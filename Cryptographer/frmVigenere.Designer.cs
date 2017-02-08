@@ -39,7 +39,7 @@
             // 
             // btnDecrypt
             // 
-            this.btnDecrypt.Location = new System.Drawing.Point(238, 87);
+            this.btnDecrypt.Location = new System.Drawing.Point(460, 68);
             this.btnDecrypt.Name = "btnDecrypt";
             this.btnDecrypt.Size = new System.Drawing.Size(75, 23);
             this.btnDecrypt.TabIndex = 15;
@@ -49,7 +49,7 @@
             // 
             // btnEncrypt
             // 
-            this.btnEncrypt.Location = new System.Drawing.Point(73, 87);
+            this.btnEncrypt.Location = new System.Drawing.Point(246, 68);
             this.btnEncrypt.Name = "btnEncrypt";
             this.btnEncrypt.Size = new System.Drawing.Size(75, 23);
             this.btnEncrypt.TabIndex = 14;
@@ -60,7 +60,7 @@
             // lblCiphertext
             // 
             this.lblCiphertext.AutoSize = true;
-            this.lblCiphertext.Location = new System.Drawing.Point(299, 8);
+            this.lblCiphertext.Location = new System.Drawing.Point(561, 8);
             this.lblCiphertext.Name = "lblCiphertext";
             this.lblCiphertext.Size = new System.Drawing.Size(54, 13);
             this.lblCiphertext.TabIndex = 13;
@@ -69,7 +69,7 @@
             // lblKey
             // 
             this.lblKey.AutoSize = true;
-            this.lblKey.Location = new System.Drawing.Point(145, 8);
+            this.lblKey.Location = new System.Drawing.Point(272, 8);
             this.lblKey.Name = "lblKey";
             this.lblKey.Size = new System.Drawing.Size(25, 13);
             this.lblKey.TabIndex = 12;
@@ -86,23 +86,26 @@
             // 
             // txtCiphertext
             // 
-            this.txtCiphertext.Location = new System.Drawing.Point(290, 24);
+            this.txtCiphertext.Location = new System.Drawing.Point(552, 24);
+            this.txtCiphertext.Multiline = true;
             this.txtCiphertext.Name = "txtCiphertext";
-            this.txtCiphertext.Size = new System.Drawing.Size(100, 20);
+            this.txtCiphertext.Size = new System.Drawing.Size(220, 525);
             this.txtCiphertext.TabIndex = 10;
             // 
             // txtKey
             // 
-            this.txtKey.Location = new System.Drawing.Point(145, 24);
+            this.txtKey.Location = new System.Drawing.Point(262, 24);
+            this.txtKey.Multiline = true;
             this.txtKey.Name = "txtKey";
-            this.txtKey.Size = new System.Drawing.Size(100, 20);
+            this.txtKey.Size = new System.Drawing.Size(250, 20);
             this.txtKey.TabIndex = 9;
             // 
             // txtPlaintext
             // 
             this.txtPlaintext.Location = new System.Drawing.Point(6, 24);
+            this.txtPlaintext.Multiline = true;
             this.txtPlaintext.Name = "txtPlaintext";
-            this.txtPlaintext.Size = new System.Drawing.Size(100, 20);
+            this.txtPlaintext.Size = new System.Drawing.Size(220, 525);
             this.txtPlaintext.TabIndex = 8;
             // 
             // frmVigenere
@@ -120,7 +123,6 @@
             this.Controls.Add(this.txtPlaintext);
             this.Name = "frmVigenere";
             this.Text = "frmVigenere";
-            this.Load += new System.EventHandler(this.frmVigenere_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
