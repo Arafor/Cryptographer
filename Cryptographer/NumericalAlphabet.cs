@@ -42,15 +42,18 @@ namespace Cryptographer
             int[] messageInInt = new int[messageInChar.Length];
             for (int i = 0; i < messageInChar.Length; i++)
             {
-                for (int j = 0; j < alphabet.Length; j++)
+                int j;
+                for (j = 0; j < alphabet.Length; j++)
                 {
                     if (messageInChar[i] == alphabet[j])
                     {
                         messageInInt[i] = j;
+                        break;
                     }
                 }
 
-                if(messageInInt[i] == null)
+                // Check for charecters out of our alphabet
+                if(j >= alphabet.Length)
                 {
                     return null;
                 }
@@ -63,15 +66,18 @@ namespace Cryptographer
             char[] messageInChar = new char[messageInInt.Length];
             for (int i = 0; i < messageInInt.Length; i++)
             {
-                for (int j = 0; j < alphabet.Length; j++)
+                int j;
+                for (j = 0; j < alphabet.Length; j++)
                 {
                     if (messageInInt[i] == j)
                     {
                         messageInChar[i] = alphabet[j];
+                        break;
                     }
                 }
 
-                if (messageInChar[i] == null)
+                // Check for charecters out of our alphabet
+                if (j >= alphabet.Length)
                 {
                     return null;
                 }
