@@ -38,7 +38,7 @@
             this.btnCaezar.Name = "btnCaezar";
             this.btnCaezar.Size = new System.Drawing.Size(75, 23);
             this.btnCaezar.TabIndex = 0;
-            this.btnCaezar.Text = "Cēzara šifrs";
+            this.btnCaezar.Text = "Caesar cipher";
             this.btnCaezar.UseVisualStyleBackColor = true;
             this.btnCaezar.Click += new System.EventHandler(this.btnCaezar_Click);
             // 
@@ -48,7 +48,7 @@
             this.btnVigenere.Name = "btnVigenere";
             this.btnVigenere.Size = new System.Drawing.Size(75, 23);
             this.btnVigenere.TabIndex = 1;
-            this.btnVigenere.Text = "Vigenēra";
+            this.btnVigenere.Text = "Vigenere cipher";
             this.btnVigenere.UseVisualStyleBackColor = true;
             this.btnVigenere.Click += new System.EventHandler(this.btnVigenere_Click);
             // 
