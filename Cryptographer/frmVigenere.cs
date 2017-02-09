@@ -105,8 +105,8 @@ namespace Cryptographer
             if (checkEmptyFields())
             {
                 // Get plaintext and key with lengths
-                char[] plaintextArray = txtPlaintext.Text.ToCharArray();
-                char[] keyArray = txtKey.Text.ToCharArray();
+                char[] plaintextArray = txtPlaintext.Text.ToUpper().ToCharArray();
+                char[] keyArray = txtKey.Text.ToUpper().ToCharArray();
 
                 // Create a padded key (same length as the message)
                 char[] paddedKeyArray = createPaddedKey(keyArray, plaintextArray.Length);
@@ -132,8 +132,8 @@ namespace Cryptographer
             if (checkEmptyFields())
             {
                 // Get ciphertext and key with lengths
-                char[] ciphertextArray = txtCiphertext.Text.ToCharArray();
-                char[] keyArray = txtKey.Text.ToCharArray();
+                char[] ciphertextArray = txtCiphertext.Text.ToUpper().ToCharArray();
+                char[] keyArray = txtKey.Text.ToUpper().ToCharArray();
 
                 // Create a padded key (same length as the message)
                 char[] paddedKeyArray = createPaddedKey(keyArray, ciphertextArray.Length);

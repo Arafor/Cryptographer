@@ -69,6 +69,16 @@ namespace Cryptographer
                 int j;
                 for (j = 0; j < alphabet.Length; j++)
                 {
+                    if (messageInInt[i] >= alphabetLength())
+                    {
+                        //Make sure the value overflows
+                        messageInInt[i] = messageInInt[i] % alphabetLength();
+                    }
+                    else if (messageInInt[i] < 0)
+                    {
+                        // Make sure the value underflows (e.g. 25 = 26 - ((-27 * -1) % 26))
+                        messageInInt[i] = alphabetLength() - ((messageInInt[i] * -1) % alphabetLength());
+                    }
                     if (messageInInt[i] == j)
                     {
                         messageInChar[i] = alphabet[j];
