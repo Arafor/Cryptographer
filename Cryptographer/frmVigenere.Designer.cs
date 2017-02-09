@@ -122,7 +122,7 @@
             this.Controls.Add(this.txtKey);
             this.Controls.Add(this.txtPlaintext);
             this.Name = "frmVigenere";
-            this.Text = "frmVigenere";
+            this.Text = "Cryptographer - Vigenere cipher";
             this.ResumeLayout(false);
             this.PerformLayout();
 
