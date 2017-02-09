@@ -60,6 +60,8 @@
             this.textBox42 = new System.Windows.Forms.TextBox();
             this.textBox40 = new System.Windows.Forms.TextBox();
             this.textBox41 = new System.Windows.Forms.TextBox();
+            this.btnClearAll = new System.Windows.Forms.Button();
+            this.btnAutoFill = new System.Windows.Forms.Button();
             this.tblTable.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -415,11 +417,31 @@
             this.textBox41.TabIndex = 24;
             this.textBox41.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // btnClearAll
+            // 
+            this.btnClearAll.Location = new System.Drawing.Point(34, 290);
+            this.btnClearAll.Name = "btnClearAll";
+            this.btnClearAll.Size = new System.Drawing.Size(75, 23);
+            this.btnClearAll.TabIndex = 7;
+            this.btnClearAll.Text = "Clear all";
+            this.btnClearAll.UseVisualStyleBackColor = true;
+            // 
+            // btnAutoFill
+            // 
+            this.btnAutoFill.Location = new System.Drawing.Point(165, 290);
+            this.btnAutoFill.Name = "btnAutoFill";
+            this.btnAutoFill.Size = new System.Drawing.Size(75, 23);
+            this.btnAutoFill.TabIndex = 8;
+            this.btnAutoFill.Text = "Auto fill";
+            this.btnAutoFill.UseVisualStyleBackColor = true;
+            // 
             // frmPlayfair
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.btnAutoFill);
+            this.Controls.Add(this.btnClearAll);
             this.Controls.Add(this.lblResult);
             this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.lblTable);
@@ -470,5 +492,7 @@
         private System.Windows.Forms.TextBox textBox32;
         private System.Windows.Forms.TextBox textBox33;
         private System.Windows.Forms.TextBox textBox34;
+        private System.Windows.Forms.Button btnClearAll;
+        private System.Windows.Forms.Button btnAutoFill;
     }
 }
