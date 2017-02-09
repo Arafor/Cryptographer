@@ -22,5 +22,10 @@ namespace Cryptographer
             //txtTable00.Text = txtTable00.Text.ToUpper();
             this.Text = this.Text.ToUpper();
         }
+
+        private void btnCipher_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

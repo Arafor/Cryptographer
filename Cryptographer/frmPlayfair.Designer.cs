@@ -62,6 +62,7 @@
             this.textBox41 = new System.Windows.Forms.TextBox();
             this.btnClearAll = new System.Windows.Forms.Button();
             this.btnAutoFill = new System.Windows.Forms.Button();
+            this.btnSaveToClipboard = new System.Windows.Forms.Button();
             this.tblTable.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -181,9 +182,11 @@
             this.btnCipher.TabIndex = 2;
             this.btnCipher.Text = "Encrypt/Decrypt";
             this.btnCipher.UseVisualStyleBackColor = true;
+            this.btnCipher.Click += new System.EventHandler(this.btnCipher_Click);
             // 
             // txtResult
             // 
+            this.txtResult.Enabled = false;
             this.txtResult.Location = new System.Drawing.Point(372, 311);
             this.txtResult.Multiline = true;
             this.txtResult.Name = "txtResult";
@@ -435,11 +438,21 @@
             this.btnAutoFill.Text = "Auto fill";
             this.btnAutoFill.UseVisualStyleBackColor = true;
             // 
+            // btnSaveToClipboard
+            // 
+            this.btnSaveToClipboard.Image = global::Cryptographer.Properties.Resources.Editing_Clipboard_icon30;
+            this.btnSaveToClipboard.Location = new System.Drawing.Point(721, 517);
+            this.btnSaveToClipboard.Name = "btnSaveToClipboard";
+            this.btnSaveToClipboard.Size = new System.Drawing.Size(40, 40);
+            this.btnSaveToClipboard.TabIndex = 9;
+            this.btnSaveToClipboard.UseVisualStyleBackColor = true;
+            // 
             // frmPlayfair
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.btnSaveToClipboard);
             this.Controls.Add(this.btnAutoFill);
             this.Controls.Add(this.btnClearAll);
             this.Controls.Add(this.lblResult);
@@ -494,5 +507,6 @@
         private System.Windows.Forms.TextBox textBox34;
         private System.Windows.Forms.Button btnClearAll;
         private System.Windows.Forms.Button btnAutoFill;
+        private System.Windows.Forms.Button btnSaveToClipboard;
     }
 }
