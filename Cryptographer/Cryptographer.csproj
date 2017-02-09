@@ -58,6 +58,12 @@
     <Compile Include="frmCaezar.Designer.cs">
       <DependentUpon>frmCaezar.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPlayfair.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPlayfair.Designer.cs">
+      <DependentUpon>frmPlayfair.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVigenere.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCryptographer.resx">
       <DependentUpon>frmCryptographer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPlayfair.resx">
+      <DependentUpon>frmPlayfair.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVigenere.resx">
       <DependentUpon>frmVigenere.cs</DependentUpon>
