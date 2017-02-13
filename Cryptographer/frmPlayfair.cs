@@ -66,6 +66,11 @@ namespace Cryptographer
                 {
                     if (message[i] == replaceableLetters[j])
                     {
+                        // Replace letter "J" with "I"
+                        if (j == 9)
+                        {
+                            parsedMessage[j] = replaceableLetters[j - 1];
+                        }
                         skip = true;
                         break;
                     }
@@ -92,19 +97,18 @@ namespace Cryptographer
 
             // Insert Q between repeating words
             message = parsedMessage.ToArray();
-            //parsedMessage = new List<char>();
             string messageWithQ = "";
             string tmpWord = "";
             string word = "";
             foreach (char letter in message)
             {
-                // Check if the word we have so far is contained in our temporary string
+                // Check if the word we are making so far is contained in our temporary string
                 if (tmpWord.Contains(word + letter))
                 {
                     word = word + letter;
                 }
                 // if our word is no longer contained in our temporary string, check if the temporary string ends with it
-                else if (tmpWord.EndsWith(word))
+                else if (tmpWord.EndsWith(word) && tmpWord != "")
                 {
                     // Move our temporary string to the message with a Q since the last two words are the same
                     messageWithQ = messageWithQ + tmpWord + "Q" + word;
@@ -117,19 +121,111 @@ namespace Cryptographer
                 // If the temporary string contained the word but didnt end with it, then we apend it without any Q
                 else
                 {
-                    tmpWord = tmpWord + word + letter;
-                    word = "";
-                    if (messageWithQ.EndsWith(tmpWord))
+                    tmpWord = tmpWord + word;
+                    word = letter.ToString();
+                    if (messageWithQ.EndsWith(tmpWord) && messageWithQ != "")
                     {
                         // Move our temporary string to the message with a Q since the last two words are the same
                         messageWithQ = messageWithQ + "Q" + tmpWord;
-                        // Move the last word to the temporary string for furthur comparisons
-                        tmpWord = "";
+                        // Start comparing a new word
+                        tmpWord = word;
+                        word = "";
                     }
                 }
             }
 
-            return parsedMessage.ToArray();
+            if (tmpWord != "")
+            {
+                messageWithQ = messageWithQ + tmpWord;
+            }
+
+            if (word != "")
+            {
+                messageWithQ = messageWithQ + word;
+            }
+
+            // Get an array of our message after one of its parsing iterations
+            message = messageWithQ.ToArray();
+            // Used to read the even and odd letter pairs within the message
+            for (int i = 0; i < message.Length - 1; i++)
+            {
+                // If the letters repeat themselves
+                if (message[i] == message[i + 1])
+                {
+                    message[i + 1] = Convert.ToChar("X");
+                }
+            }
+
+            // Check if message has an even amount of letters
+            if (message.Length % 2 == 1)
+            {
+                // If the message isn't an even number apend a "Q" at the end
+                parsedMessage = message.ToList();
+                parsedMessage[message.Length + 1] = Convert.ToChar("Q");
+                message = parsedMessage.ToArray();
+            }
+            
+            return message;
+        }
+
+        public char[] cipher(char[] message)
+        {
+            int i = 0;
+            int j = 1;
+            for (; i < message.Length && j < message.Length;)
+            {
+                // Keeps track of the coresponding letters position in the table array 
+                int evenNumberRow = -1;
+                int evenNumberColumn = -1;
+                int oddNumberRow = -1;
+                int oddNumberColumn = -1;
+                int foundLetters = 0;
+
+                // Search table for positions of letters
+                for (int k = 0; k < 5; k++)
+                {
+                    for (int l = 0; l < 5; l++)
+                    {
+                        if (table[k, l] == message[i])
+                        {
+                            evenNumberRow = k;
+                            evenNumberColumn = l;
+                            foundLetters++;
+                        }
+                        if (table[k, l] == message[j])
+                        {
+                            oddNumberRow = k;
+                            oddNumberColumn = l;
+                            foundLetters++;
+                        }
+                        // If we found both letters then stop the loops
+                        if (foundLetters == 2) break;
+                    }
+                    if (foundLetters == 2) break;
+                }
+
+                // Check if letters are on the same row or column
+                if (evenNumberRow == oddNumberRow)
+                {
+                    message[i] = table[evenNumberRow, evenNumberColumn + 1 % 5];
+                    message[j] = table[oddNumberRow, oddNumberColumn + 1 % 5];
+                }
+                else if (evenNumberColumn == oddNumberColumn)
+                {
+                    message[i] = table[evenNumberRow + 1 % 5, evenNumberColumn];
+                    message[j] = table[oddNumberRow + 1 % 5, oddNumberColumn];
+                }
+                else
+                {
+                    message[i] = table[oddNumberRow, evenNumberColumn];
+                    message[j] = table[evenNumberRow, oddNumberColumn];
+                }
+
+                // Iterate loop and start next pair
+                i = i + 2;
+                j = j + 2;
+            }
+            return message;
         }
 
         public frmPlayfair()
@@ -230,7 +326,7 @@ namespace Cryptographer
             fillArrayTable();
             char[] message = txtMessage.Text.ToCharArray();
             parseText(message);
-            
+            cipher(message);
         }
 
         private void btnClearAll_Click(object sender, EventArgs e)
