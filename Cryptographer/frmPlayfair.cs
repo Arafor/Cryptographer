@@ -182,17 +182,17 @@ namespace Cryptographer
             return message;
         }
 
-        public char[] cipher(char[] message)
+        public char[] cipher(char[] message, string function)
         {
             int i = 0;
             int j = 1;
             for (; i < message.Length && j < message.Length;)
             {
                 // Keeps track of the coresponding letters position in the table array 
-                int evenNumberRow = -1;
-                int evenNumberColumn = -1;
-                int oddNumberRow = -1;
-                int oddNumberColumn = -1;
+                int evenNumberY = -1;
+                int evenNumberX = -1;
+                int oddNumberY = -1;
+                int oddNumberX = -1;
                 int foundLetters = 0;
 
                 // Search table for positions of letters
@@ -202,14 +202,14 @@ namespace Cryptographer
                     {
                         if (table[k, l] == message[i])
                         {
-                            evenNumberRow = k;
-                            evenNumberColumn = l;
+                            evenNumberY = k;
+                            evenNumberX = l;
                             foundLetters++;
                         }
                         if (table[k, l] == message[j])
                         {
-                            oddNumberRow = k;
-                            oddNumberColumn = l;
+                            oddNumberY = k;
+                            oddNumberX = l;
                             foundLetters++;
                         }
                         // If we found both letters then stop the loops
@@ -219,21 +219,42 @@ namespace Cryptographer
                 }
 
                 // Check if letters are on the same row or column
-                if (evenNumberRow == oddNumberRow)
+                if (evenNumberY == oddNumberY)
                 {
-                    // Make sure the index overflows
-                    message[i] = table[evenNumberRow, (evenNumberColumn + 1) % 5];
-                    message[j] = table[oddNumberRow, (oddNumberColumn + 1) % 5];
+                    if (function == "E")
+                    {
+                        // Make sure the index overflows
+                        message[i] = table[evenNumberY, (evenNumberX + 1) % 5];
+                        message[j] = table[oddNumberY, (oddNumberX + 1) % 5];
+                    }
+                    else if (function == "D")
+                    {
+                        // Make sure the index underflows
+                        if (evenNumberX == 0) message[i] = table[evenNumberY, 5 - 1];
+                        else message[i] = table[evenNumberY, (evenNumberX - 1) % 5];
+                        if (oddNumberX == 0) message[j] = table[oddNumberY, 5 - 1];
+                        else message[j] = table[oddNumberY, (oddNumberX - 1) % 5];
+                    }
                 }
-                else if (evenNumberColumn == oddNumberColumn)
+                else if (evenNumberX == oddNumberX)
                 {
-                    message[i] = table[(evenNumberRow + 1) % 5, evenNumberColumn];
-                    message[j] = table[(oddNumberRow + 1) % 5, oddNumberColumn];
+                    if (function == "E")
+                    {
+                        message[i] = table[(evenNumberY + 1) % 5, evenNumberX];
+                        message[j] = table[(oddNumberY + 1) % 5, oddNumberX];
+                    }
+                    else if (function == "D")
+                    {
+                        if (evenNumberY == 0) message[i] = table[5 - 1, evenNumberX];
+                        else message[i] = table[(evenNumberY - 1) % 5, evenNumberX];
+                        if (oddNumberY == 0) message[j] = table[5 - 1, oddNumberX];
+                        else message[j] = table[(oddNumberY - 1) % 5, oddNumberX];
+                    }
                 }
                 else
                 {
-                    message[i] = table[oddNumberRow, evenNumberColumn];
-                    message[j] = table[evenNumberRow, oddNumberColumn];
+                    message[i] = table[oddNumberY, evenNumberX];
+                    message[j] = table[evenNumberY, oddNumberX];
                 }
 
                 // Iterate loop and start next pair
@@ -335,18 +356,29 @@ namespace Cryptographer
             txtTable44.Text = txtTable44.Text.ToUpper();
         }
 
-        private void btnCipher_Click(object sender, EventArgs e)
+        private void btnEncrypt_Click(object sender, EventArgs e)
         {
             fillArrayTable();
             char[] message = txtMessage.Text.ToCharArray();
             char[] parsedMessage = parseText(message);
-            char[] cipheredMessage = cipher(parsedMessage);
+            char[] cipheredMessage = cipher(parsedMessage, "E");
             txtResult.Text = "";
             for (int i = 0; i < cipheredMessage.Length; i++)
             {
                 txtResult.Text = txtResult.Text + cipheredMessage[i].ToString();
             }
-            //txtResult.Text = message.ToString();
+        }
+
+        private void btnDecrypt_Click(object sender, EventArgs e)
+        {
+            fillArrayTable();
+            char[] message = txtMessage.Text.ToCharArray();
+            char[] cipheredMessage = cipher(message, "D");
+            txtResult.Text = "";
+            for (int i = 0; i < cipheredMessage.Length; i++)
+            {
+                txtResult.Text = txtResult.Text + cipheredMessage[i].ToString();
+            }
         }
 
         private void btnClearAll_Click(object sender, EventArgs e)

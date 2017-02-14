@@ -55,7 +55,7 @@
             this.txtTable33 = new System.Windows.Forms.TextBox();
             this.txtTable34 = new System.Windows.Forms.TextBox();
             this.txtMessage = new System.Windows.Forms.TextBox();
-            this.btnCipher = new System.Windows.Forms.Button();
+            this.btnEncrypt = new System.Windows.Forms.Button();
             this.txtResult = new System.Windows.Forms.TextBox();
             this.lblTable = new System.Windows.Forms.Label();
             this.lblMessage = new System.Windows.Forms.Label();
@@ -63,6 +63,7 @@
             this.btnClearAll = new System.Windows.Forms.Button();
             this.btnAutoFill = new System.Windows.Forms.Button();
             this.btnSaveToClipboard = new System.Windows.Forms.Button();
+            this.btnDecrypt = new System.Windows.Forms.Button();
             this.tblTable.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -398,20 +399,20 @@
             this.txtMessage.TabIndex = 25;
             this.txtMessage.TextChanged += new System.EventHandler(this.txtMessage_TextChanged);
             // 
-            // btnCipher
+            // btnEncrypt
             // 
-            this.btnCipher.Location = new System.Drawing.Point(387, 252);
-            this.btnCipher.Name = "btnCipher";
-            this.btnCipher.Size = new System.Drawing.Size(100, 23);
-            this.btnCipher.TabIndex = 26;
-            this.btnCipher.Text = "Encrypt/Decrypt";
-            this.btnCipher.UseVisualStyleBackColor = true;
-            this.btnCipher.Click += new System.EventHandler(this.btnCipher_Click);
+            this.btnEncrypt.Location = new System.Drawing.Point(387, 231);
+            this.btnEncrypt.Name = "btnEncrypt";
+            this.btnEncrypt.Size = new System.Drawing.Size(75, 23);
+            this.btnEncrypt.TabIndex = 26;
+            this.btnEncrypt.Text = "Encrypt";
+            this.btnEncrypt.UseVisualStyleBackColor = true;
+            this.btnEncrypt.Click += new System.EventHandler(this.btnEncrypt_Click);
             // 
             // txtResult
             // 
             this.txtResult.Enabled = false;
-            this.txtResult.Location = new System.Drawing.Point(372, 311);
+            this.txtResult.Location = new System.Drawing.Point(372, 290);
             this.txtResult.Multiline = true;
             this.txtResult.Name = "txtResult";
             this.txtResult.Size = new System.Drawing.Size(400, 200);
@@ -438,7 +439,7 @@
             // lblResult
             // 
             this.lblResult.AutoSize = true;
-            this.lblResult.Location = new System.Drawing.Point(384, 295);
+            this.lblResult.Location = new System.Drawing.Point(384, 274);
             this.lblResult.Name = "lblResult";
             this.lblResult.Size = new System.Drawing.Size(37, 13);
             this.lblResult.TabIndex = 6;
@@ -467,18 +468,29 @@
             // btnSaveToClipboard
             // 
             this.btnSaveToClipboard.Image = global::Cryptographer.Properties.Resources.Editing_Clipboard_icon30;
-            this.btnSaveToClipboard.Location = new System.Drawing.Point(721, 517);
+            this.btnSaveToClipboard.Location = new System.Drawing.Point(720, 496);
             this.btnSaveToClipboard.Name = "btnSaveToClipboard";
             this.btnSaveToClipboard.Size = new System.Drawing.Size(40, 40);
             this.btnSaveToClipboard.TabIndex = 27;
             this.btnSaveToClipboard.UseVisualStyleBackColor = true;
             this.btnSaveToClipboard.Click += new System.EventHandler(this.btnSaveToClipboard_Click);
             // 
+            // btnDecrypt
+            // 
+            this.btnDecrypt.Location = new System.Drawing.Point(481, 231);
+            this.btnDecrypt.Name = "btnDecrypt";
+            this.btnDecrypt.Size = new System.Drawing.Size(75, 23);
+            this.btnDecrypt.TabIndex = 31;
+            this.btnDecrypt.Text = "Decrypt";
+            this.btnDecrypt.UseVisualStyleBackColor = true;
+            this.btnDecrypt.Click += new System.EventHandler(this.btnDecrypt_Click);
+            // 
             // frmPlayfair
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.btnDecrypt);
             this.Controls.Add(this.btnSaveToClipboard);
             this.Controls.Add(this.btnAutoFill);
             this.Controls.Add(this.btnClearAll);
@@ -486,7 +498,7 @@
             this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.lblTable);
             this.Controls.Add(this.txtResult);
-            this.Controls.Add(this.btnCipher);
+            this.Controls.Add(this.btnEncrypt);
             this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.tblTable);
             this.Name = "frmPlayfair";
@@ -502,7 +514,7 @@
 
         private System.Windows.Forms.TableLayoutPanel tblTable;
         private System.Windows.Forms.TextBox txtMessage;
-        private System.Windows.Forms.Button btnCipher;
+        private System.Windows.Forms.Button btnEncrypt;
         private System.Windows.Forms.TextBox txtResult;
         private System.Windows.Forms.TextBox txtTable00;
         private System.Windows.Forms.TextBox txtTable04;
@@ -535,5 +547,6 @@
         private System.Windows.Forms.Button btnClearAll;
         private System.Windows.Forms.Button btnAutoFill;
         private System.Windows.Forms.Button btnSaveToClipboard;
+        private System.Windows.Forms.Button btnDecrypt;
     }
 }
