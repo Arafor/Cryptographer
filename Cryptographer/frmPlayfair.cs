@@ -84,7 +84,7 @@ namespace Cryptographer
                 {
                     if (message[i] == allowedLetters[k])
                     {
-                        parsedMessage.Insert(i, message[1]);
+                        parsedMessage.Insert(i, message[i]);
                         break;
                     }
                 }
@@ -108,14 +108,14 @@ namespace Cryptographer
                     word = word + letter;
                 }
                 // if our word is no longer contained in our temporary string, check if the temporary string ends with it
-                else if (tmpWord.EndsWith(word) && tmpWord != "")
+                else if (tmpWord.EndsWith(word) && tmpWord != "" && word.Length > 1)
                 {
                     // Move our temporary string to the message with a Q since the last two words are the same
                     messageWithQ = messageWithQ + tmpWord + "Q" + word;
                     // Move the last word to the temporary string for furthur comparisons
-                    tmpWord = letter.ToString();
+                    tmpWord = "";
                     // Start a new word for compairing
-                    word = "";
+                    word = letter.ToString();
 
                 }
                 // If the temporary string contained the word but didnt end with it, then we apend it without any Q
@@ -136,12 +136,26 @@ namespace Cryptographer
 
             if (tmpWord != "")
             {
-                messageWithQ = messageWithQ + tmpWord;
+                if (messageWithQ.EndsWith(tmpWord))
+                {
+                    messageWithQ = messageWithQ + "Q" + tmpWord;
+                }
+                else
+                {
+                    messageWithQ = messageWithQ + tmpWord;
+                }
             }
 
             if (word != "")
             {
-                messageWithQ = messageWithQ + word;
+                if (messageWithQ.EndsWith(word))
+                {
+                    messageWithQ = messageWithQ + "Q" + word;
+                }
+                else
+                {
+                    messageWithQ = messageWithQ + word;
+                }
             }
 
             // Get an array of our message after one of its parsing iterations
@@ -208,13 +222,13 @@ namespace Cryptographer
                 if (evenNumberRow == oddNumberRow)
                 {
                     // Make sure the index overflows
-                    message[i] = table[evenNumberRow, evenNumberColumn + 1 % 5];
-                    message[j] = table[oddNumberRow, oddNumberColumn + 1 % 5];
+                    message[i] = table[evenNumberRow, (evenNumberColumn + 1) % 5];
+                    message[j] = table[oddNumberRow, (oddNumberColumn + 1) % 5];
                 }
                 else if (evenNumberColumn == oddNumberColumn)
                 {
-                    message[i] = table[evenNumberRow + 1 % 5, evenNumberColumn];
-                    message[j] = table[oddNumberRow + 1 % 5, oddNumberColumn];
+                    message[i] = table[(evenNumberRow + 1) % 5, evenNumberColumn];
+                    message[j] = table[(oddNumberRow + 1) % 5, oddNumberColumn];
                 }
                 else
                 {
@@ -325,10 +339,14 @@ namespace Cryptographer
         {
             fillArrayTable();
             char[] message = txtMessage.Text.ToCharArray();
-            parseText(message);
-            cipher(message);
-
-            txtResult.Text = message.ToString();
+            char[] parsedMessage = parseText(message);
+            char[] cipheredMessage = cipher(parsedMessage);
+            txtResult.Text = "";
+            for (int i = 0; i < cipheredMessage.Length; i++)
+            {
+                txtResult.Text = txtResult.Text + cipheredMessage[i].ToString();
+            }
+            //txtResult.Text = message.ToString();
         }
 
         private void btnClearAll_Click(object sender, EventArgs e)
