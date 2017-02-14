@@ -300,31 +300,37 @@ namespace Cryptographer
 
         public void fillArrayTable()
         {
-            table[0, 0] = txtTable00.Text[0];
-            table[0, 1] = txtTable01.Text[0];
-            table[0, 2] = txtTable02.Text[0];
-            table[0, 3] = txtTable03.Text[0];
-            table[0, 4] = txtTable04.Text[0];
-            table[1, 0] = txtTable10.Text[0];
-            table[1, 1] = txtTable11.Text[0];
-            table[1, 2] = txtTable12.Text[0];
-            table[1, 3] = txtTable13.Text[0];
-            table[1, 4] = txtTable14.Text[0];
-            table[2, 0] = txtTable20.Text[0];
-            table[2, 1] = txtTable21.Text[0];
-            table[2, 2] = txtTable22.Text[0];
-            table[2, 3] = txtTable23.Text[0];
-            table[2, 4] = txtTable24.Text[0];
-            table[3, 0] = txtTable30.Text[0];
-            table[3, 1] = txtTable31.Text[0];
-            table[3, 2] = txtTable32.Text[0];
-            table[3, 3] = txtTable33.Text[0];
-            table[3, 4] = txtTable34.Text[0];
-            table[4, 0] = txtTable40.Text[0];
-            table[4, 1] = txtTable41.Text[0];
-            table[4, 2] = txtTable42.Text[0];
-            table[4, 3] = txtTable43.Text[0];
-            table[4, 4] = txtTable44.Text[0];
+            try
+            {
+                table[0, 0] = txtTable00.Text[0];
+                table[0, 1] = txtTable01.Text[0];
+                table[0, 2] = txtTable02.Text[0];
+                table[0, 3] = txtTable03.Text[0];
+                table[0, 4] = txtTable04.Text[0];
+                table[1, 0] = txtTable10.Text[0];
+                table[1, 1] = txtTable11.Text[0];
+                table[1, 2] = txtTable12.Text[0];
+                table[1, 3] = txtTable13.Text[0];
+                table[1, 4] = txtTable14.Text[0];
+                table[2, 0] = txtTable20.Text[0];
+                table[2, 1] = txtTable21.Text[0];
+                table[2, 2] = txtTable22.Text[0];
+                table[2, 3] = txtTable23.Text[0];
+                table[2, 4] = txtTable24.Text[0];
+                table[3, 0] = txtTable30.Text[0];
+                table[3, 1] = txtTable31.Text[0];
+                table[3, 2] = txtTable32.Text[0];
+                table[3, 3] = txtTable33.Text[0];
+                table[3, 4] = txtTable34.Text[0];
+                table[4, 0] = txtTable40.Text[0];
+                table[4, 1] = txtTable41.Text[0];
+                table[4, 2] = txtTable42.Text[0];
+                table[4, 3] = txtTable43.Text[0];
+                table[4, 4] = txtTable44.Text[0];
+            } catch (Exception e)
+            {
+                MessageBox.Show("Please fill in the table!");
+            }
         }
 
         private void tblTable_TextChanged(object sender, EventArgs e)
@@ -359,25 +365,38 @@ namespace Cryptographer
         private void btnEncrypt_Click(object sender, EventArgs e)
         {
             fillArrayTable();
-            char[] message = txtMessage.Text.ToCharArray();
-            char[] parsedMessage = parseText(message);
-            char[] cipheredMessage = cipher(parsedMessage, "E");
-            txtResult.Text = "";
-            for (int i = 0; i < cipheredMessage.Length; i++)
+            if (txtMessage.Text.Length > 0)
             {
-                txtResult.Text = txtResult.Text + cipheredMessage[i].ToString();
+                char[] message = txtMessage.Text.ToCharArray();
+                char[] parsedMessage = parseText(message);
+                char[] cipheredMessage = cipher(parsedMessage, "E");
+                txtResult.Text = "";
+                for (int i = 0; i < cipheredMessage.Length; i++)
+                {
+                    txtResult.Text = txtResult.Text + cipheredMessage[i].ToString();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter a message!");
             }
         }
 
         private void btnDecrypt_Click(object sender, EventArgs e)
         {
-            fillArrayTable();
-            char[] message = txtMessage.Text.ToCharArray();
-            char[] cipheredMessage = cipher(message, "D");
-            txtResult.Text = "";
-            for (int i = 0; i < cipheredMessage.Length; i++)
+            if (txtMessage.Text.Length > 0)
             {
-                txtResult.Text = txtResult.Text + cipheredMessage[i].ToString();
+                fillArrayTable();
+                char[] message = txtMessage.Text.ToCharArray();
+                char[] cipheredMessage = cipher(message, "D");
+                txtResult.Text = "";
+                for (int i = 0; i < cipheredMessage.Length; i++)
+                {
+                    txtResult.Text = txtResult.Text + cipheredMessage[i].ToString();
+                }
+            } else
+            {
+                MessageBox.Show("Please enter a message!");
             }
         }
 
