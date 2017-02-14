@@ -69,7 +69,7 @@ namespace Cryptographer
                         // Replace letter "J" with "I"
                         if (j == 9)
                         {
-                            parsedMessage[j] = replaceableLetters[j - 1];
+                            parsedMessage.Insert(j, replaceableLetters[j - 1]);
                         }
                         skip = true;
                         break;
@@ -84,7 +84,7 @@ namespace Cryptographer
                 {
                     if (message[i] == allowedLetters[k])
                     {
-                        parsedMessage[i] = message[i];
+                        parsedMessage.Insert(i, message[1]);
                         break;
                     }
                 }
@@ -161,7 +161,7 @@ namespace Cryptographer
             {
                 // If the message isn't an even number apend a "Q" at the end
                 parsedMessage = message.ToList();
-                parsedMessage[message.Length + 1] = Convert.ToChar("Q");
+                parsedMessage.Insert(message.Length, Convert.ToChar("Q"));
                 message = parsedMessage.ToArray();
             }
             
@@ -207,6 +207,7 @@ namespace Cryptographer
                 // Check if letters are on the same row or column
                 if (evenNumberRow == oddNumberRow)
                 {
+                    // Make sure the index overflows
                     message[i] = table[evenNumberRow, evenNumberColumn + 1 % 5];
                     message[j] = table[oddNumberRow, oddNumberColumn + 1 % 5];
                 }
@@ -260,7 +261,6 @@ namespace Cryptographer
             txtTable42.Text = table[4, 2].ToString();
             txtTable43.Text = table[4, 3].ToString();
             txtTable44.Text = table[4, 4].ToString();
-
         }
 
         public void fillArrayTable()
@@ -327,6 +327,8 @@ namespace Cryptographer
             char[] message = txtMessage.Text.ToCharArray();
             parseText(message);
             cipher(message);
+
+            txtResult.Text = message.ToString();
         }
 
         private void btnClearAll_Click(object sender, EventArgs e)
@@ -360,19 +362,19 @@ namespace Cryptographer
 
         private void btnAutoFill_Click(object sender, EventArgs e)
         {
-            for(int i = 0; i < 5; i++)
+            // Index of letter to add
+            int resultLetter = -1;
+            for (int i = 0; i < 5; i++)
             {
-                for(int j = 0; j < 5; j++)
+                for (int j = 0; j < 5; j++)
                 {
-                    // Index of letter to add
-                    int resultLetter = -1;
                     // J is not contained in the table and must be avoided
-                    if (i + j >= 9)
+                    if (resultLetter == 8)
                     {
-                        resultLetter = i + j + 1;
+                        resultLetter = resultLetter + 2;
                     } else
                     {
-                        resultLetter = i + j;
+                        resultLetter++;
                     }
                     // Auto fill the table with latters from A to Z (without J)
                     table[i, j] = allowedLetters[resultLetter];
