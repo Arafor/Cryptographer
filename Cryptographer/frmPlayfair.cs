@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,6 +53,38 @@ namespace Cryptographer
         };
 
         char[,] table = new char[5, 5];
+
+        public TextBox[] getTableTextBoxes()
+        {
+            TextBox[] tableTextBoxes = {
+                txtTable00,
+                txtTable01,
+                txtTable02,
+                txtTable03,
+                txtTable04,
+                txtTable10,
+                txtTable11,
+                txtTable12,
+                txtTable13,
+                txtTable14,
+                txtTable20,
+                txtTable21,
+                txtTable22,
+                txtTable23,
+                txtTable24,
+                txtTable30,
+                txtTable31,
+                txtTable32,
+                txtTable33,
+                txtTable34,
+                txtTable40,
+                txtTable41,
+                txtTable42,
+                txtTable43,
+                txtTable44
+            };
+            return tableTextBoxes;
+        }
 
         public char[] parseText(char[] message)
         {
@@ -333,6 +366,29 @@ namespace Cryptographer
             }
         }
 
+        public string manageFiles()
+        {
+            int size = -1;
+            string text = "";
+            DialogResult result = openFileDialog1.ShowDialog(); // Show the dialog.
+            if (result == DialogResult.OK) // Test result.
+            {
+                string file = openFileDialog1.FileName;
+                try
+                {
+                    text = File.ReadAllText(file);
+                    size = text.Length;
+                }
+                catch (IOException)
+                {
+                }
+            }
+            Console.WriteLine(size); // <-- Shows file size in debugging mode.
+            Console.WriteLine(result); // <-- For debugging use.
+
+            return text;
+        }
+
         private void tblTable_TextChanged(object sender, EventArgs e)
         {
             txtTable00.Text = txtTable00.Text.ToUpper();
@@ -459,7 +515,61 @@ namespace Cryptographer
 
         private void txtMessage_TextChanged(object sender, EventArgs e)
         {
-            txtMessage.Text = txtMessage.Text.ToUpper();
+            //txtMessage.Text = txtMessage.Text.ToUpper();
+            txtMessage.CharacterCasing = CharacterCasing.Upper;
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            // Get the text from the chosen file
+            string tableText = manageFiles();
+       
+            if (tableText.Length == 25)
+            {
+                // Make sure contains all of the needed letters and only those
+                char[] tableTextCharArray = tableText.ToCharArray();
+                int j = 0;
+                bool containedLettersAreOk = true;
+                foreach (char letter in allowedLetters)
+                {
+                    // Skip letter "J" since the table can not contain it
+                    if (letter == Convert.ToChar("J"))continue;
+                    for (j = 0; j < tableTextCharArray.Length; j++)
+                    {
+                        if (tableTextCharArray[j] == letter)
+                        {
+                            break;
+                        }
+                    }
+
+                    if (j >= 25)
+                    {
+                        MessageBox.Show("The chosen file does not contain all of the necessary letters!");
+                        containedLettersAreOk = false;
+                        break;
+                    } 
+                }
+
+                if (containedLettersAreOk)
+                {
+                    // Fill table with imported letters
+                    TextBox[] tableTextBoxes = getTableTextBoxes();
+                    int i = 0;
+                    foreach (TextBox txtBox in tableTextBoxes)
+                    {
+                        txtBox.Text = tableTextCharArray[i].ToString();
+                        i++;
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("The chosen file does not contain 25 characters.\nPlease choose different file.");
+            }
         }
     }
 }
