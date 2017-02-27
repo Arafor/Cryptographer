@@ -67,6 +67,7 @@
             this.btnImport = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.tblTable.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -580,5 +581,6 @@
         private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.Button btnExport;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
