@@ -304,62 +304,28 @@ namespace Cryptographer
 
         public void fillUITable()
         {
-            txtTable00.Text = table[0, 0].ToString();
-            txtTable01.Text = table[0, 1].ToString();
-            txtTable02.Text = table[0, 2].ToString();
-            txtTable03.Text = table[0, 3].ToString();
-            txtTable04.Text = table[0, 4].ToString();
-            txtTable10.Text = table[1, 0].ToString();
-            txtTable11.Text = table[1, 1].ToString();
-            txtTable12.Text = table[1, 2].ToString();
-            txtTable13.Text = table[1, 3].ToString();
-            txtTable14.Text = table[1, 4].ToString();
-            txtTable20.Text = table[2, 0].ToString();
-            txtTable21.Text = table[2, 1].ToString();
-            txtTable22.Text = table[2, 2].ToString();
-            txtTable23.Text = table[2, 3].ToString();
-            txtTable24.Text = table[2, 4].ToString();
-            txtTable30.Text = table[3, 0].ToString();
-            txtTable31.Text = table[3, 1].ToString();
-            txtTable32.Text = table[3, 2].ToString();
-            txtTable33.Text = table[3, 3].ToString();
-            txtTable34.Text = table[3, 4].ToString();
-            txtTable40.Text = table[4, 0].ToString();
-            txtTable41.Text = table[4, 1].ToString();
-            txtTable42.Text = table[4, 2].ToString();
-            txtTable43.Text = table[4, 3].ToString();
-            txtTable44.Text = table[4, 4].ToString();
+            // Fill UI table with letters from the table
+            TextBox[] tableTextBoxes = getTableTextBoxes();
+            int i = 0;
+            foreach (TextBox txtBox in tableTextBoxes)
+            {
+                txtBox.Text = table[i/5, i%5].ToString();
+                i++;
+            }
         }
 
         public void fillArrayTable()
         {
             try
             {
-                table[0, 0] = txtTable00.Text[0];
-                table[0, 1] = txtTable01.Text[0];
-                table[0, 2] = txtTable02.Text[0];
-                table[0, 3] = txtTable03.Text[0];
-                table[0, 4] = txtTable04.Text[0];
-                table[1, 0] = txtTable10.Text[0];
-                table[1, 1] = txtTable11.Text[0];
-                table[1, 2] = txtTable12.Text[0];
-                table[1, 3] = txtTable13.Text[0];
-                table[1, 4] = txtTable14.Text[0];
-                table[2, 0] = txtTable20.Text[0];
-                table[2, 1] = txtTable21.Text[0];
-                table[2, 2] = txtTable22.Text[0];
-                table[2, 3] = txtTable23.Text[0];
-                table[2, 4] = txtTable24.Text[0];
-                table[3, 0] = txtTable30.Text[0];
-                table[3, 1] = txtTable31.Text[0];
-                table[3, 2] = txtTable32.Text[0];
-                table[3, 3] = txtTable33.Text[0];
-                table[3, 4] = txtTable34.Text[0];
-                table[4, 0] = txtTable40.Text[0];
-                table[4, 1] = txtTable41.Text[0];
-                table[4, 2] = txtTable42.Text[0];
-                table[4, 3] = txtTable43.Text[0];
-                table[4, 4] = txtTable44.Text[0];
+                // Fill table with letters from the UI table
+                TextBox[] tableTextBoxes = getTableTextBoxes();
+                int i = 0;
+                foreach (TextBox txtBox in tableTextBoxes)
+                {
+                    table[i / 5, i % 5] = txtBox.Text[0];
+                    i++;
+                }
             } catch (Exception e)
             {
                 MessageBox.Show("Please fill in the table!");
@@ -515,7 +481,6 @@ namespace Cryptographer
 
         private void txtMessage_TextChanged(object sender, EventArgs e)
         {
-            //txtMessage.Text = txtMessage.Text.ToUpper();
             txtMessage.CharacterCasing = CharacterCasing.Upper;
         }
 
