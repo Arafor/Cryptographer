@@ -22,7 +22,7 @@ namespace Cryptographer
         public Boolean checkEmptyFields()
         {
             // Check if there is a message to encrypt
-            if (txtPlaintext.Text.Length > 0 || txtCiphertext.Text.Length > 0)
+            if (txtMessage.Text.Length > 0 || txtResult.Text.Length > 0)
             {
                 // Check if there is a key specified
                 if (txtKey.Text.Length > 0)
@@ -72,14 +72,14 @@ namespace Cryptographer
             return messageInString;
         }
 
-        private void btnEncrypt_Click(object sender, EventArgs e)
+        public void prepareToCipher(string txtBoxText, string function)
         {
             // Prepare for cipher text display
-            txtCiphertext.Text = "";
+            txtResult.Text = "";
             if (checkEmptyFields())
             {
                 // Get plaintext and key
-                char[] plaintextArray = txtPlaintext.Text.ToUpper().ToCharArray();
+                char[] plaintextArray = txtBoxText.ToUpper().ToCharArray();
                 int key = 0;
                 try
                 {
@@ -97,7 +97,7 @@ namespace Cryptographer
                 {
                     if (message != null)
                     {
-                        txtCiphertext.Text = cipher(message, key, "E");
+                        txtResult.Text = cipher(message, key, function);
                     }
                     else
                     {
@@ -107,27 +107,19 @@ namespace Cryptographer
             }
         }
 
+        private void btnEncrypt_Click(object sender, EventArgs e)
+        {
+            prepareToCipher(txtMessage.Text, "E");
+        }
+
         private void btnDecrypt_Click(object sender, EventArgs e)
         {
-            // Prepare for cipher text display
-            txtPlaintext.Text = "";
-            if (checkEmptyFields())
-            {
-                // Get plaintext and key
-                char[] ciphertextArray = txtCiphertext.Text.ToUpper().ToCharArray();
-                int key = int.Parse(txtKey.Text);
+            prepareToCipher(txtMessage.Text, "D");
+        }
 
-                // Translate message to numerical values
-                int[] message = numAlphabet.lettersToNumbers(ciphertextArray);
-                if (message != null && key != null)
-                {
-                    txtPlaintext.Text = cipher(message, key, "D");
-                }
-                else
-                {
-                    MessageBox.Show("Lūdzu izmantojiet tekstā tikai latīņu burtus no A līdz Z!");
-                }
-            }
+        private void btnSaveToClipboard_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(txtResult.Text);
         }
     }
 }
