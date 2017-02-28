@@ -348,20 +348,13 @@ namespace Cryptographer
             }
             if (everythingOk)
             {
-                try
+                // Fill table with letters from the UI table
+                TextBox[] tableTextBoxes = getTableTextBoxes();
+                int i = 0;
+                foreach (TextBox txtBox in tableTextBoxes)
                 {
-                    // Fill table with letters from the UI table
-                    TextBox[] tableTextBoxes = getTableTextBoxes();
-                    int i = 0;
-                    foreach (TextBox txtBox in tableTextBoxes)
-                    {
-                        table[i / 5, i % 5] = txtBox.Text[0];
-                        i++;
-                    }
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show("Please fill in the table!");
+                    table[i / 5, i % 5] = txtBox.Text[0];
+                    i++;
                 }
             }
 
