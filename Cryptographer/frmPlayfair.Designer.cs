@@ -531,6 +531,9 @@
             this.Controls.Add(this.btnEncrypt);
             this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.tblTable);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmPlayfair";
             this.Text = "Cryptographer- Playfair cipher";
             this.tblTable.ResumeLayout(false);
