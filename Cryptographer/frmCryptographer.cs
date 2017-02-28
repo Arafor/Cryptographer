@@ -28,5 +28,11 @@ namespace Cryptographer
             frmVigenere vigenereCipher = new frmVigenere();
             vigenereCipher.Show();
         }
+
+        private void btnPlayfair_Click(object sender, EventArgs e)
+        {
+            frmPlayfair playfairCipher = new frmPlayfair();
+            playfairCipher.Show();
+        }
     }
 }
