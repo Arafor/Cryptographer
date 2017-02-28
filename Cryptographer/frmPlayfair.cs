@@ -348,20 +348,13 @@ namespace Cryptographer
             }
             if (everythingOk)
             {
-                try
+                // Fill table with letters from the UI table
+                TextBox[] tableTextBoxes = getTableTextBoxes();
+                int i = 0;
+                foreach (TextBox txtBox in tableTextBoxes)
                 {
-                    // Fill table with letters from the UI table
-                    TextBox[] tableTextBoxes = getTableTextBoxes();
-                    int i = 0;
-                    foreach (TextBox txtBox in tableTextBoxes)
-                    {
-                        table[i / 5, i % 5] = txtBox.Text[0];
-                        i++;
-                    }
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show("Please fill in the table!");
+                    table[i / 5, i % 5] = txtBox.Text[0];
+                    i++;
                 }
             }
 
@@ -374,31 +367,6 @@ namespace Cryptographer
             {
                 txtBox.CharacterCasing = CharacterCasing.Upper;
             }
-        //    txtTable00.Text = txtTable00.Text.ToUpper();
-        //    txtTable01.Text = txtTable01.Text.ToUpper();
-        //    txtTable02.Text = txtTable02.Text.ToUpper();
-        //    txtTable03.Text = txtTable03.Text.ToUpper();
-        //    txtTable04.Text = txtTable04.Text.ToUpper();
-        //    txtTable10.Text = txtTable10.Text.ToUpper();
-        //    txtTable11.Text = txtTable11.Text.ToUpper();
-        //    txtTable12.Text = txtTable12.Text.ToUpper();
-        //    txtTable13.Text = txtTable13.Text.ToUpper();
-        //    txtTable14.Text = txtTable14.Text.ToUpper();
-        //    txtTable20.Text = txtTable20.Text.ToUpper();
-        //    txtTable21.Text = txtTable21.Text.ToUpper();
-        //    txtTable22.Text = txtTable22.Text.ToUpper();
-        //    txtTable23.Text = txtTable23.Text.ToUpper();
-        //    txtTable24.Text = txtTable24.Text.ToUpper();
-        //    txtTable30.Text = txtTable30.Text.ToUpper();
-        //    txtTable31.Text = txtTable31.Text.ToUpper();
-        //    txtTable32.Text = txtTable32.Text.ToUpper();
-        //    txtTable33.Text = txtTable33.Text.ToUpper();
-        //    txtTable34.Text = txtTable34.Text.ToUpper();
-        //    txtTable40.Text = txtTable40.Text.ToUpper();
-        //    txtTable41.Text = txtTable41.Text.ToUpper();
-        //    txtTable42.Text = txtTable42.Text.ToUpper();
-        //    txtTable43.Text = txtTable43.Text.ToUpper();
-        //    txtTable44.Text = txtTable44.Text.ToUpper();
         }
 
         private void btnEncrypt_Click(object sender, EventArgs e)
@@ -446,31 +414,10 @@ namespace Cryptographer
 
         private void btnClearAll_Click(object sender, EventArgs e)
         {
-            txtTable00.Text = "";
-            txtTable01.Text = "";
-            txtTable02.Text = "";
-            txtTable03.Text = "";
-            txtTable04.Text = "";
-            txtTable10.Text = "";
-            txtTable11.Text = "";
-            txtTable12.Text = "";
-            txtTable13.Text = "";
-            txtTable14.Text = "";
-            txtTable20.Text = "";
-            txtTable21.Text = "";
-            txtTable22.Text = "";
-            txtTable23.Text = "";
-            txtTable24.Text = "";
-            txtTable30.Text = "";
-            txtTable31.Text = "";
-            txtTable32.Text = "";
-            txtTable33.Text = "";
-            txtTable34.Text = "";
-            txtTable40.Text = "";
-            txtTable41.Text = "";
-            txtTable42.Text = "";
-            txtTable43.Text = "";
-            txtTable44.Text = "";
+            foreach (TextBox txtBox in getTableTextBoxes())
+            {
+                txtBox.Text = "";
+            }
         }
 
         private void btnAutoFill_Click(object sender, EventArgs e)
@@ -508,6 +455,7 @@ namespace Cryptographer
 
         private void btnExport_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("The information that the table contains must remain secreat!\nYour encrypted messages can be easilly decripted if someone gets your table.");
             // Fill table with imported letters
             TextBox[] tableTextBoxes = getTableTextBoxes();
             string letters = "";
