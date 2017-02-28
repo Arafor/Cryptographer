@@ -314,65 +314,107 @@ namespace Cryptographer
             }
         }
 
-        private void fillArrayTable()
+        private bool fillArrayTable()
         {
-            try
+            // Check if the table contains all of the needed letters
+            bool everythingOk = false;
+            foreach (char letter in allowedLetters)
             {
-                // Fill table with letters from the UI table
-                TextBox[] tableTextBoxes = getTableTextBoxes();
-                int i = 0;
-                foreach (TextBox txtBox in tableTextBoxes)
+                everythingOk = false;
+                foreach (TextBox txtBox in getTableTextBoxes())
                 {
-                    table[i / 5, i % 5] = txtBox.Text[0];
-                    i++;
+                    if (txtBox.Text == "")
+                    {
+                        MessageBox.Show("Please fill in every square in the table");
+                        break;
+                    }
+                    // Skip if a matching letter been found or if its J
+                    else if (letter == Convert.ToChar("J") || letter == Convert.ToChar(txtBox.Text))
+                    {
+                        everythingOk = true;
+                        break;
+                    }
                 }
-            } catch (Exception e)
-            {
-                MessageBox.Show("Please fill in the table!");
+
+                if (everythingOk)
+                {
+                    continue;
+                }
+                else
+                {
+                    MessageBox.Show("The table does not contain all of the needed letters");
+                    break;
+                }
             }
+            if (everythingOk)
+            {
+                try
+                {
+                    // Fill table with letters from the UI table
+                    TextBox[] tableTextBoxes = getTableTextBoxes();
+                    int i = 0;
+                    foreach (TextBox txtBox in tableTextBoxes)
+                    {
+                        table[i / 5, i % 5] = txtBox.Text[0];
+                        i++;
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Please fill in the table!");
+                }
+            }
+
+            return everythingOk;
         }
 
         private void tblTable_TextChanged(object sender, EventArgs e)
         {
-            txtTable00.Text = txtTable00.Text.ToUpper();
-            txtTable01.Text = txtTable01.Text.ToUpper();
-            txtTable02.Text = txtTable02.Text.ToUpper();
-            txtTable03.Text = txtTable03.Text.ToUpper();
-            txtTable04.Text = txtTable04.Text.ToUpper();
-            txtTable10.Text = txtTable10.Text.ToUpper();
-            txtTable11.Text = txtTable11.Text.ToUpper();
-            txtTable12.Text = txtTable12.Text.ToUpper();
-            txtTable13.Text = txtTable13.Text.ToUpper();
-            txtTable14.Text = txtTable14.Text.ToUpper();
-            txtTable20.Text = txtTable20.Text.ToUpper();
-            txtTable21.Text = txtTable21.Text.ToUpper();
-            txtTable22.Text = txtTable22.Text.ToUpper();
-            txtTable23.Text = txtTable23.Text.ToUpper();
-            txtTable24.Text = txtTable24.Text.ToUpper();
-            txtTable30.Text = txtTable30.Text.ToUpper();
-            txtTable31.Text = txtTable31.Text.ToUpper();
-            txtTable32.Text = txtTable32.Text.ToUpper();
-            txtTable33.Text = txtTable33.Text.ToUpper();
-            txtTable34.Text = txtTable34.Text.ToUpper();
-            txtTable40.Text = txtTable40.Text.ToUpper();
-            txtTable41.Text = txtTable41.Text.ToUpper();
-            txtTable42.Text = txtTable42.Text.ToUpper();
-            txtTable43.Text = txtTable43.Text.ToUpper();
-            txtTable44.Text = txtTable44.Text.ToUpper();
+            foreach (TextBox txtBox in getTableTextBoxes())
+            {
+                txtBox.CharacterCasing = CharacterCasing.Upper;
+            }
+        //    txtTable00.Text = txtTable00.Text.ToUpper();
+        //    txtTable01.Text = txtTable01.Text.ToUpper();
+        //    txtTable02.Text = txtTable02.Text.ToUpper();
+        //    txtTable03.Text = txtTable03.Text.ToUpper();
+        //    txtTable04.Text = txtTable04.Text.ToUpper();
+        //    txtTable10.Text = txtTable10.Text.ToUpper();
+        //    txtTable11.Text = txtTable11.Text.ToUpper();
+        //    txtTable12.Text = txtTable12.Text.ToUpper();
+        //    txtTable13.Text = txtTable13.Text.ToUpper();
+        //    txtTable14.Text = txtTable14.Text.ToUpper();
+        //    txtTable20.Text = txtTable20.Text.ToUpper();
+        //    txtTable21.Text = txtTable21.Text.ToUpper();
+        //    txtTable22.Text = txtTable22.Text.ToUpper();
+        //    txtTable23.Text = txtTable23.Text.ToUpper();
+        //    txtTable24.Text = txtTable24.Text.ToUpper();
+        //    txtTable30.Text = txtTable30.Text.ToUpper();
+        //    txtTable31.Text = txtTable31.Text.ToUpper();
+        //    txtTable32.Text = txtTable32.Text.ToUpper();
+        //    txtTable33.Text = txtTable33.Text.ToUpper();
+        //    txtTable34.Text = txtTable34.Text.ToUpper();
+        //    txtTable40.Text = txtTable40.Text.ToUpper();
+        //    txtTable41.Text = txtTable41.Text.ToUpper();
+        //    txtTable42.Text = txtTable42.Text.ToUpper();
+        //    txtTable43.Text = txtTable43.Text.ToUpper();
+        //    txtTable44.Text = txtTable44.Text.ToUpper();
         }
 
         private void btnEncrypt_Click(object sender, EventArgs e)
         {
-            fillArrayTable();
             if (txtMessage.Text.Length > 0)
             {
-                char[] message = txtMessage.Text.ToCharArray();
-                char[] parsedMessage = parseText(message);
-                char[] cipheredMessage = cipher(parsedMessage, "E");
-                txtResult.Text = "";
-                for (int i = 0; i < cipheredMessage.Length; i++)
+                if (fillArrayTable())
                 {
-                    txtResult.Text = txtResult.Text + cipheredMessage[i].ToString();
+                    char[] message = txtMessage.Text.ToCharArray();
+                    char[] parsedMessage = parseText(message);
+                    char[] cipheredMessage = cipher(parsedMessage, "E");
+                    txtResult.Text = "";
+                    for (int i = 0; i < cipheredMessage.Length; i++)
+                    {
+                        txtResult.Text = txtResult.Text + cipheredMessage[i].ToString();
+                    }
                 }
             }
             else
@@ -385,15 +427,18 @@ namespace Cryptographer
         {
             if (txtMessage.Text.Length > 0)
             {
-                fillArrayTable();
-                char[] message = txtMessage.Text.ToCharArray();
-                char[] cipheredMessage = cipher(message, "D");
-                txtResult.Text = "";
-                for (int i = 0; i < cipheredMessage.Length; i++)
+                if (fillArrayTable())
                 {
-                    txtResult.Text = txtResult.Text + cipheredMessage[i].ToString();
+                    char[] message = txtMessage.Text.ToCharArray();
+                    char[] cipheredMessage = cipher(message, "D");
+                    txtResult.Text = "";
+                    for (int i = 0; i < cipheredMessage.Length; i++)
+                    {
+                        txtResult.Text = txtResult.Text + cipheredMessage[i].ToString();
+                    }
                 }
-            } else
+            }
+            else
             {
                 MessageBox.Show("Please enter a message!");
             }
