@@ -135,6 +135,9 @@
             this.Controls.Add(this.txtResult);
             this.Controls.Add(this.txtKey);
             this.Controls.Add(this.txtMessage);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmCaezar";
             this.Text = "Cryptographer- Caesar cipher";
             this.ResumeLayout(false);
