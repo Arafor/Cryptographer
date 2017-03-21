@@ -136,7 +136,6 @@
             this.Controls.Add(this.txtMessage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "frmVigenere";
             this.Text = "Cryptographer - Vigenere cipher";
             this.ResumeLayout(false);

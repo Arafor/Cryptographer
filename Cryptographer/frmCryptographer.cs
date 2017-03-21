@@ -34,5 +34,11 @@ namespace Cryptographer
             frmPlayfair playfairCipher = new frmPlayfair();
             playfairCipher.Show();
         }
+
+        private void btnDiffieHellman_Click(object sender, EventArgs e)
+        {
+            frmDiffieHellman diffieHellman = new frmDiffieHellman();
+            diffieHellman.Show();
+        }
     }
 }

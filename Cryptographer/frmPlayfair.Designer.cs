@@ -62,12 +62,12 @@
             this.lblResult = new System.Windows.Forms.Label();
             this.btnClearAll = new System.Windows.Forms.Button();
             this.btnAutoFill = new System.Windows.Forms.Button();
-            this.btnSaveToClipboard = new System.Windows.Forms.Button();
             this.btnDecrypt = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.btnSaveToClipboard = new System.Windows.Forms.Button();
             this.tblTable.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -469,16 +469,6 @@
             this.btnAutoFill.UseVisualStyleBackColor = true;
             this.btnAutoFill.Click += new System.EventHandler(this.btnAutoFill_Click);
             // 
-            // btnSaveToClipboard
-            // 
-            this.btnSaveToClipboard.Image = global::Cryptographer.Properties.Resources.Editing_Clipboard_icon30;
-            this.btnSaveToClipboard.Location = new System.Drawing.Point(720, 496);
-            this.btnSaveToClipboard.Name = "btnSaveToClipboard";
-            this.btnSaveToClipboard.Size = new System.Drawing.Size(40, 40);
-            this.btnSaveToClipboard.TabIndex = 27;
-            this.btnSaveToClipboard.UseVisualStyleBackColor = true;
-            this.btnSaveToClipboard.Click += new System.EventHandler(this.btnSaveToClipboard_Click);
-            // 
             // btnDecrypt
             // 
             this.btnDecrypt.Location = new System.Drawing.Point(481, 231);
@@ -513,6 +503,16 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // btnSaveToClipboard
+            // 
+            this.btnSaveToClipboard.Image = global::Cryptographer.Properties.Resources.Editing_Clipboard_icon30;
+            this.btnSaveToClipboard.Location = new System.Drawing.Point(720, 496);
+            this.btnSaveToClipboard.Name = "btnSaveToClipboard";
+            this.btnSaveToClipboard.Size = new System.Drawing.Size(40, 40);
+            this.btnSaveToClipboard.TabIndex = 27;
+            this.btnSaveToClipboard.UseVisualStyleBackColor = true;
+            this.btnSaveToClipboard.Click += new System.EventHandler(this.btnSaveToClipboard_Click);
+            // 
             // frmPlayfair
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -533,7 +533,6 @@
             this.Controls.Add(this.tblTable);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "frmPlayfair";
             this.Text = "Cryptographer- Playfair cipher";
             this.tblTable.ResumeLayout(false);
