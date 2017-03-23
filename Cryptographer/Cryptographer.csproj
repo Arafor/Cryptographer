@@ -70,17 +70,17 @@
     <Compile Include="frmPlayfair.Designer.cs">
       <DependentUpon>frmPlayfair.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmTest.Designer.cs">
-      <DependentUpon>frmTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmVigenere.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmVigenere.Designer.cs">
       <DependentUpon>frmVigenere.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVigenereInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVigenereInfo.Designer.cs">
+      <DependentUpon>frmVigenereInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="NumericalAlphabet.cs" />
     <Compile Include="Program.cs" />
@@ -97,11 +97,11 @@
     <EmbeddedResource Include="frmPlayfair.resx">
       <DependentUpon>frmPlayfair.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTest.resx">
-      <DependentUpon>frmTest.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmVigenere.resx">
       <DependentUpon>frmVigenere.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVigenereInfo.resx">
+      <DependentUpon>frmVigenereInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
