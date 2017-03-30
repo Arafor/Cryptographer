@@ -12,10 +12,11 @@ namespace Cryptographer
     {
         // Get screen resolution
         static Rectangle resolution = Screen.PrimaryScreen.Bounds;
-        //int resolutionHeight = resolution.Height;
-        //int resolutionWidth = resolution.Width;
-        int resolutionHeight = 768;
-        int resolutionWidth = 1366;
+        int resolutionHeight = resolution.Height;
+        int resolutionWidth = resolution.Width;
+        // For testing on other resolutions
+        //int resolutionHeight = 768;
+        //int resolutionWidth = 1366;
 
         public void setFormWindowLocation(Form previousForm, Form targetForm)
         {
