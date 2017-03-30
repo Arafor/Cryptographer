@@ -15,6 +15,10 @@ namespace Cryptographer
         public frmVigenereInfo()
         {
             InitializeComponent();
+            FormWindowManager formWindowManager = new FormWindowManager();
+            frmVigenere formVigenere = new frmVigenere();
+            formWindowManager.setFormWindowLocation(formVigenere, this);
+            formWindowManager.setFormWindowSize(this);
         }
 
         frmVigenere vigenere = new frmVigenere();

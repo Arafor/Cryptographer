@@ -15,6 +15,9 @@ namespace Cryptographer
         public frmVigenere()
         {
             InitializeComponent();
+            FormWindowManager formWindowManager = new FormWindowManager();
+            frmCryptographer formCryptographer = new frmCryptographer();
+            formWindowManager.setFormWindowLocation(formCryptographer, this);
         }
 
         NumericalAlphabet numAlphabet = new NumericalAlphabet();

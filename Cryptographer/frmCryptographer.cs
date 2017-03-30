@@ -15,6 +15,8 @@ namespace Cryptographer
         public frmCryptographer()
         {
             InitializeComponent();
+            FormWindowManager formWindowManager = new FormWindowManager();
+            formWindowManager.setFormWindowLocation(null, this);
         }
 
         private void btnCaezar_Click(object sender, EventArgs e)

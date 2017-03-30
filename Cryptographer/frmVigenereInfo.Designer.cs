@@ -97,6 +97,7 @@
             this.txtResult.Multiline = true;
             this.txtResult.Name = "txtResult";
             this.txtResult.ReadOnly = true;
+            this.txtResult.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtResult.Size = new System.Drawing.Size(497, 77);
             this.txtResult.TabIndex = 16;
             // 
@@ -113,6 +114,7 @@
             this.txtMessage.Location = new System.Drawing.Point(12, 91);
             this.txtMessage.Multiline = true;
             this.txtMessage.Name = "txtMessage";
+            this.txtMessage.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtMessage.Size = new System.Drawing.Size(273, 67);
             this.txtMessage.TabIndex = 14;
             // 
@@ -149,6 +151,7 @@
             this.txtMessageParsed.Multiline = true;
             this.txtMessageParsed.Name = "txtMessageParsed";
             this.txtMessageParsed.ReadOnly = true;
+            this.txtMessageParsed.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtMessageParsed.Size = new System.Drawing.Size(302, 67);
             this.txtMessageParsed.TabIndex = 20;
             // 
@@ -290,7 +293,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 762);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(534, 761);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblDescription1);
@@ -316,6 +320,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmVigenereInfo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Cryptographer - Vigenere cipher info";
             this.Load += new System.EventHandler(this.frmVigenereInfo_Load);
             this.grpCipher.ResumeLayout(false);

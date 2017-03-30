@@ -88,10 +88,10 @@
             // 
             // txtResult
             // 
-            this.txtResult.Enabled = false;
             this.txtResult.Location = new System.Drawing.Point(12, 268);
             this.txtResult.Multiline = true;
             this.txtResult.Name = "txtResult";
+            this.txtResult.ReadOnly = true;
             this.txtResult.Size = new System.Drawing.Size(760, 120);
             this.txtResult.TabIndex = 5;
             // 
@@ -150,6 +150,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmVigenere";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Cryptographer - Vigenere cipher";
             this.ResumeLayout(false);
             this.PerformLayout();
