@@ -76,7 +76,7 @@
             // lblKey
             // 
             this.lblKey.AutoSize = true;
-            this.lblKey.Location = new System.Drawing.Point(291, 75);
+            this.lblKey.Location = new System.Drawing.Point(368, 75);
             this.lblKey.Name = "lblKey";
             this.lblKey.Size = new System.Drawing.Size(25, 13);
             this.lblKey.TabIndex = 18;
@@ -103,10 +103,11 @@
             // 
             // txtKey
             // 
-            this.txtKey.Location = new System.Drawing.Point(291, 91);
+            this.txtKey.Location = new System.Drawing.Point(368, 91);
             this.txtKey.Multiline = true;
             this.txtKey.Name = "txtKey";
-            this.txtKey.Size = new System.Drawing.Size(115, 20);
+            this.txtKey.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtKey.Size = new System.Drawing.Size(150, 67);
             this.txtKey.TabIndex = 15;
             // 
             // txtMessage
@@ -115,13 +116,13 @@
             this.txtMessage.Multiline = true;
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtMessage.Size = new System.Drawing.Size(273, 67);
+            this.txtMessage.Size = new System.Drawing.Size(350, 67);
             this.txtMessage.TabIndex = 14;
             // 
             // lblKeyParsed
             // 
             this.lblKeyParsed.AutoSize = true;
-            this.lblKeyParsed.Location = new System.Drawing.Point(320, 239);
+            this.lblKeyParsed.Location = new System.Drawing.Point(368, 239);
             this.lblKeyParsed.Name = "lblKeyParsed";
             this.lblKeyParsed.Size = new System.Drawing.Size(60, 13);
             this.lblKeyParsed.TabIndex = 23;
@@ -138,11 +139,12 @@
             // 
             // txtKeyParsed
             // 
-            this.txtKeyParsed.Location = new System.Drawing.Point(320, 255);
+            this.txtKeyParsed.Location = new System.Drawing.Point(368, 255);
             this.txtKeyParsed.Multiline = true;
             this.txtKeyParsed.Name = "txtKeyParsed";
             this.txtKeyParsed.ReadOnly = true;
-            this.txtKeyParsed.Size = new System.Drawing.Size(115, 20);
+            this.txtKeyParsed.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtKeyParsed.Size = new System.Drawing.Size(150, 67);
             this.txtKeyParsed.TabIndex = 21;
             // 
             // txtMessageParsed
@@ -152,7 +154,7 @@
             this.txtMessageParsed.Name = "txtMessageParsed";
             this.txtMessageParsed.ReadOnly = true;
             this.txtMessageParsed.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtMessageParsed.Size = new System.Drawing.Size(302, 67);
+            this.txtMessageParsed.Size = new System.Drawing.Size(350, 67);
             this.txtMessageParsed.TabIndex = 20;
             // 
             // lstAlphabet
@@ -228,7 +230,7 @@
             this.lstFormula.FormattingEnabled = true;
             this.lstFormula.Location = new System.Drawing.Point(12, 547);
             this.lstFormula.Name = "lstFormula";
-            this.lstFormula.Size = new System.Drawing.Size(349, 95);
+            this.lstFormula.Size = new System.Drawing.Size(350, 95);
             this.lstFormula.TabIndex = 32;
             // 
             // lblDescription0

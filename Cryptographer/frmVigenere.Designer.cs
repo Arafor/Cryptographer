@@ -41,7 +41,7 @@
             // 
             // btnDecrypt
             // 
-            this.btnDecrypt.Location = new System.Drawing.Point(445, 211);
+            this.btnDecrypt.Location = new System.Drawing.Point(389, 208);
             this.btnDecrypt.Name = "btnDecrypt";
             this.btnDecrypt.Size = new System.Drawing.Size(75, 23);
             this.btnDecrypt.TabIndex = 4;
@@ -51,7 +51,7 @@
             // 
             // btnEncrypt
             // 
-            this.btnEncrypt.Location = new System.Drawing.Point(322, 211);
+            this.btnEncrypt.Location = new System.Drawing.Point(389, 179);
             this.btnEncrypt.Name = "btnEncrypt";
             this.btnEncrypt.Size = new System.Drawing.Size(75, 23);
             this.btnEncrypt.TabIndex = 3;
@@ -62,7 +62,7 @@
             // lblResult
             // 
             this.lblResult.AutoSize = true;
-            this.lblResult.Location = new System.Drawing.Point(12, 252);
+            this.lblResult.Location = new System.Drawing.Point(12, 289);
             this.lblResult.Name = "lblResult";
             this.lblResult.Size = new System.Drawing.Size(37, 13);
             this.lblResult.TabIndex = 13;
@@ -71,7 +71,7 @@
             // lblKey
             // 
             this.lblKey.AutoSize = true;
-            this.lblKey.Location = new System.Drawing.Point(12, 195);
+            this.lblKey.Location = new System.Drawing.Point(12, 163);
             this.lblKey.Name = "lblKey";
             this.lblKey.Size = new System.Drawing.Size(25, 13);
             this.lblKey.TabIndex = 12;
@@ -80,7 +80,7 @@
             // lblMessage
             // 
             this.lblMessage.AutoSize = true;
-            this.lblMessage.Location = new System.Drawing.Point(12, 31);
+            this.lblMessage.Location = new System.Drawing.Point(12, 18);
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(50, 13);
             this.lblMessage.TabIndex = 11;
@@ -88,33 +88,36 @@
             // 
             // txtResult
             // 
-            this.txtResult.Location = new System.Drawing.Point(12, 268);
+            this.txtResult.Location = new System.Drawing.Point(12, 305);
             this.txtResult.Multiline = true;
             this.txtResult.Name = "txtResult";
             this.txtResult.ReadOnly = true;
-            this.txtResult.Size = new System.Drawing.Size(760, 120);
+            this.txtResult.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtResult.Size = new System.Drawing.Size(455, 120);
             this.txtResult.TabIndex = 5;
             // 
             // txtKey
             // 
-            this.txtKey.Location = new System.Drawing.Point(12, 211);
+            this.txtKey.Location = new System.Drawing.Point(12, 179);
             this.txtKey.Multiline = true;
             this.txtKey.Name = "txtKey";
-            this.txtKey.Size = new System.Drawing.Size(250, 20);
+            this.txtKey.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtKey.Size = new System.Drawing.Size(370, 100);
             this.txtKey.TabIndex = 2;
             // 
             // txtMessage
             // 
-            this.txtMessage.Location = new System.Drawing.Point(12, 47);
+            this.txtMessage.Location = new System.Drawing.Point(12, 34);
             this.txtMessage.Multiline = true;
             this.txtMessage.Name = "txtMessage";
-            this.txtMessage.Size = new System.Drawing.Size(760, 120);
+            this.txtMessage.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtMessage.Size = new System.Drawing.Size(455, 120);
             this.txtMessage.TabIndex = 1;
             // 
             // btnSaveToClipboard
             // 
             this.btnSaveToClipboard.Image = global::Cryptographer.Properties.Resources.Editing_Clipboard_icon30;
-            this.btnSaveToClipboard.Location = new System.Drawing.Point(717, 222);
+            this.btnSaveToClipboard.Location = new System.Drawing.Point(424, 262);
             this.btnSaveToClipboard.Name = "btnSaveToClipboard";
             this.btnSaveToClipboard.Size = new System.Drawing.Size(40, 40);
             this.btnSaveToClipboard.TabIndex = 28;
@@ -124,7 +127,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(750, 12);
+            this.button1.Location = new System.Drawing.Point(445, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(22, 23);
             this.button1.TabIndex = 29;
@@ -136,7 +139,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 396);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(484, 431);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSaveToClipboard);
             this.Controls.Add(this.btnDecrypt);
