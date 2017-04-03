@@ -69,15 +69,15 @@ namespace Cryptographer
                 int j;
                 for (j = 0; j < alphabet.Length; j++)
                 {
-                    if (messageInInt[i] >= alphabetLength())
+                    if (messageInInt[i] >= getAlphabetLength())
                     {
                         //Make sure the value overflows
-                        messageInInt[i] = messageInInt[i] % alphabetLength();
+                        messageInInt[i] = messageInInt[i] % getAlphabetLength();
                     }
                     else if (messageInInt[i] < 0)
                     {
                         // Make sure the value underflows (e.g. 25 = 26 - ((-27 * -1) % 26))
-                        messageInInt[i] = alphabetLength() - ((messageInInt[i] * -1) % alphabetLength());
+                        messageInInt[i] = getAlphabetLength() - ((messageInInt[i] * -1) % getAlphabetLength());
                     }
                     if (messageInInt[i] == j)
                     {
@@ -95,9 +95,14 @@ namespace Cryptographer
             return messageInChar;
         }
 
-        public int alphabetLength()
+        public int getAlphabetLength()
         {
             return alphabet.Length;
+        }
+
+        public char[] getAlphabet()
+        {
+            return alphabet;
         }
     }
 }

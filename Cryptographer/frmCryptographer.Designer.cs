@@ -37,7 +37,7 @@
             // 
             // btnCaezar
             // 
-            this.btnCaezar.Location = new System.Drawing.Point(16, 45);
+            this.btnCaezar.Location = new System.Drawing.Point(42, 61);
             this.btnCaezar.Name = "btnCaezar";
             this.btnCaezar.Size = new System.Drawing.Size(100, 23);
             this.btnCaezar.TabIndex = 0;
@@ -47,7 +47,7 @@
             // 
             // btnVigenere
             // 
-            this.btnVigenere.Location = new System.Drawing.Point(16, 90);
+            this.btnVigenere.Location = new System.Drawing.Point(42, 101);
             this.btnVigenere.Name = "btnVigenere";
             this.btnVigenere.Size = new System.Drawing.Size(100, 23);
             this.btnVigenere.TabIndex = 1;
@@ -57,7 +57,7 @@
             // 
             // btnPlayfair
             // 
-            this.btnPlayfair.Location = new System.Drawing.Point(16, 135);
+            this.btnPlayfair.Location = new System.Drawing.Point(42, 141);
             this.btnPlayfair.Name = "btnPlayfair";
             this.btnPlayfair.Size = new System.Drawing.Size(100, 23);
             this.btnPlayfair.TabIndex = 2;
@@ -67,7 +67,7 @@
             // 
             // btnDiffieHellman
             // 
-            this.btnDiffieHellman.Location = new System.Drawing.Point(16, 178);
+            this.btnDiffieHellman.Location = new System.Drawing.Point(42, 181);
             this.btnDiffieHellman.Name = "btnDiffieHellman";
             this.btnDiffieHellman.Size = new System.Drawing.Size(100, 23);
             this.btnDiffieHellman.TabIndex = 3;
@@ -79,24 +79,30 @@
             // 
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.Location = new System.Drawing.Point(12, 9);
+            this.lblWelcome.Location = new System.Drawing.Point(25, 9);
+            this.lblWelcome.MaximumSize = new System.Drawing.Size(170, 0);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(227, 20);
+            this.lblWelcome.Size = new System.Drawing.Size(128, 40);
             this.lblWelcome.TabIndex = 4;
             this.lblWelcome.Text = "Welcome to Cryptographer!";
+            this.lblWelcome.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // frmCryptographer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(254, 341);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(184, 226);
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.btnDiffieHellman);
             this.Controls.Add(this.btnPlayfair);
             this.Controls.Add(this.btnVigenere);
             this.Controls.Add(this.btnCaezar);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmCryptographer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Cryptographer";
             this.ResumeLayout(false);
             this.PerformLayout();

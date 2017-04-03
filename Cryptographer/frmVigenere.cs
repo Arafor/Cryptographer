@@ -15,29 +15,33 @@ namespace Cryptographer
         public frmVigenere()
         {
             InitializeComponent();
+            FormWindowManager formWindowManager = new FormWindowManager();
+            formWindowManager.setFormWindowSize(this);
+            frmCryptographer formCryptographer = new frmCryptographer();
+            formWindowManager.setFormWindowLocation(formCryptographer, this);
         }
 
         NumericalAlphabet numAlphabet = new NumericalAlphabet();
 
-        public Boolean checkEmptyFields()
+        public Boolean checkEmptyFields(string message, string key)
         {
             // Check if there is a message to encrypt
-            if (txtMessage.Text.Length > 0 || txtResult.Text.Length > 0)
+            if (message.Length > 0)
             {
                 // Check if there is a key specified
-                if (txtKey.Text.Length > 0)
+                if (key.Length > 0)
                 {
                     return true;
                 }
                 else
                 {
-                    MessageBox.Show("Atslēga nedrīkst būt tukša!");
+                    MessageBox.Show("The key must not be empty!");
                     return false;
                 }
             }
             else
             {
-                MessageBox.Show("Lūdzu ievadiet ziņu!");
+                MessageBox.Show("Please enter a message!");
                 return false;
             }
         }
@@ -62,82 +66,113 @@ namespace Cryptographer
 
         public String cipher(int[] message, int[] key, string function)
         {
-            // Create variables used withing the method
-            int[] resultMessageInInt = new int[message.Length];
-            int a;
-            int b;
-            int c = numAlphabet.alphabetLength();
-            int result = 0;
-
-            // Create the numeric array of the message to get
-            for (int i = 0; i < key.Length; i++)
+            try
             {
-                a = message[i];
-                b = key[i];
-                // Specifies encryption
-                if (function == "E")
+                if (message != null && key != null)
                 {
-                    result = ((a + b) % c);
-                }
-                // Specifies decryption
-                else if (function == "D")
-                {
-                    result = ((c + (a - b)) % c);
-                }
-                resultMessageInInt[i] = result;
-            }
+                    // Create variables used withing the method
+                    int[] resultMessageInInt = new int[message.Length];
+                    int a;
+                    int b;
+                    int c = numAlphabet.getAlphabetLength();
+                    int result = 0;
 
-            // Get the string value of our result message
-            char[] resultMessageInChar = numAlphabet.numbersToLetters(resultMessageInInt);
-            string resultMessageInString = "";
-            for (int i = 0; i < resultMessageInChar.Length; i++)
-            {
-                resultMessageInString = resultMessageInString + resultMessageInChar[i].ToString();
-            }
+                    // Create the numeric array of the message to get
+                    for (int i = 0; i < key.Length; i++)
+                    {
+                        a = message[i];
+                        b = key[i];
+                        // Specifies encryption
+                        if (function == "E")
+                        {
+                            result = ((a + b) % c);
+                        }
+                        // Specifies decryption
+                        else if (function == "D")
+                        {
+                            result = ((c + (a - b)) % c);
+                        }
+                        resultMessageInInt[i] = result;
+                    }
 
-            return resultMessageInString;
-        }
+                    // Get the string value of our result message
+                    char[] resultMessageInChar = numAlphabet.numbersToLetters(resultMessageInInt);
+                    string resultMessageInString = "";
+                    for (int i = 0; i < resultMessageInChar.Length; i++)
+                    {
+                        resultMessageInString = resultMessageInString + resultMessageInChar[i].ToString();
+                    }
 
-        private void prepareToCipher(string txtBoxText, string function)
-        {
-            // Prepare for cipher text display
-            txtResult.Text = "";
-            if (checkEmptyFields())
-            {
-                // Get plaintext and key with lengths
-                char[] plaintextArray = txtBoxText.ToUpper().ToCharArray();
-                char[] keyArray = txtKey.Text.ToUpper().ToCharArray();
-
-                // Create a padded key (same length as the message)
-                char[] paddedKeyArray = createPaddedKey(keyArray, plaintextArray.Length);
-
-                // Translate message and key to numerical values
-                int[] message = numAlphabet.lettersToNumbers(plaintextArray);
-                int[] numericKey = numAlphabet.lettersToNumbers(paddedKeyArray);
-                if (message != null && numericKey != null)
-                {
-                    txtResult.Text = cipher(message, numericKey, function);
+                    return resultMessageInString;
                 }
                 else
                 {
-                    MessageBox.Show("Lūdzu izmantojiet tekstā tikai latīņu burtus no A līdz Z!");
+                    MessageBox.Show("Please use only english letters from A to Z!");
+                    throw new Exception();
                 }
+            } catch (Exception exc)
+            {
+                return null;
             }
+        }
+
+        public int[] prepareTextToCipher(string txtBoxText)
+        {
+            // Translate message and key to numerical values
+            char[] plaintextArray = txtBoxText.ToUpper().ToCharArray();
+            int[] message = numAlphabet.lettersToNumbers(plaintextArray);
+
+            return message;
+        }
+
+        public int[] prepareKeytoCipher(string txtBoxKey, int messageLength)
+        {
+                // Pad and translate key to numerical values
+                char[] keyArray = txtBoxKey.ToUpper().ToCharArray();
+                char[] paddedKeyArray = createPaddedKey(keyArray, messageLength);
+                int[] numericKey = numAlphabet.lettersToNumbers(paddedKeyArray);
+
+                return numericKey;
         }
 
         private void btnEncrypt_Click(object sender, EventArgs e)
         {
-            prepareToCipher(txtMessage.Text, "E");
+            if (checkEmptyFields(txtMessage.Text, txtKey.Text))
+            {
+                // Prepare to display result
+                txtResult.Text = "";
+                int[] message = prepareTextToCipher(txtMessage.Text);
+                int[] key = prepareKeytoCipher(txtKey.Text, txtMessage.Text.Length);
+                txtResult.Text = cipher(message, key, "E");
+            }
         }
 
         private void btnDecrypt_Click(object sender, EventArgs e)
         {
-            prepareToCipher(txtMessage.Text, "D");
+            // Prepare to display result
+            txtResult.Text = "";
+            int[] message = prepareTextToCipher(txtMessage.Text);
+            int[] key = prepareKeytoCipher(txtKey.Text, txtMessage.Text.Length);
+
+            if (message != null && key != null)
+            {
+                txtResult.Text = cipher(message, key, "D");
+            }
         }
 
         private void btnSaveToClipboard_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(txtResult.Text);
+        }
+
+        private void btnVigenereInfo(object sender, EventArgs e)
+        {
+            frmVigenereInfo vigenereInfo = new frmVigenereInfo();
+            vigenereInfo.Show();
+            if (txtMessage.Text != "" && txtKey.Text != "")
+            {
+                vigenereInfo.setMessageAndKey(txtMessage.Text, txtKey.Text);
+            }
         }
     }
 }
