@@ -16,6 +16,7 @@ namespace Cryptographer
         {
             InitializeComponent();
             FormWindowManager formWindowManager = new FormWindowManager();
+            formWindowManager.setFormWindowSize(this);
             formWindowManager.setFormWindowLocation(null, this);
         }
 
