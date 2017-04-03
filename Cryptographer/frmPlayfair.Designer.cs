@@ -415,10 +415,10 @@
             // 
             // txtResult
             // 
-            this.txtResult.Enabled = false;
             this.txtResult.Location = new System.Drawing.Point(372, 290);
             this.txtResult.Multiline = true;
             this.txtResult.Name = "txtResult";
+            this.txtResult.ReadOnly = true;
             this.txtResult.Size = new System.Drawing.Size(400, 200);
             this.txtResult.TabIndex = 30;
             // 
@@ -517,6 +517,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.btnImport);
@@ -534,6 +535,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmPlayfair";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Cryptographer- Playfair cipher";
             this.tblTable.ResumeLayout(false);
             this.tblTable.PerformLayout();

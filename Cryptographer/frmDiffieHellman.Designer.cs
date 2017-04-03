@@ -62,9 +62,9 @@
             // 
             // textBox1
             // 
-            this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(214, 35);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 1;
             // 
@@ -95,9 +95,9 @@
             // 
             // txtSecret
             // 
-            this.txtSecret.Enabled = false;
             this.txtSecret.Location = new System.Drawing.Point(214, 88);
             this.txtSecret.Name = "txtSecret";
+            this.txtSecret.ReadOnly = true;
             this.txtSecret.Size = new System.Drawing.Size(100, 20);
             this.txtSecret.TabIndex = 3;
             // 
@@ -128,9 +128,9 @@
             // 
             // txtSharedSecret
             // 
-            this.txtSharedSecret.Enabled = false;
             this.txtSharedSecret.Location = new System.Drawing.Point(214, 140);
             this.txtSharedSecret.Name = "txtSharedSecret";
+            this.txtSharedSecret.ReadOnly = true;
             this.txtSharedSecret.Size = new System.Drawing.Size(100, 20);
             this.txtSharedSecret.TabIndex = 5;
             // 
@@ -157,6 +157,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(344, 221);
             this.Controls.Add(this.lblWarning);
             this.Controls.Add(this.lblSharedSecret);
@@ -174,6 +175,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmDiffieHellman";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Cryptographer- Diffie-Hellman cipher";
             this.ResumeLayout(false);
             this.PerformLayout();
