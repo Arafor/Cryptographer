@@ -17,6 +17,10 @@ namespace Cryptographer
         public frmDiffieHellman()
         {
             InitializeComponent();
+            FormWindowManager formWindowManager = new FormWindowManager();
+            formWindowManager.setFormWindowSize(this);
+            frmCryptographer formCryptographer = new frmCryptographer();
+            formWindowManager.setFormWindowLocation(formCryptographer, this);
             textboxToolTip.IsBalloon = true;
             textboxToolTip.AutoPopDelay = 1000;
             textboxToolTip.InitialDelay = 1000;

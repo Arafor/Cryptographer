@@ -300,6 +300,10 @@ namespace Cryptographer
         public frmPlayfair()
         {
             InitializeComponent();
+            FormWindowManager formWindowManager = new FormWindowManager();
+            formWindowManager.setFormWindowSize(this);
+            frmCryptographer formCryptographer = new frmCryptographer();
+            formWindowManager.setFormWindowLocation(formCryptographer, this);
         }
 
         private void fillUITable()
