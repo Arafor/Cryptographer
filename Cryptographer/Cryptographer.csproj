@@ -47,17 +47,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FormWindowManager.cs" />
+    <Compile Include="frmCaesarInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCaesarInfo.Designer.cs">
+      <DependentUpon>frmCaesarInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCryptographer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmCryptographer.Designer.cs">
       <DependentUpon>frmCryptographer.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCaezar.cs">
+    <Compile Include="frmCaesar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCaezar.Designer.cs">
-      <DependentUpon>frmCaezar.cs</DependentUpon>
+    <Compile Include="frmCaesar.Designer.cs">
+      <DependentUpon>frmCaesar.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDiffieHellman.cs">
       <SubType>Form</SubType>
@@ -86,8 +92,11 @@
     <Compile Include="NumericalAlphabet.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmCaezar.resx">
-      <DependentUpon>frmCaezar.cs</DependentUpon>
+    <EmbeddedResource Include="frmCaesar.resx">
+      <DependentUpon>frmCaesar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCaesarInfo.resx">
+      <DependentUpon>frmCaesarInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCryptographer.resx">
       <DependentUpon>frmCryptographer.cs</DependentUpon>

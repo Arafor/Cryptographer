@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCaezar = new System.Windows.Forms.Button();
+            this.btnCaesar = new System.Windows.Forms.Button();
             this.btnVigenere = new System.Windows.Forms.Button();
             this.btnPlayfair = new System.Windows.Forms.Button();
             this.btnDiffieHellman = new System.Windows.Forms.Button();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btnCaezar
+            // btnCaesar
             // 
-            this.btnCaezar.Location = new System.Drawing.Point(42, 61);
-            this.btnCaezar.Name = "btnCaezar";
-            this.btnCaezar.Size = new System.Drawing.Size(100, 23);
-            this.btnCaezar.TabIndex = 0;
-            this.btnCaezar.Text = "Caesar cipher";
-            this.btnCaezar.UseVisualStyleBackColor = true;
-            this.btnCaezar.Click += new System.EventHandler(this.btnCaezar_Click);
+            this.btnCaesar.Location = new System.Drawing.Point(42, 61);
+            this.btnCaesar.Name = "btnCaesar";
+            this.btnCaesar.Size = new System.Drawing.Size(100, 23);
+            this.btnCaesar.TabIndex = 0;
+            this.btnCaesar.Text = "Caesar cipher";
+            this.btnCaesar.UseVisualStyleBackColor = true;
+            this.btnCaesar.Click += new System.EventHandler(this.btnCaesar_Click);
             // 
             // btnVigenere
             // 
@@ -97,7 +97,7 @@
             this.Controls.Add(this.btnDiffieHellman);
             this.Controls.Add(this.btnPlayfair);
             this.Controls.Add(this.btnVigenere);
-            this.Controls.Add(this.btnCaezar);
+            this.Controls.Add(this.btnCaesar);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -111,7 +111,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnCaezar;
+        private System.Windows.Forms.Button btnCaesar;
         private System.Windows.Forms.Button btnVigenere;
         private System.Windows.Forms.Button btnPlayfair;
         private System.Windows.Forms.Button btnDiffieHellman;
