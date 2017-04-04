@@ -98,6 +98,7 @@ namespace Cryptographer
                 }
                 catch (Exception exc)
                 {
+                    MessageBox.Show(exc.ToString());
                 }
             }
         }
