@@ -240,10 +240,10 @@
             this.lblDescription0.Location = new System.Drawing.Point(9, 9);
             this.lblDescription0.MaximumSize = new System.Drawing.Size(500, 0);
             this.lblDescription0.Name = "lblDescription0";
-            this.lblDescription0.Size = new System.Drawing.Size(500, 30);
+            this.lblDescription0.Size = new System.Drawing.Size(490, 30);
             this.lblDescription0.TabIndex = 33;
-            this.lblDescription0.Text = "The Vigenere cipher is a an old simplistic cipher that uses text values both for " +
-    "the message and key.";
+            this.lblDescription0.Text = "The Vigenere cipher is an old simplistic cipher that uses text values both for th" +
+    "e message and key.";
             // 
             // lblDescription2
             // 

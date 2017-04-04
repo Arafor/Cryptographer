@@ -10,21 +10,21 @@ using System.Windows.Forms;
 
 namespace Cryptographer
 {
-    public partial class frmVigenereInfo : Form
+    public partial class frmCaesarInfo : Form
     {
-        public frmVigenereInfo()
+        public frmCaesarInfo()
         {
             InitializeComponent();
             FormWindowManager formWindowManager = new FormWindowManager();
             formWindowManager.setFormWindowSize(this);
-            frmVigenere formVigenere = new frmVigenere();
-            formWindowManager.setFormWindowLocation(formVigenere, this);
+            frmCaesar formCaesar = new frmCaesar();
+            formWindowManager.setFormWindowLocation(formCaesar, this);
         }
 
-        frmVigenere vigenere = new frmVigenere();
+        frmCaesar caesar = new frmCaesar();
         NumericalAlphabet numAlphabet = new NumericalAlphabet();
 
-        private void frmVigenereInfo_Load(object sender, EventArgs e)
+        private void frmCaesarInfo_Load(object sender, EventArgs e)
         {
             int i = 0;
             foreach (char letter in numAlphabet.getAlphabet())
@@ -48,16 +48,16 @@ namespace Cryptographer
                 "P- plaintext letter, ",
                 "C- ciphertext letter, ",
                 "K- key letter, ",
-                "a- the number of what letter in order it is from the message or ciphertext, ",
-                "b- the number of what letter in order it is from the key",
                 "" };
             if (rdoBtnEncrypt.Checked)
             {
-                formulaMessage.Add("Ca = Pa + Kb (mod 26)");
+                formulaMessage.Add("(P + K) > 0: C = P + K (mod 26)");
+                formulaMessage.Add("(P + K) < 0: C = 26 + (P + K (mod 26))");
             }
             else if (rdoBtnDecrypt.Checked)
             {
-                formulaMessage.Add("Pa = (26 + (Ca - Kb)) (mod 26)");
+                formulaMessage.Add("(P + K) > 0: P = C - K (mod 26)");
+                formulaMessage.Add("(P + K) < 0: P = 26 + (C - K (mod 26))");
             }
             else
             {
@@ -72,19 +72,18 @@ namespace Cryptographer
         private void btnCipher_Click(object sender, EventArgs e)
         {
             txtMessageParsed.Text = "";
-            txtKeyParsed.Text = "";
             txtResult.Text = "";
-            if (vigenere.checkEmptyFields(txtMessage.Text, txtKey.Text))
+            if (caesar.checkEmptyFields(txtMessage.Text, txtKey.Text))
             {
                 try
                 {
                     if (rdoBtnEncrypt.Checked)
                     {
-                        txtResult.Text = vigenere.cipher(vigenere.prepareTextToCipher(txtMessage.Text), vigenere.prepareKeytoCipher(txtKey.Text, txtMessage.Text.Length), "E");
+                        txtResult.Text = caesar.cipher(caesar.getParsedMessage(txtMessage.Text), caesar.getParsedKey(txtKey.Text), "E");
                     }
                     else if (rdoBtnDecrypt.Checked)
                     {
-                        txtResult.Text = vigenere.cipher(vigenere.prepareTextToCipher(txtMessage.Text), vigenere.prepareKeytoCipher(txtKey.Text, txtMessage.Text.Length), "D");
+                        txtResult.Text = caesar.cipher(caesar.getParsedMessage(txtMessage.Text), caesar.getParsedKey(txtKey.Text), "D");
                     }
                     else
                     {
@@ -92,8 +91,8 @@ namespace Cryptographer
                     }
                     if (txtResult.Text != "")
                     {
-                        txtMessageParsed.Text = txtMessage.Text.ToUpper();
-                        txtKeyParsed.Text = new string(vigenere.createPaddedKey(txtKey.Text.ToCharArray(), txtMessage.Text.Length)).ToUpper();
+                        txtMessageParsed.Text = new string(numAlphabet.numbersToLetters(caesar.getParsedMessage(txtMessage.Text)));
+                        //txtKeyParsed.Text = new string(caesar.createPaddedKey(txtKey.Text.ToCharArray(), txtMessage.Text.Length)).ToUpper();
                     }
                 }
                 catch (Exception exc)

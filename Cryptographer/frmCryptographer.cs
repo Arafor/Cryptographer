@@ -20,10 +20,10 @@ namespace Cryptographer
             formWindowManager.setFormWindowLocation(null, this);
         }
 
-        private void btnCaezar_Click(object sender, EventArgs e)
+        private void btnCaesar_Click(object sender, EventArgs e)
         {
-            frmCaezar ceazarCipher = new frmCaezar();
-            ceazarCipher.Show();
+            frmCaesar ceasarCipher = new frmCaesar();
+            ceasarCipher.Show();
         }
 
         private void btnVigenere_Click(object sender, EventArgs e)
