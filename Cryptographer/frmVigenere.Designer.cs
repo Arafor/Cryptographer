@@ -36,7 +36,7 @@
             this.txtKey = new System.Windows.Forms.TextBox();
             this.txtMessage = new System.Windows.Forms.TextBox();
             this.btnSaveToClipboard = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnVigenereInfo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnDecrypt
@@ -124,16 +124,16 @@
             this.btnSaveToClipboard.UseVisualStyleBackColor = true;
             this.btnSaveToClipboard.Click += new System.EventHandler(this.btnSaveToClipboard_Click);
             // 
-            // button1
+            // btnVigenereInfo
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(445, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(22, 23);
-            this.button1.TabIndex = 29;
-            this.button1.Text = "i";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btnVigenereInfo);
+            this.btnVigenereInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVigenereInfo.Location = new System.Drawing.Point(445, 5);
+            this.btnVigenereInfo.Name = "btnVigenereInfo";
+            this.btnVigenereInfo.Size = new System.Drawing.Size(22, 23);
+            this.btnVigenereInfo.TabIndex = 29;
+            this.btnVigenereInfo.Text = "i";
+            this.btnVigenereInfo.UseVisualStyleBackColor = true;
+            this.btnVigenereInfo.Click += new System.EventHandler(this.btnVigenereInfo_Click);
             // 
             // frmVigenere
             // 
@@ -141,7 +141,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(484, 431);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnVigenereInfo);
             this.Controls.Add(this.btnSaveToClipboard);
             this.Controls.Add(this.btnDecrypt);
             this.Controls.Add(this.btnEncrypt);
@@ -172,6 +172,6 @@
         private System.Windows.Forms.TextBox txtKey;
         private System.Windows.Forms.TextBox txtMessage;
         private System.Windows.Forms.Button btnSaveToClipboard;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnVigenereInfo;
     }
 }

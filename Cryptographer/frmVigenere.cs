@@ -165,7 +165,7 @@ namespace Cryptographer
             Clipboard.SetText(txtResult.Text);
         }
 
-        private void btnVigenereInfo(object sender, EventArgs e)
+        private void btnVigenereInfo_Click(object sender, EventArgs e)
         {
             frmVigenereInfo vigenereInfo = new frmVigenereInfo();
             vigenereInfo.Show();
