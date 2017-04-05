@@ -13,125 +13,91 @@ namespace Cryptographer
 {
     public partial class frmPlayfair : Form
     {
-        char[] allowedLetters =
-        {
-                Convert.ToChar("A"),
-                Convert.ToChar("B"),
-                Convert.ToChar("C"),
-                Convert.ToChar("D"),
-                Convert.ToChar("E"),
-                Convert.ToChar("F"),
-                Convert.ToChar("G"),
-                Convert.ToChar("H"),
-                Convert.ToChar("I"),
-                Convert.ToChar("J"),
-                Convert.ToChar("K"),
-                Convert.ToChar("L"),
-                Convert.ToChar("M"),
-                Convert.ToChar("N"),
-                Convert.ToChar("O"),
-                Convert.ToChar("P"),
-                Convert.ToChar("Q"),
-                Convert.ToChar("R"),
-                Convert.ToChar("S"),
-                Convert.ToChar("T"),
-                Convert.ToChar("U"),
-                Convert.ToChar("V"),
-                Convert.ToChar("W"),
-                Convert.ToChar("X"),
-                Convert.ToChar("Y"),
-                Convert.ToChar("Z")
-        };
-
-        char[] replaceableLetters =
-        {
-                Convert.ToChar(" "),
-                Convert.ToChar(","),
-                Convert.ToChar("."),
-                Convert.ToChar("?"),
-                Convert.ToChar("!"),
-        };
-
-        char[,] table = new char[5, 5];
-
         FileManager fileManager = new FileManager();
+        NumericalAlphabet numAlphabet = new NumericalAlphabet();
 
-        private TextBox[] getTableTextBoxes()
+        protected TextBox[] getTableTextBoxes()
         {
-            TextBox[] tableTextBoxes = {
-                txtTable00,
-                txtTable01,
-                txtTable02,
-                txtTable03,
-                txtTable04,
-                txtTable10,
-                txtTable11,
-                txtTable12,
-                txtTable13,
-                txtTable14,
-                txtTable20,
-                txtTable21,
-                txtTable22,
-                txtTable23,
-                txtTable24,
-                txtTable30,
-                txtTable31,
-                txtTable32,
-                txtTable33,
-                txtTable34,
-                txtTable40,
-                txtTable41,
-                txtTable42,
-                txtTable43,
-                txtTable44
-            };
-            return tableTextBoxes;
+            try
+            {
+                TextBox[] tableTextBoxes = {
+                    this.txtTable00,
+                    this.txtTable01,
+                    this.txtTable02,
+                    this.txtTable03,
+                    this.txtTable04,
+                    this.txtTable10,
+                    this.txtTable11,
+                    this.txtTable12,
+                    this.txtTable13,
+                    this.txtTable14,
+                    this.txtTable20,
+                    this.txtTable21,
+                    this.txtTable22,
+                    this.txtTable23,
+                    this.txtTable24,
+                    this.txtTable30,
+                    this.txtTable31,
+                    this.txtTable32,
+                    this.txtTable33,
+                    this.txtTable34,
+                    this.txtTable40,
+                    this.txtTable41,
+                    this.txtTable42,
+                    this.txtTable43,
+                    this.txtTable44
+                };
+
+                return tableTextBoxes;
+            } catch (Exception exc)
+            {
+                MessageBox.Show(exc.ToString());
+
+                return null;
+            }
         }
 
-        private char[] parseText(char[] message)
+        protected char[] parseText(char[] message)
+        {
+            TextParser txtParser = new TextParser();
+            message = txtParser.parseReplaceableLetters(message);
+            if (txtParser.checkAllowedLetters(message))
+            {
+                message = messageReplaceJWithI(message);
+                message = messageInsertQ(message);
+                message = messageAppendQ(message);
+                message = messageReplaceWithX(message);
+
+                return message;
+            }
+
+            return null;
+        }
+
+        private char[] messageReplaceJWithI(char[] message)
         {
             // List holds parsed message (valid letters, without unnecessary symbols)
             var parsedMessage = new List<char>();
             // Iterate through our current message
             for (int i = 0; i < message.Length; i++)
             {
-                // If letter is replaceable by "" then skip to the next letter
-                bool skip = false;
-                for (int j = 0; j < replaceableLetters.Length; j++)
+                // Replace letter "J" with "I"
+                if (message[i] == Convert.ToChar("J"))
                 {
-                    if (message[i] == replaceableLetters[j])
-                    {
-                        // Replace letter "J" with "I"
-                        if (j == 9)
-                        {
-                            parsedMessage.Insert(j, replaceableLetters[j - 1]);
-                        }
-                        skip = true;
-                        break;
-                    }
+                    parsedMessage.Insert(i, Convert.ToChar("I"));
                 }
-
-                if (skip) continue;
-
-                // If the letter in the message is valid then add it to the parsed message
-                int k = -1;
-                for (k = 0; k < allowedLetters.Length; k++)
+                else
                 {
-                    if (message[i] == allowedLetters[k])
-                    {
-                        parsedMessage.Insert(i, message[i]);
-                        break;
-                    }
-                }
-                if (k >= allowedLetters.Length)
-                {
-                    MessageBox.Show("Please use only latin letters form A to Z in your message!");
-                    return null;
+                    parsedMessage.Insert(i, message[i]);
                 }
             }
 
+            return parsedMessage.ToArray();
+        }
+
+        private char[] messageInsertQ(char[] message)
+        {
             // Insert Q between repeating words
-            message = parsedMessage.ToArray();
             string messageWithQ = "";
             string tmpWord = "";
             string word = "";
@@ -194,7 +160,26 @@ namespace Cryptographer
             }
 
             // Get an array of our message after one of its parsing iterations
-            message = messageWithQ.ToArray();
+            return messageWithQ.ToArray();
+        }
+
+        private char[] messageAppendQ(char[] message)
+        {
+            var parsedMessage = new List<char>();
+            // Check if message has an even amount of letters
+            if (message.Length % 2 == 1)
+            {
+                // If the message isn't an even number apend a "Q" at the end
+                parsedMessage = message.ToList();
+                parsedMessage.Insert(message.Length, Convert.ToChar("Q"));
+                message = parsedMessage.ToArray();
+            }
+
+            return parsedMessage.ToArray();
+        }
+
+        private char[] messageReplaceWithX(char[] message)
+        {
             // Used to read the even and odd letter pairs within the message
             for (int i = 0; i < message.Length - 1; i++)
             {
@@ -205,19 +190,10 @@ namespace Cryptographer
                 }
             }
 
-            // Check if message has an even amount of letters
-            if (message.Length % 2 == 1)
-            {
-                // If the message isn't an even number apend a "Q" at the end
-                parsedMessage = message.ToList();
-                parsedMessage.Insert(message.Length, Convert.ToChar("Q"));
-                message = parsedMessage.ToArray();
-            }
-            
             return message;
         }
 
-        private char[] cipher(char[] message, string function)
+        protected string cipher(char[] message, string function)
         {
             int i = 0;
             int j = 1;
@@ -229,19 +205,20 @@ namespace Cryptographer
                 int oddNumberY = -1;
                 int oddNumberX = -1;
                 int foundLetters = 0;
+                char[,] tableArray = getTableArray(getTableTextBoxes());
 
                 // Search table for positions of letters
                 for (int k = 0; k < 5; k++)
                 {
                     for (int l = 0; l < 5; l++)
                     {
-                        if (table[k, l] == message[i])
+                        if (tableArray[k, l] == message[i])
                         {
                             evenNumberY = k;
                             evenNumberX = l;
                             foundLetters++;
                         }
-                        if (table[k, l] == message[j])
+                        if (tableArray[k, l] == message[j])
                         {
                             oddNumberY = k;
                             oddNumberX = l;
@@ -259,44 +236,51 @@ namespace Cryptographer
                     if (function == "E")
                     {
                         // Make sure the index overflows
-                        message[i] = table[evenNumberY, (evenNumberX + 1) % 5];
-                        message[j] = table[oddNumberY, (oddNumberX + 1) % 5];
+                        message[i] = tableArray[evenNumberY, (evenNumberX + 1) % 5];
+                        message[j] = tableArray[oddNumberY, (oddNumberX + 1) % 5];
                     }
                     else if (function == "D")
                     {
                         // Make sure the index underflows
-                        if (evenNumberX == 0) message[i] = table[evenNumberY, 5 - 1];
-                        else message[i] = table[evenNumberY, (evenNumberX - 1) % 5];
-                        if (oddNumberX == 0) message[j] = table[oddNumberY, 5 - 1];
-                        else message[j] = table[oddNumberY, (oddNumberX - 1) % 5];
+                        if (evenNumberX == 0) message[i] = tableArray[evenNumberY, 5 - 1];
+                        else message[i] = tableArray[evenNumberY, (evenNumberX - 1) % 5];
+                        if (oddNumberX == 0) message[j] = tableArray[oddNumberY, 5 - 1];
+                        else message[j] = tableArray[oddNumberY, (oddNumberX - 1) % 5];
                     }
                 }
                 else if (evenNumberX == oddNumberX)
                 {
                     if (function == "E")
                     {
-                        message[i] = table[(evenNumberY + 1) % 5, evenNumberX];
-                        message[j] = table[(oddNumberY + 1) % 5, oddNumberX];
+                        message[i] = tableArray[(evenNumberY + 1) % 5, evenNumberX];
+                        message[j] = tableArray[(oddNumberY + 1) % 5, oddNumberX];
                     }
                     else if (function == "D")
                     {
-                        if (evenNumberY == 0) message[i] = table[5 - 1, evenNumberX];
-                        else message[i] = table[(evenNumberY - 1) % 5, evenNumberX];
-                        if (oddNumberY == 0) message[j] = table[5 - 1, oddNumberX];
-                        else message[j] = table[(oddNumberY - 1) % 5, oddNumberX];
+                        if (evenNumberY == 0) message[i] = tableArray[5 - 1, evenNumberX];
+                        else message[i] = tableArray[(evenNumberY - 1) % 5, evenNumberX];
+                        if (oddNumberY == 0) message[j] = tableArray[5 - 1, oddNumberX];
+                        else message[j] = tableArray[(oddNumberY - 1) % 5, oddNumberX];
                     }
                 }
                 else
                 {
-                    message[i] = table[oddNumberY, evenNumberX];
-                    message[j] = table[evenNumberY, oddNumberX];
+                    message[i] = tableArray[oddNumberY, evenNumberX];
+                    message[j] = tableArray[evenNumberY, oddNumberX];
                 }
 
                 // Iterate loop and start next pair
                 i = i + 2;
                 j = j + 2;
             }
-            return message;
+
+            string messageString = "";
+            for (int n = 0; n < message.Length; n++)
+            {
+                messageString = messageString + message[n].ToString();
+            }
+
+            return messageString;
         }
 
         public frmPlayfair()
@@ -308,23 +292,41 @@ namespace Cryptographer
             formWindowManager.setFormWindowLocation(formCryptographer, this);
         }
 
-        private void fillUITable()
+        protected void fillUITable(TextBox[] tableTextBoxes, char[,] tableArray)
         {
             // Fill UI table with letters from the table
-            TextBox[] tableTextBoxes = getTableTextBoxes();
             int i = 0;
             foreach (TextBox txtBox in tableTextBoxes)
             {
-                txtBox.Text = table[i/5, i%5].ToString();
+                txtBox.Text = tableArray[i/5, i%5].ToString();
                 i++;
             }
         }
 
-        private bool fillArrayTable()
+        public char[,] getTableArray(TextBox[] tableTextBoxes)
+        {
+            if (checkTableContent())
+            {
+                // Fill the array table with letters from the UI table
+                char[,] tableArray = new char[5, 5];
+                int i = 0;
+                foreach (TextBox txtBox in tableTextBoxes)
+                {
+                    tableArray[i / 5, i % 5] = txtBox.Text[0];
+                    i++;
+                }
+
+                return tableArray;
+            }
+
+            return null;
+        }
+
+        public bool checkTableContent()
         {
             // Check if the table contains all of the needed letters
             bool everythingOk = false;
-            foreach (char letter in allowedLetters)
+            foreach (char letter in numAlphabet.getAlphabet())
             {
                 everythingOk = false;
                 foreach (TextBox txtBox in getTableTextBoxes())
@@ -352,17 +354,6 @@ namespace Cryptographer
                     break;
                 }
             }
-            if (everythingOk)
-            {
-                // Fill table with letters from the UI table
-                TextBox[] tableTextBoxes = getTableTextBoxes();
-                int i = 0;
-                foreach (TextBox txtBox in tableTextBoxes)
-                {
-                    table[i / 5, i % 5] = txtBox.Text[0];
-                    i++;
-                }
-            }
 
             return everythingOk;
         }
@@ -379,15 +370,13 @@ namespace Cryptographer
         {
             if (txtMessage.Text.Length > 0)
             {
-                if (fillArrayTable())
+                if (checkTableContent())
                 {
-                    char[] message = txtMessage.Text.ToCharArray();
-                    char[] parsedMessage = parseText(message);
-                    char[] cipheredMessage = cipher(parsedMessage, "E");
-                    txtResult.Text = "";
-                    for (int i = 0; i < cipheredMessage.Length; i++)
+                    char[] parsedMessage = parseText(txtMessage.Text.ToCharArray());
+                    if (parsedMessage != null)
                     {
-                        txtResult.Text = txtResult.Text + cipheredMessage[i].ToString();
+                        txtResult.Text = "";
+                        txtResult.Text = cipher(parsedMessage, "E");
                     }
                 }
             }
@@ -401,14 +390,14 @@ namespace Cryptographer
         {
             if (txtMessage.Text.Length > 0)
             {
-                if (fillArrayTable())
+                if (checkTableContent())
                 {
-                    char[] message = txtMessage.Text.ToCharArray();
-                    char[] cipheredMessage = cipher(message, "D");
-                    txtResult.Text = "";
-                    for (int i = 0; i < cipheredMessage.Length; i++)
+                    char[] parsedMessage = parseText(txtMessage.Text.ToCharArray());
+                    if (parsedMessage != null)
                     {
-                        txtResult.Text = txtResult.Text + cipheredMessage[i].ToString();
+                        txtResult.Text = "";
+                        txtResult.Text = cipher(parsedMessage, "D");
+
                     }
                 }
             }
@@ -430,6 +419,8 @@ namespace Cryptographer
         {
             // Index of letter to add
             int resultLetter = -1;
+            char[] alphabetLetters = numAlphabet.getAlphabet();
+            char[,] tableArray = new char[5, 5];
             for (int i = 0; i < 5; i++)
             {
                 for (int j = 0; j < 5; j++)
@@ -443,10 +434,10 @@ namespace Cryptographer
                         resultLetter++;
                     }
                     // Auto fill the table with latters from A to Z (without J)
-                    table[i, j] = allowedLetters[resultLetter];
+                    tableArray[i, j] = alphabetLetters[resultLetter];
                 }
             }
-            fillUITable();
+            fillUITable(getTableTextBoxes(), tableArray);
         }
 
         private void btnSaveToClipboard_Click(object sender, EventArgs e)
@@ -487,7 +478,7 @@ namespace Cryptographer
                 char[] fileContentCharArray = fileContent.ToCharArray();
                 int j = 0;
                 bool containedLettersAreOk = true;
-                foreach (char letter in allowedLetters)
+                foreach (char letter in numAlphabet.getAlphabet())
                 {
                     // Skip letter "J" since the table can not contain it
                     if (letter == Convert.ToChar("J")) continue;
@@ -531,9 +522,9 @@ namespace Cryptographer
 
             frmPlayfairInfo playfairInfo = new frmPlayfairInfo();
             playfairInfo.Show();
-            if (txtMessage.Text != "" && txtKey.Text != "")
+            if (txtMessage.Text != "" && getTableArray(getTableTextBoxes()) != null)
             {
-                playfairInfo.setMessageAndTable(txtMessage.Text, txtKey.Text);
+                playfairInfo.setMessageAndTable(txtMessage.Text, getTableArray(getTableTextBoxes()));
             }
         }
     }

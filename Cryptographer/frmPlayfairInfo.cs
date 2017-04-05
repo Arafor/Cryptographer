@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Cryptographer
 {
-    public partial class frmPlayfairInfo : Form
+    public partial class frmPlayfairInfo : frmPlayfair
     {
         public frmPlayfairInfo()
         {
@@ -21,10 +21,10 @@ namespace Cryptographer
             formWindowManager.setFormWindowLocation(formPlayfair, this);
         }
 
-        public void setMessageAndTable(string message, string key)
+        public void setMessageAndTable(string message, char[,] tableArray)
         {
             txtMessage.Text = message;
-            txtKey.Text = key;
+            fillUITable(getTableTextBoxes(), tableArray);
         }
     }
 }
