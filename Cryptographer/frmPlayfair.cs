@@ -54,6 +54,8 @@ namespace Cryptographer
 
         char[,] table = new char[5, 5];
 
+        FileManager fileManager = new FileManager();
+
         private TextBox[] getTableTextBoxes()
         {
             TextBox[] tableTextBoxes = {
@@ -332,7 +334,7 @@ namespace Cryptographer
                         MessageBox.Show("Please fill in every square in the table");
                         break;
                     }
-                    // Skip if a matching letter been found or if its J
+                    // Skip if the letter matches to the needed letter or to the letter J
                     else if (letter == Convert.ToChar("J") || letter == Convert.ToChar(txtBox.Text))
                     {
                         everythingOk = true;
@@ -459,7 +461,7 @@ namespace Cryptographer
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("The information that the table contains must remain secreat!\nYour encrypted messages can be easilly decripted if someone gets your table.");
+            MessageBox.Show("The information that the table contains must remain secret!\nYour encrypted messages can be easilly decrypted if someone has your table.");
             // Fill table with imported letters
             TextBox[] tableTextBoxes = getTableTextBoxes();
             string letters = "";
@@ -467,94 +469,71 @@ namespace Cryptographer
             {
                 letters = letters + txtBox.Text;
             }
-            // Prepare SaveFileDialog for file saving 
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            saveFileDialog1.DefaultExt = "*.txt";
-            saveFileDialog1.Filter = "Text file (*.txt)|*.txt|All files (*.*)|*.*";
-            saveFileDialog1.Title = "Save text to file";
 
-            // If the file name is not an empty then save to file  
-            if (saveFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK && saveFileDialog1.FileName.Length > 0)
-            {
-                // Check if we need to create a new file
-                if (!System.IO.File.Exists(saveFileDialog1.InitialDirectory + saveFileDialog1.FileName))
-                {
-                    FileStream fs = System.IO.File.Create(saveFileDialog1.InitialDirectory + saveFileDialog1.FileName);
-                    fs.Close();
-                }
-                // Write to file
-                File.WriteAllText(saveFileDialog1.InitialDirectory + saveFileDialog1.FileName, letters);
-            }
+            fileManager.exportFile(letters);
         }
 
         private void btnImport_Click(object sender, EventArgs e)
         {
-            // Get the text from the chosen file
-            int size = -1;
-            string tableText = "";
-            // Prepare and open the dialog window
-            openFileDialog1.FileName = "";
-            DialogResult result = openFileDialog1.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                string file = openFileDialog1.FileName;
-                try
-                {
-                    tableText = File.ReadAllText(file);
-                    size = tableText.Length;
-                }
-                catch (IOException)
-                {
-                }
-            }
-            // For debuging
-            Console.WriteLine(size);
-            Console.WriteLine(result);
+            // Get file content
+            string file = fileManager.importFile();
+            string fileContent = fileManager.getFileContent(file);
+            int fileContentLength = fileContent.Length;
 
-            if (result == System.Windows.Forms.DialogResult.OK)
+            // The file must contain exactly 25 letters for the table
+            if (fileContent.Length == 25)
             {
-                if (tableText.Length == 25)
+                // Make sure the imported text contains all of the necessary letters
+                char[] fileContentCharArray = fileContent.ToCharArray();
+                int j = 0;
+                bool containedLettersAreOk = true;
+                foreach (char letter in allowedLetters)
                 {
-                    // Make sure contains all of the needed letters and only those
-                    char[] tableTextCharArray = tableText.ToCharArray();
-                    int j = 0;
-                    bool containedLettersAreOk = true;
-                    foreach (char letter in allowedLetters)
+                    // Skip letter "J" since the table can not contain it
+                    if (letter == Convert.ToChar("J")) continue;
+                    for (j = 0; j < fileContentCharArray.Length; j++)
                     {
-                        // Skip letter "J" since the table can not contain it
-                        if (letter == Convert.ToChar("J")) continue;
-                        for (j = 0; j < tableTextCharArray.Length; j++)
+                        if (fileContentCharArray[j] == letter)
                         {
-                            if (tableTextCharArray[j] == letter)
-                            {
-                                break;
-                            }
-                        }
-
-                        if (j >= 25)
-                        {
-                            MessageBox.Show("The chosen file does not contain all of the necessary letters!");
-                            containedLettersAreOk = false;
                             break;
                         }
                     }
 
-                    if (containedLettersAreOk)
+                    if (j >= 25)
                     {
-                        // Fill table with imported letters
-                        TextBox[] tableTextBoxes = getTableTextBoxes();
-                        int i = 0;
-                        foreach (TextBox txtBox in tableTextBoxes)
-                        {
-                            txtBox.Text = tableTextCharArray[i].ToString();
-                            i++;
-                        }
+                        MessageBox.Show("The chosen file does not contain all of the necessary letters!");
+                        containedLettersAreOk = false;
+                        break;
                     }
                 }
-                else
+
+                if (containedLettersAreOk)
                 {
-                    MessageBox.Show("The chosen file does not contain 25 characters.\nPlease choose different file.");
+                    // Fill table with imported letters
+                    TextBox[] tableTextBoxes = getTableTextBoxes();
+                    int i = 0;
+                    foreach (TextBox txtBox in tableTextBoxes)
+                    {
+                        txtBox.Text = fileContentCharArray[i].ToString();
+                        i++;
+                    }
                 }
+            }
+            else
+            {
+                MessageBox.Show("The chosen file does not contain 25 characters.\nPlease choose a different file.");
+            }
+
+        }
+
+        private void btnVigenereInfo_Click(object sender, EventArgs e)
+        {
+
+            frmPlayfairInfo playfairInfo = new frmPlayfairInfo();
+            playfairInfo.Show();
+            if (txtMessage.Text != "" && txtKey.Text != "")
+            {
+                playfairInfo.setMessageAndTable(txtMessage.Text, txtKey.Text);
             }
         }
     }

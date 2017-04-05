@@ -1,6 +1,6 @@
 ﻿namespace Cryptographer
 {
-    partial class frmPlayfair
+    partial class frmPlayfairInfo
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPlayfairInfo));
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblDescription1 = new System.Windows.Forms.Label();
+            this.lblDescription2 = new System.Windows.Forms.Label();
+            this.lblDescription0 = new System.Windows.Forms.Label();
+            this.lstFormula = new System.Windows.Forms.ListBox();
+            this.btnCipher = new System.Windows.Forms.Button();
+            this.lblFormula = new System.Windows.Forms.Label();
+            this.grpCipher = new System.Windows.Forms.GroupBox();
+            this.rdoBtnEncrypt = new System.Windows.Forms.RadioButton();
+            this.rdoBtnDecrypt = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblAlphabet = new System.Windows.Forms.Label();
+            this.lstAlphabet = new System.Windows.Forms.ListBox();
+            this.lblKeyParsed = new System.Windows.Forms.Label();
+            this.lblMessageParsed = new System.Windows.Forms.Label();
+            this.txtKeyParsed = new System.Windows.Forms.TextBox();
+            this.txtMessageParsed = new System.Windows.Forms.TextBox();
+            this.lblResult = new System.Windows.Forms.Label();
+            this.lblKey = new System.Windows.Forms.Label();
+            this.lblMessage = new System.Windows.Forms.Label();
+            this.txtResult = new System.Windows.Forms.TextBox();
+            this.txtMessage = new System.Windows.Forms.TextBox();
+            this.lblDescription = new System.Windows.Forms.Label();
             this.tblTable = new System.Windows.Forms.TableLayoutPanel();
             this.txtTable41 = new System.Windows.Forms.TextBox();
             this.txtTable40 = new System.Windows.Forms.TextBox();
@@ -54,23 +78,237 @@
             this.txtTable32 = new System.Windows.Forms.TextBox();
             this.txtTable33 = new System.Windows.Forms.TextBox();
             this.txtTable34 = new System.Windows.Forms.TextBox();
-            this.txtMessage = new System.Windows.Forms.TextBox();
-            this.btnEncrypt = new System.Windows.Forms.Button();
-            this.txtResult = new System.Windows.Forms.TextBox();
-            this.lblTable = new System.Windows.Forms.Label();
-            this.lblMessage = new System.Windows.Forms.Label();
-            this.lblResult = new System.Windows.Forms.Label();
-            this.btnClearAll = new System.Windows.Forms.Button();
-            this.btnAutoFill = new System.Windows.Forms.Button();
-            this.btnDecrypt = new System.Windows.Forms.Button();
-            this.btnImport = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.btnSaveToClipboard = new System.Windows.Forms.Button();
-            this.btnVigenereInfo = new System.Windows.Forms.Button();
+            this.btnImport = new System.Windows.Forms.Button();
+            this.btnAutoFill = new System.Windows.Forms.Button();
+            this.btnClearAll = new System.Windows.Forms.Button();
+            this.grpCipher.SuspendLayout();
             this.tblTable.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(13, 813);
+            this.label2.MaximumSize = new System.Drawing.Size(500, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(499, 30);
+            this.label2.TabIndex = 59;
+            this.label2.Text = "After that we can begin encrypting or decrypting our message. Based on what we ch" +
+    "ose the formulas for  encrypting and decrypting slightly differs.";
+            // 
+            // lblDescription1
+            // 
+            this.lblDescription1.AutoSize = true;
+            this.lblDescription1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescription1.Location = new System.Drawing.Point(13, 53);
+            this.lblDescription1.MaximumSize = new System.Drawing.Size(500, 0);
+            this.lblDescription1.Name = "lblDescription1";
+            this.lblDescription1.Size = new System.Drawing.Size(225, 15);
+            this.lblDescription1.TabIndex = 57;
+            this.lblDescription1.Text = "To start off you must choose a message.";
+            // 
+            // lblDescription2
+            // 
+            this.lblDescription2.AutoSize = true;
+            this.lblDescription2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescription2.Location = new System.Drawing.Point(13, 487);
+            this.lblDescription2.MaximumSize = new System.Drawing.Size(500, 0);
+            this.lblDescription2.Name = "lblDescription2";
+            this.lblDescription2.Size = new System.Drawing.Size(477, 60);
+            this.lblDescription2.TabIndex = 56;
+            this.lblDescription2.Text = resources.GetString("lblDescription2.Text");
+            // 
+            // lblDescription0
+            // 
+            this.lblDescription0.AutoSize = true;
+            this.lblDescription0.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescription0.Location = new System.Drawing.Point(13, 9);
+            this.lblDescription0.MaximumSize = new System.Drawing.Size(500, 0);
+            this.lblDescription0.Name = "lblDescription0";
+            this.lblDescription0.Size = new System.Drawing.Size(483, 30);
+            this.lblDescription0.TabIndex = 55;
+            this.lblDescription0.Text = "The Playfair cipher is an old simplistic cipher that uses text values for its mes" +
+    "sage and a table containing letters from the english alphabet as its key.";
+            // 
+            // lstFormula
+            // 
+            this.lstFormula.FormattingEnabled = true;
+            this.lstFormula.Location = new System.Drawing.Point(16, 863);
+            this.lstFormula.Name = "lstFormula";
+            this.lstFormula.Size = new System.Drawing.Size(350, 95);
+            this.lstFormula.TabIndex = 54;
+            // 
+            // btnCipher
+            // 
+            this.btnCipher.Location = new System.Drawing.Point(438, 940);
+            this.btnCipher.Name = "btnCipher";
+            this.btnCipher.Size = new System.Drawing.Size(75, 23);
+            this.btnCipher.TabIndex = 53;
+            this.btnCipher.Text = "Cipher";
+            this.btnCipher.UseVisualStyleBackColor = true;
+            // 
+            // lblFormula
+            // 
+            this.lblFormula.AutoSize = true;
+            this.lblFormula.Location = new System.Drawing.Point(16, 847);
+            this.lblFormula.Name = "lblFormula";
+            this.lblFormula.Size = new System.Drawing.Size(44, 13);
+            this.lblFormula.TabIndex = 52;
+            this.lblFormula.Text = "Formula";
+            // 
+            // grpCipher
+            // 
+            this.grpCipher.Controls.Add(this.rdoBtnEncrypt);
+            this.grpCipher.Controls.Add(this.rdoBtnDecrypt);
+            this.grpCipher.Location = new System.Drawing.Point(413, 863);
+            this.grpCipher.Name = "grpCipher";
+            this.grpCipher.Size = new System.Drawing.Size(97, 71);
+            this.grpCipher.TabIndex = 51;
+            this.grpCipher.TabStop = false;
+            this.grpCipher.Text = "Cipher";
+            // 
+            // rdoBtnEncrypt
+            // 
+            this.rdoBtnEncrypt.AutoSize = true;
+            this.rdoBtnEncrypt.Location = new System.Drawing.Point(6, 19);
+            this.rdoBtnEncrypt.Name = "rdoBtnEncrypt";
+            this.rdoBtnEncrypt.Size = new System.Drawing.Size(61, 17);
+            this.rdoBtnEncrypt.TabIndex = 26;
+            this.rdoBtnEncrypt.Text = "Encrypt";
+            this.rdoBtnEncrypt.UseVisualStyleBackColor = true;
+            // 
+            // rdoBtnDecrypt
+            // 
+            this.rdoBtnDecrypt.AutoSize = true;
+            this.rdoBtnDecrypt.Location = new System.Drawing.Point(6, 42);
+            this.rdoBtnDecrypt.Name = "rdoBtnDecrypt";
+            this.rdoBtnDecrypt.Size = new System.Drawing.Size(62, 17);
+            this.rdoBtnDecrypt.TabIndex = 27;
+            this.rdoBtnDecrypt.Text = "Decrypt";
+            this.rdoBtnDecrypt.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(13, 650);
+            this.label1.MaximumSize = new System.Drawing.Size(500, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(497, 30);
+            this.label1.TabIndex = 58;
+            this.label1.Text = "You then translate each letter to its numerical number value based on the order o" +
+    "f where it is located within the alphabet e.g. A => 0, C => 2.";
+            // 
+            // lblAlphabet
+            // 
+            this.lblAlphabet.AutoSize = true;
+            this.lblAlphabet.Location = new System.Drawing.Point(16, 690);
+            this.lblAlphabet.Name = "lblAlphabet";
+            this.lblAlphabet.Size = new System.Drawing.Size(49, 13);
+            this.lblAlphabet.TabIndex = 50;
+            this.lblAlphabet.Text = "Alphabet";
+            // 
+            // lstAlphabet
+            // 
+            this.lstAlphabet.FormattingEnabled = true;
+            this.lstAlphabet.Location = new System.Drawing.Point(16, 706);
+            this.lstAlphabet.Name = "lstAlphabet";
+            this.lstAlphabet.Size = new System.Drawing.Size(120, 95);
+            this.lstAlphabet.TabIndex = 49;
+            // 
+            // lblKeyParsed
+            // 
+            this.lblKeyParsed.AutoSize = true;
+            this.lblKeyParsed.Location = new System.Drawing.Point(372, 555);
+            this.lblKeyParsed.Name = "lblKeyParsed";
+            this.lblKeyParsed.Size = new System.Drawing.Size(60, 13);
+            this.lblKeyParsed.TabIndex = 48;
+            this.lblKeyParsed.Text = "Parsed key";
+            // 
+            // lblMessageParsed
+            // 
+            this.lblMessageParsed.AutoSize = true;
+            this.lblMessageParsed.Location = new System.Drawing.Point(16, 555);
+            this.lblMessageParsed.Name = "lblMessageParsed";
+            this.lblMessageParsed.Size = new System.Drawing.Size(85, 13);
+            this.lblMessageParsed.TabIndex = 47;
+            this.lblMessageParsed.Text = "Parsed message";
+            // 
+            // txtKeyParsed
+            // 
+            this.txtKeyParsed.Location = new System.Drawing.Point(372, 571);
+            this.txtKeyParsed.Multiline = true;
+            this.txtKeyParsed.Name = "txtKeyParsed";
+            this.txtKeyParsed.ReadOnly = true;
+            this.txtKeyParsed.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtKeyParsed.Size = new System.Drawing.Size(150, 67);
+            this.txtKeyParsed.TabIndex = 46;
+            // 
+            // txtMessageParsed
+            // 
+            this.txtMessageParsed.Location = new System.Drawing.Point(16, 571);
+            this.txtMessageParsed.Multiline = true;
+            this.txtMessageParsed.Name = "txtMessageParsed";
+            this.txtMessageParsed.ReadOnly = true;
+            this.txtMessageParsed.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtMessageParsed.Size = new System.Drawing.Size(350, 67);
+            this.txtMessageParsed.TabIndex = 45;
+            // 
+            // lblResult
+            // 
+            this.lblResult.AutoSize = true;
+            this.lblResult.Location = new System.Drawing.Point(16, 974);
+            this.lblResult.Name = "lblResult";
+            this.lblResult.Size = new System.Drawing.Size(37, 13);
+            this.lblResult.TabIndex = 44;
+            this.lblResult.Text = "Result";
+            // 
+            // lblKey
+            // 
+            this.lblKey.AutoSize = true;
+            this.lblKey.Location = new System.Drawing.Point(13, 188);
+            this.lblKey.Name = "lblKey";
+            this.lblKey.Size = new System.Drawing.Size(25, 13);
+            this.lblKey.TabIndex = 43;
+            this.lblKey.Text = "Key";
+            // 
+            // lblMessage
+            // 
+            this.lblMessage.AutoSize = true;
+            this.lblMessage.Location = new System.Drawing.Point(16, 75);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(50, 13);
+            this.lblMessage.TabIndex = 42;
+            this.lblMessage.Text = "Message";
+            // 
+            // txtResult
+            // 
+            this.txtResult.Location = new System.Drawing.Point(16, 990);
+            this.txtResult.Multiline = true;
+            this.txtResult.Name = "txtResult";
+            this.txtResult.ReadOnly = true;
+            this.txtResult.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtResult.Size = new System.Drawing.Size(497, 77);
+            this.txtResult.TabIndex = 41;
+            // 
+            // txtMessage
+            // 
+            this.txtMessage.Location = new System.Drawing.Point(16, 91);
+            this.txtMessage.Multiline = true;
+            this.txtMessage.Name = "txtMessage";
+            this.txtMessage.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtMessage.Size = new System.Drawing.Size(350, 67);
+            this.txtMessage.TabIndex = 39;
+            // 
+            // lblDescription
+            // 
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Location = new System.Drawing.Point(16, 9);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(0, 13);
+            this.lblDescription.TabIndex = 38;
             // 
             // tblTable
             // 
@@ -108,7 +346,7 @@
             this.tblTable.Controls.Add(this.txtTable34, 4, 3);
             this.tblTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tblTable.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tblTable.Location = new System.Drawing.Point(12, 25);
+            this.tblTable.Location = new System.Drawing.Point(16, 215);
             this.tblTable.Name = "tblTable";
             this.tblTable.RowCount = 5;
             this.tblTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -118,7 +356,7 @@
             this.tblTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tblTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tblTable.Size = new System.Drawing.Size(250, 250);
-            this.tblTable.TabIndex = 0;
+            this.tblTable.TabIndex = 60;
             // 
             // txtTable41
             // 
@@ -129,7 +367,6 @@
             this.txtTable41.Size = new System.Drawing.Size(44, 44);
             this.txtTable41.TabIndex = 21;
             this.txtTable41.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtTable41.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
             // txtTable40
             // 
@@ -140,7 +377,6 @@
             this.txtTable40.Size = new System.Drawing.Size(44, 44);
             this.txtTable40.TabIndex = 20;
             this.txtTable40.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtTable40.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
             // txtTable42
             // 
@@ -151,7 +387,6 @@
             this.txtTable42.Size = new System.Drawing.Size(44, 44);
             this.txtTable42.TabIndex = 22;
             this.txtTable42.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtTable42.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
             // txtTable44
             // 
@@ -162,7 +397,6 @@
             this.txtTable44.Size = new System.Drawing.Size(44, 44);
             this.txtTable44.TabIndex = 24;
             this.txtTable44.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtTable44.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
             // txtTable43
             // 
@@ -173,7 +407,6 @@
             this.txtTable43.Size = new System.Drawing.Size(44, 44);
             this.txtTable43.TabIndex = 23;
             this.txtTable43.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtTable43.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
             // txtTable04
             // 
@@ -184,7 +417,6 @@
             this.txtTable04.Size = new System.Drawing.Size(44, 44);
             this.txtTable04.TabIndex = 4;
             this.txtTable04.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtTable04.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
             // txtTable03
             // 
@@ -195,7 +427,6 @@
             this.txtTable03.Size = new System.Drawing.Size(44, 44);
             this.txtTable03.TabIndex = 3;
             this.txtTable03.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtTable03.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
             // txtTable02
             // 
@@ -206,7 +437,6 @@
             this.txtTable02.Size = new System.Drawing.Size(44, 44);
             this.txtTable02.TabIndex = 2;
             this.txtTable02.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtTable02.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
             // txtTable01
             // 
@@ -217,7 +447,6 @@
             this.txtTable01.Size = new System.Drawing.Size(44, 44);
             this.txtTable01.TabIndex = 1;
             this.txtTable01.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtTable01.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
             // txtTable00
             // 
@@ -228,7 +457,6 @@
             this.txtTable00.Size = new System.Drawing.Size(44, 44);
             this.txtTable00.TabIndex = 0;
             this.txtTable00.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtTable00.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
             // txtTable10
             // 
@@ -239,7 +467,6 @@
             this.txtTable10.Size = new System.Drawing.Size(44, 44);
             this.txtTable10.TabIndex = 5;
             this.txtTable10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtTable10.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
             // txtTable11
             // 
@@ -250,7 +477,6 @@
             this.txtTable11.Size = new System.Drawing.Size(44, 44);
             this.txtTable11.TabIndex = 6;
             this.txtTable11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtTable11.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
             // txtTable12
             // 
@@ -261,7 +487,6 @@
             this.txtTable12.Size = new System.Drawing.Size(44, 44);
             this.txtTable12.TabIndex = 7;
             this.txtTable12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtTable12.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
             // txtTable13
             // 
@@ -272,7 +497,6 @@
             this.txtTable13.Size = new System.Drawing.Size(44, 44);
             this.txtTable13.TabIndex = 8;
             this.txtTable13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtTable13.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
             // txtTable14
             // 
@@ -283,7 +507,6 @@
             this.txtTable14.Size = new System.Drawing.Size(44, 44);
             this.txtTable14.TabIndex = 9;
             this.txtTable14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtTable14.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
             // txtTable20
             // 
@@ -294,7 +517,6 @@
             this.txtTable20.Size = new System.Drawing.Size(44, 44);
             this.txtTable20.TabIndex = 10;
             this.txtTable20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtTable20.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
             // txtTable21
             // 
@@ -305,7 +527,6 @@
             this.txtTable21.Size = new System.Drawing.Size(44, 44);
             this.txtTable21.TabIndex = 11;
             this.txtTable21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtTable21.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
             // txtTable22
             // 
@@ -316,7 +537,6 @@
             this.txtTable22.Size = new System.Drawing.Size(44, 44);
             this.txtTable22.TabIndex = 12;
             this.txtTable22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtTable22.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
             // txtTable23
             // 
@@ -327,7 +547,6 @@
             this.txtTable23.Size = new System.Drawing.Size(44, 44);
             this.txtTable23.TabIndex = 13;
             this.txtTable23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtTable23.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
             // txtTable24
             // 
@@ -338,7 +557,6 @@
             this.txtTable24.Size = new System.Drawing.Size(44, 44);
             this.txtTable24.TabIndex = 14;
             this.txtTable24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtTable24.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
             // txtTable30
             // 
@@ -349,7 +567,6 @@
             this.txtTable30.Size = new System.Drawing.Size(44, 44);
             this.txtTable30.TabIndex = 15;
             this.txtTable30.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtTable30.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
             // txtTable31
             // 
@@ -360,7 +577,6 @@
             this.txtTable31.Size = new System.Drawing.Size(44, 44);
             this.txtTable31.TabIndex = 16;
             this.txtTable31.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtTable31.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
             // txtTable32
             // 
@@ -371,7 +587,6 @@
             this.txtTable32.Size = new System.Drawing.Size(44, 44);
             this.txtTable32.TabIndex = 17;
             this.txtTable32.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtTable32.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
             // txtTable33
             // 
@@ -382,7 +597,6 @@
             this.txtTable33.Size = new System.Drawing.Size(44, 44);
             this.txtTable33.TabIndex = 18;
             this.txtTable33.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtTable33.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
             // txtTable34
             // 
@@ -393,163 +607,82 @@
             this.txtTable34.Size = new System.Drawing.Size(44, 44);
             this.txtTable34.TabIndex = 19;
             this.txtTable34.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtTable34.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
-            // 
-            // txtMessage
-            // 
-            this.txtMessage.Location = new System.Drawing.Point(372, 25);
-            this.txtMessage.Multiline = true;
-            this.txtMessage.Name = "txtMessage";
-            this.txtMessage.Size = new System.Drawing.Size(400, 200);
-            this.txtMessage.TabIndex = 25;
-            this.txtMessage.TextChanged += new System.EventHandler(this.txtMessage_TextChanged);
-            // 
-            // btnEncrypt
-            // 
-            this.btnEncrypt.Location = new System.Drawing.Point(387, 231);
-            this.btnEncrypt.Name = "btnEncrypt";
-            this.btnEncrypt.Size = new System.Drawing.Size(75, 23);
-            this.btnEncrypt.TabIndex = 26;
-            this.btnEncrypt.Text = "Encrypt";
-            this.btnEncrypt.UseVisualStyleBackColor = true;
-            this.btnEncrypt.Click += new System.EventHandler(this.btnEncrypt_Click);
-            // 
-            // txtResult
-            // 
-            this.txtResult.Location = new System.Drawing.Point(372, 290);
-            this.txtResult.Multiline = true;
-            this.txtResult.Name = "txtResult";
-            this.txtResult.ReadOnly = true;
-            this.txtResult.Size = new System.Drawing.Size(400, 200);
-            this.txtResult.TabIndex = 30;
-            // 
-            // lblTable
-            // 
-            this.lblTable.AutoSize = true;
-            this.lblTable.Location = new System.Drawing.Point(12, 9);
-            this.lblTable.Name = "lblTable";
-            this.lblTable.Size = new System.Drawing.Size(34, 13);
-            this.lblTable.TabIndex = 4;
-            this.lblTable.Text = "Table";
-            // 
-            // lblMessage
-            // 
-            this.lblMessage.AutoSize = true;
-            this.lblMessage.Location = new System.Drawing.Point(384, 9);
-            this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(50, 13);
-            this.lblMessage.TabIndex = 5;
-            this.lblMessage.Text = "Message";
-            // 
-            // lblResult
-            // 
-            this.lblResult.AutoSize = true;
-            this.lblResult.Location = new System.Drawing.Point(384, 274);
-            this.lblResult.Name = "lblResult";
-            this.lblResult.Size = new System.Drawing.Size(37, 13);
-            this.lblResult.TabIndex = 6;
-            this.lblResult.Text = "Result";
-            // 
-            // btnClearAll
-            // 
-            this.btnClearAll.Location = new System.Drawing.Point(34, 290);
-            this.btnClearAll.Name = "btnClearAll";
-            this.btnClearAll.Size = new System.Drawing.Size(75, 23);
-            this.btnClearAll.TabIndex = 28;
-            this.btnClearAll.Text = "Clear all";
-            this.btnClearAll.UseVisualStyleBackColor = true;
-            this.btnClearAll.Click += new System.EventHandler(this.btnClearAll_Click);
-            // 
-            // btnAutoFill
-            // 
-            this.btnAutoFill.Location = new System.Drawing.Point(165, 290);
-            this.btnAutoFill.Name = "btnAutoFill";
-            this.btnAutoFill.Size = new System.Drawing.Size(75, 23);
-            this.btnAutoFill.TabIndex = 29;
-            this.btnAutoFill.Text = "Auto fill";
-            this.btnAutoFill.UseVisualStyleBackColor = true;
-            this.btnAutoFill.Click += new System.EventHandler(this.btnAutoFill_Click);
-            // 
-            // btnDecrypt
-            // 
-            this.btnDecrypt.Location = new System.Drawing.Point(481, 231);
-            this.btnDecrypt.Name = "btnDecrypt";
-            this.btnDecrypt.Size = new System.Drawing.Size(75, 23);
-            this.btnDecrypt.TabIndex = 31;
-            this.btnDecrypt.Text = "Decrypt";
-            this.btnDecrypt.UseVisualStyleBackColor = true;
-            this.btnDecrypt.Click += new System.EventHandler(this.btnDecrypt_Click);
-            // 
-            // btnImport
-            // 
-            this.btnImport.Location = new System.Drawing.Point(34, 345);
-            this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(75, 23);
-            this.btnImport.TabIndex = 32;
-            this.btnImport.Text = "Import";
-            this.btnImport.UseVisualStyleBackColor = true;
-            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // btnExport
             // 
-            this.btnExport.Location = new System.Drawing.Point(165, 345);
+            this.btnExport.Location = new System.Drawing.Point(307, 389);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(75, 23);
-            this.btnExport.TabIndex = 33;
+            this.btnExport.TabIndex = 64;
             this.btnExport.Text = "Export";
             this.btnExport.UseVisualStyleBackColor = true;
-            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
-            // openFileDialog1
+            // btnImport
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.btnImport.Location = new System.Drawing.Point(307, 339);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(75, 23);
+            this.btnImport.TabIndex = 63;
+            this.btnImport.Text = "Import";
+            this.btnImport.UseVisualStyleBackColor = true;
             // 
-            // btnSaveToClipboard
+            // btnAutoFill
             // 
-            this.btnSaveToClipboard.Image = global::Cryptographer.Properties.Resources.Editing_Clipboard_icon30;
-            this.btnSaveToClipboard.Location = new System.Drawing.Point(720, 496);
-            this.btnSaveToClipboard.Name = "btnSaveToClipboard";
-            this.btnSaveToClipboard.Size = new System.Drawing.Size(40, 40);
-            this.btnSaveToClipboard.TabIndex = 27;
-            this.btnSaveToClipboard.UseVisualStyleBackColor = true;
-            this.btnSaveToClipboard.Click += new System.EventHandler(this.btnSaveToClipboard_Click);
+            this.btnAutoFill.Location = new System.Drawing.Point(307, 239);
+            this.btnAutoFill.Name = "btnAutoFill";
+            this.btnAutoFill.Size = new System.Drawing.Size(75, 23);
+            this.btnAutoFill.TabIndex = 62;
+            this.btnAutoFill.Text = "Auto fill";
+            this.btnAutoFill.UseVisualStyleBackColor = true;
             // 
-            // btnVigenereInfo
+            // btnClearAll
             // 
-            this.btnVigenereInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVigenereInfo.Location = new System.Drawing.Point(750, 9);
-            this.btnVigenereInfo.Name = "btnVigenereInfo";
-            this.btnVigenereInfo.Size = new System.Drawing.Size(22, 23);
-            this.btnVigenereInfo.TabIndex = 34;
-            this.btnVigenereInfo.Text = "i";
-            this.btnVigenereInfo.UseVisualStyleBackColor = true;
-            this.btnVigenereInfo.Click += new System.EventHandler(this.btnVigenereInfo_Click);
+            this.btnClearAll.Location = new System.Drawing.Point(307, 289);
+            this.btnClearAll.Name = "btnClearAll";
+            this.btnClearAll.Size = new System.Drawing.Size(75, 23);
+            this.btnClearAll.TabIndex = 61;
+            this.btnClearAll.Text = "Clear all";
+            this.btnClearAll.UseVisualStyleBackColor = true;
             // 
-            // frmPlayfair
+            // frmPlayfairInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.btnVigenereInfo);
+            this.ClientSize = new System.Drawing.Size(534, 761);
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.btnImport);
-            this.Controls.Add(this.btnDecrypt);
-            this.Controls.Add(this.btnSaveToClipboard);
             this.Controls.Add(this.btnAutoFill);
             this.Controls.Add(this.btnClearAll);
-            this.Controls.Add(this.lblResult);
-            this.Controls.Add(this.lblMessage);
-            this.Controls.Add(this.lblTable);
-            this.Controls.Add(this.txtResult);
-            this.Controls.Add(this.btnEncrypt);
-            this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.tblTable);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblDescription1);
+            this.Controls.Add(this.lblDescription2);
+            this.Controls.Add(this.lblDescription0);
+            this.Controls.Add(this.lstFormula);
+            this.Controls.Add(this.btnCipher);
+            this.Controls.Add(this.lblFormula);
+            this.Controls.Add(this.grpCipher);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblAlphabet);
+            this.Controls.Add(this.lstAlphabet);
+            this.Controls.Add(this.lblKeyParsed);
+            this.Controls.Add(this.lblMessageParsed);
+            this.Controls.Add(this.txtKeyParsed);
+            this.Controls.Add(this.txtMessageParsed);
+            this.Controls.Add(this.lblResult);
+            this.Controls.Add(this.lblKey);
+            this.Controls.Add(this.lblMessage);
+            this.Controls.Add(this.txtResult);
+            this.Controls.Add(this.txtMessage);
+            this.Controls.Add(this.lblDescription);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "frmPlayfair";
+            this.Name = "frmPlayfairInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Cryptographer- Playfair cipher";
+            this.Text = "Cryptographer - Playfair cipher info";
+            this.grpCipher.ResumeLayout(false);
+            this.grpCipher.PerformLayout();
             this.tblTable.ResumeLayout(false);
             this.tblTable.PerformLayout();
             this.ResumeLayout(false);
@@ -559,23 +692,40 @@
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tblTable;
-        private System.Windows.Forms.TextBox txtMessage;
-        private System.Windows.Forms.Button btnEncrypt;
-        private System.Windows.Forms.TextBox txtResult;
-        private System.Windows.Forms.TextBox txtTable00;
-        private System.Windows.Forms.TextBox txtTable04;
-        private System.Windows.Forms.TextBox txtTable03;
-        private System.Windows.Forms.TextBox txtTable02;
-        private System.Windows.Forms.TextBox txtTable01;
-        private System.Windows.Forms.Label lblTable;
-        private System.Windows.Forms.Label lblMessage;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblDescription1;
+        private System.Windows.Forms.Label lblDescription2;
+        private System.Windows.Forms.Label lblDescription0;
+        private System.Windows.Forms.ListBox lstFormula;
+        private System.Windows.Forms.Button btnCipher;
+        private System.Windows.Forms.Label lblFormula;
+        private System.Windows.Forms.GroupBox grpCipher;
+        private System.Windows.Forms.RadioButton rdoBtnEncrypt;
+        private System.Windows.Forms.RadioButton rdoBtnDecrypt;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblAlphabet;
+        private System.Windows.Forms.ListBox lstAlphabet;
+        private System.Windows.Forms.Label lblKeyParsed;
+        private System.Windows.Forms.Label lblMessageParsed;
+        private System.Windows.Forms.TextBox txtKeyParsed;
+        private System.Windows.Forms.TextBox txtMessageParsed;
         private System.Windows.Forms.Label lblResult;
+        private System.Windows.Forms.Label lblKey;
+        private System.Windows.Forms.Label lblMessage;
+        private System.Windows.Forms.TextBox txtResult;
+        private System.Windows.Forms.TextBox txtMessage;
+        private System.Windows.Forms.Label lblDescription;
+        private System.Windows.Forms.TableLayoutPanel tblTable;
         private System.Windows.Forms.TextBox txtTable41;
         private System.Windows.Forms.TextBox txtTable40;
         private System.Windows.Forms.TextBox txtTable42;
         private System.Windows.Forms.TextBox txtTable44;
         private System.Windows.Forms.TextBox txtTable43;
+        private System.Windows.Forms.TextBox txtTable04;
+        private System.Windows.Forms.TextBox txtTable03;
+        private System.Windows.Forms.TextBox txtTable02;
+        private System.Windows.Forms.TextBox txtTable01;
+        private System.Windows.Forms.TextBox txtTable00;
         private System.Windows.Forms.TextBox txtTable10;
         private System.Windows.Forms.TextBox txtTable11;
         private System.Windows.Forms.TextBox txtTable12;
@@ -591,14 +741,9 @@
         private System.Windows.Forms.TextBox txtTable32;
         private System.Windows.Forms.TextBox txtTable33;
         private System.Windows.Forms.TextBox txtTable34;
-        private System.Windows.Forms.Button btnClearAll;
-        private System.Windows.Forms.Button btnAutoFill;
-        private System.Windows.Forms.Button btnSaveToClipboard;
-        private System.Windows.Forms.Button btnDecrypt;
-        private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.Button btnExport;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-        private System.Windows.Forms.Button btnVigenereInfo;
+        private System.Windows.Forms.Button btnImport;
+        private System.Windows.Forms.Button btnAutoFill;
+        private System.Windows.Forms.Button btnClearAll;
     }
 }
