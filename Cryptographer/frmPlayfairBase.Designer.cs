@@ -335,6 +335,7 @@
             this.txtResult.Multiline = true;
             this.txtResult.Name = "txtResult";
             this.txtResult.ReadOnly = true;
+            this.txtResult.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtResult.Size = new System.Drawing.Size(400, 200);
             this.txtResult.TabIndex = 44;
             // 
@@ -343,6 +344,7 @@
             this.txtMessage.Location = new System.Drawing.Point(372, 46);
             this.txtMessage.Multiline = true;
             this.txtMessage.Name = "txtMessage";
+            this.txtMessage.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtMessage.Size = new System.Drawing.Size(400, 200);
             this.txtMessage.TabIndex = 39;
             this.txtMessage.TextChanged += new System.EventHandler(this.txtMessage_TextChanged);

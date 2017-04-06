@@ -50,15 +50,42 @@
             this.lblKey = new System.Windows.Forms.Label();
             this.lblMessage = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
-            this.btnVigenereInfo = new System.Windows.Forms.Button();
+            this.btnVigenere = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.grpCipher.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // btnImport
+            // 
+            this.btnImport.Location = new System.Drawing.Point(331, 427);
+            // 
+            // btnAutoFill
+            // 
+            this.btnAutoFill.Location = new System.Drawing.Point(464, 362);
+            // 
+            // btnClearAll
+            // 
+            this.btnClearAll.Location = new System.Drawing.Point(331, 362);
+            // 
+            // btnExport
+            // 
+            this.btnExport.Location = new System.Drawing.Point(464, 427);
+            // 
+            // txtResult
+            // 
+            this.txtResult.Location = new System.Drawing.Point(16, 1386);
+            // 
+            // txtMessage
+            // 
+            this.txtMessage.Location = new System.Drawing.Point(15, 91);
+            this.txtMessage.Size = new System.Drawing.Size(525, 130);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 813);
+            this.label2.Location = new System.Drawing.Point(13, 1205);
             this.label2.MaximumSize = new System.Drawing.Size(500, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(499, 30);
@@ -81,10 +108,10 @@
             // 
             this.lblDescription2.AutoSize = true;
             this.lblDescription2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription2.Location = new System.Drawing.Point(13, 487);
-            this.lblDescription2.MaximumSize = new System.Drawing.Size(500, 0);
+            this.lblDescription2.Location = new System.Drawing.Point(13, 560);
+            this.lblDescription2.MaximumSize = new System.Drawing.Size(525, 0);
             this.lblDescription2.Name = "lblDescription2";
-            this.lblDescription2.Size = new System.Drawing.Size(477, 60);
+            this.lblDescription2.Size = new System.Drawing.Size(524, 90);
             this.lblDescription2.TabIndex = 56;
             this.lblDescription2.Text = resources.GetString("lblDescription2.Text");
             // 
@@ -103,14 +130,14 @@
             // lstFormula
             // 
             this.lstFormula.FormattingEnabled = true;
-            this.lstFormula.Location = new System.Drawing.Point(16, 863);
+            this.lstFormula.Location = new System.Drawing.Point(16, 1255);
             this.lstFormula.Name = "lstFormula";
             this.lstFormula.Size = new System.Drawing.Size(350, 95);
             this.lstFormula.TabIndex = 54;
             // 
             // btnCipher
             // 
-            this.btnCipher.Location = new System.Drawing.Point(438, 940);
+            this.btnCipher.Location = new System.Drawing.Point(438, 1332);
             this.btnCipher.Name = "btnCipher";
             this.btnCipher.Size = new System.Drawing.Size(75, 23);
             this.btnCipher.TabIndex = 53;
@@ -120,7 +147,7 @@
             // lblFormula
             // 
             this.lblFormula.AutoSize = true;
-            this.lblFormula.Location = new System.Drawing.Point(16, 847);
+            this.lblFormula.Location = new System.Drawing.Point(16, 1239);
             this.lblFormula.Name = "lblFormula";
             this.lblFormula.Size = new System.Drawing.Size(44, 13);
             this.lblFormula.TabIndex = 52;
@@ -130,7 +157,7 @@
             // 
             this.grpCipher.Controls.Add(this.rdoBtnEncrypt);
             this.grpCipher.Controls.Add(this.rdoBtnDecrypt);
-            this.grpCipher.Location = new System.Drawing.Point(413, 863);
+            this.grpCipher.Location = new System.Drawing.Point(413, 1255);
             this.grpCipher.Name = "grpCipher";
             this.grpCipher.Size = new System.Drawing.Size(97, 71);
             this.grpCipher.TabIndex = 51;
@@ -161,44 +188,45 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 650);
+            this.label1.Location = new System.Drawing.Point(13, 822);
             this.label1.MaximumSize = new System.Drawing.Size(500, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(497, 30);
+            this.label1.Size = new System.Drawing.Size(499, 30);
             this.label1.TabIndex = 58;
-            this.label1.Text = "You then translate each letter to its numerical number value based on the order o" +
-    "f where it is located within the alphabet e.g. A => 0, C => 2.";
+            this.label1.Text = "After that we devide our parsed message in pairs of two. And start swapping the l" +
+    "etters from our message based on our table. E.g. ";
             // 
             // lblAlphabet
             // 
             this.lblAlphabet.AutoSize = true;
-            this.lblAlphabet.Location = new System.Drawing.Point(16, 690);
+            this.lblAlphabet.Location = new System.Drawing.Point(15, 994);
             this.lblAlphabet.Name = "lblAlphabet";
-            this.lblAlphabet.Size = new System.Drawing.Size(49, 13);
+            this.lblAlphabet.Size = new System.Drawing.Size(207, 13);
             this.lblAlphabet.TabIndex = 50;
-            this.lblAlphabet.Text = "Alphabet";
+            this.lblAlphabet.Text = "List of pairs and their swapped equivalents";
             // 
             // lstAlphabet
             // 
             this.lstAlphabet.FormattingEnabled = true;
-            this.lstAlphabet.Location = new System.Drawing.Point(16, 706);
+            this.lstAlphabet.Location = new System.Drawing.Point(16, 1010);
+            this.lstAlphabet.MultiColumn = true;
             this.lstAlphabet.Name = "lstAlphabet";
-            this.lstAlphabet.Size = new System.Drawing.Size(120, 95);
+            this.lstAlphabet.Size = new System.Drawing.Size(525, 95);
             this.lstAlphabet.TabIndex = 49;
             // 
             // lblKeyParsed
             // 
             this.lblKeyParsed.AutoSize = true;
-            this.lblKeyParsed.Location = new System.Drawing.Point(372, 555);
+            this.lblKeyParsed.Location = new System.Drawing.Point(16, 862);
             this.lblKeyParsed.Name = "lblKeyParsed";
-            this.lblKeyParsed.Size = new System.Drawing.Size(60, 13);
+            this.lblKeyParsed.Size = new System.Drawing.Size(175, 13);
             this.lblKeyParsed.TabIndex = 48;
-            this.lblKeyParsed.Text = "Parsed key";
+            this.lblKeyParsed.Text = "Parsed message with its pairs slit up";
             // 
             // lblMessageParsed
             // 
             this.lblMessageParsed.AutoSize = true;
-            this.lblMessageParsed.Location = new System.Drawing.Point(16, 555);
+            this.lblMessageParsed.Location = new System.Drawing.Point(16, 663);
             this.lblMessageParsed.Name = "lblMessageParsed";
             this.lblMessageParsed.Size = new System.Drawing.Size(85, 13);
             this.lblMessageParsed.TabIndex = 47;
@@ -206,28 +234,28 @@
             // 
             // txtKeyParsed
             // 
-            this.txtKeyParsed.Location = new System.Drawing.Point(372, 571);
+            this.txtKeyParsed.Location = new System.Drawing.Point(16, 878);
             this.txtKeyParsed.Multiline = true;
             this.txtKeyParsed.Name = "txtKeyParsed";
             this.txtKeyParsed.ReadOnly = true;
             this.txtKeyParsed.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtKeyParsed.Size = new System.Drawing.Size(150, 67);
+            this.txtKeyParsed.Size = new System.Drawing.Size(525, 100);
             this.txtKeyParsed.TabIndex = 46;
             // 
             // txtMessageParsed
             // 
-            this.txtMessageParsed.Location = new System.Drawing.Point(16, 571);
+            this.txtMessageParsed.Location = new System.Drawing.Point(16, 679);
             this.txtMessageParsed.Multiline = true;
             this.txtMessageParsed.Name = "txtMessageParsed";
             this.txtMessageParsed.ReadOnly = true;
             this.txtMessageParsed.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtMessageParsed.Size = new System.Drawing.Size(350, 67);
+            this.txtMessageParsed.Size = new System.Drawing.Size(525, 130);
             this.txtMessageParsed.TabIndex = 45;
             // 
             // lblResult
             // 
             this.lblResult.AutoSize = true;
-            this.lblResult.Location = new System.Drawing.Point(16, 974);
+            this.lblResult.Location = new System.Drawing.Point(16, 1366);
             this.lblResult.Name = "lblResult";
             this.lblResult.Size = new System.Drawing.Size(37, 13);
             this.lblResult.TabIndex = 44;
@@ -259,23 +287,45 @@
             this.lblDescription.Size = new System.Drawing.Size(0, 13);
             this.lblDescription.TabIndex = 38;
             // 
-            // btnVigenereInfo
+            // btnVigenere
             // 
-            this.btnVigenereInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVigenereInfo.Location = new System.Drawing.Point(452, 9);
-            this.btnVigenereInfo.Name = "btnVigenereInfo";
-            this.btnVigenereInfo.Size = new System.Drawing.Size(70, 23);
-            this.btnVigenereInfo.TabIndex = 60;
-            this.btnVigenereInfo.Text = "<= Back";
-            this.btnVigenereInfo.UseVisualStyleBackColor = true;
-            this.btnVigenereInfo.Click += new System.EventHandler(this.btnVigenereInfo_Click);
+            this.btnVigenere.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVigenere.Location = new System.Drawing.Point(469, 12);
+            this.btnVigenere.Name = "btnVigenere";
+            this.btnVigenere.Size = new System.Drawing.Size(70, 23);
+            this.btnVigenere.TabIndex = 60;
+            this.btnVigenere.Text = "<= Back";
+            this.btnVigenere.UseVisualStyleBackColor = true;
+            this.btnVigenere.Click += new System.EventHandler(this.btnVigenere_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(65, 334);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 13);
+            this.label3.TabIndex = 61;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(16, 247);
+            this.label4.MaximumSize = new System.Drawing.Size(450, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(439, 15);
+            this.label4.TabIndex = 62;
+            this.label4.Text = "Then we fill the table with letters from the english alphabet (except the letter " +
+    "\"J\").";
             // 
             // frmPlayfairInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(568, 795);
-            this.Controls.Add(this.btnVigenereInfo);
+            this.ClientSize = new System.Drawing.Size(564, 961);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnVigenere);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblDescription1);
             this.Controls.Add(this.lblDescription2);
@@ -295,7 +345,6 @@
             this.Controls.Add(this.lblKey);
             this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.lblDescription);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "frmPlayfairInfo";
             this.Text = "Cryptographer - Playfair cipher info";
@@ -324,7 +373,9 @@
             this.Controls.SetChildIndex(this.btnClearAll, 0);
             this.Controls.SetChildIndex(this.btnAutoFill, 0);
             this.Controls.SetChildIndex(this.btnImport, 0);
-            this.Controls.SetChildIndex(this.btnVigenereInfo, 0);
+            this.Controls.SetChildIndex(this.btnVigenere, 0);
+            this.Controls.SetChildIndex(this.label3, 0);
+            this.Controls.SetChildIndex(this.label4, 0);
             this.grpCipher.ResumeLayout(false);
             this.grpCipher.PerformLayout();
             this.ResumeLayout(false);
@@ -355,6 +406,8 @@
         private System.Windows.Forms.Label lblKey;
         private System.Windows.Forms.Label lblMessage;
         private System.Windows.Forms.Label lblDescription;
-        private System.Windows.Forms.Button btnVigenereInfo;
+        private System.Windows.Forms.Button btnVigenere;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

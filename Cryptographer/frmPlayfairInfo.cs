@@ -15,10 +15,10 @@ namespace Cryptographer
         public frmPlayfairInfo()
         {
             InitializeComponent();
-            txtMessage.Location = new Point(0, 0);
+            tblTable.Location = new Point(15, 300);
         }
 
-        private void btnVigenereInfo_Click(object sender, EventArgs e)
+        private void btnVigenere_Click(object sender, EventArgs e)
         {
             frmPlayfair playfair = new frmPlayfair();
             playfair.Show();
