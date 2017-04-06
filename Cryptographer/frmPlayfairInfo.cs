@@ -10,21 +10,23 @@ using System.Windows.Forms;
 
 namespace Cryptographer
 {
-    public partial class frmPlayfairInfo : frmPlayfair
+    public partial class frmPlayfairInfo : frmPlayfairBase
     {
         public frmPlayfairInfo()
         {
             InitializeComponent();
-            FormWindowManager formWindowManager = new FormWindowManager();
-            formWindowManager.setFormWindowSize(this);
-            frmPlayfair formPlayfair = new frmPlayfair();
-            formWindowManager.setFormWindowLocation(formPlayfair, this);
+            txtMessage.Location = new Point(0, 0);
         }
 
-        public void setMessageAndTable(string message, char[,] tableArray)
+        private void btnVigenereInfo_Click(object sender, EventArgs e)
         {
-            txtMessage.Text = message;
-            fillUITable(getTableTextBoxes(), tableArray);
+            frmPlayfair playfair = new frmPlayfair();
+            playfair.Show();
+            if (txtMessage.Text != "" && getTableArray(getTableTextBoxes()) != null)
+            {
+                setMessageAndTable(txtMessage.Text, getTableArray(getTableTextBoxes()));
+            }
+            this.Close();
         }
     }
 }

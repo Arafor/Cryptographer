@@ -78,6 +78,12 @@
     <Compile Include="frmPlayfair.Designer.cs">
       <DependentUpon>frmPlayfair.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPlayfairBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPlayfairBase.Designer.cs">
+      <DependentUpon>frmPlayfairBase.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPlayfairInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPlayfair.resx">
       <DependentUpon>frmPlayfair.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPlayfairBase.resx">
+      <DependentUpon>frmPlayfairBase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPlayfairInfo.resx">
       <DependentUpon>frmPlayfairInfo.cs</DependentUpon>
