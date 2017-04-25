@@ -133,5 +133,10 @@ namespace Cryptographer
                 MessageBox.Show("Please enter a message.");
             }
         }
+
+        private void frmPlayfairInfo_Load(object sender, EventArgs e)
+        {
+            rdoBtnEncrypt.Checked = true;
+        }
     }
 }

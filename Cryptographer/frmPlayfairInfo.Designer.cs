@@ -297,7 +297,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(564, 961);
+            this.ClientSize = new System.Drawing.Size(581, 961);
             this.Controls.Add(this.lblDescription2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnPlayfair);
@@ -319,6 +319,7 @@
             this.Controls.Add(this.lblDescription);
             this.Name = "frmPlayfairInfo";
             this.Text = "Cryptographer - Playfair cipher info";
+            this.Load += new System.EventHandler(this.frmPlayfairInfo_Load);
             this.Controls.SetChildIndex(this.lblDescription, 0);
             this.Controls.SetChildIndex(this.lblMessage, 0);
             this.Controls.SetChildIndex(this.lblKey, 0);

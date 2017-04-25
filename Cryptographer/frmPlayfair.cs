@@ -22,46 +22,6 @@ namespace Cryptographer
             formWindowManager.setFormWindowLocation(formCryptographer, this);
         }
 
-        private void btnEncrypt_Click(object sender, EventArgs e)
-        {
-            if (txtMessage.Text.Length > 0)
-            {
-                if (checkTableContent())
-                {
-                    char[] parsedMessage = parseText(txtMessage.Text.ToCharArray());
-                    if (parsedMessage != null)
-                    {
-                        txtResult.Text = "";
-                        txtResult.Text = cipher(parsedMessage, "E");
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("Please enter a message!");
-            }
-        }
-
-        private void btnDecrypt_Click(object sender, EventArgs e)
-        {
-            if (txtMessage.Text.Length > 0)
-            {
-                if (checkTableContent())
-                {
-                    char[] parsedMessage = parseText(txtMessage.Text.ToCharArray());
-                    if (parsedMessage != null)
-                    {
-                        txtResult.Text = "";
-                        txtResult.Text = cipher(parsedMessage, "D");
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("Please enter a message!");
-            }
-        }
-
         private void btnSaveToClipboard_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(txtResult.Text);
@@ -76,6 +36,60 @@ namespace Cryptographer
                 setMessageAndTable(txtMessage.Text, getTableArray(getTableTextBoxes()));
             }
             this.Close();
+        }
+
+        private void btnCipher_Click(object sender, EventArgs e)
+        {
+            if (txtMessage.Text.Length > 0)
+            {
+                if (checkTableContent())
+                {
+                    char[] parsedMessage = parseText(txtMessage.Text.ToCharArray());
+                    if (parsedMessage != null)
+                    {
+                        txtResult.Text = "";
+                        if (rdoBtnEncrypt.Checked)
+                        {
+                            txtResult.Text = cipher(parsedMessage, "E");
+                        }
+                        else if (rdoBtnDecrypt.Checked)
+                        {
+                            txtResult.Text = cipher(parsedMessage, "D");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Select if you want to encrypt or decrypt the text");
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter a message!");
+            }
+        }
+
+        private void cipherRadioButtonChanged(object sender, EventArgs e)
+        {
+            if (rdoBtnEncrypt.Checked)
+            {
+                lblMessage.Text = "Plaintext";
+                lblResult.Text = "Ciphertext";
+            }
+            else if (rdoBtnDecrypt.Checked)
+            {
+                lblMessage.Text = "Ciphertext";
+                lblResult.Text = "Plaintext";
+            }
+            else
+            {
+                MessageBox.Show("Select if you want to encrypt or decrypt the text");
+            }
+        }
+
+        private void frmPlayfair_Load(object sender, EventArgs e)
+        {
+            rdoBtnEncrypt.Checked = true;
         }
     }
 }
