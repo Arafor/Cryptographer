@@ -19,7 +19,7 @@ namespace Cryptographer
             formWindowManager.setFormWindowSize(this);
             frmCryptographer formCryptographer = new frmCryptographer();
             formWindowManager.setFormWindowLocation(formCryptographer, this);
-            tblTable.Location = new Point(15, 300);
+            tblTable.Location = new Point(15, 250);
         }
 
         private void btnVigenere_Click(object sender, EventArgs e)

@@ -55,33 +55,31 @@
             // 
             // btnImport
             // 
-            this.btnImport.Location = new System.Drawing.Point(331, 427);
+            this.btnImport.Location = new System.Drawing.Point(325, 412);
             this.btnImport.TabIndex = 28;
             // 
             // btnAutoFill
             // 
-            this.btnAutoFill.Location = new System.Drawing.Point(464, 362);
-            this.btnAutoFill.TabIndex = 27;
+            this.btnAutoFill.Location = new System.Drawing.Point(445, 312);
             // 
             // btnClearAll
             // 
-            this.btnClearAll.Location = new System.Drawing.Point(331, 362);
-            this.btnClearAll.TabIndex = 26;
+            this.btnClearAll.Location = new System.Drawing.Point(325, 312);
             // 
             // btnExport
             // 
-            this.btnExport.Location = new System.Drawing.Point(464, 427);
+            this.btnExport.Location = new System.Drawing.Point(445, 412);
             this.btnExport.TabIndex = 29;
             // 
             // txtResult
             // 
-            this.txtResult.Location = new System.Drawing.Point(16, 1386);
+            this.txtResult.Location = new System.Drawing.Point(15, 1084);
+            this.txtResult.Size = new System.Drawing.Size(525, 200);
             // 
             // txtMessage
             // 
             this.txtMessage.Location = new System.Drawing.Point(15, 91);
             this.txtMessage.Size = new System.Drawing.Size(525, 130);
-            this.txtMessage.TabIndex = 0;
             // 
             // lblDescription1
             // 
@@ -98,7 +96,7 @@
             // 
             this.lblDescription3.AutoSize = true;
             this.lblDescription3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription3.Location = new System.Drawing.Point(13, 560);
+            this.lblDescription3.Location = new System.Drawing.Point(13, 510);
             this.lblDescription3.MaximumSize = new System.Drawing.Size(525, 0);
             this.lblDescription3.Name = "lblDescription3";
             this.lblDescription3.Size = new System.Drawing.Size(524, 90);
@@ -112,14 +110,14 @@
             this.lblDescription0.Location = new System.Drawing.Point(13, 9);
             this.lblDescription0.MaximumSize = new System.Drawing.Size(420, 0);
             this.lblDescription0.Name = "lblDescription0";
-            this.lblDescription0.Size = new System.Drawing.Size(415, 30);
+            this.lblDescription0.Size = new System.Drawing.Size(400, 45);
             this.lblDescription0.TabIndex = 55;
             this.lblDescription0.Text = "The Playfair cipher is an old simplistic cipher that uses text values for its mes" +
-    "sage and a table containing letters from the english alphabet as its key.";
+    "sages and a table containing letters from the english alphabet as its key.";
             // 
             // btnCipher
             // 
-            this.btnCipher.Location = new System.Drawing.Point(438, 1332);
+            this.btnCipher.Location = new System.Drawing.Point(468, 1036);
             this.btnCipher.Name = "btnCipher";
             this.btnCipher.Size = new System.Drawing.Size(75, 23);
             this.btnCipher.TabIndex = 32;
@@ -131,7 +129,7 @@
             // 
             this.grpCipher.Controls.Add(this.rdoBtnEncrypt);
             this.grpCipher.Controls.Add(this.rdoBtnDecrypt);
-            this.grpCipher.Location = new System.Drawing.Point(413, 1255);
+            this.grpCipher.Location = new System.Drawing.Point(443, 959);
             this.grpCipher.Name = "grpCipher";
             this.grpCipher.Size = new System.Drawing.Size(97, 71);
             this.grpCipher.TabIndex = 51;
@@ -162,18 +160,19 @@
             // 
             this.lblDescription4.AutoSize = true;
             this.lblDescription4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription4.Location = new System.Drawing.Point(13, 822);
+            this.lblDescription4.Location = new System.Drawing.Point(12, 771);
             this.lblDescription4.MaximumSize = new System.Drawing.Size(500, 0);
             this.lblDescription4.Name = "lblDescription4";
-            this.lblDescription4.Size = new System.Drawing.Size(499, 30);
+            this.lblDescription4.Size = new System.Drawing.Size(494, 30);
             this.lblDescription4.TabIndex = 58;
-            this.lblDescription4.Text = "After that we devide our parsed message in pairs of two. And start swapping the l" +
-    "etters from our message based on our table. E.g. ";
+            this.lblDescription4.Text = "After that we devide our parsed message in pairs of two. And start encrypting or " +
+    "decrypting our message by swapping the pairs of letters in our message based on " +
+    "our table. E.g. ";
             // 
             // lblPairs
             // 
             this.lblPairs.AutoSize = true;
-            this.lblPairs.Location = new System.Drawing.Point(15, 994);
+            this.lblPairs.Location = new System.Drawing.Point(14, 943);
             this.lblPairs.Name = "lblPairs";
             this.lblPairs.Size = new System.Drawing.Size(207, 13);
             this.lblPairs.TabIndex = 50;
@@ -182,25 +181,25 @@
             // lstPairs
             // 
             this.lstPairs.FormattingEnabled = true;
-            this.lstPairs.Location = new System.Drawing.Point(16, 1010);
+            this.lstPairs.Location = new System.Drawing.Point(15, 959);
             this.lstPairs.MultiColumn = true;
             this.lstPairs.Name = "lstPairs";
-            this.lstPairs.Size = new System.Drawing.Size(525, 95);
+            this.lstPairs.Size = new System.Drawing.Size(422, 95);
             this.lstPairs.TabIndex = 52;
             // 
             // lblMessageParsedPairs
             // 
             this.lblMessageParsedPairs.AutoSize = true;
-            this.lblMessageParsedPairs.Location = new System.Drawing.Point(16, 862);
+            this.lblMessageParsedPairs.Location = new System.Drawing.Point(15, 811);
             this.lblMessageParsedPairs.Name = "lblMessageParsedPairs";
-            this.lblMessageParsedPairs.Size = new System.Drawing.Size(175, 13);
+            this.lblMessageParsedPairs.Size = new System.Drawing.Size(181, 13);
             this.lblMessageParsedPairs.TabIndex = 48;
-            this.lblMessageParsedPairs.Text = "Parsed message with its pairs slit up";
+            this.lblMessageParsedPairs.Text = "Parsed message with its pairs split up";
             // 
             // lblMessageParsed
             // 
             this.lblMessageParsed.AutoSize = true;
-            this.lblMessageParsed.Location = new System.Drawing.Point(16, 663);
+            this.lblMessageParsed.Location = new System.Drawing.Point(15, 612);
             this.lblMessageParsed.Name = "lblMessageParsed";
             this.lblMessageParsed.Size = new System.Drawing.Size(85, 13);
             this.lblMessageParsed.TabIndex = 47;
@@ -208,7 +207,7 @@
             // 
             // txtMessageParsedPairs
             // 
-            this.txtMessageParsedPairs.Location = new System.Drawing.Point(16, 878);
+            this.txtMessageParsedPairs.Location = new System.Drawing.Point(15, 827);
             this.txtMessageParsedPairs.Multiline = true;
             this.txtMessageParsedPairs.Name = "txtMessageParsedPairs";
             this.txtMessageParsedPairs.ReadOnly = true;
@@ -218,7 +217,7 @@
             // 
             // txtMessageParsed
             // 
-            this.txtMessageParsed.Location = new System.Drawing.Point(16, 679);
+            this.txtMessageParsed.Location = new System.Drawing.Point(15, 628);
             this.txtMessageParsed.Multiline = true;
             this.txtMessageParsed.Name = "txtMessageParsed";
             this.txtMessageParsed.ReadOnly = true;
@@ -229,7 +228,7 @@
             // lblResult
             // 
             this.lblResult.AutoSize = true;
-            this.lblResult.Location = new System.Drawing.Point(16, 1366);
+            this.lblResult.Location = new System.Drawing.Point(15, 1064);
             this.lblResult.Name = "lblResult";
             this.lblResult.Size = new System.Drawing.Size(37, 13);
             this.lblResult.TabIndex = 44;
@@ -264,7 +263,7 @@
             // btnPlayfair
             // 
             this.btnPlayfair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPlayfair.Location = new System.Drawing.Point(482, 12);
+            this.btnPlayfair.Location = new System.Drawing.Point(471, 9);
             this.btnPlayfair.Name = "btnPlayfair";
             this.btnPlayfair.Size = new System.Drawing.Size(70, 23);
             this.btnPlayfair.TabIndex = 60;
@@ -284,7 +283,7 @@
             // 
             this.lblDescription2.AutoSize = true;
             this.lblDescription2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription2.Location = new System.Drawing.Point(16, 247);
+            this.lblDescription2.Location = new System.Drawing.Point(16, 230);
             this.lblDescription2.MaximumSize = new System.Drawing.Size(450, 0);
             this.lblDescription2.Name = "lblDescription2";
             this.lblDescription2.Size = new System.Drawing.Size(439, 15);
@@ -296,7 +295,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(581, 961);
+            this.ClientSize = new System.Drawing.Size(564, 961);
             this.Controls.Add(this.lblDescription2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnPlayfair);
