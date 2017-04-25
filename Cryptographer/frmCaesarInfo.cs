@@ -53,11 +53,15 @@ namespace Cryptographer
             {
                 formulaMessage.Add("(P + K) > 0: C = P + K (mod 26)");
                 formulaMessage.Add("(P + K) < 0: C = 26 + (P + K (mod 26))");
+                lblMessage.Text = "Plaintext";
+                lblResult.Text = "Ciphertext";
             }
             else if (rdoBtnDecrypt.Checked)
             {
                 formulaMessage.Add("(P + K) > 0: P = C - K (mod 26)");
                 formulaMessage.Add("(P + K) < 0: P = 26 + (C - K (mod 26))");
+                lblMessage.Text = "Ciphertext";
+                lblResult.Text = "Plaintext";
             }
             else
             {
