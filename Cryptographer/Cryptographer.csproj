@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FileManager.cs" />
     <Compile Include="FormWindowManager.cs" />
     <Compile Include="frmCaesarInfo.cs">
       <SubType>Form</SubType>
@@ -77,6 +78,18 @@
     <Compile Include="frmPlayfair.Designer.cs">
       <DependentUpon>frmPlayfair.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPlayfairBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPlayfairBase.Designer.cs">
+      <DependentUpon>frmPlayfairBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPlayfairInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPlayfairInfo.Designer.cs">
+      <DependentUpon>frmPlayfairInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVigenere.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +105,7 @@
     <Compile Include="NumericalAlphabet.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TextParser.cs" />
     <EmbeddedResource Include="frmCaesar.resx">
       <DependentUpon>frmCaesar.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,6 +120,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPlayfair.resx">
       <DependentUpon>frmPlayfair.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPlayfairBase.resx">
+      <DependentUpon>frmPlayfairBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPlayfairInfo.resx">
+      <DependentUpon>frmPlayfairInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVigenere.resx">
       <DependentUpon>frmVigenere.cs</DependentUpon>

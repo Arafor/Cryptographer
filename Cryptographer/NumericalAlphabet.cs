@@ -37,6 +37,7 @@ namespace Cryptographer
                 Convert.ToChar("Y"),
                 Convert.ToChar("Z")
             };
+
         public int[] lettersToNumbers (char[] messageInChar)
         {
             int[] messageInInt = new int[messageInChar.Length];
