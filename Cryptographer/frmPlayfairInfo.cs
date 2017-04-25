@@ -33,6 +33,24 @@ namespace Cryptographer
             this.Close();
         }
 
+        private void cipherRadioButtonChanged(object sender, EventArgs e)
+        {
+            if (rdoBtnEncrypt.Checked)
+            {
+                lblMessage.Text = "Plaintext";
+                lblResult.Text = "Ciphertext";
+            }
+            else if (rdoBtnDecrypt.Checked)
+            {
+                lblMessage.Text = "Ciphertext";
+                lblResult.Text = "Plaintext";
+            }
+            else
+            {
+                MessageBox.Show("Select if you want to encrypt or decrypt the text");
+            }
+        }
+
         private void btnCipher_Click(object sender, EventArgs e)
         {
             txtMessageParsed.Text = "";
