@@ -54,10 +54,14 @@ namespace Cryptographer
             if (rdoBtnEncrypt.Checked)
             {
                 formulaMessage.Add("Ca = Pa + Kb (mod 26)");
+                lblMessage.Text = "Plaintext";
+                lblResult.Text = "Ciphertext";
             }
             else if (rdoBtnDecrypt.Checked)
             {
                 formulaMessage.Add("Pa = (26 + (Ca - Kb)) (mod 26)");
+                lblMessage.Text = "Ciphertext";
+                lblResult.Text = "Plaintext";
             }
             else
             {

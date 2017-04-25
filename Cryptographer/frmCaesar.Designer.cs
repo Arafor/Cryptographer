@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnDecrypt = new System.Windows.Forms.Button();
-            this.btnEncrypt = new System.Windows.Forms.Button();
             this.lblResult = new System.Windows.Forms.Label();
             this.lblKey = new System.Windows.Forms.Label();
             this.lblMessage = new System.Windows.Forms.Label();
@@ -38,32 +36,17 @@
             this.txtMessage = new System.Windows.Forms.TextBox();
             this.btnSaveToClipboard = new System.Windows.Forms.Button();
             this.btnCaesarInfo = new System.Windows.Forms.Button();
+            this.btnCipher = new System.Windows.Forms.Button();
+            this.grpCipher = new System.Windows.Forms.GroupBox();
+            this.rdoBtnEncrypt = new System.Windows.Forms.RadioButton();
+            this.rdoBtnDecrypt = new System.Windows.Forms.RadioButton();
+            this.grpCipher.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnDecrypt
-            // 
-            this.btnDecrypt.Location = new System.Drawing.Point(389, 208);
-            this.btnDecrypt.Name = "btnDecrypt";
-            this.btnDecrypt.Size = new System.Drawing.Size(75, 23);
-            this.btnDecrypt.TabIndex = 23;
-            this.btnDecrypt.Text = "Decrypt";
-            this.btnDecrypt.UseVisualStyleBackColor = true;
-            this.btnDecrypt.Click += new System.EventHandler(this.btnDecrypt_Click);
-            // 
-            // btnEncrypt
-            // 
-            this.btnEncrypt.Location = new System.Drawing.Point(389, 179);
-            this.btnEncrypt.Name = "btnEncrypt";
-            this.btnEncrypt.Size = new System.Drawing.Size(75, 23);
-            this.btnEncrypt.TabIndex = 22;
-            this.btnEncrypt.Text = "Encrypt";
-            this.btnEncrypt.UseVisualStyleBackColor = true;
-            this.btnEncrypt.Click += new System.EventHandler(this.btnEncrypt_Click);
             // 
             // lblResult
             // 
             this.lblResult.AutoSize = true;
-            this.lblResult.Location = new System.Drawing.Point(12, 289);
+            this.lblResult.Location = new System.Drawing.Point(12, 296);
             this.lblResult.Name = "lblResult";
             this.lblResult.Size = new System.Drawing.Size(37, 13);
             this.lblResult.TabIndex = 21;
@@ -89,7 +72,7 @@
             // 
             // txtResult
             // 
-            this.txtResult.Location = new System.Drawing.Point(12, 305);
+            this.txtResult.Location = new System.Drawing.Point(12, 312);
             this.txtResult.Multiline = true;
             this.txtResult.Name = "txtResult";
             this.txtResult.ReadOnly = true;
@@ -103,7 +86,7 @@
             this.txtKey.Multiline = true;
             this.txtKey.Name = "txtKey";
             this.txtKey.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtKey.Size = new System.Drawing.Size(370, 100);
+            this.txtKey.Size = new System.Drawing.Size(352, 100);
             this.txtKey.TabIndex = 17;
             // 
             // txtMessage
@@ -118,7 +101,7 @@
             // btnSaveToClipboard
             // 
             this.btnSaveToClipboard.Image = global::Cryptographer.Properties.Resources.Editing_Clipboard_icon30;
-            this.btnSaveToClipboard.Location = new System.Drawing.Point(424, 262);
+            this.btnSaveToClipboard.Location = new System.Drawing.Point(427, 266);
             this.btnSaveToClipboard.Name = "btnSaveToClipboard";
             this.btnSaveToClipboard.Size = new System.Drawing.Size(40, 40);
             this.btnSaveToClipboard.TabIndex = 29;
@@ -136,16 +119,59 @@
             this.btnCaesarInfo.UseVisualStyleBackColor = true;
             this.btnCaesarInfo.Click += new System.EventHandler(this.btnCaesarInfo_Click);
             // 
+            // btnCipher
+            // 
+            this.btnCipher.Location = new System.Drawing.Point(392, 237);
+            this.btnCipher.Name = "btnCipher";
+            this.btnCipher.Size = new System.Drawing.Size(75, 23);
+            this.btnCipher.TabIndex = 35;
+            this.btnCipher.Text = "Cipher";
+            this.btnCipher.UseVisualStyleBackColor = true;
+            this.btnCipher.Click += new System.EventHandler(this.btnCipher_Click);
+            // 
+            // grpCipher
+            // 
+            this.grpCipher.Controls.Add(this.rdoBtnEncrypt);
+            this.grpCipher.Controls.Add(this.rdoBtnDecrypt);
+            this.grpCipher.Location = new System.Drawing.Point(370, 160);
+            this.grpCipher.Name = "grpCipher";
+            this.grpCipher.Size = new System.Drawing.Size(97, 71);
+            this.grpCipher.TabIndex = 34;
+            this.grpCipher.TabStop = false;
+            this.grpCipher.Text = "Cipher";
+            // 
+            // rdoBtnEncrypt
+            // 
+            this.rdoBtnEncrypt.AutoSize = true;
+            this.rdoBtnEncrypt.Location = new System.Drawing.Point(6, 19);
+            this.rdoBtnEncrypt.Name = "rdoBtnEncrypt";
+            this.rdoBtnEncrypt.Size = new System.Drawing.Size(61, 17);
+            this.rdoBtnEncrypt.TabIndex = 26;
+            this.rdoBtnEncrypt.Text = "Encrypt";
+            this.rdoBtnEncrypt.UseVisualStyleBackColor = true;
+            this.rdoBtnEncrypt.CheckedChanged += new System.EventHandler(this.cipherRadioButtonChanged);
+            // 
+            // rdoBtnDecrypt
+            // 
+            this.rdoBtnDecrypt.AutoSize = true;
+            this.rdoBtnDecrypt.Location = new System.Drawing.Point(6, 42);
+            this.rdoBtnDecrypt.Name = "rdoBtnDecrypt";
+            this.rdoBtnDecrypt.Size = new System.Drawing.Size(62, 17);
+            this.rdoBtnDecrypt.TabIndex = 27;
+            this.rdoBtnDecrypt.Text = "Decrypt";
+            this.rdoBtnDecrypt.UseVisualStyleBackColor = true;
+            this.rdoBtnDecrypt.CheckedChanged += new System.EventHandler(this.cipherRadioButtonChanged);
+            // 
             // frmCaesar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(484, 431);
+            this.ClientSize = new System.Drawing.Size(484, 451);
+            this.Controls.Add(this.btnCipher);
+            this.Controls.Add(this.grpCipher);
             this.Controls.Add(this.btnCaesarInfo);
             this.Controls.Add(this.btnSaveToClipboard);
-            this.Controls.Add(this.btnDecrypt);
-            this.Controls.Add(this.btnEncrypt);
             this.Controls.Add(this.lblResult);
             this.Controls.Add(this.lblKey);
             this.Controls.Add(this.lblMessage);
@@ -157,15 +183,15 @@
             this.Name = "frmCaesar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Cryptographer- Caesar cipher";
+            this.Load += new System.EventHandler(this.frmCaesar_Load);
+            this.grpCipher.ResumeLayout(false);
+            this.grpCipher.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnDecrypt;
-        private System.Windows.Forms.Button btnEncrypt;
         private System.Windows.Forms.Label lblResult;
         private System.Windows.Forms.Label lblKey;
         private System.Windows.Forms.Label lblMessage;
@@ -174,5 +200,9 @@
         private System.Windows.Forms.TextBox txtMessage;
         private System.Windows.Forms.Button btnSaveToClipboard;
         private System.Windows.Forms.Button btnCaesarInfo;
+        private System.Windows.Forms.Button btnCipher;
+        private System.Windows.Forms.GroupBox grpCipher;
+        private System.Windows.Forms.RadioButton rdoBtnEncrypt;
+        private System.Windows.Forms.RadioButton rdoBtnDecrypt;
     }
 }
