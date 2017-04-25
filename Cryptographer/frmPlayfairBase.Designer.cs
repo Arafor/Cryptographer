@@ -76,7 +76,7 @@
             this.txtTable41.Multiline = true;
             this.txtTable41.Name = "txtTable41";
             this.txtTable41.Size = new System.Drawing.Size(44, 44);
-            this.txtTable41.TabIndex = 21;
+            this.txtTable41.TabIndex = 22;
             this.txtTable41.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTable41.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
@@ -87,7 +87,7 @@
             this.txtTable40.Multiline = true;
             this.txtTable40.Name = "txtTable40";
             this.txtTable40.Size = new System.Drawing.Size(44, 44);
-            this.txtTable40.TabIndex = 20;
+            this.txtTable40.TabIndex = 21;
             this.txtTable40.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTable40.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
@@ -98,7 +98,7 @@
             this.txtTable42.Multiline = true;
             this.txtTable42.Name = "txtTable42";
             this.txtTable42.Size = new System.Drawing.Size(44, 44);
-            this.txtTable42.TabIndex = 22;
+            this.txtTable42.TabIndex = 23;
             this.txtTable42.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTable42.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
@@ -109,7 +109,7 @@
             this.txtTable44.Multiline = true;
             this.txtTable44.Name = "txtTable44";
             this.txtTable44.Size = new System.Drawing.Size(44, 44);
-            this.txtTable44.TabIndex = 24;
+            this.txtTable44.TabIndex = 25;
             this.txtTable44.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTable44.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
@@ -120,7 +120,7 @@
             this.txtTable43.Multiline = true;
             this.txtTable43.Name = "txtTable43";
             this.txtTable43.Size = new System.Drawing.Size(44, 44);
-            this.txtTable43.TabIndex = 23;
+            this.txtTable43.TabIndex = 24;
             this.txtTable43.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTable43.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
@@ -131,7 +131,7 @@
             this.txtTable04.Multiline = true;
             this.txtTable04.Name = "txtTable04";
             this.txtTable04.Size = new System.Drawing.Size(44, 44);
-            this.txtTable04.TabIndex = 4;
+            this.txtTable04.TabIndex = 5;
             this.txtTable04.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTable04.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
@@ -142,7 +142,7 @@
             this.txtTable03.Multiline = true;
             this.txtTable03.Name = "txtTable03";
             this.txtTable03.Size = new System.Drawing.Size(44, 44);
-            this.txtTable03.TabIndex = 3;
+            this.txtTable03.TabIndex = 4;
             this.txtTable03.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTable03.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
@@ -153,7 +153,7 @@
             this.txtTable02.Multiline = true;
             this.txtTable02.Name = "txtTable02";
             this.txtTable02.Size = new System.Drawing.Size(44, 44);
-            this.txtTable02.TabIndex = 2;
+            this.txtTable02.TabIndex = 3;
             this.txtTable02.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTable02.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
@@ -162,7 +162,7 @@
             this.btnImport.Location = new System.Drawing.Point(37, 379);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(75, 23);
-            this.btnImport.TabIndex = 46;
+            this.btnImport.TabIndex = 29;
             this.btnImport.Text = "Import";
             this.btnImport.UseVisualStyleBackColor = true;
             this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
@@ -172,7 +172,7 @@
             this.btnAutoFill.Location = new System.Drawing.Point(168, 324);
             this.btnAutoFill.Name = "btnAutoFill";
             this.btnAutoFill.Size = new System.Drawing.Size(75, 23);
-            this.btnAutoFill.TabIndex = 43;
+            this.btnAutoFill.TabIndex = 27;
             this.btnAutoFill.Text = "Auto fill";
             this.btnAutoFill.UseVisualStyleBackColor = true;
             this.btnAutoFill.Click += new System.EventHandler(this.btnAutoFill_Click);
@@ -182,7 +182,7 @@
             this.btnClearAll.Location = new System.Drawing.Point(37, 324);
             this.btnClearAll.Name = "btnClearAll";
             this.btnClearAll.Size = new System.Drawing.Size(75, 23);
-            this.btnClearAll.TabIndex = 42;
+            this.btnClearAll.TabIndex = 26;
             this.btnClearAll.Text = "Clear all";
             this.btnClearAll.UseVisualStyleBackColor = true;
             this.btnClearAll.Click += new System.EventHandler(this.btnClearAll_Click);
@@ -194,7 +194,7 @@
             this.txtTable01.Multiline = true;
             this.txtTable01.Name = "txtTable01";
             this.txtTable01.Size = new System.Drawing.Size(44, 44);
-            this.txtTable01.TabIndex = 1;
+            this.txtTable01.TabIndex = 2;
             this.txtTable01.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTable01.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
@@ -205,7 +205,7 @@
             this.txtTable00.Multiline = true;
             this.txtTable00.Name = "txtTable00";
             this.txtTable00.Size = new System.Drawing.Size(44, 44);
-            this.txtTable00.TabIndex = 0;
+            this.txtTable00.TabIndex = 1;
             this.txtTable00.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTable00.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
@@ -216,7 +216,7 @@
             this.txtTable10.Multiline = true;
             this.txtTable10.Name = "txtTable10";
             this.txtTable10.Size = new System.Drawing.Size(44, 44);
-            this.txtTable10.TabIndex = 5;
+            this.txtTable10.TabIndex = 6;
             this.txtTable10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTable10.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
@@ -227,7 +227,7 @@
             this.txtTable11.Multiline = true;
             this.txtTable11.Name = "txtTable11";
             this.txtTable11.Size = new System.Drawing.Size(44, 44);
-            this.txtTable11.TabIndex = 6;
+            this.txtTable11.TabIndex = 7;
             this.txtTable11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTable11.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
@@ -236,7 +236,7 @@
             this.btnExport.Location = new System.Drawing.Point(168, 379);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(75, 23);
-            this.btnExport.TabIndex = 47;
+            this.btnExport.TabIndex = 30;
             this.btnExport.Text = "Export";
             this.btnExport.UseVisualStyleBackColor = true;
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
@@ -248,7 +248,7 @@
             this.txtTable12.Multiline = true;
             this.txtTable12.Name = "txtTable12";
             this.txtTable12.Size = new System.Drawing.Size(44, 44);
-            this.txtTable12.TabIndex = 7;
+            this.txtTable12.TabIndex = 8;
             this.txtTable12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTable12.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
@@ -259,7 +259,7 @@
             this.txtTable13.Multiline = true;
             this.txtTable13.Name = "txtTable13";
             this.txtTable13.Size = new System.Drawing.Size(44, 44);
-            this.txtTable13.TabIndex = 8;
+            this.txtTable13.TabIndex = 9;
             this.txtTable13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTable13.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
@@ -270,7 +270,7 @@
             this.txtTable14.Multiline = true;
             this.txtTable14.Name = "txtTable14";
             this.txtTable14.Size = new System.Drawing.Size(44, 44);
-            this.txtTable14.TabIndex = 9;
+            this.txtTable14.TabIndex = 10;
             this.txtTable14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTable14.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
@@ -281,7 +281,7 @@
             this.txtTable20.Multiline = true;
             this.txtTable20.Name = "txtTable20";
             this.txtTable20.Size = new System.Drawing.Size(44, 44);
-            this.txtTable20.TabIndex = 10;
+            this.txtTable20.TabIndex = 11;
             this.txtTable20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTable20.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
@@ -292,7 +292,7 @@
             this.txtTable21.Multiline = true;
             this.txtTable21.Name = "txtTable21";
             this.txtTable21.Size = new System.Drawing.Size(44, 44);
-            this.txtTable21.TabIndex = 11;
+            this.txtTable21.TabIndex = 12;
             this.txtTable21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTable21.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
@@ -303,7 +303,7 @@
             this.txtTable22.Multiline = true;
             this.txtTable22.Name = "txtTable22";
             this.txtTable22.Size = new System.Drawing.Size(44, 44);
-            this.txtTable22.TabIndex = 12;
+            this.txtTable22.TabIndex = 13;
             this.txtTable22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTable22.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
@@ -314,7 +314,7 @@
             this.txtTable23.Multiline = true;
             this.txtTable23.Name = "txtTable23";
             this.txtTable23.Size = new System.Drawing.Size(44, 44);
-            this.txtTable23.TabIndex = 13;
+            this.txtTable23.TabIndex = 14;
             this.txtTable23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTable23.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
@@ -325,7 +325,7 @@
             this.txtTable24.Multiline = true;
             this.txtTable24.Name = "txtTable24";
             this.txtTable24.Size = new System.Drawing.Size(44, 44);
-            this.txtTable24.TabIndex = 14;
+            this.txtTable24.TabIndex = 15;
             this.txtTable24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTable24.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
@@ -337,7 +337,7 @@
             this.txtResult.ReadOnly = true;
             this.txtResult.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtResult.Size = new System.Drawing.Size(400, 200);
-            this.txtResult.TabIndex = 44;
+            this.txtResult.TabIndex = 28;
             // 
             // txtMessage
             // 
@@ -346,7 +346,7 @@
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtMessage.Size = new System.Drawing.Size(400, 200);
-            this.txtMessage.TabIndex = 39;
+            this.txtMessage.TabIndex = 0;
             this.txtMessage.TextChanged += new System.EventHandler(this.txtMessage_TextChanged);
             // 
             // txtTable30
@@ -356,7 +356,7 @@
             this.txtTable30.Multiline = true;
             this.txtTable30.Name = "txtTable30";
             this.txtTable30.Size = new System.Drawing.Size(44, 44);
-            this.txtTable30.TabIndex = 15;
+            this.txtTable30.TabIndex = 16;
             this.txtTable30.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTable30.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
@@ -367,7 +367,7 @@
             this.txtTable31.Multiline = true;
             this.txtTable31.Name = "txtTable31";
             this.txtTable31.Size = new System.Drawing.Size(44, 44);
-            this.txtTable31.TabIndex = 16;
+            this.txtTable31.TabIndex = 17;
             this.txtTable31.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTable31.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
@@ -378,7 +378,7 @@
             this.txtTable32.Multiline = true;
             this.txtTable32.Name = "txtTable32";
             this.txtTable32.Size = new System.Drawing.Size(44, 44);
-            this.txtTable32.TabIndex = 17;
+            this.txtTable32.TabIndex = 18;
             this.txtTable32.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTable32.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
@@ -389,7 +389,7 @@
             this.txtTable33.Multiline = true;
             this.txtTable33.Name = "txtTable33";
             this.txtTable33.Size = new System.Drawing.Size(44, 44);
-            this.txtTable33.TabIndex = 18;
+            this.txtTable33.TabIndex = 19;
             this.txtTable33.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTable33.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
@@ -400,7 +400,7 @@
             this.txtTable34.Multiline = true;
             this.txtTable34.Name = "txtTable34";
             this.txtTable34.Size = new System.Drawing.Size(44, 44);
-            this.txtTable34.TabIndex = 19;
+            this.txtTable34.TabIndex = 20;
             this.txtTable34.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTable34.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 

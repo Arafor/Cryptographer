@@ -59,7 +59,7 @@
             this.lblResult = new System.Windows.Forms.Label();
             this.btnDecrypt = new System.Windows.Forms.Button();
             this.btnSaveToClipboard = new System.Windows.Forms.Button();
-            this.btnVigenereInfo = new System.Windows.Forms.Button();
+            this.btnPlayfairInfo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtTable41
@@ -369,30 +369,29 @@
             this.btnSaveToClipboard.UseVisualStyleBackColor = true;
             this.btnSaveToClipboard.Click += new System.EventHandler(this.btnSaveToClipboard_Click);
             // 
-            // btnVigenereInfo
+            // btnPlayfairInfo
             // 
-            this.btnVigenereInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVigenereInfo.Location = new System.Drawing.Point(661, 9);
-            this.btnVigenereInfo.Name = "btnVigenereInfo";
-            this.btnVigenereInfo.Size = new System.Drawing.Size(111, 23);
-            this.btnVigenereInfo.TabIndex = 34;
-            this.btnVigenereInfo.Text = "Information =>";
-            this.btnVigenereInfo.UseVisualStyleBackColor = true;
-            this.btnVigenereInfo.Click += new System.EventHandler(this.btnVigenereInfo_Click);
+            this.btnPlayfairInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlayfairInfo.Location = new System.Drawing.Point(661, 9);
+            this.btnPlayfairInfo.Name = "btnPlayfairInfo";
+            this.btnPlayfairInfo.Size = new System.Drawing.Size(111, 23);
+            this.btnPlayfairInfo.TabIndex = 34;
+            this.btnPlayfairInfo.Text = "Explanation =>";
+            this.btnPlayfairInfo.UseVisualStyleBackColor = true;
+            this.btnPlayfairInfo.Click += new System.EventHandler(this.btnVigenereInfo_Click);
             // 
             // frmPlayfair
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.btnVigenereInfo);
+            this.Controls.Add(this.btnPlayfairInfo);
             this.Controls.Add(this.btnDecrypt);
             this.Controls.Add(this.btnSaveToClipboard);
             this.Controls.Add(this.lblResult);
             this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.lblTable);
             this.Controls.Add(this.btnEncrypt);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmPlayfair";
             this.Text = "Cryptographer- Playfair cipher";
             this.Controls.SetChildIndex(this.txtMessage, 0);
@@ -407,7 +406,7 @@
             this.Controls.SetChildIndex(this.lblResult, 0);
             this.Controls.SetChildIndex(this.btnSaveToClipboard, 0);
             this.Controls.SetChildIndex(this.btnDecrypt, 0);
-            this.Controls.SetChildIndex(this.btnVigenereInfo, 0);
+            this.Controls.SetChildIndex(this.btnPlayfairInfo, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -445,6 +444,6 @@
         private System.Windows.Forms.TextBox txtTable34;
         private System.Windows.Forms.Button btnSaveToClipboard;
         private System.Windows.Forms.Button btnDecrypt;
-        private System.Windows.Forms.Button btnVigenereInfo;
+        private System.Windows.Forms.Button btnPlayfairInfo;
     }
 }

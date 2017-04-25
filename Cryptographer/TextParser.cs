@@ -45,7 +45,7 @@ namespace Cryptographer
                 }
 
                 // If the letter is replaceable skip, otherwise add letter to the parsed message
-                if (skip) continue; else parsedMessage.Insert(i, message[i]);
+                if (skip) continue; else parsedMessage.Add(message[i]);
             }
 
             return parsedMessage.ToArray();
