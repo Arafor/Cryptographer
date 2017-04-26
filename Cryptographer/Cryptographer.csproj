@@ -78,6 +78,12 @@
     <Compile Include="frmDiffieHellman.Designer.cs">
       <DependentUpon>frmDiffieHellman.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDiffieHellmanBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDiffieHellmanBase.Designer.cs">
+      <DependentUpon>frmDiffieHellmanBase.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPlayfair.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,7 @@
     <Compile Include="frmVigenereInfo.Designer.cs">
       <DependentUpon>frmVigenereInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Notes.cs" />
     <Compile Include="NumericalAlphabet.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -132,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDiffieHellman.resx">
       <DependentUpon>frmDiffieHellman.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDiffieHellmanBase.resx">
+      <DependentUpon>frmDiffieHellmanBase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPlayfair.resx">
       <DependentUpon>frmPlayfair.cs</DependentUpon>
