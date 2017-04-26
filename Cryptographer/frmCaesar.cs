@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Cryptographer
 {
-    public partial class frmCaesar : Form
+    public partial class frmCaesar : frmCaesarBase
     {
         public frmCaesar()
         {
@@ -21,88 +21,7 @@ namespace Cryptographer
             formWindowManager.setFormWindowLocation(formCryptographer, this);
         }
 
-        NumericalAlphabet numAlphabet = new NumericalAlphabet();
-
-        public Boolean checkEmptyFields(string txtBoxMessage, string txtBoxKey)
-        {
-            // Check if there is a message to encrypt
-            if (txtBoxMessage.Length > 0)
-            {
-                // Check if there is a key specified
-                if (txtBoxKey.Length > 0)
-                {
-                    try
-                    {
-                        // Check if key is of type integer
-                        int.Parse(txtBoxKey);
-
-                        return true;
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("The key must be an integer");
-
-                        return false;
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Please enter a key");
-                    return false;
-                }
-            }
-            else
-            {
-                MessageBox.Show("Please enter a message");
-                return false;
-            }
-        }
-
-        public string cipher(int[] messageInInt, int key, string function)
-        {
-            // Encrypt message using key
-            for (int i = 0; i < messageInInt.Length; i++)
-            {
-                if (function == "E")
-                {
-                    messageInInt[i] = messageInInt[i] + key;
-                }
-                else if (function == "D")
-                {
-                    messageInInt[i] = messageInInt[i] - key;
-                }
-                else
-                {
-                    MessageBox.Show("Unknown function specified");
-                    break;
-                }
-            }
-
-            // Get the string value of our result message
-            char[] messageInChar = numAlphabet.numbersToLetters(messageInInt);
-            string messageInString = "";
-            for (int i = 0; i < messageInChar.Length; i++)
-            {
-                messageInString = messageInString + messageInChar[i].ToString();
-            }
-            return messageInString;
-        }
-
-        public int[] getParsedMessage(string txtBoxText)
-        {
-            // Translate message to numerical values
-            char[] plaintextArray = txtBoxText.ToUpper().ToCharArray();
-            int[] message = numAlphabet.lettersToNumbers(plaintextArray);
-
-            return message;
-        }
-
-        public int getParsedKey(string txtBoxKey)
-        {
-            int key = int.Parse(txtBoxKey);
-
-            return key;
-        }
+        frmCaesarInfo caesarInfo;
 
         private void btnSaveToClipboard_Click(object sender, EventArgs e)
         {
@@ -111,17 +30,22 @@ namespace Cryptographer
 
         private void btnCaesarInfo_Click(object sender, EventArgs e)
         {
-            frmCaesarInfo caesarInfo = new frmCaesarInfo();
-            caesarInfo.Show();
-            if (txtMessage.Text != "" && txtKey.Text != "")
+            if (!caesarInfo.Visible)
             {
-                caesarInfo.setMessageAndKey(txtMessage.Text, txtKey.Text);
+                caesarInfo = new frmCaesarInfo();
+                caesarInfo.Show();
+                if (txtMessage.Text != "" && txtKey.Text != "")
+                {
+                    caesarInfo.setMessageAndKey(txtMessage.Text, txtKey.Text);
+                }
+                this.Close();
             }
         }
 
         private void frmCaesar_Load(object sender, EventArgs e)
         {
             rdoBtnEncrypt.Checked = true;
+            caesarInfo = new frmCaesarInfo();
         }
 
         private void btnCipher_Click(object sender, EventArgs e)
@@ -170,6 +94,12 @@ namespace Cryptographer
             {
                 MessageBox.Show("Select if you want to encrypt or decrypt the text");
             }
+        }
+
+        private void frmCaesar_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            frmCaesar ceasarCipher = new frmCaesar();
+            ceasarCipher.Close();
         }
     }
 }

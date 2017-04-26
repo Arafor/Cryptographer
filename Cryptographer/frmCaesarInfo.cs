@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace Cryptographer
 {
-    public partial class frmCaesarInfo : Form
+    public partial class frmCaesarInfo : frmCaesarBase
     {
         public frmCaesarInfo()
         {
             InitializeComponent();
             FormWindowManager formWindowManager = new FormWindowManager();
             formWindowManager.setFormWindowSize(this);
-            frmCaesar formCaesar = new frmCaesar();
-            formWindowManager.setFormWindowLocation(formCaesar, this);
+            frmCryptographer formCryptographer = new frmCryptographer();
+            formWindowManager.setFormWindowLocation(formCryptographer, this);
         }
 
-        frmCaesar caesar = new frmCaesar();
         NumericalAlphabet numAlphabet = new NumericalAlphabet();
+        frmCaesar caesar;
 
         private void frmCaesarInfo_Load(object sender, EventArgs e)
         {
@@ -33,12 +33,7 @@ namespace Cryptographer
                 i++;
             }
             rdoBtnEncrypt.Checked = true;
-        }
-
-        public void setMessageAndKey(string message, string key)
-        {
-            txtMessage.Text = message;
-            txtKey.Text = key;
+            caesar = new frmCaesar();
         }
 
         private void cipherRadioButtonChanged(object sender, EventArgs e)
@@ -77,17 +72,17 @@ namespace Cryptographer
         {
             txtMessageParsed.Text = "";
             txtResult.Text = "";
-            if (caesar.checkEmptyFields(txtMessage.Text, txtKey.Text))
+            if (checkEmptyFields(txtMessage.Text, txtKey.Text))
             {
                 try
                 {
                     if (rdoBtnEncrypt.Checked)
                     {
-                        txtResult.Text = caesar.cipher(caesar.getParsedMessage(txtMessage.Text), caesar.getParsedKey(txtKey.Text), "E");
+                        txtResult.Text = cipher(getParsedMessage(txtMessage.Text), getParsedKey(txtKey.Text), "E");
                     }
                     else if (rdoBtnDecrypt.Checked)
                     {
-                        txtResult.Text = caesar.cipher(caesar.getParsedMessage(txtMessage.Text), caesar.getParsedKey(txtKey.Text), "D");
+                        txtResult.Text = cipher(getParsedMessage(txtMessage.Text), getParsedKey(txtKey.Text), "D");
                     }
                     else
                     {
@@ -95,7 +90,7 @@ namespace Cryptographer
                     }
                     if (txtResult.Text != "")
                     {
-                        txtMessageParsed.Text = new string(numAlphabet.numbersToLetters(caesar.getParsedMessage(txtMessage.Text)));
+                        txtMessageParsed.Text = new string(numAlphabet.numbersToLetters(getParsedMessage(txtMessage.Text)));
                         //txtKeyParsed.Text = new string(caesar.createPaddedKey(txtKey.Text.ToCharArray(), txtMessage.Text.Length)).ToUpper();
                     }
                 }
@@ -104,6 +99,26 @@ namespace Cryptographer
                     MessageBox.Show(exc.ToString());
                 }
             }
+        }
+
+        private void btnCaesarInfo_Click(object sender, EventArgs e)
+        {
+            if (!caesar.Visible)
+            {
+                caesar = new frmCaesar();
+                caesar.Show();
+                if (txtMessage.Text != "" && txtKey.Text != "")
+                {
+                    caesar.setMessageAndKey(txtMessage.Text, txtKey.Text);
+                }
+                this.Close();
+            }
+        }
+
+        private void frmCaesarInfo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            frmCaesar ceasarCipher = new frmCaesar();
+            ceasarCipher.Close();
         }
     }
 }
