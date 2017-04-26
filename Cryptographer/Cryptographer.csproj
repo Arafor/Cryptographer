@@ -120,6 +120,7 @@
     <Compile Include="frmVigenereInfo.Designer.cs">
       <DependentUpon>frmVigenereInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Notes.cs" />
     <Compile Include="NumericalAlphabet.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

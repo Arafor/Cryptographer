@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblWarning = new System.Windows.Forms.Label();
             this.lblSharedSecret = new System.Windows.Forms.Label();
             this.txtSharedSecret = new System.Windows.Forms.TextBox();
@@ -41,6 +42,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblPrimeNumber = new System.Windows.Forms.Label();
             this.txtPrimeNumber = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblWarning
@@ -154,6 +157,10 @@
             this.txtPrimeNumber.TabIndex = 13;
             this.txtPrimeNumber.TextChanged += new System.EventHandler(this.txtPrimeNumber_TextChanged);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmDiffieHellmanBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -178,6 +185,7 @@
             this.Name = "frmDiffieHellmanBase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Cryptographer- Diffie-Hellman cipher";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,5 +206,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblPrimeNumber;
         private System.Windows.Forms.TextBox txtPrimeNumber;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

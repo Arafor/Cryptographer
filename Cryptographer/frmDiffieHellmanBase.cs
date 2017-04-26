@@ -12,15 +12,11 @@ namespace Cryptographer
 {
     public partial class frmDiffieHellmanBase : Form
     {
-        ToolTip textboxToolTip = new ToolTip();
+        
 
         public frmDiffieHellmanBase()
         {
             InitializeComponent();
-            textboxToolTip.IsBalloon = true;
-            textboxToolTip.AutoPopDelay = 1000;
-            textboxToolTip.InitialDelay = 1000;
-            textboxToolTip.ReshowDelay = 500;
         }
 
         public static bool isPrime(int number)
@@ -40,19 +36,19 @@ namespace Cryptographer
 
         private void txtPrimeNumber_TextChanged(object sender, EventArgs e)
         {
+            //Check if number is prime
             int parsedNumber;
             if (!int.TryParse(txtPrimeNumber.Text, out parsedNumber)) parsedNumber = 0;
             bool textIsPrime = isPrime(parsedNumber);
             if (textIsPrime)
             {
-                textboxToolTip.Hide(txtPrimeNumber);
                 txtPrimeNumber.ForeColor = Color.Black;
+                errorProvider1.Clear();
             }
             else
             {
                 txtPrimeNumber.ForeColor = Color.Red;
-                textboxToolTip.Show(string.Empty, txtPrimeNumber);
-                textboxToolTip.Show("The entered value is not a prime number", txtPrimeNumber);
+                errorProvider1.SetError(txtPrimeNumber, "The entered value is not a prime number");
             }
         }
     }
