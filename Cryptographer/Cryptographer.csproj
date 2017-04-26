@@ -48,6 +48,12 @@
   <ItemGroup>
     <Compile Include="FileManager.cs" />
     <Compile Include="FormWindowManager.cs" />
+    <Compile Include="frmCaesarBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCaesarBase.Designer.cs">
+      <DependentUpon>frmCaesarBase.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCaesarInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,9 @@
     <Compile Include="TextParser.cs" />
     <EmbeddedResource Include="frmCaesar.resx">
       <DependentUpon>frmCaesar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCaesarBase.resx">
+      <DependentUpon>frmCaesarBase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCaesarInfo.resx">
       <DependentUpon>frmCaesarInfo.cs</DependentUpon>
