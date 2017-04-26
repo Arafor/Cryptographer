@@ -104,6 +104,7 @@
             this.Name = "frmCryptographer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Cryptographer";
+            this.Load += new System.EventHandler(this.frmCryptographer_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
