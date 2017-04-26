@@ -74,7 +74,7 @@
             // txtResult
             // 
             this.txtResult.Location = new System.Drawing.Point(15, 1084);
-            this.txtResult.Size = new System.Drawing.Size(525, 200);
+            this.txtResult.Size = new System.Drawing.Size(525, 100);
             // 
             // txtMessage
             // 
@@ -265,11 +265,11 @@
             // btnPlayfair
             // 
             this.btnPlayfair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPlayfair.Location = new System.Drawing.Point(471, 9);
+            this.btnPlayfair.Location = new System.Drawing.Point(493, 9);
             this.btnPlayfair.Name = "btnPlayfair";
-            this.btnPlayfair.Size = new System.Drawing.Size(70, 23);
+            this.btnPlayfair.Size = new System.Drawing.Size(48, 23);
             this.btnPlayfair.TabIndex = 60;
-            this.btnPlayfair.Text = "<= Back";
+            this.btnPlayfair.Text = "Back";
             this.btnPlayfair.UseVisualStyleBackColor = true;
             this.btnPlayfair.Click += new System.EventHandler(this.btnVigenere_Click);
             // 
@@ -297,7 +297,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(581, 961);
+            this.ClientSize = new System.Drawing.Size(564, 984);
             this.Controls.Add(this.lblDescription2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnPlayfair);

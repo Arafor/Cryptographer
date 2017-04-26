@@ -364,11 +364,11 @@
             // btnPlayfairInfo
             // 
             this.btnPlayfairInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPlayfairInfo.Location = new System.Drawing.Point(661, 9);
+            this.btnPlayfairInfo.Location = new System.Drawing.Point(749, 12);
             this.btnPlayfairInfo.Name = "btnPlayfairInfo";
-            this.btnPlayfairInfo.Size = new System.Drawing.Size(111, 23);
+            this.btnPlayfairInfo.Size = new System.Drawing.Size(23, 23);
             this.btnPlayfairInfo.TabIndex = 34;
-            this.btnPlayfairInfo.Text = "Explanation =>";
+            this.btnPlayfairInfo.Text = "?";
             this.btnPlayfairInfo.UseVisualStyleBackColor = true;
             this.btnPlayfairInfo.Click += new System.EventHandler(this.btnVigenereInfo_Click);
             // 
