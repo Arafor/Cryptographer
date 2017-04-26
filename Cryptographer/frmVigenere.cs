@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Cryptographer
 {
-    public partial class frmVigenere : Form
+    public partial class frmVigenere : frmVigenereBase
     {
         public frmVigenere()
         {
@@ -21,119 +21,7 @@ namespace Cryptographer
             formWindowManager.setFormWindowLocation(formCryptographer, this);
         }
 
-        NumericalAlphabet numAlphabet = new NumericalAlphabet();
-
-        public Boolean checkEmptyFields(string message, string key)
-        {
-            // Check if there is a message to encrypt
-            if (message.Length > 0)
-            {
-                // Check if there is a key specified
-                if (key.Length > 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    MessageBox.Show("The key must not be empty!");
-                    return false;
-                }
-            }
-            else
-            {
-                MessageBox.Show("Please enter a message!");
-                return false;
-            }
-        }
-
-        public char[] createPaddedKey(char[] key, int length)
-        {
-            // If the key length is shorter than the messages then repeat the key until the length equals the messages length
-            int j = 0;
-            char[] paddedKeyArray = new char[length];
-            for (int i = 0; i < length; i++)
-            {
-                if (j >= key.Length)
-                {
-                    j = 0;
-                }
-                paddedKeyArray[i] = key[j];
-                j++;
-            }
-
-            return paddedKeyArray;
-        }
-
-        public String cipher(int[] message, int[] key, string function)
-        {
-            try
-            {
-                if (message != null && key != null)
-                {
-                    // Create variables used withing the method
-                    int[] resultMessageInInt = new int[message.Length];
-                    int a;
-                    int b;
-                    int c = numAlphabet.getAlphabetLength();
-                    int result = 0;
-
-                    // Create the numeric array of the message to get
-                    for (int i = 0; i < key.Length; i++)
-                    {
-                        a = message[i];
-                        b = key[i];
-                        // Specifies encryption
-                        if (function == "E")
-                        {
-                            result = ((a + b) % c);
-                        }
-                        // Specifies decryption
-                        else if (function == "D")
-                        {
-                            result = ((c + (a - b)) % c);
-                        }
-                        resultMessageInInt[i] = result;
-                    }
-
-                    // Get the string value of our result message
-                    char[] resultMessageInChar = numAlphabet.numbersToLetters(resultMessageInInt);
-                    string resultMessageInString = "";
-                    for (int i = 0; i < resultMessageInChar.Length; i++)
-                    {
-                        resultMessageInString = resultMessageInString + resultMessageInChar[i].ToString();
-                    }
-
-                    return resultMessageInString;
-                }
-                else
-                {
-                    MessageBox.Show("Please use only english letters from A to Z!");
-                    throw new Exception();
-                }
-            } catch (Exception exc)
-            {
-                return null;
-            }
-        }
-
-        public int[] prepareTextToCipher(string txtBoxText)
-        {
-            // Translate message and key to numerical values
-            char[] plaintextArray = txtBoxText.ToUpper().ToCharArray();
-            int[] message = numAlphabet.lettersToNumbers(plaintextArray);
-
-            return message;
-        }
-
-        public int[] prepareKeytoCipher(string txtBoxKey, int messageLength)
-        {
-                // Pad and translate key to numerical values
-                char[] keyArray = txtBoxKey.ToUpper().ToCharArray();
-                char[] paddedKeyArray = createPaddedKey(keyArray, messageLength);
-                int[] numericKey = numAlphabet.lettersToNumbers(paddedKeyArray);
-
-                return numericKey;
-        }
+        frmVigenereInfo vigenereInfo;
 
         private void btnSaveToClipboard_Click(object sender, EventArgs e)
         {
@@ -142,17 +30,22 @@ namespace Cryptographer
 
         private void btnVigenereInfo_Click(object sender, EventArgs e)
         {
-            frmVigenereInfo vigenereInfo = new frmVigenereInfo();
-            vigenereInfo.Show();
-            if (txtMessage.Text != "" && txtKey.Text != "")
+            if (!vigenereInfo.Visible)
             {
-                vigenereInfo.setMessageAndKey(txtMessage.Text, txtKey.Text);
+                vigenereInfo = new frmVigenereInfo();
+                vigenereInfo.Show();
+                if (txtMessage.Text != "" && txtKey.Text != "")
+                {
+                    vigenereInfo.setMessageAndKey(txtMessage.Text, txtKey.Text);
+                }
+                this.Close();
             }
         }
 
         private void frmVigenere_Load(object sender, EventArgs e)
         {
             rdoBtnEncrypt.Checked = true;
+            vigenereInfo = new frmVigenereInfo();
         }
 
         private void btnCipher_Click(object sender, EventArgs e)
@@ -162,7 +55,7 @@ namespace Cryptographer
                 // Prepare to display result
                 txtResult.Text = "";
                 int[] message = prepareTextToCipher(txtMessage.Text);
-                int[] key = prepareKeytoCipher(txtKey.Text, txtMessage.Text.Length);
+                int[] key = prepareKeytoCipher(txtKey.Text, message.Length);
                 if (rdoBtnEncrypt.Checked)
                 {
                     txtResult.Text = cipher(message, key, "E");
@@ -176,6 +69,12 @@ namespace Cryptographer
                     MessageBox.Show("Select if you want to encrypt or decrypt the text");
                 }
             }
+        }
+
+        private void frmVigenere_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            frmVigenereInfo vigenereInfo = new frmVigenereInfo();
+            vigenereInfo.Close();
         }
 
         private void cipherRadioButtonChanged(object sender, EventArgs e)
