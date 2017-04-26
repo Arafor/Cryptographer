@@ -102,6 +102,12 @@
     <Compile Include="frmVigenere.Designer.cs">
       <DependentUpon>frmVigenere.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVigenereBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVigenereBase.Designer.cs">
+      <DependentUpon>frmVigenereBase.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVigenereInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmVigenere.resx">
       <DependentUpon>frmVigenere.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVigenereBase.resx">
+      <DependentUpon>frmVigenereBase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVigenereInfo.resx">
       <DependentUpon>frmVigenereInfo.cs</DependentUpon>

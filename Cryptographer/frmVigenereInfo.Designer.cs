@@ -30,31 +30,66 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVigenereInfo));
             this.lblDescription = new System.Windows.Forms.Label();
-            this.lblResult = new System.Windows.Forms.Label();
-            this.lblKey = new System.Windows.Forms.Label();
-            this.lblMessage = new System.Windows.Forms.Label();
-            this.txtResult = new System.Windows.Forms.TextBox();
-            this.txtKey = new System.Windows.Forms.TextBox();
-            this.txtMessage = new System.Windows.Forms.TextBox();
             this.lblKeyParsed = new System.Windows.Forms.Label();
             this.lblMessageParsed = new System.Windows.Forms.Label();
             this.txtKeyParsed = new System.Windows.Forms.TextBox();
             this.txtMessageParsed = new System.Windows.Forms.TextBox();
             this.lstAlphabet = new System.Windows.Forms.ListBox();
             this.lblAlphabet = new System.Windows.Forms.Label();
-            this.rdoBtnEncrypt = new System.Windows.Forms.RadioButton();
-            this.rdoBtnDecrypt = new System.Windows.Forms.RadioButton();
-            this.grpCipher = new System.Windows.Forms.GroupBox();
             this.lblFormula = new System.Windows.Forms.Label();
-            this.btnCipher = new System.Windows.Forms.Button();
             this.lstFormula = new System.Windows.Forms.ListBox();
             this.lblDescription0 = new System.Windows.Forms.Label();
             this.lblDescription2 = new System.Windows.Forms.Label();
             this.lblDescription1 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnVigenere = new System.Windows.Forms.Button();
             this.grpCipher.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // btnCipher
+            // 
+            this.btnCipher.Location = new System.Drawing.Point(434, 624);
+            this.btnCipher.Click += new System.EventHandler(this.btnCipher_Click);
+            // 
+            // grpCipher
+            // 
+            this.grpCipher.Location = new System.Drawing.Point(409, 547);
+            // 
+            // rdoBtnEncrypt
+            // 
+            this.rdoBtnEncrypt.CheckedChanged += new System.EventHandler(this.cipherRadioButtonChanged);
+            // 
+            // rdoBtnDecrypt
+            // 
+            this.rdoBtnDecrypt.CheckedChanged += new System.EventHandler(this.cipherRadioButtonChanged);
+            // 
+            // lblResult
+            // 
+            this.lblResult.Location = new System.Drawing.Point(12, 658);
+            // 
+            // lblKey
+            // 
+            this.lblKey.Location = new System.Drawing.Point(368, 75);
+            // 
+            // lblMessage
+            // 
+            this.lblMessage.Location = new System.Drawing.Point(12, 75);
+            // 
+            // txtResult
+            // 
+            this.txtResult.Location = new System.Drawing.Point(12, 674);
+            this.txtResult.Size = new System.Drawing.Size(497, 77);
+            // 
+            // txtKey
+            // 
+            this.txtKey.Location = new System.Drawing.Point(368, 91);
+            this.txtKey.Size = new System.Drawing.Size(150, 67);
+            // 
+            // txtMessage
+            // 
+            this.txtMessage.Location = new System.Drawing.Point(12, 91);
+            this.txtMessage.Size = new System.Drawing.Size(350, 67);
             // 
             // lblDescription
             // 
@@ -63,61 +98,6 @@
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(0, 13);
             this.lblDescription.TabIndex = 0;
-            // 
-            // lblResult
-            // 
-            this.lblResult.AutoSize = true;
-            this.lblResult.Location = new System.Drawing.Point(12, 658);
-            this.lblResult.Name = "lblResult";
-            this.lblResult.Size = new System.Drawing.Size(37, 13);
-            this.lblResult.TabIndex = 19;
-            this.lblResult.Text = "Result";
-            // 
-            // lblKey
-            // 
-            this.lblKey.AutoSize = true;
-            this.lblKey.Location = new System.Drawing.Point(368, 75);
-            this.lblKey.Name = "lblKey";
-            this.lblKey.Size = new System.Drawing.Size(25, 13);
-            this.lblKey.TabIndex = 18;
-            this.lblKey.Text = "Key";
-            // 
-            // lblMessage
-            // 
-            this.lblMessage.AutoSize = true;
-            this.lblMessage.Location = new System.Drawing.Point(12, 75);
-            this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(50, 13);
-            this.lblMessage.TabIndex = 17;
-            this.lblMessage.Text = "Message";
-            // 
-            // txtResult
-            // 
-            this.txtResult.Location = new System.Drawing.Point(12, 674);
-            this.txtResult.Multiline = true;
-            this.txtResult.Name = "txtResult";
-            this.txtResult.ReadOnly = true;
-            this.txtResult.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtResult.Size = new System.Drawing.Size(497, 77);
-            this.txtResult.TabIndex = 16;
-            // 
-            // txtKey
-            // 
-            this.txtKey.Location = new System.Drawing.Point(368, 91);
-            this.txtKey.Multiline = true;
-            this.txtKey.Name = "txtKey";
-            this.txtKey.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtKey.Size = new System.Drawing.Size(150, 67);
-            this.txtKey.TabIndex = 15;
-            // 
-            // txtMessage
-            // 
-            this.txtMessage.Location = new System.Drawing.Point(12, 91);
-            this.txtMessage.Multiline = true;
-            this.txtMessage.Name = "txtMessage";
-            this.txtMessage.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtMessage.Size = new System.Drawing.Size(350, 67);
-            this.txtMessage.TabIndex = 14;
             // 
             // lblKeyParsed
             // 
@@ -174,38 +154,6 @@
             this.lblAlphabet.TabIndex = 25;
             this.lblAlphabet.Text = "Alphabet";
             // 
-            // rdoBtnEncrypt
-            // 
-            this.rdoBtnEncrypt.AutoSize = true;
-            this.rdoBtnEncrypt.Location = new System.Drawing.Point(6, 19);
-            this.rdoBtnEncrypt.Name = "rdoBtnEncrypt";
-            this.rdoBtnEncrypt.Size = new System.Drawing.Size(61, 17);
-            this.rdoBtnEncrypt.TabIndex = 26;
-            this.rdoBtnEncrypt.Text = "Encrypt";
-            this.rdoBtnEncrypt.UseVisualStyleBackColor = true;
-            this.rdoBtnEncrypt.CheckedChanged += new System.EventHandler(this.cipherRadioButtonChanged);
-            // 
-            // rdoBtnDecrypt
-            // 
-            this.rdoBtnDecrypt.AutoSize = true;
-            this.rdoBtnDecrypt.Location = new System.Drawing.Point(6, 42);
-            this.rdoBtnDecrypt.Name = "rdoBtnDecrypt";
-            this.rdoBtnDecrypt.Size = new System.Drawing.Size(62, 17);
-            this.rdoBtnDecrypt.TabIndex = 27;
-            this.rdoBtnDecrypt.Text = "Decrypt";
-            this.rdoBtnDecrypt.UseVisualStyleBackColor = true;
-            // 
-            // grpCipher
-            // 
-            this.grpCipher.Controls.Add(this.rdoBtnEncrypt);
-            this.grpCipher.Controls.Add(this.rdoBtnDecrypt);
-            this.grpCipher.Location = new System.Drawing.Point(409, 547);
-            this.grpCipher.Name = "grpCipher";
-            this.grpCipher.Size = new System.Drawing.Size(97, 71);
-            this.grpCipher.TabIndex = 28;
-            this.grpCipher.TabStop = false;
-            this.grpCipher.Text = "Cipher";
-            // 
             // lblFormula
             // 
             this.lblFormula.AutoSize = true;
@@ -214,16 +162,6 @@
             this.lblFormula.Size = new System.Drawing.Size(44, 13);
             this.lblFormula.TabIndex = 29;
             this.lblFormula.Text = "Formula";
-            // 
-            // btnCipher
-            // 
-            this.btnCipher.Location = new System.Drawing.Point(434, 624);
-            this.btnCipher.Name = "btnCipher";
-            this.btnCipher.Size = new System.Drawing.Size(75, 23);
-            this.btnCipher.TabIndex = 31;
-            this.btnCipher.Text = "Cipher";
-            this.btnCipher.UseVisualStyleBackColor = true;
-            this.btnCipher.Click += new System.EventHandler(this.btnCipher_Click);
             // 
             // lstFormula
             // 
@@ -238,9 +176,9 @@
             this.lblDescription0.AutoSize = true;
             this.lblDescription0.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescription0.Location = new System.Drawing.Point(9, 9);
-            this.lblDescription0.MaximumSize = new System.Drawing.Size(500, 0);
+            this.lblDescription0.MaximumSize = new System.Drawing.Size(460, 0);
             this.lblDescription0.Name = "lblDescription0";
-            this.lblDescription0.Size = new System.Drawing.Size(490, 30);
+            this.lblDescription0.Size = new System.Drawing.Size(436, 30);
             this.lblDescription0.TabIndex = 33;
             this.lblDescription0.Text = "The Vigenere cipher is an old simplistic cipher that uses text values both for th" +
     "e message and key.";
@@ -291,40 +229,64 @@
             this.label2.Text = "After that we can begin encrypting or decrypting our message. Based on what we ch" +
     "ose the formulas for  encrypting and decrypting slightly differs.";
             // 
+            // btnVigenere
+            // 
+            this.btnVigenere.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVigenere.Location = new System.Drawing.Point(475, 12);
+            this.btnVigenere.Name = "btnVigenere";
+            this.btnVigenere.Size = new System.Drawing.Size(47, 23);
+            this.btnVigenere.TabIndex = 42;
+            this.btnVigenere.Text = "Back";
+            this.btnVigenere.UseVisualStyleBackColor = true;
+            this.btnVigenere.Click += new System.EventHandler(this.btnVigenere_Click);
+            // 
             // frmVigenereInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(534, 761);
+            this.Controls.Add(this.btnVigenere);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblDescription1);
             this.Controls.Add(this.lblDescription2);
             this.Controls.Add(this.lblDescription0);
             this.Controls.Add(this.lstFormula);
-            this.Controls.Add(this.btnCipher);
             this.Controls.Add(this.lblFormula);
-            this.Controls.Add(this.grpCipher);
             this.Controls.Add(this.lblAlphabet);
             this.Controls.Add(this.lstAlphabet);
             this.Controls.Add(this.lblKeyParsed);
             this.Controls.Add(this.lblMessageParsed);
             this.Controls.Add(this.txtKeyParsed);
             this.Controls.Add(this.txtMessageParsed);
-            this.Controls.Add(this.lblResult);
-            this.Controls.Add(this.lblKey);
-            this.Controls.Add(this.lblMessage);
-            this.Controls.Add(this.txtResult);
-            this.Controls.Add(this.txtKey);
-            this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.lblDescription);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
             this.Name = "frmVigenereInfo";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Cryptographer - Vigenere cipher info";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmVigenereInfo_FormClosing);
             this.Load += new System.EventHandler(this.frmVigenereInfo_Load);
+            this.Controls.SetChildIndex(this.lblDescription, 0);
+            this.Controls.SetChildIndex(this.txtMessageParsed, 0);
+            this.Controls.SetChildIndex(this.txtKeyParsed, 0);
+            this.Controls.SetChildIndex(this.lblMessageParsed, 0);
+            this.Controls.SetChildIndex(this.lblKeyParsed, 0);
+            this.Controls.SetChildIndex(this.lstAlphabet, 0);
+            this.Controls.SetChildIndex(this.lblAlphabet, 0);
+            this.Controls.SetChildIndex(this.lblFormula, 0);
+            this.Controls.SetChildIndex(this.lstFormula, 0);
+            this.Controls.SetChildIndex(this.lblDescription0, 0);
+            this.Controls.SetChildIndex(this.lblDescription2, 0);
+            this.Controls.SetChildIndex(this.lblDescription1, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.txtMessage, 0);
+            this.Controls.SetChildIndex(this.txtKey, 0);
+            this.Controls.SetChildIndex(this.txtResult, 0);
+            this.Controls.SetChildIndex(this.lblMessage, 0);
+            this.Controls.SetChildIndex(this.lblKey, 0);
+            this.Controls.SetChildIndex(this.lblResult, 0);
+            this.Controls.SetChildIndex(this.grpCipher, 0);
+            this.Controls.SetChildIndex(this.btnCipher, 0);
+            this.Controls.SetChildIndex(this.btnVigenere, 0);
             this.grpCipher.ResumeLayout(false);
             this.grpCipher.PerformLayout();
             this.ResumeLayout(false);
@@ -335,28 +297,19 @@
         #endregion
 
         private System.Windows.Forms.Label lblDescription;
-        private System.Windows.Forms.Label lblResult;
-        private System.Windows.Forms.Label lblKey;
-        private System.Windows.Forms.Label lblMessage;
-        private System.Windows.Forms.TextBox txtResult;
-        private System.Windows.Forms.TextBox txtKey;
-        private System.Windows.Forms.TextBox txtMessage;
         private System.Windows.Forms.Label lblKeyParsed;
         private System.Windows.Forms.Label lblMessageParsed;
         private System.Windows.Forms.TextBox txtKeyParsed;
         private System.Windows.Forms.TextBox txtMessageParsed;
         private System.Windows.Forms.ListBox lstAlphabet;
         private System.Windows.Forms.Label lblAlphabet;
-        private System.Windows.Forms.RadioButton rdoBtnEncrypt;
-        private System.Windows.Forms.RadioButton rdoBtnDecrypt;
-        private System.Windows.Forms.GroupBox grpCipher;
         private System.Windows.Forms.Label lblFormula;
-        private System.Windows.Forms.Button btnCipher;
         private System.Windows.Forms.ListBox lstFormula;
         private System.Windows.Forms.Label lblDescription0;
         private System.Windows.Forms.Label lblDescription2;
         private System.Windows.Forms.Label lblDescription1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnVigenere;
     }
 }

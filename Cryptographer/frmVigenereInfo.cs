@@ -10,18 +10,18 @@ using System.Windows.Forms;
 
 namespace Cryptographer
 {
-    public partial class frmVigenereInfo : Form
+    public partial class frmVigenereInfo : frmVigenereBase
     {
         public frmVigenereInfo()
         {
             InitializeComponent();
             FormWindowManager formWindowManager = new FormWindowManager();
             formWindowManager.setFormWindowSize(this);
-            frmVigenere formVigenere = new frmVigenere();
-            formWindowManager.setFormWindowLocation(formVigenere, this);
+            frmCryptographer formCryptographer = new frmCryptographer();
+            formWindowManager.setFormWindowLocation(formCryptographer, this);
         }
 
-        frmVigenere vigenere = new frmVigenere();
+        frmVigenere vigenere;
         NumericalAlphabet numAlphabet = new NumericalAlphabet();
 
         private void frmVigenereInfo_Load(object sender, EventArgs e)
@@ -33,12 +33,7 @@ namespace Cryptographer
                 i++;
             }
             rdoBtnEncrypt.Checked = true;
-        }
-
-        public void setMessageAndKey(string message, string key)
-        {
-            txtMessage.Text = message;
-            txtKey.Text = key;
+            vigenere = new frmVigenere();
         }
 
         private void cipherRadioButtonChanged(object sender, EventArgs e)
@@ -78,17 +73,18 @@ namespace Cryptographer
             txtMessageParsed.Text = "";
             txtKeyParsed.Text = "";
             txtResult.Text = "";
-            if (vigenere.checkEmptyFields(txtMessage.Text, txtKey.Text))
+            if (checkEmptyFields(txtMessage.Text, txtKey.Text))
             {
                 try
                 {
+                    int[] message = prepareTextToCipher(txtMessage.Text);
                     if (rdoBtnEncrypt.Checked)
                     {
-                        txtResult.Text = vigenere.cipher(vigenere.prepareTextToCipher(txtMessage.Text), vigenere.prepareKeytoCipher(txtKey.Text, txtMessage.Text.Length), "E");
+                        txtResult.Text = cipher(message, prepareKeytoCipher(txtKey.Text, message.Length), "E");
                     }
                     else if (rdoBtnDecrypt.Checked)
                     {
-                        txtResult.Text = vigenere.cipher(vigenere.prepareTextToCipher(txtMessage.Text), vigenere.prepareKeytoCipher(txtKey.Text, txtMessage.Text.Length), "D");
+                        txtResult.Text = cipher(message, prepareKeytoCipher(txtKey.Text, message.Length), "D");
                     }
                     else
                     {
@@ -96,8 +92,9 @@ namespace Cryptographer
                     }
                     if (txtResult.Text != "")
                     {
-                        txtMessageParsed.Text = txtMessage.Text.ToUpper();
-                        txtKeyParsed.Text = new string(vigenere.createPaddedKey(txtKey.Text.ToCharArray(), txtMessage.Text.Length)).ToUpper();
+                        TextParser textParser = new TextParser();
+                        txtMessageParsed.Text = new string(textParser.parseReplaceableLetters(txtMessage.Text.ToUpper().ToCharArray())).ToUpper();
+                        txtKeyParsed.Text = new string(createPaddedKey(textParser.parseReplaceableLetters(txtKey.Text.ToCharArray()), txtMessageParsed.Text.Length)).ToUpper();
                     }
                 }
                 catch (Exception exc)
@@ -105,6 +102,26 @@ namespace Cryptographer
                     MessageBox.Show(exc.ToString());
                 }
             }
+        }
+
+        private void btnVigenere_Click(object sender, EventArgs e)
+        {
+            if (!vigenere.Visible)
+            {
+                vigenere = new frmVigenere();
+                vigenere.Show();
+                if (txtMessage.Text != "" && txtKey.Text != "")
+                {
+                    vigenere.setMessageAndKey(txtMessage.Text, txtKey.Text);
+                }
+                this.Close();
+            }
+        }
+
+        private void frmVigenereInfo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            frmVigenere vigenere = new frmVigenere();
+            vigenere.Close();
         }
     }
 }
