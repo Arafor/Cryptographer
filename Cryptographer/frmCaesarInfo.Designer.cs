@@ -41,7 +41,7 @@
             this.lblMessageParsed = new System.Windows.Forms.Label();
             this.txtMessageParsed = new System.Windows.Forms.TextBox();
             this.lblDescription = new System.Windows.Forms.Label();
-            this.btnCaesarInfo = new System.Windows.Forms.Button();
+            this.btnCaesar = new System.Windows.Forms.Button();
             this.grpCipher.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -208,23 +208,23 @@
             this.lblDescription.Size = new System.Drawing.Size(0, 13);
             this.lblDescription.TabIndex = 38;
             // 
-            // btnCaesarInfo
+            // btnCaesar
             // 
-            this.btnCaesarInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCaesarInfo.Location = new System.Drawing.Point(475, 12);
-            this.btnCaesarInfo.Name = "btnCaesarInfo";
-            this.btnCaesarInfo.Size = new System.Drawing.Size(47, 23);
-            this.btnCaesarInfo.TabIndex = 60;
-            this.btnCaesarInfo.Text = "Back";
-            this.btnCaesarInfo.UseVisualStyleBackColor = true;
-            this.btnCaesarInfo.Click += new System.EventHandler(this.btnCaesarInfo_Click);
+            this.btnCaesar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCaesar.Location = new System.Drawing.Point(475, 12);
+            this.btnCaesar.Name = "btnCaesar";
+            this.btnCaesar.Size = new System.Drawing.Size(47, 23);
+            this.btnCaesar.TabIndex = 60;
+            this.btnCaesar.Text = "Back";
+            this.btnCaesar.UseVisualStyleBackColor = true;
+            this.btnCaesar.Click += new System.EventHandler(this.btnCaesarInfo_Click);
             // 
             // frmCaesarInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(534, 741);
-            this.Controls.Add(this.btnCaesarInfo);
+            this.Controls.Add(this.btnCaesar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblDescription1);
             this.Controls.Add(this.lblDescription2);
@@ -261,7 +261,7 @@
             this.Controls.SetChildIndex(this.lblResult, 0);
             this.Controls.SetChildIndex(this.grpCipher, 0);
             this.Controls.SetChildIndex(this.btnCipher, 0);
-            this.Controls.SetChildIndex(this.btnCaesarInfo, 0);
+            this.Controls.SetChildIndex(this.btnCaesar, 0);
             this.grpCipher.ResumeLayout(false);
             this.grpCipher.PerformLayout();
             this.ResumeLayout(false);
@@ -283,6 +283,6 @@
         private System.Windows.Forms.Label lblMessageParsed;
         private System.Windows.Forms.TextBox txtMessageParsed;
         private System.Windows.Forms.Label lblDescription;
-        private System.Windows.Forms.Button btnCaesarInfo;
+        private System.Windows.Forms.Button btnCaesar;
     }
 }
