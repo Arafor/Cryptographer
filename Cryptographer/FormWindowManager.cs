@@ -14,7 +14,10 @@ namespace Cryptographer
         // Get working area of primary screen (no task bar)
         static Rectangle resolution = Screen.PrimaryScreen.Bounds;
         Rectangle taskbar = new Rectangle();
-        //Size(Screen.PrimaryScreen.Bounds.Width - Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.Bounds.Height - Screen.PrimaryScreen.WorkingArea.Height);
+        int taskbarPaddingLeft;
+        int taskbarPaddingTop;
+        int taskbarPaddingRight;
+        int taskbarPaddingBottom;
         int resolutionWidth = resolution.Width;
         int resolutionHeight = resolution.Height;
         // For testing on other resolutions
@@ -24,14 +27,30 @@ namespace Cryptographer
         public FormWindowManager()
         {
             taskbar = GetTaskbarPosition();
-            if (resolution.Width != taskbar.Width)
+            //Adjust the workin area without the taskbar
+            if (resolution.Width != taskbar.Width) //Taskbar is on the left or right
             {
                 resolutionWidth = resolution.Width - taskbar.Width;
+                if (taskbar.Left > 0) //Taskbar is on the right
+                {
+                    taskbarPaddingRight = taskbar.Width;
+                }
+                else //Taskbar is on the left
+                {
+                    taskbarPaddingLeft = taskbar.Width;
+                }
             }
-
-            if (resolution.Height != taskbar.Height)
+            else if (resolution.Height != taskbar.Height) //Taskbar is at the bottom or the top of the screen
             {
                 resolutionHeight = resolution.Height - taskbar.Height;
+                if (taskbar.Top > 0) //Taskbar is at the bottom of the screen
+                {
+                    taskbarPaddingBottom = taskbar.Height;
+                }
+                else //Taskbar is at the top of the screen
+                {
+                    taskbarPaddingTop = taskbar.Height;
+                }
             }
         }
 
@@ -64,27 +83,18 @@ namespace Cryptographer
             public int left, top, right, bottom;
         }
 
-        public Rectangle getTaskbar()
-        {
-            Rectangle taskbar = new Rectangle();
-            taskbar.Size = new Size(Screen.PrimaryScreen.Bounds.Width - Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.Bounds.Height - Screen.PrimaryScreen.WorkingArea.Height);
-            taskbar.Location = new Point(Screen.PrimaryScreen.WorkingArea.Location.X, Screen.PrimaryScreen.WorkingArea.Location.Y);
-
-            return taskbar;
-        }
-
         public void setFormWindowLocation(Form previousForm, Form targetForm)
         {
             if (previousForm == null)
             {
-                targetForm.Location = new Point(0, 0);
+                targetForm.Location = new Point(taskbarPaddingLeft, taskbarPaddingTop);
                 return;
             }
 
             if (targetForm.Size.Width > resolutionWidth)
             {
                 // Window is bigger than the screen
-                targetForm.Location = new Point(0, 0);
+                targetForm.Location = new Point(taskbarPaddingLeft, taskbarPaddingTop);
             }
             else if (previousForm.Location.X + previousForm.Size.Width + targetForm.Size.Width < resolutionWidth)
             {
@@ -108,13 +118,15 @@ namespace Cryptographer
                 {
                     // Width does not fit, height does not fit
                     targetForm.Size = new Size(resolutionWidth, resolutionHeight);
-                } else
+                }
+                else
                 {
                     // Width does fit, height does not fit
                     targetForm.Size = new Size(targetForm.Size.Width, resolutionHeight);
                 }
-                
-            } else
+
+            }
+            else
             {
                 if (targetForm.Size.Width > resolutionWidth)
                 {
