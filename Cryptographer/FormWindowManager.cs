@@ -18,7 +18,6 @@ namespace Cryptographer
         int taskbarPaddingTop;
         int taskbarPaddingRight;
         int taskbarPaddingBottom;
-        //Size(Screen.PrimaryScreen.Bounds.Width - Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.Bounds.Height - Screen.PrimaryScreen.WorkingArea.Height);
         int resolutionWidth = resolution.Width;
         int resolutionHeight = resolution.Height;
         // For testing on other resolutions
@@ -84,15 +83,6 @@ namespace Cryptographer
             public int left, top, right, bottom;
         }
 
-        /*public Rectangle getTaskbar()
-        {
-            Rectangle taskbar = new Rectangle();
-            taskbar.Size = new Size(Screen.PrimaryScreen.Bounds.Width - Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.Bounds.Height - Screen.PrimaryScreen.WorkingArea.Height);
-            taskbar.Location = new Point(Screen.PrimaryScreen.WorkingArea.Location.X, Screen.PrimaryScreen.WorkingArea.Location.Y);
-
-            return taskbar;
-        }*/
-
         public void setFormWindowLocation(Form previousForm, Form targetForm)
         {
             if (previousForm == null)
@@ -128,13 +118,15 @@ namespace Cryptographer
                 {
                     // Width does not fit, height does not fit
                     targetForm.Size = new Size(resolutionWidth, resolutionHeight);
-                } else
+                }
+                else
                 {
                     // Width does fit, height does not fit
                     targetForm.Size = new Size(targetForm.Size.Width, resolutionHeight);
                 }
-                
-            } else
+
+            }
+            else
             {
                 if (targetForm.Size.Width > resolutionWidth)
                 {
