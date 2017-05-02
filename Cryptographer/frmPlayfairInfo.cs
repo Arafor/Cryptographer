@@ -20,6 +20,7 @@ namespace Cryptographer
             frmCryptographer formCryptographer = new frmCryptographer();
             formWindowManager.setFormWindowLocation(formCryptographer, this);
             tblTable.Location = new Point(15, 250);
+            this.ActiveControl = txtMessage;
         }
 
         private void btnVigenere_Click(object sender, EventArgs e)
@@ -28,7 +29,7 @@ namespace Cryptographer
             playfair.Show();
             if (txtMessage.Text != "" && getTableArray(getTableTextBoxes()) != null)
             {
-                setMessageAndTable(txtMessage.Text, getTableArray(getTableTextBoxes()));
+                playfair.setMessageAndTable(txtMessage.Text, getTableArray(getTableTextBoxes()));
             }
             this.Close();
         }

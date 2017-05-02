@@ -46,7 +46,7 @@
             this.btnCipher.Location = new System.Drawing.Point(396, 239);
             this.btnCipher.Name = "btnCipher";
             this.btnCipher.Size = new System.Drawing.Size(75, 23);
-            this.btnCipher.TabIndex = 41;
+            this.btnCipher.TabIndex = 4;
             this.btnCipher.Text = "Cipher";
             this.btnCipher.UseVisualStyleBackColor = true;
             // 
@@ -57,7 +57,7 @@
             this.grpCipher.Location = new System.Drawing.Point(371, 162);
             this.grpCipher.Name = "grpCipher";
             this.grpCipher.Size = new System.Drawing.Size(97, 71);
-            this.grpCipher.TabIndex = 40;
+            this.grpCipher.TabIndex = 2;
             this.grpCipher.TabStop = false;
             this.grpCipher.Text = "Cipher";
             // 
@@ -67,7 +67,7 @@
             this.rdoBtnEncrypt.Location = new System.Drawing.Point(6, 19);
             this.rdoBtnEncrypt.Name = "rdoBtnEncrypt";
             this.rdoBtnEncrypt.Size = new System.Drawing.Size(61, 17);
-            this.rdoBtnEncrypt.TabIndex = 26;
+            this.rdoBtnEncrypt.TabIndex = 2;
             this.rdoBtnEncrypt.Text = "Encrypt";
             this.rdoBtnEncrypt.UseVisualStyleBackColor = true;
             // 
@@ -77,7 +77,7 @@
             this.rdoBtnDecrypt.Location = new System.Drawing.Point(6, 42);
             this.rdoBtnDecrypt.Name = "rdoBtnDecrypt";
             this.rdoBtnDecrypt.Size = new System.Drawing.Size(62, 17);
-            this.rdoBtnDecrypt.TabIndex = 27;
+            this.rdoBtnDecrypt.TabIndex = 3;
             this.rdoBtnDecrypt.Text = "Decrypt";
             this.rdoBtnDecrypt.UseVisualStyleBackColor = true;
             // 
@@ -116,7 +116,7 @@
             this.txtResult.ReadOnly = true;
             this.txtResult.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtResult.Size = new System.Drawing.Size(455, 120);
-            this.txtResult.TabIndex = 36;
+            this.txtResult.TabIndex = 6;
             // 
             // txtKey
             // 
@@ -125,7 +125,7 @@
             this.txtKey.Name = "txtKey";
             this.txtKey.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtKey.Size = new System.Drawing.Size(352, 100);
-            this.txtKey.TabIndex = 35;
+            this.txtKey.TabIndex = 1;
             this.txtKey.TextChanged += new System.EventHandler(this.txtMessage_TextChanged);
             // 
             // txtMessage
@@ -135,7 +135,7 @@
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtMessage.Size = new System.Drawing.Size(455, 120);
-            this.txtMessage.TabIndex = 34;
+            this.txtMessage.TabIndex = 0;
             this.txtMessage.TextChanged += new System.EventHandler(this.txtMessage_TextChanged);
             // 
             // frmVigenereBase

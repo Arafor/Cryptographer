@@ -162,7 +162,7 @@
             this.btnImport.Location = new System.Drawing.Point(37, 379);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(75, 23);
-            this.btnImport.TabIndex = 29;
+            this.btnImport.TabIndex = 34;
             this.btnImport.Text = "Import";
             this.btnImport.UseVisualStyleBackColor = true;
             this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
@@ -172,7 +172,7 @@
             this.btnAutoFill.Location = new System.Drawing.Point(168, 324);
             this.btnAutoFill.Name = "btnAutoFill";
             this.btnAutoFill.Size = new System.Drawing.Size(75, 23);
-            this.btnAutoFill.TabIndex = 27;
+            this.btnAutoFill.TabIndex = 29;
             this.btnAutoFill.Text = "Auto fill";
             this.btnAutoFill.UseVisualStyleBackColor = true;
             this.btnAutoFill.Click += new System.EventHandler(this.btnAutoFill_Click);
@@ -182,7 +182,7 @@
             this.btnClearAll.Location = new System.Drawing.Point(37, 324);
             this.btnClearAll.Name = "btnClearAll";
             this.btnClearAll.Size = new System.Drawing.Size(75, 23);
-            this.btnClearAll.TabIndex = 26;
+            this.btnClearAll.TabIndex = 30;
             this.btnClearAll.Text = "Clear all";
             this.btnClearAll.UseVisualStyleBackColor = true;
             this.btnClearAll.Click += new System.EventHandler(this.btnClearAll_Click);
@@ -236,7 +236,7 @@
             this.btnExport.Location = new System.Drawing.Point(168, 379);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(75, 23);
-            this.btnExport.TabIndex = 30;
+            this.btnExport.TabIndex = 33;
             this.btnExport.Text = "Export";
             this.btnExport.UseVisualStyleBackColor = true;
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
@@ -450,7 +450,7 @@
             this.tblTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tblTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tblTable.Size = new System.Drawing.Size(250, 250);
-            this.tblTable.TabIndex = 35;
+            this.tblTable.TabIndex = 1;
             // 
             // frmPlayfairBase
             // 

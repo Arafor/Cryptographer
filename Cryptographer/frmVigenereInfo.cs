@@ -19,6 +19,7 @@ namespace Cryptographer
             formWindowManager.setFormWindowSize(this);
             frmCryptographer formCryptographer = new frmCryptographer();
             formWindowManager.setFormWindowLocation(formCryptographer, this);
+            this.ActiveControl = txtMessage;
         }
 
         frmVigenere vigenere;

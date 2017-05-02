@@ -35,15 +35,34 @@
             // 
             // btnCipher
             // 
+            this.btnCipher.TabIndex = 4;
             this.btnCipher.Click += new System.EventHandler(this.btnCipher_Click);
+            // 
+            // grpCipher
+            // 
+            this.grpCipher.TabIndex = 2;
             // 
             // rdoBtnEncrypt
             // 
+            this.rdoBtnEncrypt.TabIndex = 2;
             this.rdoBtnEncrypt.CheckedChanged += new System.EventHandler(this.cipherRadioButtonChanged);
             // 
             // rdoBtnDecrypt
             // 
+            this.rdoBtnDecrypt.TabIndex = 3;
             this.rdoBtnDecrypt.CheckedChanged += new System.EventHandler(this.cipherRadioButtonChanged);
+            // 
+            // txtResult
+            // 
+            this.txtResult.TabIndex = 6;
+            // 
+            // txtKey
+            // 
+            this.txtKey.TabIndex = 1;
+            // 
+            // txtMessage
+            // 
+            this.txtMessage.TabIndex = 0;
             // 
             // btnSaveToClipboard
             // 
@@ -51,7 +70,7 @@
             this.btnSaveToClipboard.Location = new System.Drawing.Point(427, 266);
             this.btnSaveToClipboard.Name = "btnSaveToClipboard";
             this.btnSaveToClipboard.Size = new System.Drawing.Size(40, 40);
-            this.btnSaveToClipboard.TabIndex = 29;
+            this.btnSaveToClipboard.TabIndex = 5;
             this.btnSaveToClipboard.UseVisualStyleBackColor = true;
             this.btnSaveToClipboard.Click += new System.EventHandler(this.btnSaveToClipboard_Click);
             // 
@@ -61,7 +80,7 @@
             this.btnCaesarInfo.Location = new System.Drawing.Point(445, 5);
             this.btnCaesarInfo.Name = "btnCaesarInfo";
             this.btnCaesarInfo.Size = new System.Drawing.Size(22, 23);
-            this.btnCaesarInfo.TabIndex = 30;
+            this.btnCaesarInfo.TabIndex = 7;
             this.btnCaesarInfo.Text = "?";
             this.btnCaesarInfo.UseVisualStyleBackColor = true;
             this.btnCaesarInfo.Click += new System.EventHandler(this.btnCaesarInfo_Click);

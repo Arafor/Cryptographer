@@ -34,15 +34,34 @@
             // 
             // btnCipher
             // 
+            this.btnCipher.TabIndex = 4;
             this.btnCipher.Click += new System.EventHandler(this.btnCipher_Click);
+            // 
+            // grpCipher
+            // 
+            this.grpCipher.TabIndex = 2;
             // 
             // rdoBtnEncrypt
             // 
+            this.rdoBtnEncrypt.TabIndex = 2;
             this.rdoBtnEncrypt.CheckedChanged += new System.EventHandler(this.cipherRadioButtonChanged);
             // 
             // rdoBtnDecrypt
             // 
+            this.rdoBtnDecrypt.TabIndex = 3;
             this.rdoBtnDecrypt.CheckedChanged += new System.EventHandler(this.cipherRadioButtonChanged);
+            // 
+            // txtResult
+            // 
+            this.txtResult.TabIndex = 6;
+            // 
+            // txtKey
+            // 
+            this.txtKey.TabIndex = 1;
+            // 
+            // txtMessage
+            // 
+            this.txtMessage.TabIndex = 0;
             // 
             // btnSaveToClipboard
             // 
@@ -50,7 +69,7 @@
             this.btnSaveToClipboard.Location = new System.Drawing.Point(427, 269);
             this.btnSaveToClipboard.Name = "btnSaveToClipboard";
             this.btnSaveToClipboard.Size = new System.Drawing.Size(40, 40);
-            this.btnSaveToClipboard.TabIndex = 28;
+            this.btnSaveToClipboard.TabIndex = 5;
             this.btnSaveToClipboard.UseVisualStyleBackColor = true;
             this.btnSaveToClipboard.Click += new System.EventHandler(this.btnSaveToClipboard_Click);
             // 
@@ -60,7 +79,7 @@
             this.btnVigenereInfo.Location = new System.Drawing.Point(445, 5);
             this.btnVigenereInfo.Name = "btnVigenereInfo";
             this.btnVigenereInfo.Size = new System.Drawing.Size(22, 23);
-            this.btnVigenereInfo.TabIndex = 29;
+            this.btnVigenereInfo.TabIndex = 7;
             this.btnVigenereInfo.Text = "?";
             this.btnVigenereInfo.UseVisualStyleBackColor = true;
             this.btnVigenereInfo.Click += new System.EventHandler(this.btnVigenereInfo_Click);

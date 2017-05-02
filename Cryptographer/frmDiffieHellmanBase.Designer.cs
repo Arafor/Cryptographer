@@ -72,7 +72,7 @@
             this.txtSharedSecret.Name = "txtSharedSecret";
             this.txtSharedSecret.ReadOnly = true;
             this.txtSharedSecret.Size = new System.Drawing.Size(100, 20);
-            this.txtSharedSecret.TabIndex = 18;
+            this.txtSharedSecret.TabIndex = 5;
             // 
             // lblOtherSecret
             // 
@@ -97,7 +97,7 @@
             this.txtOtherSecret.Location = new System.Drawing.Point(27, 139);
             this.txtOtherSecret.Name = "txtOtherSecret";
             this.txtOtherSecret.Size = new System.Drawing.Size(100, 20);
-            this.txtOtherSecret.TabIndex = 17;
+            this.txtOtherSecret.TabIndex = 2;
             // 
             // txtSecret
             // 
@@ -105,7 +105,7 @@
             this.txtSecret.Name = "txtSecret";
             this.txtSecret.ReadOnly = true;
             this.txtSecret.Size = new System.Drawing.Size(100, 20);
-            this.txtSecret.TabIndex = 16;
+            this.txtSecret.TabIndex = 4;
             // 
             // lblSecretNumber
             // 
@@ -121,7 +121,7 @@
             this.txtSecretNumber.Location = new System.Drawing.Point(27, 87);
             this.txtSecretNumber.Name = "txtSecretNumber";
             this.txtSecretNumber.Size = new System.Drawing.Size(100, 20);
-            this.txtSecretNumber.TabIndex = 15;
+            this.txtSecretNumber.TabIndex = 1;
             // 
             // lblPrimitiveRoot
             // 
@@ -138,7 +138,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 14;
+            this.textBox1.TabIndex = 3;
             // 
             // lblPrimeNumber
             // 
@@ -154,7 +154,7 @@
             this.txtPrimeNumber.Location = new System.Drawing.Point(27, 34);
             this.txtPrimeNumber.Name = "txtPrimeNumber";
             this.txtPrimeNumber.Size = new System.Drawing.Size(100, 20);
-            this.txtPrimeNumber.TabIndex = 13;
+            this.txtPrimeNumber.TabIndex = 0;
             this.txtPrimeNumber.TextChanged += new System.EventHandler(this.txtPrimeNumber_TextChanged);
             // 
             // errorProvider1

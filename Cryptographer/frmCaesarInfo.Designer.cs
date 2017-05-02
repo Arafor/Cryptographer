@@ -48,18 +48,22 @@
             // btnCipher
             // 
             this.btnCipher.Location = new System.Drawing.Point(437, 605);
+            this.btnCipher.TabIndex = 4;
             this.btnCipher.Click += new System.EventHandler(this.btnCipher_Click);
             // 
             // grpCipher
             // 
             this.grpCipher.Location = new System.Drawing.Point(412, 528);
+            this.grpCipher.TabIndex = 2;
             // 
             // rdoBtnEncrypt
             // 
+            this.rdoBtnEncrypt.TabIndex = 2;
             this.rdoBtnEncrypt.CheckedChanged += new System.EventHandler(this.cipherRadioButtonChanged);
             // 
             // rdoBtnDecrypt
             // 
+            this.rdoBtnDecrypt.TabIndex = 3;
             this.rdoBtnDecrypt.CheckedChanged += new System.EventHandler(this.cipherRadioButtonChanged);
             // 
             // lblResult
@@ -78,16 +82,19 @@
             // 
             this.txtResult.Location = new System.Drawing.Point(15, 649);
             this.txtResult.Size = new System.Drawing.Size(497, 77);
+            this.txtResult.TabIndex = 6;
             // 
             // txtKey
             // 
             this.txtKey.Location = new System.Drawing.Point(371, 91);
             this.txtKey.Size = new System.Drawing.Size(150, 67);
+            this.txtKey.TabIndex = 1;
             // 
             // txtMessage
             // 
             this.txtMessage.Location = new System.Drawing.Point(15, 91);
             this.txtMessage.Size = new System.Drawing.Size(350, 67);
+            this.txtMessage.TabIndex = 0;
             // 
             // label2
             // 
@@ -141,7 +148,7 @@
             this.lstFormula.Location = new System.Drawing.Point(15, 528);
             this.lstFormula.Name = "lstFormula";
             this.lstFormula.Size = new System.Drawing.Size(350, 95);
-            this.lstFormula.TabIndex = 54;
+            this.lstFormula.TabIndex = 10;
             // 
             // lblFormula
             // 
@@ -179,7 +186,7 @@
             this.lstAlphabet.Location = new System.Drawing.Point(15, 358);
             this.lstAlphabet.Name = "lstAlphabet";
             this.lstAlphabet.Size = new System.Drawing.Size(120, 95);
-            this.lstAlphabet.TabIndex = 49;
+            this.lstAlphabet.TabIndex = 9;
             // 
             // lblMessageParsed
             // 
@@ -192,13 +199,13 @@
             // 
             // txtMessageParsed
             // 
-            this.txtMessageParsed.Location = new System.Drawing.Point(15, 228);
+            this.txtMessageParsed.Location = new System.Drawing.Point(6, 228);
             this.txtMessageParsed.Multiline = true;
             this.txtMessageParsed.Name = "txtMessageParsed";
             this.txtMessageParsed.ReadOnly = true;
             this.txtMessageParsed.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtMessageParsed.Size = new System.Drawing.Size(506, 67);
-            this.txtMessageParsed.TabIndex = 45;
+            this.txtMessageParsed.TabIndex = 8;
             // 
             // lblDescription
             // 
@@ -214,7 +221,7 @@
             this.btnCaesar.Location = new System.Drawing.Point(475, 12);
             this.btnCaesar.Name = "btnCaesar";
             this.btnCaesar.Size = new System.Drawing.Size(47, 23);
-            this.btnCaesar.TabIndex = 60;
+            this.btnCaesar.TabIndex = 7;
             this.btnCaesar.Text = "Back";
             this.btnCaesar.UseVisualStyleBackColor = true;
             this.btnCaesar.Click += new System.EventHandler(this.btnCaesarInfo_Click);
