@@ -20,6 +20,7 @@ namespace Cryptographer
             formWindowManager.setFormWindowSize(this);
             frmCryptographer formCryptographer = new frmCryptographer();
             formWindowManager.setFormWindowLocation(formCryptographer, this);
+            this.ActiveControl = txtMessage;
         }
 
         private void btnSaveToClipboard_Click(object sender, EventArgs e)
@@ -33,7 +34,7 @@ namespace Cryptographer
             playfairInfo.Show();
             if (txtMessage.Text != "" && getTableArray(getTableTextBoxes()) != null)
             {
-                setMessageAndTable(txtMessage.Text, getTableArray(getTableTextBoxes()));
+                playfairInfo.setMessageAndTable(txtMessage.Text, getTableArray(getTableTextBoxes()));
             }
             this.Close();
         }

@@ -17,6 +17,7 @@ namespace Cryptographer
         public frmDiffieHellmanBase()
         {
             InitializeComponent();
+            this.ActiveControl = txtPrimeNumber;
         }
 
         public static bool isPrime(int number)

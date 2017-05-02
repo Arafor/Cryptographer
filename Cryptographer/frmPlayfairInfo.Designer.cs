@@ -56,7 +56,6 @@
             // btnImport
             // 
             this.btnImport.Location = new System.Drawing.Point(325, 412);
-            this.btnImport.TabIndex = 28;
             // 
             // btnAutoFill
             // 
@@ -69,12 +68,12 @@
             // btnExport
             // 
             this.btnExport.Location = new System.Drawing.Point(445, 412);
-            this.btnExport.TabIndex = 29;
             // 
             // txtResult
             // 
             this.txtResult.Location = new System.Drawing.Point(15, 1084);
             this.txtResult.Size = new System.Drawing.Size(525, 100);
+            this.txtResult.TabIndex = 32;
             // 
             // txtMessage
             // 
@@ -120,7 +119,7 @@
             this.btnCipher.Location = new System.Drawing.Point(468, 1036);
             this.btnCipher.Name = "btnCipher";
             this.btnCipher.Size = new System.Drawing.Size(75, 23);
-            this.btnCipher.TabIndex = 32;
+            this.btnCipher.TabIndex = 28;
             this.btnCipher.Text = "Cipher";
             this.btnCipher.UseVisualStyleBackColor = true;
             this.btnCipher.Click += new System.EventHandler(this.btnCipher_Click);
@@ -132,7 +131,7 @@
             this.grpCipher.Location = new System.Drawing.Point(443, 959);
             this.grpCipher.Name = "grpCipher";
             this.grpCipher.Size = new System.Drawing.Size(97, 71);
-            this.grpCipher.TabIndex = 51;
+            this.grpCipher.TabIndex = 26;
             this.grpCipher.TabStop = false;
             this.grpCipher.Text = "Cipher";
             // 
@@ -142,7 +141,7 @@
             this.rdoBtnEncrypt.Location = new System.Drawing.Point(6, 19);
             this.rdoBtnEncrypt.Name = "rdoBtnEncrypt";
             this.rdoBtnEncrypt.Size = new System.Drawing.Size(61, 17);
-            this.rdoBtnEncrypt.TabIndex = 30;
+            this.rdoBtnEncrypt.TabIndex = 26;
             this.rdoBtnEncrypt.Text = "Encrypt";
             this.rdoBtnEncrypt.UseVisualStyleBackColor = true;
             this.rdoBtnEncrypt.CheckedChanged += new System.EventHandler(this.cipherRadioButtonChanged);
@@ -153,7 +152,7 @@
             this.rdoBtnDecrypt.Location = new System.Drawing.Point(6, 42);
             this.rdoBtnDecrypt.Name = "rdoBtnDecrypt";
             this.rdoBtnDecrypt.Size = new System.Drawing.Size(62, 17);
-            this.rdoBtnDecrypt.TabIndex = 31;
+            this.rdoBtnDecrypt.TabIndex = 27;
             this.rdoBtnDecrypt.Text = "Decrypt";
             this.rdoBtnDecrypt.UseVisualStyleBackColor = true;
             this.rdoBtnDecrypt.CheckedChanged += new System.EventHandler(this.cipherRadioButtonChanged);
@@ -187,7 +186,7 @@
             this.lstPairs.MultiColumn = true;
             this.lstPairs.Name = "lstPairs";
             this.lstPairs.Size = new System.Drawing.Size(422, 95);
-            this.lstPairs.TabIndex = 52;
+            this.lstPairs.TabIndex = 38;
             // 
             // lblMessageParsedPairs
             // 
@@ -215,7 +214,7 @@
             this.txtMessageParsedPairs.ReadOnly = true;
             this.txtMessageParsedPairs.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtMessageParsedPairs.Size = new System.Drawing.Size(525, 100);
-            this.txtMessageParsedPairs.TabIndex = 50;
+            this.txtMessageParsedPairs.TabIndex = 37;
             // 
             // txtMessageParsed
             // 
@@ -225,7 +224,7 @@
             this.txtMessageParsed.ReadOnly = true;
             this.txtMessageParsed.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtMessageParsed.Size = new System.Drawing.Size(525, 130);
-            this.txtMessageParsed.TabIndex = 50;
+            this.txtMessageParsed.TabIndex = 36;
             // 
             // lblResult
             // 
@@ -268,7 +267,7 @@
             this.btnPlayfair.Location = new System.Drawing.Point(493, 9);
             this.btnPlayfair.Name = "btnPlayfair";
             this.btnPlayfair.Size = new System.Drawing.Size(48, 23);
-            this.btnPlayfair.TabIndex = 60;
+            this.btnPlayfair.TabIndex = 35;
             this.btnPlayfair.Text = "Back";
             this.btnPlayfair.UseVisualStyleBackColor = true;
             this.btnPlayfair.Click += new System.EventHandler(this.btnVigenere_Click);
@@ -297,7 +296,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(564, 984);
+            this.ClientSize = new System.Drawing.Size(564, 976);
             this.Controls.Add(this.lblDescription2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnPlayfair);

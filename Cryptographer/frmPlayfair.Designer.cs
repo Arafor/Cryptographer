@@ -69,6 +69,7 @@
             // 
             this.txtResult.Location = new System.Drawing.Point(372, 307);
             this.txtResult.Size = new System.Drawing.Size(400, 197);
+            this.txtResult.TabIndex = 32;
             // 
             // txtMessage
             // 
@@ -330,7 +331,7 @@
             this.lblTable.Location = new System.Drawing.Point(28, 22);
             this.lblTable.Name = "lblTable";
             this.lblTable.Size = new System.Drawing.Size(34, 13);
-            this.lblTable.TabIndex = 4;
+            this.lblTable.TabIndex = 50;
             this.lblTable.Text = "Table";
             // 
             // lblMessage
@@ -339,7 +340,7 @@
             this.lblMessage.Location = new System.Drawing.Point(386, 30);
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(50, 13);
-            this.lblMessage.TabIndex = 5;
+            this.lblMessage.TabIndex = 51;
             this.lblMessage.Text = "Message";
             // 
             // lblResult
@@ -348,7 +349,7 @@
             this.lblResult.Location = new System.Drawing.Point(386, 288);
             this.lblResult.Name = "lblResult";
             this.lblResult.Size = new System.Drawing.Size(37, 13);
-            this.lblResult.TabIndex = 6;
+            this.lblResult.TabIndex = 53;
             this.lblResult.Text = "Result";
             // 
             // btnSaveToClipboard
@@ -357,7 +358,7 @@
             this.btnSaveToClipboard.Location = new System.Drawing.Point(732, 509);
             this.btnSaveToClipboard.Name = "btnSaveToClipboard";
             this.btnSaveToClipboard.Size = new System.Drawing.Size(40, 40);
-            this.btnSaveToClipboard.TabIndex = 27;
+            this.btnSaveToClipboard.TabIndex = 31;
             this.btnSaveToClipboard.UseVisualStyleBackColor = true;
             this.btnSaveToClipboard.Click += new System.EventHandler(this.btnSaveToClipboard_Click);
             // 
@@ -367,7 +368,7 @@
             this.btnPlayfairInfo.Location = new System.Drawing.Point(749, 12);
             this.btnPlayfairInfo.Name = "btnPlayfairInfo";
             this.btnPlayfairInfo.Size = new System.Drawing.Size(23, 23);
-            this.btnPlayfairInfo.TabIndex = 34;
+            this.btnPlayfairInfo.TabIndex = 35;
             this.btnPlayfairInfo.Text = "?";
             this.btnPlayfairInfo.UseVisualStyleBackColor = true;
             this.btnPlayfairInfo.Click += new System.EventHandler(this.btnVigenereInfo_Click);
@@ -377,7 +378,7 @@
             this.btnCipher.Location = new System.Drawing.Point(594, 230);
             this.btnCipher.Name = "btnCipher";
             this.btnCipher.Size = new System.Drawing.Size(75, 23);
-            this.btnCipher.TabIndex = 52;
+            this.btnCipher.TabIndex = 28;
             this.btnCipher.Text = "Cipher";
             this.btnCipher.UseVisualStyleBackColor = true;
             this.btnCipher.Click += new System.EventHandler(this.btnCipher_Click);
@@ -389,7 +390,7 @@
             this.grpCipher.Location = new System.Drawing.Point(675, 230);
             this.grpCipher.Name = "grpCipher";
             this.grpCipher.Size = new System.Drawing.Size(97, 71);
-            this.grpCipher.TabIndex = 53;
+            this.grpCipher.TabIndex = 26;
             this.grpCipher.TabStop = false;
             this.grpCipher.Text = "Cipher";
             // 
@@ -399,7 +400,7 @@
             this.rdoBtnEncrypt.Location = new System.Drawing.Point(6, 19);
             this.rdoBtnEncrypt.Name = "rdoBtnEncrypt";
             this.rdoBtnEncrypt.Size = new System.Drawing.Size(61, 17);
-            this.rdoBtnEncrypt.TabIndex = 30;
+            this.rdoBtnEncrypt.TabIndex = 26;
             this.rdoBtnEncrypt.Text = "Encrypt";
             this.rdoBtnEncrypt.UseVisualStyleBackColor = true;
             this.rdoBtnEncrypt.CheckedChanged += new System.EventHandler(this.cipherRadioButtonChanged);
@@ -410,7 +411,7 @@
             this.rdoBtnDecrypt.Location = new System.Drawing.Point(6, 42);
             this.rdoBtnDecrypt.Name = "rdoBtnDecrypt";
             this.rdoBtnDecrypt.Size = new System.Drawing.Size(62, 17);
-            this.rdoBtnDecrypt.TabIndex = 31;
+            this.rdoBtnDecrypt.TabIndex = 27;
             this.rdoBtnDecrypt.Text = "Decrypt";
             this.rdoBtnDecrypt.UseVisualStyleBackColor = true;
             this.rdoBtnDecrypt.CheckedChanged += new System.EventHandler(this.cipherRadioButtonChanged);

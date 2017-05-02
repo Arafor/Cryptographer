@@ -20,7 +20,7 @@ namespace Cryptographer
         FileManager fileManager = new FileManager();
         NumericalAlphabet numAlphabet = new NumericalAlphabet();
 
-        protected void setMessageAndTable(string message, char[,] tableArray)
+        public void setMessageAndTable(string message, char[,] tableArray)
         {
             txtMessage.Text = message;
             fillUITable(getTableTextBoxes(), tableArray);
