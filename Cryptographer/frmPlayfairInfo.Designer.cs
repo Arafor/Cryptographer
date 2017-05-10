@@ -53,10 +53,6 @@
             this.grpCipher.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnImport
-            // 
-            this.btnImport.Location = new System.Drawing.Point(325, 412);
-            // 
             // btnAutoFill
             // 
             this.btnAutoFill.Location = new System.Drawing.Point(445, 312);
@@ -64,10 +60,6 @@
             // btnClearAll
             // 
             this.btnClearAll.Location = new System.Drawing.Point(325, 312);
-            // 
-            // btnExport
-            // 
-            this.btnExport.Location = new System.Drawing.Point(445, 412);
             // 
             // txtResult
             // 
@@ -120,7 +112,7 @@
             this.btnCipher.Name = "btnCipher";
             this.btnCipher.Size = new System.Drawing.Size(75, 23);
             this.btnCipher.TabIndex = 28;
-            this.btnCipher.Text = "Cipher";
+            this.btnCipher.Text = "Start";
             this.btnCipher.UseVisualStyleBackColor = true;
             this.btnCipher.Click += new System.EventHandler(this.btnCipher_Click);
             // 
@@ -296,7 +288,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(564, 976);
+            this.ClientSize = new System.Drawing.Size(581, 976);
             this.Controls.Add(this.lblDescription2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnPlayfair);
@@ -337,10 +329,8 @@
             this.Controls.SetChildIndex(this.lblDescription1, 0);
             this.Controls.SetChildIndex(this.txtMessage, 0);
             this.Controls.SetChildIndex(this.txtResult, 0);
-            this.Controls.SetChildIndex(this.btnExport, 0);
             this.Controls.SetChildIndex(this.btnClearAll, 0);
             this.Controls.SetChildIndex(this.btnAutoFill, 0);
-            this.Controls.SetChildIndex(this.btnImport, 0);
             this.Controls.SetChildIndex(this.btnPlayfair, 0);
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.lblDescription2, 0);

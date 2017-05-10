@@ -330,9 +330,9 @@
             this.lblTable.AutoSize = true;
             this.lblTable.Location = new System.Drawing.Point(28, 22);
             this.lblTable.Name = "lblTable";
-            this.lblTable.Size = new System.Drawing.Size(34, 13);
+            this.lblTable.Size = new System.Drawing.Size(25, 13);
             this.lblTable.TabIndex = 50;
-            this.lblTable.Text = "Table";
+            this.lblTable.Text = "Key";
             // 
             // lblMessage
             // 
@@ -379,7 +379,7 @@
             this.btnCipher.Name = "btnCipher";
             this.btnCipher.Size = new System.Drawing.Size(75, 23);
             this.btnCipher.TabIndex = 28;
-            this.btnCipher.Text = "Cipher";
+            this.btnCipher.Text = "Start";
             this.btnCipher.UseVisualStyleBackColor = true;
             this.btnCipher.Click += new System.EventHandler(this.btnCipher_Click);
             // 
@@ -433,10 +433,8 @@
             this.Load += new System.EventHandler(this.frmPlayfair_Load);
             this.Controls.SetChildIndex(this.txtMessage, 0);
             this.Controls.SetChildIndex(this.txtResult, 0);
-            this.Controls.SetChildIndex(this.btnExport, 0);
             this.Controls.SetChildIndex(this.btnClearAll, 0);
             this.Controls.SetChildIndex(this.btnAutoFill, 0);
-            this.Controls.SetChildIndex(this.btnImport, 0);
             this.Controls.SetChildIndex(this.lblTable, 0);
             this.Controls.SetChildIndex(this.lblMessage, 0);
             this.Controls.SetChildIndex(this.lblResult, 0);

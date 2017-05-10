@@ -47,7 +47,7 @@
             this.btnCipher.Name = "btnCipher";
             this.btnCipher.Size = new System.Drawing.Size(75, 23);
             this.btnCipher.TabIndex = 4;
-            this.btnCipher.Text = "Cipher";
+            this.btnCipher.Text = "Start";
             this.btnCipher.UseVisualStyleBackColor = true;
             // 
             // grpCipher
