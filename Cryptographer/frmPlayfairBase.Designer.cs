@@ -37,14 +37,12 @@
             this.txtTable04 = new System.Windows.Forms.TextBox();
             this.txtTable03 = new System.Windows.Forms.TextBox();
             this.txtTable02 = new System.Windows.Forms.TextBox();
-            this.btnImport = new System.Windows.Forms.Button();
             this.btnAutoFill = new System.Windows.Forms.Button();
             this.btnClearAll = new System.Windows.Forms.Button();
             this.txtTable01 = new System.Windows.Forms.TextBox();
             this.txtTable00 = new System.Windows.Forms.TextBox();
             this.txtTable10 = new System.Windows.Forms.TextBox();
             this.txtTable11 = new System.Windows.Forms.TextBox();
-            this.btnExport = new System.Windows.Forms.Button();
             this.txtTable12 = new System.Windows.Forms.TextBox();
             this.txtTable13 = new System.Windows.Forms.TextBox();
             this.txtTable14 = new System.Windows.Forms.TextBox();
@@ -157,16 +155,6 @@
             this.txtTable02.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTable02.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
             // 
-            // btnImport
-            // 
-            this.btnImport.Location = new System.Drawing.Point(37, 379);
-            this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(75, 23);
-            this.btnImport.TabIndex = 34;
-            this.btnImport.Text = "Import";
-            this.btnImport.UseVisualStyleBackColor = true;
-            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
-            // 
             // btnAutoFill
             // 
             this.btnAutoFill.Location = new System.Drawing.Point(168, 324);
@@ -230,16 +218,6 @@
             this.txtTable11.TabIndex = 7;
             this.txtTable11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTable11.TextChanged += new System.EventHandler(this.tblTable_TextChanged);
-            // 
-            // btnExport
-            // 
-            this.btnExport.Location = new System.Drawing.Point(168, 379);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(75, 23);
-            this.btnExport.TabIndex = 33;
-            this.btnExport.Text = "Export";
-            this.btnExport.UseVisualStyleBackColor = true;
-            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // txtTable12
             // 
@@ -458,10 +436,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.btnImport);
             this.Controls.Add(this.btnAutoFill);
             this.Controls.Add(this.btnClearAll);
-            this.Controls.Add(this.btnExport);
             this.Controls.Add(this.txtResult);
             this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.tblTable);
@@ -488,14 +464,12 @@
         protected System.Windows.Forms.TextBox txtTable04;
         protected System.Windows.Forms.TextBox txtTable03;
         protected System.Windows.Forms.TextBox txtTable02;
-        protected System.Windows.Forms.Button btnImport;
         protected System.Windows.Forms.Button btnAutoFill;
         protected System.Windows.Forms.Button btnClearAll;
         protected System.Windows.Forms.TextBox txtTable01;
         protected System.Windows.Forms.TextBox txtTable00;
         protected System.Windows.Forms.TextBox txtTable10;
         protected System.Windows.Forms.TextBox txtTable11;
-        protected System.Windows.Forms.Button btnExport;
         protected System.Windows.Forms.TextBox txtTable12;
         protected System.Windows.Forms.TextBox txtTable13;
         protected System.Windows.Forms.TextBox txtTable14;
