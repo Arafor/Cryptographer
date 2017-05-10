@@ -39,7 +39,7 @@
             this.lblSecretNumber = new System.Windows.Forms.Label();
             this.txtSecretNumber = new System.Windows.Forms.TextBox();
             this.lblPrimitiveRoot = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPrimitiveRoot = new System.Windows.Forms.TextBox();
             this.lblPrimeNumber = new System.Windows.Forms.Label();
             this.txtPrimeNumber = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -122,6 +122,7 @@
             this.txtSecretNumber.Name = "txtSecretNumber";
             this.txtSecretNumber.Size = new System.Drawing.Size(100, 20);
             this.txtSecretNumber.TabIndex = 1;
+            this.txtSecretNumber.TextChanged += new System.EventHandler(this.txtSecretNumber_TextChanged);
             // 
             // lblPrimitiveRoot
             // 
@@ -132,13 +133,14 @@
             this.lblPrimitiveRoot.TabIndex = 20;
             this.lblPrimitiveRoot.Text = "Your primitive root is:";
             // 
-            // textBox1
+            // txtPrimitiveRoot
             // 
-            this.textBox1.Location = new System.Drawing.Point(214, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
+            this.txtPrimitiveRoot.Location = new System.Drawing.Point(214, 34);
+            this.txtPrimitiveRoot.Name = "txtPrimitiveRoot";
+            this.txtPrimitiveRoot.ReadOnly = true;
+            this.txtPrimitiveRoot.Size = new System.Drawing.Size(100, 20);
+            this.txtPrimitiveRoot.TabIndex = 3;
+            this.txtPrimitiveRoot.TextChanged += new System.EventHandler(this.txtPrimitiveRoot_TextChanged);
             // 
             // lblPrimeNumber
             // 
@@ -177,7 +179,7 @@
             this.Controls.Add(this.lblSecretNumber);
             this.Controls.Add(this.txtSecretNumber);
             this.Controls.Add(this.lblPrimitiveRoot);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPrimitiveRoot);
             this.Controls.Add(this.lblPrimeNumber);
             this.Controls.Add(this.txtPrimeNumber);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -203,7 +205,7 @@
         private System.Windows.Forms.Label lblSecretNumber;
         private System.Windows.Forms.TextBox txtSecretNumber;
         private System.Windows.Forms.Label lblPrimitiveRoot;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPrimitiveRoot;
         private System.Windows.Forms.Label lblPrimeNumber;
         private System.Windows.Forms.TextBox txtPrimeNumber;
         private System.Windows.Forms.ErrorProvider errorProvider1;
