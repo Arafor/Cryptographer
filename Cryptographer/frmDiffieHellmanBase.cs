@@ -66,119 +66,75 @@ namespace Cryptographer
 
         private void txtPrimeNumber_TextChanged(object sender, EventArgs e)
         {
+            updatePrimitiveRootTextBox();
+        }
+
+        protected void updatePrimitiveRootTextBox()
+        {
             txtPrimitiveRoot.Text = "";
-            //Clear previous errors
-            txtPrimeNumber.ForeColor = Color.Black;
-            errorProvider1.Clear();
-
-            //Check if the field is not empty
-            if (txtPrimeNumber.Text != "")
+            //Check if the entered value is a natural number
+            if (assertNaturalNumber(txtPrimeNumber))
             {
-                //Check if the entered value is an integer
-                try
-                {
-                    int.Parse(txtPrimeNumber.Text);
-                }
-                catch (Exception exc)
-                {
-                    txtPrimeNumber.ForeColor = Color.Red;
-                    errorProvider1.SetError(txtPrimeNumber, "The value must be a natural number");
-                    return;
-                    //MessageBox.Show("The value must be a natural number");
-                }
-
-                //Check if the entered value is a natural number
                 int parsedNumber;
                 if (!int.TryParse(txtPrimeNumber.Text, out parsedNumber)) parsedNumber = 0;
-                if (parsedNumber > 0)
+                //Check if the number isnt higher than what we have primitive roots for
+                if (parsedNumber <= 97)
                 {
-                    //Check if the number isnt higher than what we have primitive roots for
-                    if (parsedNumber <= 97)
+                    //Check if the entered value is a prime number
+                    if (isPrime(parsedNumber))
                     {
-                        //Check if the entered value is a prime number
-                        //bool textIsPrime = isPrime(parsedNumber);
-                        if (isPrime(parsedNumber))
+                        //Check if this prime number has a primitive root
+                        try
                         {
-                            //Check if this prime number has a primitive root
-                            try //(primitiveRootsOfPrimeNumbers[parsedNumber] == null
-                            {
-                                //txtPrimeNumber.ForeColor = Color.Black;
-                                //errorProvider1.Clear();
-                                txtPrimitiveRoot.Text = primitiveRootsOfPrimeNumbers[parsedNumber].ToString();
-                            }
-                            catch (KeyNotFoundException exc)
-                            {
-                                txtPrimeNumber.ForeColor = Color.Red;
-                                errorProvider1.SetError(txtPrimeNumber, "This prime number does not have a primitive root; Please choose a different number");
-                            }
+                            txtPrimitiveRoot.Text = primitiveRootsOfPrimeNumbers[parsedNumber].ToString();
                         }
-                        else
+                        catch (KeyNotFoundException exc)
                         {
                             txtPrimeNumber.ForeColor = Color.Red;
-                            errorProvider1.SetError(txtPrimeNumber, "The entered value is not a prime number");
+                            errorProvider1.SetError(txtPrimeNumber, "This prime number does not have a primitive root; Please choose a different number");
                         }
                     }
                     else
                     {
                         txtPrimeNumber.ForeColor = Color.Red;
-                        errorProvider1.SetError(txtPrimeNumber, "The highest allowed prime number is 97; Please choose a different number");
+                        errorProvider1.SetError(txtPrimeNumber, "The entered value is not a prime number");
                     }
                 }
                 else
                 {
                     txtPrimeNumber.ForeColor = Color.Red;
-                    errorProvider1.SetError(txtPrimeNumber, "A prime number can only be a natural number (0 <)");
+                    errorProvider1.SetError(txtPrimeNumber, "The highest allowed prime number is 97; Please choose a different number");
                 }
             }
         }
 
         private void txtPrimitiveRoot_TextChanged(object sender, EventArgs e)
         {
-
+            updateSecretTextBox();
         }
 
         private void txtSecretNumber_TextChanged(object sender, EventArgs e)
         {
+            updateSecretTextBox();
+        }
+
+        protected void updateSecretTextBox()
+        {
             txtSecret.Text = "";
-            //Clear previous errors
-            txtSecretNumber.ForeColor = Color.Black;
-            errorProvider1.Clear();
-
-            //Check if the field is not empty
-            if (txtSecretNumber.Text != "")
+            //Check if the entered value is a natural number
+            if (assertNaturalNumber(txtSecretNumber))
             {
-                //Check if the entered value is an integer
-                try
-                {
-                    int.Parse(txtSecretNumber.Text);
-                }
-                catch (Exception exc)
-                {
-                    txtSecretNumber.ForeColor = Color.Red;
-                    errorProvider1.SetError(txtSecretNumber, "The value must be a natural number");
-                    return;
-                }
-
-                //Check if the entered value is a natural number
                 int parsedNumber;
                 if (!int.TryParse(txtSecretNumber.Text, out parsedNumber)) parsedNumber = 0;
-                if (parsedNumber > 0)
+                //Check if primitive root is not empty
+                if (txtPrimitiveRoot.Text != "")
                 {
-                    if (txtPrimitiveRoot.Text != "")
-                    {
-
-                        txtSecret.Text = ((int.Parse(txtPrimitiveRoot.Text) ^ parsedNumber) % int.Parse(txtPrimeNumber.Text)).ToString();
-                    } else
-                    {
-                        txtPrimeNumber.ForeColor = Color.Red;
-                        errorProvider1.SetError(txtPrimeNumber, "You need a prime number and a primitive root to create your secret");
-                    }
+                    txtSecret.Text = ((int.Parse(txtPrimitiveRoot.Text) ^ parsedNumber) % int.Parse(txtPrimeNumber.Text)).ToString();
                 }
                 else
                 {
-                    //txtSecretNumber.ForeColor = Color.Red;
-                    //errorProvider1.SetError(txtSecretNumber, "You must choose a natural number (0 <)");
-                    setErrorMessage(txtSecretNumber, "You must choose a natural number (0 <)");
+                    txtPrimeNumber.ForeColor = Color.Red;
+                    errorProvider1.SetError(txtPrimeNumber, "You need a prime number and a primitive root to create your secret");
                 }
             }
         }
@@ -224,6 +180,37 @@ namespace Cryptographer
             }
 
             return false;
+        }
+
+        private void txtOtherSecret_TextChanged(object sender, EventArgs e)
+        {
+            updateSharedSecretTextBox();
+        }
+
+        protected void updateSharedSecretTextBox()
+        {
+            txtSharedSecret.Text = "";
+            //Check if the entered value is a natural number
+            if (assertNaturalNumber(txtOtherSecret))
+            {
+                int parsedNumber;
+                if (!int.TryParse(txtSecretNumber.Text, out parsedNumber)) parsedNumber = 0;
+                //Check if primitive root is not empty
+                if (txtSecret.Text != "")
+                {
+                    txtSharedSecret.Text = ((parsedNumber ^ int.Parse(txtSecretNumber.Text)) % int.Parse(txtPrimeNumber.Text)).ToString();
+                }
+                else
+                {
+                    txtSecretNumber.ForeColor = Color.Red;
+                    errorProvider1.SetError(txtSecretNumber, "To get the shared secret you need to create your own secret as well");
+                }
+            }
+        }
+
+        private void txtSecret_TextChanged(object sender, EventArgs e)
+        {
+            updateSharedSecretTextBox();
         }
     }
 }

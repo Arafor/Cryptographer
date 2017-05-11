@@ -98,6 +98,7 @@
             this.txtOtherSecret.Name = "txtOtherSecret";
             this.txtOtherSecret.Size = new System.Drawing.Size(100, 20);
             this.txtOtherSecret.TabIndex = 2;
+            this.txtOtherSecret.TextChanged += new System.EventHandler(this.txtOtherSecret_TextChanged);
             // 
             // txtSecret
             // 
@@ -106,6 +107,7 @@
             this.txtSecret.ReadOnly = true;
             this.txtSecret.Size = new System.Drawing.Size(100, 20);
             this.txtSecret.TabIndex = 4;
+            this.txtSecret.TextChanged += new System.EventHandler(this.txtSecret_TextChanged);
             // 
             // lblSecretNumber
             // 
