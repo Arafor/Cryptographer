@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Numerics;
 
 namespace Cryptographer
 {
@@ -129,7 +130,7 @@ namespace Cryptographer
                 //Check if primitive root is not empty
                 if (txtPrimitiveRoot.Text != "")
                 {
-                    txtSecret.Text = ((int.Parse(txtPrimitiveRoot.Text) ^ parsedNumber) % int.Parse(txtPrimeNumber.Text)).ToString();
+                    txtSecret.Text = BigInteger.ModPow(int.Parse(txtPrimitiveRoot.Text), parsedNumber, int.Parse(txtPrimeNumber.Text)).ToString();
                 }
                 else
                 {
@@ -159,7 +160,13 @@ namespace Cryptographer
                 {
                     enteredValue = int.Parse(target.Text);
                 }
-                catch (Exception exc)
+                catch (OverflowException)
+                {
+                    setErrorMessage(target, "The chosen value is too large");
+
+                    return false;
+                }
+                catch (Exception)
                 {
                     setErrorMessage(target, "The value must be a natural number");
                     
@@ -194,11 +201,11 @@ namespace Cryptographer
             if (assertNaturalNumber(txtOtherSecret))
             {
                 int parsedNumber;
-                if (!int.TryParse(txtSecretNumber.Text, out parsedNumber)) parsedNumber = 0;
-                //Check if primitive root is not empty
+                if (!int.TryParse(txtOtherSecret.Text, out parsedNumber)) parsedNumber = 0;
+                //Check if we have a secret to work with
                 if (txtSecret.Text != "")
                 {
-                    txtSharedSecret.Text = ((parsedNumber ^ int.Parse(txtSecretNumber.Text)) % int.Parse(txtPrimeNumber.Text)).ToString();
+                    txtSharedSecret.Text = BigInteger.ModPow(parsedNumber, int.Parse(txtSecretNumber.Text), int.Parse(txtPrimeNumber.Text)).ToString();
                 }
                 else
                 {
