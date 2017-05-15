@@ -53,7 +53,7 @@
             this.btnCaesarInfo.Location = new System.Drawing.Point(445, 12);
             this.btnCaesarInfo.Name = "btnCaesarInfo";
             this.btnCaesarInfo.Size = new System.Drawing.Size(22, 23);
-            this.btnCaesarInfo.TabIndex = 50;
+            this.btnCaesarInfo.TabIndex = 13;
             this.btnCaesarInfo.Text = "?";
             this.btnCaesarInfo.UseVisualStyleBackColor = true;
             this.btnCaesarInfo.Click += new System.EventHandler(this.btnDESInfo_Click);
@@ -64,7 +64,7 @@
             this.btnSaveToClipboard.Location = new System.Drawing.Point(427, 643);
             this.btnSaveToClipboard.Name = "btnSaveToClipboard";
             this.btnSaveToClipboard.Size = new System.Drawing.Size(40, 40);
-            this.btnSaveToClipboard.TabIndex = 51;
+            this.btnSaveToClipboard.TabIndex = 5;
             this.btnSaveToClipboard.UseVisualStyleBackColor = true;
             this.btnSaveToClipboard.Click += new System.EventHandler(this.btnSaveToClipboard_Click);
             // 

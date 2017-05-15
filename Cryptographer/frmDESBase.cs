@@ -180,21 +180,60 @@ namespace Cryptographer
             byte[] bytes = new byte[numOfBytes];
             for (int i = 0; i < numOfBytes; ++i)
             {
-                //try
-                //{
-                    bytes[i] = Convert.ToByte(message.Substring(8 * i, 8), 2);
-                //} catch (FormatException)
-                //{
-                    //MessageBox.Show("Bad fromat");
-                //}
+                bytes[i] = Convert.ToByte(message.Substring(8 * i, 8), 2);
             }
 
             return bytes;
         }
 
-        private void grpMode_CheckedChanged(object sender, EventArgs e)
+        private void grpValueDisplayMode_CheckedChanged(object sender, EventArgs e)
         {
+            try
+            {
+                if (rdoBinary.Checked)
+                {
+                    //Convert key
+                    string keyText = txtKey.Text;
+                    txtKey.Text = "";
+                    foreach (byte keyByte in parseHexadecimalStringToBytes(keyText))
+                    {
+                        txtKey.Text = txtKey.Text + Convert.ToString(keyByte, 2).PadLeft(8, '0');
+                    }
 
+                    //Convert IV
+                    string IVText = txtIV.Text;
+                    txtIV.Text = "";
+                    foreach (byte IVByte in parseHexadecimalStringToBytes(IVText))
+                    {
+                        txtIV.Text = txtIV.Text + Convert.ToString(IVByte, 2).PadLeft(8, '0');
+                    }
+                }
+                else if (rdoHexadecimal.Checked)
+                {
+                    //Convert Key
+                    txtKey.Text = BitConverter.ToString(parseBinaryStringToBytes(txtKey.Text)).Replace("-", "");
+                    //Convert IV
+                    txtIV.Text = BitConverter.ToString(parseBinaryStringToBytes(txtIV.Text)).Replace("-", "");
+                }
+            }
+            catch (System.ArgumentException)
+            {
+                MessageBox.Show("Check the entered Key or IV", "Argument Exception");
+
+                return;
+            }
+            catch (System.Security.Cryptography.CryptographicException)
+            {
+                MessageBox.Show("Check the entered Key or IV", "Cryptographic Exception");
+
+                return;
+            }
+            catch (System.FormatException)
+            {
+                MessageBox.Show("Check the entered Key or IV", "Format Exception");
+
+                return;
+            }
         }
 
         protected System.Security.Cryptography.CipherMode setSelectedMode()

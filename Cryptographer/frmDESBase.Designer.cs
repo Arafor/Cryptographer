@@ -57,7 +57,7 @@
             this.btnCipher.Location = new System.Drawing.Point(379, 477);
             this.btnCipher.Name = "btnCipher";
             this.btnCipher.Size = new System.Drawing.Size(75, 23);
-            this.btnCipher.TabIndex = 44;
+            this.btnCipher.TabIndex = 3;
             this.btnCipher.Text = "Start";
             this.btnCipher.UseVisualStyleBackColor = true;
             // 
@@ -68,7 +68,7 @@
             this.grpCipher.Location = new System.Drawing.Point(373, 256);
             this.grpCipher.Name = "grpCipher";
             this.grpCipher.Size = new System.Drawing.Size(97, 71);
-            this.grpCipher.TabIndex = 43;
+            this.grpCipher.TabIndex = 8;
             this.grpCipher.TabStop = false;
             this.grpCipher.Text = "Cipher";
             // 
@@ -78,7 +78,7 @@
             this.rdoBtnEncrypt.Location = new System.Drawing.Point(6, 19);
             this.rdoBtnEncrypt.Name = "rdoBtnEncrypt";
             this.rdoBtnEncrypt.Size = new System.Drawing.Size(61, 17);
-            this.rdoBtnEncrypt.TabIndex = 2;
+            this.rdoBtnEncrypt.TabIndex = 8;
             this.rdoBtnEncrypt.Text = "Encrypt";
             this.rdoBtnEncrypt.UseVisualStyleBackColor = true;
             // 
@@ -88,7 +88,7 @@
             this.rdoBtnDecrypt.Location = new System.Drawing.Point(6, 42);
             this.rdoBtnDecrypt.Name = "rdoBtnDecrypt";
             this.rdoBtnDecrypt.Size = new System.Drawing.Size(62, 17);
-            this.rdoBtnDecrypt.TabIndex = 3;
+            this.rdoBtnDecrypt.TabIndex = 9;
             this.rdoBtnDecrypt.Text = "Decrypt";
             this.rdoBtnDecrypt.UseVisualStyleBackColor = true;
             // 
@@ -127,7 +127,7 @@
             this.txtResult.ReadOnly = true;
             this.txtResult.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtResult.Size = new System.Drawing.Size(455, 120);
-            this.txtResult.TabIndex = 45;
+            this.txtResult.TabIndex = 4;
             // 
             // txtKey
             // 
@@ -136,7 +136,7 @@
             this.txtKey.Name = "txtKey";
             this.txtKey.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtKey.Size = new System.Drawing.Size(352, 100);
-            this.txtKey.TabIndex = 42;
+            this.txtKey.TabIndex = 1;
             // 
             // txtMessage
             // 
@@ -145,7 +145,7 @@
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtMessage.Size = new System.Drawing.Size(455, 120);
-            this.txtMessage.TabIndex = 46;
+            this.txtMessage.TabIndex = 0;
             this.txtMessage.TextChanged += new System.EventHandler(this.txtMessage_TextChanged);
             // 
             // grpMode
@@ -156,7 +156,7 @@
             this.grpMode.Location = new System.Drawing.Point(373, 384);
             this.grpMode.Name = "grpMode";
             this.grpMode.Size = new System.Drawing.Size(97, 87);
-            this.grpMode.TabIndex = 44;
+            this.grpMode.TabIndex = 10;
             this.grpMode.TabStop = false;
             this.grpMode.Text = "Mode";
             // 
@@ -166,10 +166,9 @@
             this.rdoECB.Location = new System.Drawing.Point(5, 65);
             this.rdoECB.Name = "rdoECB";
             this.rdoECB.Size = new System.Drawing.Size(46, 17);
-            this.rdoECB.TabIndex = 5;
+            this.rdoECB.TabIndex = 12;
             this.rdoECB.Text = "ECB";
             this.rdoECB.UseVisualStyleBackColor = true;
-            this.rdoECB.CheckedChanged += new System.EventHandler(this.grpMode_CheckedChanged);
             // 
             // rdoCBC
             // 
@@ -178,11 +177,10 @@
             this.rdoCBC.Location = new System.Drawing.Point(6, 19);
             this.rdoCBC.Name = "rdoCBC";
             this.rdoCBC.Size = new System.Drawing.Size(46, 17);
-            this.rdoCBC.TabIndex = 2;
+            this.rdoCBC.TabIndex = 10;
             this.rdoCBC.TabStop = true;
             this.rdoCBC.Text = "CBC";
             this.rdoCBC.UseVisualStyleBackColor = true;
-            this.rdoCBC.CheckedChanged += new System.EventHandler(this.grpMode_CheckedChanged);
             // 
             // rdoCFB
             // 
@@ -190,10 +188,9 @@
             this.rdoCFB.Location = new System.Drawing.Point(6, 42);
             this.rdoCFB.Name = "rdoCFB";
             this.rdoCFB.Size = new System.Drawing.Size(45, 17);
-            this.rdoCFB.TabIndex = 3;
+            this.rdoCFB.TabIndex = 11;
             this.rdoCFB.Text = "CFB";
             this.rdoCFB.UseVisualStyleBackColor = true;
-            this.rdoCFB.CheckedChanged += new System.EventHandler(this.grpMode_CheckedChanged);
             // 
             // grpDisplayVlaueMode
             // 
@@ -202,7 +199,7 @@
             this.grpDisplayVlaueMode.Location = new System.Drawing.Point(12, 12);
             this.grpDisplayVlaueMode.Name = "grpDisplayVlaueMode";
             this.grpDisplayVlaueMode.Size = new System.Drawing.Size(161, 71);
-            this.grpDisplayVlaueMode.TabIndex = 44;
+            this.grpDisplayVlaueMode.TabIndex = 6;
             this.grpDisplayVlaueMode.TabStop = false;
             this.grpDisplayVlaueMode.Text = "Choose how to display values";
             // 
@@ -213,10 +210,11 @@
             this.rdoBinary.Location = new System.Drawing.Point(6, 19);
             this.rdoBinary.Name = "rdoBinary";
             this.rdoBinary.Size = new System.Drawing.Size(54, 17);
-            this.rdoBinary.TabIndex = 2;
+            this.rdoBinary.TabIndex = 6;
             this.rdoBinary.TabStop = true;
             this.rdoBinary.Text = "Binary";
             this.rdoBinary.UseVisualStyleBackColor = true;
+            this.rdoBinary.CheckedChanged += new System.EventHandler(this.grpValueDisplayMode_CheckedChanged);
             // 
             // rdoHexadecimal
             // 
@@ -224,7 +222,7 @@
             this.rdoHexadecimal.Location = new System.Drawing.Point(6, 42);
             this.rdoHexadecimal.Name = "rdoHexadecimal";
             this.rdoHexadecimal.Size = new System.Drawing.Size(86, 17);
-            this.rdoHexadecimal.TabIndex = 3;
+            this.rdoHexadecimal.TabIndex = 7;
             this.rdoHexadecimal.Text = "Hexadecimal";
             this.rdoHexadecimal.UseVisualStyleBackColor = true;
             // 
@@ -235,7 +233,7 @@
             this.txtIV.Name = "txtIV";
             this.txtIV.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtIV.Size = new System.Drawing.Size(352, 100);
-            this.txtIV.TabIndex = 50;
+            this.txtIV.TabIndex = 2;
             // 
             // lblIV
             // 
