@@ -85,6 +85,12 @@
     <Compile Include="frmDESBase.Designer.cs">
       <DependentUpon>frmDESBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDESInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDESInfo.Designer.cs">
+      <DependentUpon>frmDESInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDiffieHellman.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDESBase.resx">
       <DependentUpon>frmDESBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDESInfo.resx">
+      <DependentUpon>frmDESInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDiffieHellman.resx">
       <DependentUpon>frmDiffieHellman.cs</DependentUpon>

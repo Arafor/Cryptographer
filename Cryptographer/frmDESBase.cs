@@ -124,54 +124,11 @@ namespace Cryptographer
             }
         }
 
-        public string cipher(int[] messageInInt, int key, string function)
-        {
-            // Encrypt message using key
-            for (int i = 0; i < messageInInt.Length; i++)
-            {
-                if (function == "E")
-                {
-                    messageInInt[i] = messageInInt[i] + key;
-                }
-                else if (function == "D")
-                {
-                    messageInInt[i] = messageInInt[i] - key;
-                }
-                else
-                {
-                    MessageBox.Show("Unknown function specified");
-                    break;
-                }
-            }
-
-            // Get the string value of our result message
-            char[] messageInChar = numAlphabet.numbersToLetters(messageInInt);
-            string messageInString = "";
-            for (int i = 0; i < messageInChar.Length; i++)
-            {
-                messageInString = messageInString + messageInChar[i].ToString();
-            }
-            return messageInString;
-        }
-
-        public int[] getParsedMessage(string txtBoxText)
-        {
-            // Translate message to numerical values
-            char[] plaintextArray = textParser.parseReplaceableLetters(txtBoxText.ToUpper().ToCharArray());
-            int[] message = numAlphabet.lettersToNumbers(plaintextArray);
-
-            return message;
-        }
-
-        protected void txtMessage_TextChanged(object sender, EventArgs e)
-        {
-            txtMessage.CharacterCasing = CharacterCasing.Upper;
-        }
-
-        public void setMessageAndKey(string message, string key)
+        public void setMessageAndKey(string message, string key, string IV)
         {
             txtMessage.Text = message;
             txtKey.Text = key;
+            txtIV.Text = IV;
         }
 
         public byte[] parseBinaryStringToBytes(string message)
@@ -186,6 +143,7 @@ namespace Cryptographer
             return bytes;
         }
 
+        //Display values in binary or hexadecimal
         private void grpValueDisplayMode_CheckedChanged(object sender, EventArgs e)
         {
             try

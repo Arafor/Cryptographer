@@ -146,7 +146,6 @@
             this.txtMessage.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtMessage.Size = new System.Drawing.Size(455, 120);
             this.txtMessage.TabIndex = 0;
-            this.txtMessage.TextChanged += new System.EventHandler(this.txtMessage_TextChanged);
             // 
             // grpMode
             // 

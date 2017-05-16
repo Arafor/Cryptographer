@@ -4,16 +4,16 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace Cryptographer
 {
-    public partial class frmDES : frmDESBase
+    public partial class frmDESInfo : frmDESBase
     {
-        public frmDES()
+        public frmDESInfo()
         {
             InitializeComponent();
             FormWindowManager formWindowManager = new FormWindowManager();
@@ -23,35 +23,56 @@ namespace Cryptographer
             this.ActiveControl = txtMessage;
         }
 
-        frmDESInfo DESInfo;
+        frmDES DES;
         DES myDES = new DESCryptoServiceProvider();
 
-        private void btnSaveToClipboard_Click(object sender, EventArgs e)
+        private void btnDES_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text != "")
+            if (!DES.Visible)
             {
-                Clipboard.SetText(txtResult.Text);
-            }
-        }
-
-        private void btnDESInfo_Click(object sender, EventArgs e)
-        {
-            if (!DESInfo.Visible)
-            {
-                DESInfo = new frmDESInfo();
-                DESInfo.Show();
+                DES = new frmDES();
+                DES.Show();
                 if (txtMessage.Text != "" && txtKey.Text != "")
                 {
-                    DESInfo.setMessageAndKey(txtMessage.Text, txtKey.Text, txtIV.Text);
+                    DES.setMessageAndKey(txtMessage.Text, txtKey.Text, txtIV.Text);
                 }
                 this.Close();
             }
         }
 
-        private void frmDES_Load(object sender, EventArgs e)
+        private void frmDESInfo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            frmDESInfo DESInfo = new frmDESInfo();
+            DESInfo.Close();
+        }
+
+        private void frmDESInfo_Load(object sender, EventArgs e)
         {
             rdoBtnEncrypt.Checked = true;
-            DESInfo = new frmDESInfo();
+            DES = new frmDES();
+        }
+
+        private void btnSaveToClipboard_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cipherRadioButtonChanged(object sender, EventArgs e)
+        {
+            if (rdoBtnEncrypt.Checked)
+            {
+                lblMessage.Text = "Plaintext";
+                lblResult.Text = "Ciphertext";
+            }
+            else if (rdoBtnDecrypt.Checked)
+            {
+                lblMessage.Text = "Ciphertext";
+                lblResult.Text = "Plaintext";
+            }
+            else
+            {
+                MessageBox.Show("Select if you want to encrypt or decrypt the text");
+            }
         }
 
         private void btnCipher_Click(object sender, EventArgs e)
@@ -80,7 +101,8 @@ namespace Cryptographer
                             {
                                 myDES.GenerateIV();
                             }
-                        } else if (rdoHexadecimal.Checked)
+                        }
+                        else if (rdoHexadecimal.Checked)
                         {
                             if (txtKey.Text != "")
                             {
@@ -95,7 +117,8 @@ namespace Cryptographer
                                 myDES.GenerateIV();
                             }
                         }
-                    }catch (System.ArgumentException)
+                    }
+                    catch (System.ArgumentException)
                     {
                         MessageBox.Show("Check if the entered Key is correct", "Argument Exception");
 
@@ -106,7 +129,8 @@ namespace Cryptographer
                         MessageBox.Show("Check if the entered IV is correct", "Cryptographic Exception");
 
                         return;
-                    } catch (System.FormatException)
+                    }
+                    catch (System.FormatException)
                     {
                         MessageBox.Show("Check if the entered IV is correct", "Format Exception");
 
@@ -189,7 +213,8 @@ namespace Cryptographer
 
                                 return;
                             }
-                        } catch (System.Security.Cryptography.CryptographicException)
+                        }
+                        catch (System.Security.Cryptography.CryptographicException)
                         {
                             MessageBox.Show("Check if the entered ciphertext is correct", "Cryptographic error");
 
@@ -228,30 +253,6 @@ namespace Cryptographer
                     return;
                 }
             }
-        }
-
-        private void cipherRadioButtonChanged(object sender, EventArgs e)
-        {
-            if (rdoBtnEncrypt.Checked)
-            {
-                lblMessage.Text = "Plaintext";
-                lblResult.Text = "Ciphertext";
-            }
-            else if (rdoBtnDecrypt.Checked)
-            {
-                lblMessage.Text = "Ciphertext";
-                lblResult.Text = "Plaintext";
-            }
-            else
-            {
-                MessageBox.Show("Select if you want to encrypt or decrypt the text");
-            }
-        }
-
-        private void frmDES_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            frmDES DESCipher = new frmDES();
-            DESCipher.Close();
         }
     }
 }
