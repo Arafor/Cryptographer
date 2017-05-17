@@ -54,7 +54,10 @@ namespace Cryptographer
 
         private void btnSaveToClipboard_Click(object sender, EventArgs e)
         {
-
+            if (txtResult.Text != "")
+            {
+                Clipboard.SetText(txtResult.Text);
+            }
         }
 
         private void cipherRadioButtonChanged(object sender, EventArgs e)
