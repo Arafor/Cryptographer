@@ -32,9 +32,9 @@ namespace Cryptographer
             if (IV == null || IV.Length <= 0)
                 throw new ArgumentNullException("Key");
             byte[] encrypted;
-            // Create an DESCryptoServiceProvider object
+            // Create an AesCryptoServiceProvider object
             // with the specified key and IV.
-            using (DES tdsAlg = new DESCryptoServiceProvider())
+            using (Aes tdsAlg = new AesCryptoServiceProvider())
             {
                 tdsAlg.Key = Key;
                 tdsAlg.IV = IV;
@@ -65,7 +65,7 @@ namespace Cryptographer
 
         }
 
-        protected string DecryptStringFromBytes(byte[] cipherText, byte[] Key, byte[] IV)
+        protected string DecryptStringFromBytes(byte[] cipherText, byte[] Key, byte[] IV, CipherMode Mode)
         {
             // Check arguments.
             if (cipherText == null || cipherText.Length <= 0)
@@ -79,12 +79,13 @@ namespace Cryptographer
             // the decrypted text.
             string plaintext = null;
 
-            // Create an TripleDESCryptoServiceProvider object
+            // Create an TripleAesCryptoServiceProvider object
             // with the specified key and IV.
-            using (DES tdsAlg = new DESCryptoServiceProvider())
+            using (Aes tdsAlg = new AesCryptoServiceProvider())
             {
                 tdsAlg.Key = Key;
                 tdsAlg.IV = IV;
+                tdsAlg.Mode = Mode;
 
                 // Create a decrytor to perform the stream transform.
                 ICryptoTransform decryptor = tdsAlg.CreateDecryptor(tdsAlg.Key, tdsAlg.IV);

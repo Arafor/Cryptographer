@@ -24,7 +24,7 @@ namespace Cryptographer
         }
 
         frmAES AES;
-        DES myDES = new DESCryptoServiceProvider();
+        Aes myAES = new AesCryptoServiceProvider();
 
         private void btnAES_Click(object sender, EventArgs e)
         {
@@ -79,37 +79,37 @@ namespace Cryptographer
                 string message = txtMessage.Text;
                 if (message != null)
                 {
-                    myDES.Mode = setSelectedMode();
+                    myAES.Mode = setSelectedMode();
                     try
                     {
                         if (rdoBinary.Checked)
                         {
                             if (txtKey.Text != "")
                             {
-                                myDES.Key = parseBinaryStringToBytes(txtKey.Text);
+                                myAES.Key = parseBinaryStringToBytes(txtKey.Text);
                             }
                             if (txtIV.Text != "")
                             {
-                                myDES.IV = parseBinaryStringToBytes(txtIV.Text);
+                                myAES.IV = parseBinaryStringToBytes(txtIV.Text);
                             }
                             else
                             {
-                                myDES.GenerateIV();
+                                myAES.GenerateIV();
                             }
                         }
                         else if (rdoHexadecimal.Checked)
                         {
                             if (txtKey.Text != "")
                             {
-                                myDES.Key = parseHexadecimalStringToBytes(txtKey.Text);
+                                myAES.Key = parseHexadecimalStringToBytes(txtKey.Text);
                             }
                             if (txtIV.Text != "")
                             {
-                                myDES.IV = parseHexadecimalStringToBytes(txtIV.Text);
+                                myAES.IV = parseHexadecimalStringToBytes(txtIV.Text);
                             }
                             else
                             {
-                                myDES.GenerateIV();
+                                myAES.GenerateIV();
                             }
                         }
                     }
@@ -134,7 +134,7 @@ namespace Cryptographer
                     if (rdoBtnEncrypt.Checked)
                     {
                         //Plaintext to Ciphertext
-                        byte[] encrypted = EncryptStringToBytes(message, myDES.Key, myDES.IV, myDES.Mode);
+                        byte[] encrypted = EncryptStringToBytes(message, myAES.Key, myAES.IV, myAES.Mode);
                         if (rdoBinary.Checked)
                         {
                             foreach (byte encryptedByte in encrypted)
@@ -143,13 +143,13 @@ namespace Cryptographer
                             }
                             //Print key
                             txtKey.Text = "";
-                            foreach (byte keyByte in myDES.Key)
+                            foreach (byte keyByte in myAES.Key)
                             {
                                 txtKey.Text = txtKey.Text + Convert.ToString(keyByte, 2).PadLeft(8, '0');
                             }
                             //Print IV
                             txtIV.Text = "";
-                            foreach (byte IVByte in myDES.IV)
+                            foreach (byte IVByte in myAES.IV)
                             {
                                 txtIV.Text = txtIV.Text + Convert.ToString(IVByte, 2).PadLeft(8, '0');
                             }
@@ -157,8 +157,8 @@ namespace Cryptographer
                         else if (rdoHexadecimal.Checked)
                         {
                             txtResult.Text = BitConverter.ToString(encrypted).Replace("-", "");
-                            txtKey.Text = BitConverter.ToString(myDES.Key).Replace("-", "");
-                            txtIV.Text = BitConverter.ToString(myDES.IV).Replace("-", "");
+                            txtKey.Text = BitConverter.ToString(myAES.Key).Replace("-", "");
+                            txtIV.Text = BitConverter.ToString(myAES.IV).Replace("-", "");
                         }
                         else
                         {
@@ -186,21 +186,21 @@ namespace Cryptographer
 
                                 return;
                             }
-                            string roundtrip = DecryptStringFromBytes(encrypted, myDES.Key, myDES.IV);
+                            string roundtrip = DecryptStringFromBytes(encrypted, myAES.Key, myAES.IV, myAES.Mode);
                             txtResult.Text = roundtrip;
 
                             //Set Key text
                             txtKey.Text = "";
                             if (rdoBinary.Checked)
                             {
-                                foreach (byte keyByte in myDES.Key)
+                                foreach (byte keyByte in myAES.Key)
                                 {
                                     txtKey.Text = txtKey.Text + Convert.ToString(keyByte, 2).PadLeft(8, '0');
                                 }
                             }
                             else if (rdoHexadecimal.Checked)
                             {
-                                txtKey.Text = BitConverter.ToString(myDES.Key).Replace("-", "");
+                                txtKey.Text = BitConverter.ToString(myAES.Key).Replace("-", "");
                             }
                             else
                             {
