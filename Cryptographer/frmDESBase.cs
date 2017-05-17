@@ -65,7 +65,7 @@ namespace Cryptographer
 
         }
 
-        protected string DecryptStringFromBytes(byte[] cipherText, byte[] Key, byte[] IV)
+        protected string DecryptStringFromBytes(byte[] cipherText, byte[] Key, byte[] IV, CipherMode Mode)
         {
             // Check arguments.
             if (cipherText == null || cipherText.Length <= 0)
@@ -85,6 +85,7 @@ namespace Cryptographer
             {
                 tdsAlg.Key = Key;
                 tdsAlg.IV = IV;
+                tdsAlg.Mode = Mode;
 
                 // Create a decrytor to perform the stream transform.
                 ICryptoTransform decryptor = tdsAlg.CreateDecryptor(tdsAlg.Key, tdsAlg.IV);

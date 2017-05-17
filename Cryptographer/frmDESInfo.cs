@@ -194,7 +194,7 @@ namespace Cryptographer
 
                                 return;
                             }
-                            string roundtrip = DecryptStringFromBytes(encrypted, myDES.Key, myDES.IV);
+                            string roundtrip = DecryptStringFromBytes(encrypted, myDES.Key, myDES.IV, myDES.Mode);
                             txtResult.Text = roundtrip;
 
                             //Set Key text
