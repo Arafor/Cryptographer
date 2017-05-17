@@ -16,6 +16,7 @@ namespace Cryptographer
         frmCaesar ceasarCipher;
         frmVigenere vigenereCipher;
         frmPlayfair playfairCipher;
+        frmDES DESCipher;
         frmDiffieHellman diffieHellman;
 
         public frmCryptographer()
@@ -69,7 +70,18 @@ namespace Cryptographer
             ceasarCipher = new frmCaesar();
             vigenereCipher = new frmVigenere();
             playfairCipher = new frmPlayfair();
+            DESCipher = new frmDES();
             diffieHellman = new frmDiffieHellman();
+        }
+
+        private void btnDES_Click(object sender, EventArgs e)
+        {
+
+            if (!DESCipher.Visible)
+            {
+                DESCipher = new frmDES();
+                DESCipher.Show();
+            }
         }
     }
 }

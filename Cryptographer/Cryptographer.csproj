@@ -73,6 +73,24 @@
     <Compile Include="frmCaesar.Designer.cs">
       <DependentUpon>frmCaesar.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDES.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDES.Designer.cs">
+      <DependentUpon>frmDES.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDESBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDESBase.Designer.cs">
+      <DependentUpon>frmDESBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDESInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDESInfo.Designer.cs">
+      <DependentUpon>frmDESInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDiffieHellman.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +155,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCryptographer.resx">
       <DependentUpon>frmCryptographer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDES.resx">
+      <DependentUpon>frmDES.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDESBase.resx">
+      <DependentUpon>frmDESBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDESInfo.resx">
+      <DependentUpon>frmDESInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDiffieHellman.resx">
       <DependentUpon>frmDiffieHellman.cs</DependentUpon>

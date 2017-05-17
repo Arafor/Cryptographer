@@ -33,6 +33,7 @@
             this.btnPlayfair = new System.Windows.Forms.Button();
             this.btnDiffieHellman = new System.Windows.Forms.Button();
             this.lblWelcome = new System.Windows.Forms.Label();
+            this.btnDES = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCaesar
@@ -67,7 +68,7 @@
             // 
             // btnDiffieHellman
             // 
-            this.btnDiffieHellman.Location = new System.Drawing.Point(42, 181);
+            this.btnDiffieHellman.Location = new System.Drawing.Point(42, 221);
             this.btnDiffieHellman.Name = "btnDiffieHellman";
             this.btnDiffieHellman.Size = new System.Drawing.Size(100, 23);
             this.btnDiffieHellman.TabIndex = 3;
@@ -87,12 +88,23 @@
             this.lblWelcome.Text = "Welcome to Cryptographer!";
             this.lblWelcome.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // btnDES
+            // 
+            this.btnDES.Location = new System.Drawing.Point(42, 181);
+            this.btnDES.Name = "btnDES";
+            this.btnDES.Size = new System.Drawing.Size(100, 23);
+            this.btnDES.TabIndex = 5;
+            this.btnDES.Text = "DES cipher";
+            this.btnDES.UseVisualStyleBackColor = true;
+            this.btnDES.Click += new System.EventHandler(this.btnDES_Click);
+            // 
             // frmCryptographer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(184, 226);
+            this.ClientSize = new System.Drawing.Size(184, 261);
+            this.Controls.Add(this.btnDES);
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.btnDiffieHellman);
             this.Controls.Add(this.btnPlayfair);
@@ -117,6 +129,7 @@
         private System.Windows.Forms.Button btnPlayfair;
         private System.Windows.Forms.Button btnDiffieHellman;
         private System.Windows.Forms.Label lblWelcome;
+        private System.Windows.Forms.Button btnDES;
     }
 }
 
