@@ -34,6 +34,7 @@
             this.btnDiffieHellman = new System.Windows.Forms.Button();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.btnDES = new System.Windows.Forms.Button();
+            this.btnAES = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCaesar
@@ -68,7 +69,7 @@
             // 
             // btnDiffieHellman
             // 
-            this.btnDiffieHellman.Location = new System.Drawing.Point(42, 221);
+            this.btnDiffieHellman.Location = new System.Drawing.Point(42, 261);
             this.btnDiffieHellman.Name = "btnDiffieHellman";
             this.btnDiffieHellman.Size = new System.Drawing.Size(100, 23);
             this.btnDiffieHellman.TabIndex = 3;
@@ -98,12 +99,23 @@
             this.btnDES.UseVisualStyleBackColor = true;
             this.btnDES.Click += new System.EventHandler(this.btnDES_Click);
             // 
+            // btnAES
+            // 
+            this.btnAES.Location = new System.Drawing.Point(42, 221);
+            this.btnAES.Name = "btnAES";
+            this.btnAES.Size = new System.Drawing.Size(100, 23);
+            this.btnAES.TabIndex = 6;
+            this.btnAES.Text = "AES cipher";
+            this.btnAES.UseVisualStyleBackColor = true;
+            this.btnAES.Click += new System.EventHandler(this.btnAES_Click);
+            // 
             // frmCryptographer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(184, 261);
+            this.ClientSize = new System.Drawing.Size(184, 301);
+            this.Controls.Add(this.btnAES);
             this.Controls.Add(this.btnDES);
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.btnDiffieHellman);
@@ -130,6 +142,7 @@
         private System.Windows.Forms.Button btnDiffieHellman;
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Button btnDES;
+        private System.Windows.Forms.Button btnAES;
     }
 }
 

@@ -17,6 +17,7 @@ namespace Cryptographer
         frmVigenere vigenereCipher;
         frmPlayfair playfairCipher;
         frmDES DESCipher;
+        frmAES AESCipher;
         frmDiffieHellman diffieHellman;
 
         public frmCryptographer()
@@ -25,6 +26,16 @@ namespace Cryptographer
             FormWindowManager formWindowManager = new FormWindowManager();
             formWindowManager.setFormWindowSize(this);
             formWindowManager.setFormWindowLocation(null, this);
+        }
+
+        private void frmCryptographer_Load(object sender, EventArgs e)
+        {
+            ceasarCipher = new frmCaesar();
+            vigenereCipher = new frmVigenere();
+            playfairCipher = new frmPlayfair();
+            DESCipher = new frmDES();
+            AESCipher = new frmAES();
+            diffieHellman = new frmDiffieHellman();
         }
 
         private void btnCaesar_Click(object sender, EventArgs e)
@@ -56,31 +67,30 @@ namespace Cryptographer
             }
         }
 
+        private void btnDES_Click(object sender, EventArgs e)
+        {
+            if (!DESCipher.Visible)
+            {
+                DESCipher = new frmDES();
+                DESCipher.Show();
+            }
+        }
+
+        private void btnAES_Click(object sender, EventArgs e)
+        {
+            if (!AESCipher.Visible)
+            {
+                AESCipher = new frmAES();
+                AESCipher.Show();
+            }
+        }
+
         private void btnDiffieHellman_Click(object sender, EventArgs e)
         {
             if (!diffieHellman.Visible)
             {
                 diffieHellman = new frmDiffieHellman();
                 diffieHellman.Show();
-            }
-        }
-
-        private void frmCryptographer_Load(object sender, EventArgs e)
-        {
-            ceasarCipher = new frmCaesar();
-            vigenereCipher = new frmVigenere();
-            playfairCipher = new frmPlayfair();
-            DESCipher = new frmDES();
-            diffieHellman = new frmDiffieHellman();
-        }
-
-        private void btnDES_Click(object sender, EventArgs e)
-        {
-
-            if (!DESCipher.Visible)
-            {
-                DESCipher = new frmDES();
-                DESCipher.Show();
             }
         }
     }
