@@ -168,6 +168,12 @@
     <Compile Include="frmPlayfairInfo.Designer.cs">
       <DependentUpon>frmPlayfairInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRSABase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRSABase.Designer.cs">
+      <DependentUpon>frmRSABase.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVigenere.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPlayfairInfo.resx">
       <DependentUpon>frmPlayfairInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRSABase.resx">
+      <DependentUpon>frmRSABase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVigenere.resx">
       <DependentUpon>frmVigenere.cs</DependentUpon>
