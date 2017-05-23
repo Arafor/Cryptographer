@@ -89,7 +89,7 @@ namespace Cryptographer
                         {
                             txtPrimitiveRoot.Text = primitiveRootsOfPrimeNumbers[parsedNumber].ToString();
                         }
-                        catch (KeyNotFoundException exc)
+                        catch (KeyNotFoundException)
                         {
                             txtPrimeNumber.ForeColor = Color.Red;
                             errorProvider1.SetError(txtPrimeNumber, "This prime number does not have a primitive root; Please choose a different number");

@@ -73,5 +73,25 @@ namespace Cryptographer
             }
             return true;
         }
+
+        public byte[] parseBinaryStringToBytes(string message)
+        {
+            int numOfBytes = message.Length / 8;
+            byte[] bytes = new byte[numOfBytes];
+            for (int i = 0; i < numOfBytes; ++i)
+            {
+                bytes[i] = Convert.ToByte(message.Substring(8 * i, 8), 2);
+            }
+
+            return bytes;
+        }
+
+        public byte[] parseHexadecimalStringToBytes(string message)
+        {
+            int messageLength = message.Length;
+            byte[] bytes = new byte[messageLength / 2];
+            for (int i = 0; i < messageLength; i += 2) bytes[i / 2] = Convert.ToByte(message.Substring(i, 2), 16);
+            return bytes;
+        }
     }
 }

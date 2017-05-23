@@ -108,7 +108,7 @@ namespace Cryptographer
                     throw new Exception();
                 }
             }
-            catch (Exception exc)
+            catch (Exception)
             {
                 return null;
             }

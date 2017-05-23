@@ -25,6 +25,7 @@ namespace Cryptographer
 
         frmAESInfo AESInfo;
         Aes myAES = new AesCryptoServiceProvider();
+        TextParser textParser = new TextParser();
 
         private void btnSaveToClipboard_Click(object sender, EventArgs e)
         {
@@ -70,11 +71,11 @@ namespace Cryptographer
                         {
                             if (txtKey.Text != "")
                             {
-                                myAES.Key = parseBinaryStringToBytes(txtKey.Text);
+                                myAES.Key = textParser.parseBinaryStringToBytes(txtKey.Text);
                             }
                             if (txtIV.Text != "")
                             {
-                                myAES.IV = parseBinaryStringToBytes(txtIV.Text);
+                                myAES.IV = textParser.parseBinaryStringToBytes(txtIV.Text);
                             }
                             else
                             {
@@ -85,11 +86,11 @@ namespace Cryptographer
                         {
                             if (txtKey.Text != "")
                             {
-                                myAES.Key = parseHexadecimalStringToBytes(txtKey.Text);
+                                myAES.Key = textParser.parseHexadecimalStringToBytes(txtKey.Text);
                             }
                             if (txtIV.Text != "")
                             {
-                                myAES.IV = parseHexadecimalStringToBytes(txtIV.Text);
+                                myAES.IV = textParser.parseHexadecimalStringToBytes(txtIV.Text);
                             }
                             else
                             {
@@ -158,11 +159,11 @@ namespace Cryptographer
                             byte[] encrypted = null;
                             if (rdoBinary.Checked)
                             {
-                                encrypted = parseBinaryStringToBytes(txtMessage.Text);
+                                encrypted = textParser.parseBinaryStringToBytes(txtMessage.Text);
                             }
                             else if (rdoHexadecimal.Checked)
                             {
-                                encrypted = parseHexadecimalStringToBytes(txtMessage.Text);
+                                encrypted = textParser.parseHexadecimalStringToBytes(txtMessage.Text);
                             }
                             else
                             {
