@@ -76,14 +76,22 @@ namespace Cryptographer
 
         public byte[] parseBinaryStringToBytes(string message)
         {
-            int numOfBytes = message.Length / 8;
-            byte[] bytes = new byte[numOfBytes];
-            for (int i = 0; i < numOfBytes; ++i)
+            try
             {
-                bytes[i] = Convert.ToByte(message.Substring(8 * i, 8), 2);
-            }
+                int numOfBytes = message.Length / 8;
+                byte[] bytes = new byte[numOfBytes];
+                for (int i = 0; i < numOfBytes; ++i)
+                {
+                    bytes[i] = Convert.ToByte(message.Substring(8 * i, 8), 2);
+                }
 
-            return bytes;
+                return bytes;
+            }catch (System.FormatException exc)
+            {
+                MessageBox.Show(exc.Message);
+
+                return null;
+            }
         }
 
         public byte[] parseHexadecimalStringToBytes(string message)

@@ -186,6 +186,24 @@
     <Compile Include="frmRSAInfo.Designer.cs">
       <DependentUpon>frmRSAInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRSASignature.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRSASignature.Designer.cs">
+      <DependentUpon>frmRSASignature.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRSASignatureBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRSASignatureBase.Designer.cs">
+      <DependentUpon>frmRSASignatureBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRSASignatureInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRSASignatureInfo.Designer.cs">
+      <DependentUpon>frmRSASignatureInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVigenere.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,6 +280,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRSAInfo.resx">
       <DependentUpon>frmRSAInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRSASignature.resx">
+      <DependentUpon>frmRSASignature.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRSASignatureBase.resx">
+      <DependentUpon>frmRSASignatureBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRSASignatureInfo.resx">
+      <DependentUpon>frmRSASignatureInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVigenere.resx">
       <DependentUpon>frmVigenere.cs</DependentUpon>

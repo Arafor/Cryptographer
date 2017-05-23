@@ -12,7 +12,7 @@ namespace Cryptographer
         frmDES DESCipher;
         frmAES AESCipher;
         frmRSA RSACipher;
-        //frmRSASignature RSASigature;
+        frmRSASignature RSASigature;
         frmDiffieHellman diffieHellman;
 
         public frmCryptographer()
@@ -31,7 +31,7 @@ namespace Cryptographer
             DESCipher = new frmDES();
             AESCipher = new frmAES();
             RSACipher = new frmRSA();
-            //RSASigature = new frmRSASignature();
+            RSASigature = new frmRSASignature();
             diffieHellman = new frmDiffieHellman();
         }
 
@@ -93,11 +93,11 @@ namespace Cryptographer
 
         private void btnRSASignature_Click(object sender, EventArgs e)
         {
-            //if (!RSASigature.Visible)
-            //{
-            //    RSASigature = new frmRSASignature();
-            //    RSASigature.Show();
-            //}
+            if (!RSASigature.Visible)
+            {
+                RSASigature = new frmRSASignature();
+                RSASigature.Show();
+            }
         }
 
         private void btnDiffieHellman_Click(object sender, EventArgs e)

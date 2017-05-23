@@ -46,8 +46,8 @@
             this.txtD = new System.Windows.Forms.TextBox();
             this.lblE = new System.Windows.Forms.Label();
             this.txtE = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblDescription6 = new System.Windows.Forms.Label();
+            this.lblDescription7 = new System.Windows.Forms.Label();
             this.grpDisplayVlaueMode.SuspendLayout();
             this.grpCipher.SuspendLayout();
             this.SuspendLayout();
@@ -272,33 +272,33 @@
             this.txtE.Size = new System.Drawing.Size(220, 120);
             this.txtE.TabIndex = 81;
             // 
-            // label1
+            // lblDescription6
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 554);
-            this.label1.MaximumSize = new System.Drawing.Size(460, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 13);
-            this.label1.TabIndex = 85;
-            this.label1.Text = "Here are our variables:";
+            this.lblDescription6.AutoSize = true;
+            this.lblDescription6.Location = new System.Drawing.Point(9, 554);
+            this.lblDescription6.MaximumSize = new System.Drawing.Size(460, 0);
+            this.lblDescription6.Name = "lblDescription6";
+            this.lblDescription6.Size = new System.Drawing.Size(114, 13);
+            this.lblDescription6.TabIndex = 85;
+            this.lblDescription6.Text = "Here are our variables:";
             // 
-            // label2
+            // lblDescription7
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 999);
-            this.label2.MaximumSize = new System.Drawing.Size(460, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 13);
-            this.label2.TabIndex = 86;
-            this.label2.Text = "Here is our Result:";
+            this.lblDescription7.AutoSize = true;
+            this.lblDescription7.Location = new System.Drawing.Point(9, 999);
+            this.lblDescription7.MaximumSize = new System.Drawing.Size(460, 0);
+            this.lblDescription7.Name = "lblDescription7";
+            this.lblDescription7.Size = new System.Drawing.Size(94, 13);
+            this.lblDescription7.TabIndex = 86;
+            this.lblDescription7.Text = "Here is our Result:";
             // 
             // frmRSAInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 561);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(484, 733);
+            this.Controls.Add(this.lblDescription7);
+            this.Controls.Add(this.lblDescription6);
             this.Controls.Add(this.lblD);
             this.Controls.Add(this.txtD);
             this.Controls.Add(this.lblE);
@@ -348,8 +348,8 @@
             this.Controls.SetChildIndex(this.lblE, 0);
             this.Controls.SetChildIndex(this.txtD, 0);
             this.Controls.SetChildIndex(this.lblD, 0);
-            this.Controls.SetChildIndex(this.label1, 0);
-            this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.lblDescription6, 0);
+            this.Controls.SetChildIndex(this.lblDescription7, 0);
             this.grpDisplayVlaueMode.ResumeLayout(false);
             this.grpDisplayVlaueMode.PerformLayout();
             this.grpCipher.ResumeLayout(false);
@@ -379,7 +379,7 @@
         protected System.Windows.Forms.TextBox txtD;
         protected System.Windows.Forms.Label lblE;
         protected System.Windows.Forms.TextBox txtE;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblDescription6;
+        private System.Windows.Forms.Label lblDescription7;
     }
 }
