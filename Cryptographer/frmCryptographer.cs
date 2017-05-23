@@ -11,6 +11,8 @@ namespace Cryptographer
         frmPlayfair playfairCipher;
         frmDES DESCipher;
         frmAES AESCipher;
+        frmRSA RSACipher;
+        //frmRSASignature RSASigature;
         frmDiffieHellman diffieHellman;
 
         public frmCryptographer()
@@ -28,6 +30,8 @@ namespace Cryptographer
             playfairCipher = new frmPlayfair();
             DESCipher = new frmDES();
             AESCipher = new frmAES();
+            RSACipher = new frmRSA();
+            //RSASigature = new frmRSASignature();
             diffieHellman = new frmDiffieHellman();
         }
 
@@ -76,6 +80,24 @@ namespace Cryptographer
                 AESCipher = new frmAES();
                 AESCipher.Show();
             }
+        }
+
+        private void btnRSA_Click(object sender, EventArgs e)
+        {
+            if (!RSACipher.Visible)
+            {
+                RSACipher = new frmRSA();
+                RSACipher.Show();
+            }
+        }
+
+        private void btnRSASignature_Click(object sender, EventArgs e)
+        {
+            //if (!RSASigature.Visible)
+            //{
+            //    RSASigature = new frmRSASignature();
+            //    RSASigature.Show();
+            //}
         }
 
         private void btnDiffieHellman_Click(object sender, EventArgs e)
