@@ -58,25 +58,20 @@
             // 
             // btnCipher
             // 
-            this.btnCipher.Location = new System.Drawing.Point(376, 403);
+            this.btnCipher.Location = new System.Drawing.Point(376, 417);
             this.btnCipher.Click += new System.EventHandler(this.btnCipher_Click);
             // 
             // lblResult
             // 
-            this.lblResult.Location = new System.Drawing.Point(12, 1022);
+            this.lblResult.Location = new System.Drawing.Point(9, 1192);
             // 
             // lblKey
             // 
-            this.lblKey.Location = new System.Drawing.Point(12, 297);
+            this.lblKey.Location = new System.Drawing.Point(12, 311);
             // 
-            // lblMessage
+            // lblSignedData
             // 
-            this.lblMessage.Location = new System.Drawing.Point(12, 123);
-            // 
-            // txtResult
-            // 
-            this.txtResult.Location = new System.Drawing.Point(12, 1038);
-            this.txtResult.Size = new System.Drawing.Size(460, 120);
+            this.lblSignedData.Location = new System.Drawing.Point(12, 137);
             // 
             // rdoBtnEncrypt
             // 
@@ -88,20 +83,37 @@
             // 
             // grpCipher
             // 
-            this.grpCipher.Location = new System.Drawing.Point(370, 313);
+            this.grpCipher.Location = new System.Drawing.Point(370, 327);
             // 
             // txtKey
             // 
-            this.txtKey.Location = new System.Drawing.Point(12, 313);
+            this.txtKey.Location = new System.Drawing.Point(18, 327);
             // 
-            // txtMessage
+            // txtSignedData
             // 
-            this.txtMessage.Location = new System.Drawing.Point(12, 139);
+            this.txtSignedData.Location = new System.Drawing.Point(12, 153);
+            // 
+            // lblSignature
+            // 
+            this.lblSignature.Location = new System.Drawing.Point(15, 1027);
+            // 
+            // txtSignature
+            // 
+            this.txtSignature.Location = new System.Drawing.Point(10, 1043);
+            // 
+            // lblValidSignature
+            // 
+            this.lblValidSignature.Location = new System.Drawing.Point(55, 1192);
+            // 
+            // btnImport
+            // 
+            this.btnImport.Location = new System.Drawing.Point(390, 124);
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // lblDescription7
             // 
             this.lblDescription7.AutoSize = true;
-            this.lblDescription7.Location = new System.Drawing.Point(9, 1002);
+            this.lblDescription7.Location = new System.Drawing.Point(10, 1178);
             this.lblDescription7.MaximumSize = new System.Drawing.Size(460, 0);
             this.lblDescription7.Name = "lblDescription7";
             this.lblDescription7.Size = new System.Drawing.Size(94, 13);
@@ -111,7 +123,7 @@
             // lblDescription6
             // 
             this.lblDescription6.AutoSize = true;
-            this.lblDescription6.Location = new System.Drawing.Point(9, 557);
+            this.lblDescription6.Location = new System.Drawing.Point(9, 571);
             this.lblDescription6.MaximumSize = new System.Drawing.Size(460, 0);
             this.lblDescription6.Name = "lblDescription6";
             this.lblDescription6.Size = new System.Drawing.Size(114, 13);
@@ -121,7 +133,7 @@
             // lblD
             // 
             this.lblD.AutoSize = true;
-            this.lblD.Location = new System.Drawing.Point(245, 863);
+            this.lblD.Location = new System.Drawing.Point(245, 877);
             this.lblD.Name = "lblD";
             this.lblD.Size = new System.Drawing.Size(15, 13);
             this.lblD.TabIndex = 104;
@@ -129,7 +141,7 @@
             // 
             // txtD
             // 
-            this.txtD.Location = new System.Drawing.Point(245, 879);
+            this.txtD.Location = new System.Drawing.Point(245, 893);
             this.txtD.Multiline = true;
             this.txtD.Name = "txtD";
             this.txtD.ReadOnly = true;
@@ -140,7 +152,7 @@
             // lblE
             // 
             this.lblE.AutoSize = true;
-            this.lblE.Location = new System.Drawing.Point(12, 863);
+            this.lblE.Location = new System.Drawing.Point(12, 877);
             this.lblE.Name = "lblE";
             this.lblE.Size = new System.Drawing.Size(14, 13);
             this.lblE.TabIndex = 102;
@@ -148,7 +160,7 @@
             // 
             // txtE
             // 
-            this.txtE.Location = new System.Drawing.Point(12, 879);
+            this.txtE.Location = new System.Drawing.Point(12, 893);
             this.txtE.Multiline = true;
             this.txtE.Name = "txtE";
             this.txtE.ReadOnly = true;
@@ -159,7 +171,7 @@
             // lblN
             // 
             this.lblN.AutoSize = true;
-            this.lblN.Location = new System.Drawing.Point(12, 718);
+            this.lblN.Location = new System.Drawing.Point(12, 732);
             this.lblN.Name = "lblN";
             this.lblN.Size = new System.Drawing.Size(15, 13);
             this.lblN.TabIndex = 100;
@@ -167,7 +179,7 @@
             // 
             // txtN
             // 
-            this.txtN.Location = new System.Drawing.Point(12, 734);
+            this.txtN.Location = new System.Drawing.Point(12, 748);
             this.txtN.Multiline = true;
             this.txtN.Name = "txtN";
             this.txtN.ReadOnly = true;
@@ -178,7 +190,7 @@
             // lblQ
             // 
             this.lblQ.AutoSize = true;
-            this.lblQ.Location = new System.Drawing.Point(245, 580);
+            this.lblQ.Location = new System.Drawing.Point(245, 594);
             this.lblQ.Name = "lblQ";
             this.lblQ.Size = new System.Drawing.Size(15, 13);
             this.lblQ.TabIndex = 98;
@@ -186,7 +198,7 @@
             // 
             // txtQ
             // 
-            this.txtQ.Location = new System.Drawing.Point(245, 596);
+            this.txtQ.Location = new System.Drawing.Point(245, 610);
             this.txtQ.Multiline = true;
             this.txtQ.Name = "txtQ";
             this.txtQ.ReadOnly = true;
@@ -197,7 +209,7 @@
             // lblP
             // 
             this.lblP.AutoSize = true;
-            this.lblP.Location = new System.Drawing.Point(12, 580);
+            this.lblP.Location = new System.Drawing.Point(12, 594);
             this.lblP.Name = "lblP";
             this.lblP.Size = new System.Drawing.Size(14, 13);
             this.lblP.TabIndex = 96;
@@ -205,7 +217,7 @@
             // 
             // txtP
             // 
-            this.txtP.Location = new System.Drawing.Point(12, 596);
+            this.txtP.Location = new System.Drawing.Point(12, 610);
             this.txtP.Multiline = true;
             this.txtP.Name = "txtP";
             this.txtP.ReadOnly = true;
@@ -216,17 +228,17 @@
             // lblDescription5
             // 
             this.lblDescription5.AutoSize = true;
-            this.lblDescription5.Location = new System.Drawing.Point(9, 430);
+            this.lblDescription5.Location = new System.Drawing.Point(9, 444);
             this.lblDescription5.MaximumSize = new System.Drawing.Size(460, 0);
             this.lblDescription5.Name = "lblDescription5";
-            this.lblDescription5.Size = new System.Drawing.Size(238, 13);
+            this.lblDescription5.Size = new System.Drawing.Size(280, 13);
             this.lblDescription5.TabIndex = 94;
-            this.lblDescription5.Text = "To cipher our data we use the following formulas:";
+            this.lblDescription5.Text = "To sign or validate our data we use the following formulas:";
             // 
             // lstFormula
             // 
             this.lstFormula.FormattingEnabled = true;
-            this.lstFormula.Location = new System.Drawing.Point(12, 446);
+            this.lstFormula.Location = new System.Drawing.Point(12, 460);
             this.lstFormula.Name = "lstFormula";
             this.lstFormula.Size = new System.Drawing.Size(453, 108);
             this.lstFormula.TabIndex = 93;
@@ -234,17 +246,17 @@
             // lblDescription4
             // 
             this.lblDescription4.AutoSize = true;
-            this.lblDescription4.Location = new System.Drawing.Point(370, 262);
-            this.lblDescription4.MaximumSize = new System.Drawing.Size(100, 0);
+            this.lblDescription4.Location = new System.Drawing.Point(349, 276);
+            this.lblDescription4.MaximumSize = new System.Drawing.Size(120, 0);
             this.lblDescription4.Name = "lblDescription4";
-            this.lblDescription4.Size = new System.Drawing.Size(95, 39);
+            this.lblDescription4.Size = new System.Drawing.Size(118, 39);
             this.lblDescription4.TabIndex = 92;
-            this.lblDescription4.Text = "Let\'s choose if we want to encrypt or decrypt or data.";
+            this.lblDescription4.Text = "Let\'s choose if we want to sign or validate a document.";
             // 
             // lblDescription3
             // 
             this.lblDescription3.AutoSize = true;
-            this.lblDescription3.Location = new System.Drawing.Point(9, 262);
+            this.lblDescription3.Location = new System.Drawing.Point(9, 276);
             this.lblDescription3.MaximumSize = new System.Drawing.Size(350, 0);
             this.lblDescription3.Name = "lblDescription3";
             this.lblDescription3.Size = new System.Drawing.Size(338, 26);
@@ -256,11 +268,12 @@
             // 
             this.lblDescription2.AutoSize = true;
             this.lblDescription2.Location = new System.Drawing.Point(9, 105);
-            this.lblDescription2.MaximumSize = new System.Drawing.Size(460, 0);
+            this.lblDescription2.MaximumSize = new System.Drawing.Size(360, 0);
             this.lblDescription2.Name = "lblDescription2";
-            this.lblDescription2.Size = new System.Drawing.Size(314, 13);
+            this.lblDescription2.Size = new System.Drawing.Size(352, 26);
             this.lblDescription2.TabIndex = 90;
-            this.lblDescription2.Text = "To encrypt or decrypt we need some data. Let\'s enter some data.";
+            this.lblDescription2.Text = "To sign or validate we need some data. Let\'s enter some data or import a file to " +
+    "sign.";
             // 
             // lblDescription1
             // 
@@ -275,7 +288,7 @@
             // btnSaveToClipboard
             // 
             this.btnSaveToClipboard.Image = global::Cryptographer.Properties.Resources.Editing_Clipboard_icon30;
-            this.btnSaveToClipboard.Location = new System.Drawing.Point(432, 1164);
+            this.btnSaveToClipboard.Location = new System.Drawing.Point(432, 1178);
             this.btnSaveToClipboard.Name = "btnSaveToClipboard";
             this.btnSaveToClipboard.Size = new System.Drawing.Size(40, 40);
             this.btnSaveToClipboard.TabIndex = 88;
@@ -297,7 +310,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 733);
+            this.ClientSize = new System.Drawing.Size(518, 733);
             this.Controls.Add(this.lblDescription7);
             this.Controls.Add(this.lblDescription6);
             this.Controls.Add(this.lblD);
@@ -322,11 +335,14 @@
             this.Text = "Cryptographer- RSA signature info form";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmRSASignatureInfo_FormClosing);
             this.Load += new System.EventHandler(this.frmRSASignatureInfo_Load);
-            this.Controls.SetChildIndex(this.txtMessage, 0);
+            this.Controls.SetChildIndex(this.txtSignature, 0);
+            this.Controls.SetChildIndex(this.lblSignature, 0);
+            this.Controls.SetChildIndex(this.lblValidSignature, 0);
+            this.Controls.SetChildIndex(this.btnImport, 0);
+            this.Controls.SetChildIndex(this.txtSignedData, 0);
             this.Controls.SetChildIndex(this.txtKey, 0);
             this.Controls.SetChildIndex(this.grpCipher, 0);
-            this.Controls.SetChildIndex(this.txtResult, 0);
-            this.Controls.SetChildIndex(this.lblMessage, 0);
+            this.Controls.SetChildIndex(this.lblSignedData, 0);
             this.Controls.SetChildIndex(this.lblKey, 0);
             this.Controls.SetChildIndex(this.lblResult, 0);
             this.Controls.SetChildIndex(this.btnCipher, 0);

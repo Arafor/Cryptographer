@@ -87,6 +87,7 @@ namespace Cryptographer
 
                         return;
                     }
+                    txtKey.Text = myRSA.ToXmlString(true);
                     if (rdoBinary.Checked)
                     {
                         txtResult.Text = "";
@@ -94,8 +95,6 @@ namespace Cryptographer
                         {
                             txtResult.Text = txtResult.Text + Convert.ToString(encryptedByte, 2).PadLeft(8, '0');
                         }
-                        txtKey.Text = myRSA.ToXmlString(true);
-                        printKeyParam();
                     }
                     else if (rdoHexadecimal.Checked)
                     {
@@ -107,6 +106,7 @@ namespace Cryptographer
 
                         return;
                     }
+                    printKeyParam();
                 }
                 else if (rdoBtnDecrypt.Checked)
                 {

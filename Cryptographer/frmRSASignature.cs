@@ -2,6 +2,8 @@
 using System.Windows.Forms;
 using System.Security.Cryptography;
 using System.Text;
+using System.Drawing;
+using System.IO;
 
 namespace Cryptographer
 {
@@ -14,7 +16,7 @@ namespace Cryptographer
             formWindowManager.setFormWindowSize(this);
             frmCryptographer formCryptographer = new frmCryptographer();
             formWindowManager.setFormWindowLocation(formCryptographer, this);
-            this.ActiveControl = txtMessage;
+            this.ActiveControl = txtSignedData;
         }
 
         frmRSASignatureInfo RSASignatureInfo;
@@ -22,12 +24,13 @@ namespace Cryptographer
         TextParser textParser = new TextParser();
         //Create a UnicodeEncoder to convert between byte array and string.
         UnicodeEncoding ByteConverter = new UnicodeEncoding();
+        FileManager fileManager = new FileManager();
 
         private void btnSaveToClipboard_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text != "")
+            if (txtSignature.Text != "")
             {
-                Clipboard.SetText(txtResult.Text);
+                Clipboard.SetText(txtSignature.Text);
             }
         }
 
@@ -37,9 +40,9 @@ namespace Cryptographer
             {
                 RSASignatureInfo = new frmRSASignatureInfo();
                 RSASignatureInfo.Show();
-                if (txtMessage.Text != "" && txtKey.Text != "")
+                if (txtSignedData.Text != "" && txtKey.Text != "")
                 {
-                    RSASignatureInfo.setMessageAndKey(txtMessage.Text, txtKey.Text);
+                    RSASignatureInfo.setMessageAndKey(txtSignedData.Text, txtKey.Text, txtSignature.Text);
                 }
                 this.Close();
             }
@@ -53,10 +56,14 @@ namespace Cryptographer
 
         private void btnCipher_Click(object sender, EventArgs e)
         {
-            if (checkEmptyFields(txtMessage.Text))
+            if (checkEmptyFields(txtSignedData.Text))
             {
+                byte[] message = ByteConverter.GetBytes(txtSignedData.Text);
                 // Prepare for cipher text display
-                txtResult.Text = "";
+                if (rdoBtnEncrypt.Checked)
+                {
+                    txtSignature.Text = "";
+                }
                 if (txtKey.Text != "")
                 {
                     try
@@ -72,13 +79,12 @@ namespace Cryptographer
                 }
                 if (rdoBtnEncrypt.Checked)
                 {
-                    byte[] message = ByteConverter.GetBytes(txtMessage.Text);
 
                     //Plaintext to Ciphertext
                     byte[] encrypted;
                     try
                     {
-                        encrypted = RSAEncrypt(message, myRSA.ExportParameters(false), false);
+                        encrypted = HashAndSignBytes(message, myRSA.ExportParameters(true));
                     }
                     catch (Exception exc)
                     {
@@ -86,18 +92,19 @@ namespace Cryptographer
 
                         return;
                     }
+
+                    txtKey.Text = myRSA.ToXmlString(true);
                     if (rdoBinary.Checked)
                     {
-                        txtResult.Text = "";
+                        txtSignature.Text = "";
                         foreach (byte encryptedByte in encrypted)
                         {
-                            txtResult.Text = txtResult.Text + Convert.ToString(encryptedByte, 2).PadLeft(8, '0');
+                            txtSignature.Text = txtSignature.Text + Convert.ToString(encryptedByte, 2).PadLeft(8, '0');
                         }
-                        txtKey.Text = myRSA.ToXmlString(true);
                     }
                     else if (rdoHexadecimal.Checked)
                     {
-                        txtResult.Text = BitConverter.ToString(encrypted).Replace("-", "");
+                        txtSignature.Text = BitConverter.ToString(encrypted).Replace("-", "");
                     }
                     else
                     {
@@ -113,11 +120,11 @@ namespace Cryptographer
                         byte[] encrypted = null;
                         if (rdoBinary.Checked)
                         {
-                            encrypted = textParser.parseBinaryStringToBytes(txtMessage.Text);
+                            encrypted = textParser.parseBinaryStringToBytes(txtSignature.Text);
                         }
                         else if (rdoHexadecimal.Checked)
                         {
-                            encrypted = textParser.parseHexadecimalStringToBytes(txtMessage.Text);
+                            encrypted = textParser.parseHexadecimalStringToBytes(txtSignature.Text);
                         }
                         else
                         {
@@ -125,17 +132,16 @@ namespace Cryptographer
 
                             return;
                         }
-                        byte[] decryptedByteArray = RSADecrypt(encrypted, myRSA.ExportParameters(true), false);
-                        try
+                        bool signatureCheck = VerifySignedHash(message, encrypted, myRSA.ExportParameters(false));
+                        if (signatureCheck)
                         {
-                            foreach (byte decryptedByte in decryptedByteArray)
-                            {
-                                txtResult.Text = txtResult.Text + Convert.ToChar(decryptedByte).ToString();
-                            }
+                            lblValidSignature.Text = "Signature matches the signed document.";
+                            lblValidSignature.ForeColor = Color.Green;
                         }
-                        catch (NullReferenceException exc)
+                        else
                         {
-                            MessageBox.Show(exc.ToString());
+                            lblValidSignature.Text = "Signature does match the signed document.";
+                            lblValidSignature.ForeColor = Color.Red;
                         }
                     }
                     catch (System.Security.Cryptography.CryptographicException)
@@ -164,13 +170,11 @@ namespace Cryptographer
         {
             if (rdoBtnEncrypt.Checked)
             {
-                lblMessage.Text = "Plaintext";
-                lblResult.Text = "Ciphertext";
+                lblSignedData.Text = "Signable data";
             }
             else if (rdoBtnDecrypt.Checked)
             {
-                lblMessage.Text = "Ciphertext";
-                lblResult.Text = "Plaintext";
+                lblSignedData.Text = "Signed data";
             }
             else
             {
@@ -182,6 +186,53 @@ namespace Cryptographer
         {
             frmRSASignature RSASignatureCipher = new frmRSASignature();
             RSASignatureCipher.Close();
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                byte[] signableData = File.ReadAllBytes(fileManager.importFile());
+                if (rdoBinary.Checked)
+                {
+
+
+                    string documentBinaryData = "";
+                    foreach (byte documentByte in signableData)
+                    {
+                        if (documentBinaryData.Length < txtSignedData.MaxLength)
+                        {
+                            documentBinaryData = documentBinaryData + Convert.ToString(documentByte, 2).PadLeft(8, '0');
+                        }
+                        else
+                        {
+                            MessageBox.Show("The chosen file is too large.");
+
+                            return;
+                        }
+                    }
+                    txtSignedData.Text = documentBinaryData;
+
+                }
+                else if (rdoHexadecimal.Checked)
+                {
+                    if (signableData.Length < txtSignedData.MaxLength)
+                    {
+                        txtSignedData.Text = BitConverter.ToString(signableData).Replace("-", "");
+                    }
+                    else
+                    {
+                        MessageBox.Show("The chosen file is too large.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Choose in what format to display values.");
+                }
+            } catch (ArgumentNullException)
+            {
+                return;
+            }
         }
     }
 }

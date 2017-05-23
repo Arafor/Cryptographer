@@ -46,6 +46,10 @@
             // 
             this.rdoBtnDecrypt.CheckedChanged += new System.EventHandler(this.cipherRadioButtonChanged);
             // 
+            // btnImport
+            // 
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+            // 
             // btnSaveToClipboard
             // 
             this.btnSaveToClipboard.Image = global::Cryptographer.Properties.Resources.Editing_Clipboard_icon30;
@@ -78,11 +82,14 @@
             this.Text = "Cryptographer- RSA signature form";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmRSASignature_FormClosing);
             this.Load += new System.EventHandler(this.frmRSASignature_Load);
-            this.Controls.SetChildIndex(this.txtMessage, 0);
+            this.Controls.SetChildIndex(this.txtSignature, 0);
+            this.Controls.SetChildIndex(this.lblSignature, 0);
+            this.Controls.SetChildIndex(this.lblValidSignature, 0);
+            this.Controls.SetChildIndex(this.btnImport, 0);
+            this.Controls.SetChildIndex(this.txtSignedData, 0);
             this.Controls.SetChildIndex(this.txtKey, 0);
             this.Controls.SetChildIndex(this.grpCipher, 0);
-            this.Controls.SetChildIndex(this.txtResult, 0);
-            this.Controls.SetChildIndex(this.lblMessage, 0);
+            this.Controls.SetChildIndex(this.lblSignedData, 0);
             this.Controls.SetChildIndex(this.lblKey, 0);
             this.Controls.SetChildIndex(this.lblResult, 0);
             this.Controls.SetChildIndex(this.btnCipher, 0);

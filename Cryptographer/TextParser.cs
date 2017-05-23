@@ -96,10 +96,18 @@ namespace Cryptographer
 
         public byte[] parseHexadecimalStringToBytes(string message)
         {
-            int messageLength = message.Length;
-            byte[] bytes = new byte[messageLength / 2];
-            for (int i = 0; i < messageLength; i += 2) bytes[i / 2] = Convert.ToByte(message.Substring(i, 2), 16);
-            return bytes;
+            try
+            {
+                int messageLength = message.Length;
+                byte[] bytes = new byte[messageLength / 2];
+                for (int i = 0; i < messageLength; i += 2) bytes[i / 2] = Convert.ToByte(message.Substring(i, 2), 16);
+                return bytes;
+            } catch (FormatException exc)
+            {
+                MessageBox.Show(exc.Message);
+
+                return null;
+            }
         }
     }
 }

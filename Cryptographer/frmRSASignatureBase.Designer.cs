@@ -35,13 +35,16 @@
             this.btnCipher = new System.Windows.Forms.Button();
             this.lblResult = new System.Windows.Forms.Label();
             this.lblKey = new System.Windows.Forms.Label();
-            this.lblMessage = new System.Windows.Forms.Label();
-            this.txtResult = new System.Windows.Forms.TextBox();
+            this.lblSignedData = new System.Windows.Forms.Label();
             this.rdoBtnEncrypt = new System.Windows.Forms.RadioButton();
             this.rdoBtnDecrypt = new System.Windows.Forms.RadioButton();
             this.grpCipher = new System.Windows.Forms.GroupBox();
             this.txtKey = new System.Windows.Forms.TextBox();
-            this.txtMessage = new System.Windows.Forms.TextBox();
+            this.txtSignedData = new System.Windows.Forms.TextBox();
+            this.lblSignature = new System.Windows.Forms.Label();
+            this.txtSignature = new System.Windows.Forms.TextBox();
+            this.lblValidSignature = new System.Windows.Forms.Label();
+            this.btnImport = new System.Windows.Forms.Button();
             this.grpDisplayVlaueMode.SuspendLayout();
             this.grpCipher.SuspendLayout();
             this.SuspendLayout();
@@ -92,11 +95,11 @@
             // lblResult
             // 
             this.lblResult.AutoSize = true;
-            this.lblResult.Location = new System.Drawing.Point(12, 370);
+            this.lblResult.Location = new System.Drawing.Point(9, 521);
             this.lblResult.Name = "lblResult";
-            this.lblResult.Size = new System.Drawing.Size(37, 13);
+            this.lblResult.Size = new System.Drawing.Size(40, 13);
             this.lblResult.TabIndex = 71;
-            this.lblResult.Text = "Result";
+            this.lblResult.Text = "Result:";
             // 
             // lblKey
             // 
@@ -107,24 +110,14 @@
             this.lblKey.TabIndex = 70;
             this.lblKey.Text = "Key";
             // 
-            // lblMessage
+            // lblSignedData
             // 
-            this.lblMessage.AutoSize = true;
-            this.lblMessage.Location = new System.Drawing.Point(12, 91);
-            this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(50, 13);
-            this.lblMessage.TabIndex = 69;
-            this.lblMessage.Text = "Message";
-            // 
-            // txtResult
-            // 
-            this.txtResult.Location = new System.Drawing.Point(12, 386);
-            this.txtResult.Multiline = true;
-            this.txtResult.Name = "txtResult";
-            this.txtResult.ReadOnly = true;
-            this.txtResult.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtResult.Size = new System.Drawing.Size(455, 120);
-            this.txtResult.TabIndex = 66;
+            this.lblSignedData.AutoSize = true;
+            this.lblSignedData.Location = new System.Drawing.Point(12, 91);
+            this.lblSignedData.Name = "lblSignedData";
+            this.lblSignedData.Size = new System.Drawing.Size(66, 13);
+            this.lblSignedData.TabIndex = 69;
+            this.lblSignedData.Text = "Signed Data";
             // 
             // rdoBtnEncrypt
             // 
@@ -166,14 +159,50 @@
             this.txtKey.Size = new System.Drawing.Size(352, 100);
             this.txtKey.TabIndex = 64;
             // 
-            // txtMessage
+            // txtSignedData
             // 
-            this.txtMessage.Location = new System.Drawing.Point(12, 107);
-            this.txtMessage.Multiline = true;
-            this.txtMessage.Name = "txtMessage";
-            this.txtMessage.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtMessage.Size = new System.Drawing.Size(455, 120);
-            this.txtMessage.TabIndex = 63;
+            this.txtSignedData.Location = new System.Drawing.Point(12, 107);
+            this.txtSignedData.Multiline = true;
+            this.txtSignedData.Name = "txtSignedData";
+            this.txtSignedData.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtSignedData.Size = new System.Drawing.Size(455, 120);
+            this.txtSignedData.TabIndex = 63;
+            // 
+            // lblSignature
+            // 
+            this.lblSignature.AutoSize = true;
+            this.lblSignature.Location = new System.Drawing.Point(12, 370);
+            this.lblSignature.Name = "lblSignature";
+            this.lblSignature.Size = new System.Drawing.Size(52, 13);
+            this.lblSignature.TabIndex = 73;
+            this.lblSignature.Text = "Signature";
+            // 
+            // txtSignature
+            // 
+            this.txtSignature.Location = new System.Drawing.Point(12, 386);
+            this.txtSignature.Multiline = true;
+            this.txtSignature.Name = "txtSignature";
+            this.txtSignature.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtSignature.Size = new System.Drawing.Size(455, 120);
+            this.txtSignature.TabIndex = 72;
+            // 
+            // lblValidSignature
+            // 
+            this.lblValidSignature.AutoSize = true;
+            this.lblValidSignature.Location = new System.Drawing.Point(55, 521);
+            this.lblValidSignature.Name = "lblValidSignature";
+            this.lblValidSignature.Size = new System.Drawing.Size(53, 13);
+            this.lblValidSignature.TabIndex = 74;
+            this.lblValidSignature.Text = "Unknown";
+            // 
+            // btnImport
+            // 
+            this.btnImport.Location = new System.Drawing.Point(379, 78);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(75, 23);
+            this.btnImport.TabIndex = 75;
+            this.btnImport.Text = "Browse...";
+            this.btnImport.UseVisualStyleBackColor = true;
             // 
             // frmRSASignatureBase
             // 
@@ -181,15 +210,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(484, 561);
+            this.Controls.Add(this.btnImport);
+            this.Controls.Add(this.lblValidSignature);
+            this.Controls.Add(this.lblSignature);
+            this.Controls.Add(this.txtSignature);
             this.Controls.Add(this.grpDisplayVlaueMode);
             this.Controls.Add(this.btnCipher);
             this.Controls.Add(this.lblResult);
             this.Controls.Add(this.lblKey);
-            this.Controls.Add(this.lblMessage);
-            this.Controls.Add(this.txtResult);
+            this.Controls.Add(this.lblSignedData);
             this.Controls.Add(this.grpCipher);
             this.Controls.Add(this.txtKey);
-            this.Controls.Add(this.txtMessage);
+            this.Controls.Add(this.txtSignedData);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -213,12 +245,15 @@
         protected System.Windows.Forms.Button btnCipher;
         protected System.Windows.Forms.Label lblResult;
         protected System.Windows.Forms.Label lblKey;
-        protected System.Windows.Forms.Label lblMessage;
-        protected System.Windows.Forms.TextBox txtResult;
+        protected System.Windows.Forms.Label lblSignedData;
         protected System.Windows.Forms.RadioButton rdoBtnEncrypt;
         protected System.Windows.Forms.RadioButton rdoBtnDecrypt;
         protected System.Windows.Forms.GroupBox grpCipher;
         protected System.Windows.Forms.TextBox txtKey;
-        protected System.Windows.Forms.TextBox txtMessage;
+        protected System.Windows.Forms.TextBox txtSignedData;
+        protected System.Windows.Forms.Label lblSignature;
+        protected System.Windows.Forms.TextBox txtSignature;
+        protected System.Windows.Forms.Label lblValidSignature;
+        protected System.Windows.Forms.Button btnImport;
     }
 }
