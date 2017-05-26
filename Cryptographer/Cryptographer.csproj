@@ -150,6 +150,12 @@
     <Compile Include="frmDiffieHellmanBase.Designer.cs">
       <DependentUpon>frmDiffieHellmanBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDiffieHellmanInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDiffieHellmanInfo.Designer.cs">
+      <DependentUpon>frmDiffieHellmanInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPlayfair.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,6 +268,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDiffieHellmanBase.resx">
       <DependentUpon>frmDiffieHellmanBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDiffieHellmanInfo.resx">
+      <DependentUpon>frmDiffieHellmanInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPlayfair.resx">
       <DependentUpon>frmPlayfair.cs</DependentUpon>
