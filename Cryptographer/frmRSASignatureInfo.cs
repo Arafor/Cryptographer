@@ -223,7 +223,7 @@ namespace Cryptographer
             string keyPText = "";
             foreach (byte keyByte in myRSAKeyParam.P)
             {
-                keyPText = keyPText + keyByte;
+                keyPText = keyPText + Convert.ToString(keyByte, 2).PadLeft(8, '0');
             }
             txtP.Text = keyPText;
 
@@ -231,7 +231,7 @@ namespace Cryptographer
             string keyQText = "";
             foreach (byte keyByte in myRSAKeyParam.Q)
             {
-                keyQText = keyQText + keyByte;
+                keyQText = keyQText + Convert.ToString(keyByte, 2).PadLeft(8, '0');
             }
             txtQ.Text = keyQText;
 
@@ -239,7 +239,7 @@ namespace Cryptographer
             string keyNText = "";
             foreach (byte keyByte in myRSAKeyParam.Modulus)
             {
-                keyNText = keyNText + keyByte;
+                keyNText = keyNText + Convert.ToString(keyByte, 2).PadLeft(8, '0');
             }
             txtN.Text = keyNText;
 
@@ -247,7 +247,7 @@ namespace Cryptographer
             string keyEText = "";
             foreach (byte keyByte in myRSAKeyParam.Exponent)
             {
-                keyEText = keyEText + keyByte;
+                keyEText = keyEText + Convert.ToString(keyByte, 2).PadLeft(8, '0');
             }
             txtE.Text = keyEText;
 
@@ -255,7 +255,7 @@ namespace Cryptographer
             string keyDText = "";
             foreach (byte keyByte in myRSAKeyParam.D)
             {
-                keyDText = keyDText + keyByte;
+                keyDText = keyDText + Convert.ToString(keyByte, 2).PadLeft(8, '0');
             }
             txtD.Text = keyDText;
         }
