@@ -429,7 +429,7 @@
             this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.lblTable);
             this.Name = "frmPlayfair";
-            this.Text = "Cryptographer- Playfair cipher";
+            this.Text = "Playfair cipher";
             this.Load += new System.EventHandler(this.frmPlayfair_Load);
             this.Controls.SetChildIndex(this.txtMessage, 0);
             this.Controls.SetChildIndex(this.txtResult, 0);

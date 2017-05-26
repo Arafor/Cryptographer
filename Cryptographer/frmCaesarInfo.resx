@@ -118,6 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label2.Text" xml:space="preserve">
-    <value>After that we can begin encrypting or decrypting our message. Based on what we chose the formulas for  encrypting and decrypting slightly differs. As well as if the sum is a negative or a positive number</value>
+    <value>After that we can begin encrypting or decrypting our message. Based on what we chose the formulas for  encrypting and decrypting slightly differs. As well as if the sum is a negative or a positive number.</value>
   </data>
 </root>

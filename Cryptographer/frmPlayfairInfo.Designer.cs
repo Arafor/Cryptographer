@@ -90,7 +90,7 @@
             this.lblDescription3.Location = new System.Drawing.Point(13, 510);
             this.lblDescription3.MaximumSize = new System.Drawing.Size(525, 0);
             this.lblDescription3.Name = "lblDescription3";
-            this.lblDescription3.Size = new System.Drawing.Size(524, 90);
+            this.lblDescription3.Size = new System.Drawing.Size(522, 105);
             this.lblDescription3.TabIndex = 56;
             this.lblDescription3.Text = resources.GetString("lblDescription3.Text");
             // 
@@ -101,10 +101,10 @@
             this.lblDescription0.Location = new System.Drawing.Point(13, 9);
             this.lblDescription0.MaximumSize = new System.Drawing.Size(420, 0);
             this.lblDescription0.Name = "lblDescription0";
-            this.lblDescription0.Size = new System.Drawing.Size(400, 45);
+            this.lblDescription0.Size = new System.Drawing.Size(402, 30);
             this.lblDescription0.TabIndex = 55;
-            this.lblDescription0.Text = "The Playfair cipher is an old simplistic cipher that uses text values for its mes" +
-    "sages and a table containing letters from the english alphabet as its key.";
+            this.lblDescription0.Text = "The Playfair cipher uses symbols for its message. And a key containing a 5x5 arra" +
+    "y of latin alphabet symbols.";
             // 
             // btnCipher
             // 
@@ -156,11 +156,11 @@
             this.lblDescription4.Location = new System.Drawing.Point(12, 771);
             this.lblDescription4.MaximumSize = new System.Drawing.Size(500, 0);
             this.lblDescription4.Name = "lblDescription4";
-            this.lblDescription4.Size = new System.Drawing.Size(494, 30);
+            this.lblDescription4.Size = new System.Drawing.Size(498, 45);
             this.lblDescription4.TabIndex = 58;
-            this.lblDescription4.Text = "After that we devide our parsed message in pairs of two. And start encrypting or " +
-    "decrypting our message by swapping the pairs of letters in our message based on " +
-    "our table. E.g. ";
+            this.lblDescription4.Text = "After that we devide our parsed message into blocks of two symbols. And start enc" +
+    "rypting or decrypting our message by swapping the pairs of symbols in our messag" +
+    "e based on our table. E.g. ";
             // 
             // lblPairs
             // 
@@ -183,7 +183,7 @@
             // lblMessageParsedPairs
             // 
             this.lblMessageParsedPairs.AutoSize = true;
-            this.lblMessageParsedPairs.Location = new System.Drawing.Point(15, 811);
+            this.lblMessageParsedPairs.Location = new System.Drawing.Point(10, 824);
             this.lblMessageParsedPairs.Name = "lblMessageParsedPairs";
             this.lblMessageParsedPairs.Size = new System.Drawing.Size(181, 13);
             this.lblMessageParsedPairs.TabIndex = 48;
@@ -192,7 +192,7 @@
             // lblMessageParsed
             // 
             this.lblMessageParsed.AutoSize = true;
-            this.lblMessageParsed.Location = new System.Drawing.Point(15, 612);
+            this.lblMessageParsed.Location = new System.Drawing.Point(10, 622);
             this.lblMessageParsed.Name = "lblMessageParsed";
             this.lblMessageParsed.Size = new System.Drawing.Size(85, 13);
             this.lblMessageParsed.TabIndex = 47;
@@ -200,7 +200,7 @@
             // 
             // txtMessageParsedPairs
             // 
-            this.txtMessageParsedPairs.Location = new System.Drawing.Point(15, 827);
+            this.txtMessageParsedPairs.Location = new System.Drawing.Point(10, 840);
             this.txtMessageParsedPairs.Multiline = true;
             this.txtMessageParsedPairs.Name = "txtMessageParsedPairs";
             this.txtMessageParsedPairs.ReadOnly = true;
@@ -210,7 +210,7 @@
             // 
             // txtMessageParsed
             // 
-            this.txtMessageParsed.Location = new System.Drawing.Point(15, 628);
+            this.txtMessageParsed.Location = new System.Drawing.Point(10, 638);
             this.txtMessageParsed.Multiline = true;
             this.txtMessageParsed.Name = "txtMessageParsed";
             this.txtMessageParsed.ReadOnly = true;
@@ -279,16 +279,16 @@
             this.lblDescription2.Location = new System.Drawing.Point(16, 230);
             this.lblDescription2.MaximumSize = new System.Drawing.Size(450, 0);
             this.lblDescription2.Name = "lblDescription2";
-            this.lblDescription2.Size = new System.Drawing.Size(439, 15);
+            this.lblDescription2.Size = new System.Drawing.Size(437, 15);
             this.lblDescription2.TabIndex = 62;
-            this.lblDescription2.Text = "Then we fill the table with letters from the english alphabet (except the letter " +
-    "\"J\").";
+            this.lblDescription2.Text = "Then we fill the key with symbols from the latin alphabet (except the symbol \"J\")" +
+    ".";
             // 
             // frmPlayfairInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(581, 976);
+            this.ClientSize = new System.Drawing.Size(615, 741);
             this.Controls.Add(this.lblDescription2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnPlayfair);
@@ -309,7 +309,7 @@
             this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.lblDescription);
             this.Name = "frmPlayfairInfo";
-            this.Text = "Cryptographer - Playfair cipher info";
+            this.Text = "Playfair cipher info";
             this.Load += new System.EventHandler(this.frmPlayfairInfo_Load);
             this.Controls.SetChildIndex(this.lblDescription, 0);
             this.Controls.SetChildIndex(this.lblMessage, 0);

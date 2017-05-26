@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
 
@@ -25,6 +18,7 @@ namespace Cryptographer
 
         frmDES DES;
         DES myDES = new DESCryptoServiceProvider();
+        TextParser textParser = new TextParser();
 
         private void btnDES_Click(object sender, EventArgs e)
         {
@@ -94,11 +88,11 @@ namespace Cryptographer
                         {
                             if (txtKey.Text != "")
                             {
-                                myDES.Key = parseBinaryStringToBytes(txtKey.Text);
+                                myDES.Key = textParser.parseBinaryStringToBytes(txtKey.Text);
                             }
                             if (txtIV.Text != "")
                             {
-                                myDES.IV = parseBinaryStringToBytes(txtIV.Text);
+                                myDES.IV = textParser.parseBinaryStringToBytes(txtIV.Text);
                             }
                             else
                             {
@@ -109,11 +103,11 @@ namespace Cryptographer
                         {
                             if (txtKey.Text != "")
                             {
-                                myDES.Key = parseHexadecimalStringToBytes(txtKey.Text);
+                                myDES.Key = textParser.parseHexadecimalStringToBytes(txtKey.Text);
                             }
                             if (txtIV.Text != "")
                             {
-                                myDES.IV = parseHexadecimalStringToBytes(txtIV.Text);
+                                myDES.IV = textParser.parseHexadecimalStringToBytes(txtIV.Text);
                             }
                             else
                             {
@@ -182,11 +176,11 @@ namespace Cryptographer
                             byte[] encrypted = null;
                             if (rdoBinary.Checked)
                             {
-                                encrypted = parseBinaryStringToBytes(txtMessage.Text);
+                                encrypted = textParser.parseBinaryStringToBytes(txtMessage.Text);
                             }
                             else if (rdoHexadecimal.Checked)
                             {
-                                encrypted = parseHexadecimalStringToBytes(txtMessage.Text);
+                                encrypted = textParser.parseHexadecimalStringToBytes(txtMessage.Text);
                             }
                             else
                             {

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
 using System.IO;
@@ -132,18 +125,6 @@ namespace Cryptographer
             txtIV.Text = IV;
         }
 
-        public byte[] parseBinaryStringToBytes(string message)
-        {
-            int numOfBytes = message.Length / 8;
-            byte[] bytes = new byte[numOfBytes];
-            for (int i = 0; i < numOfBytes; ++i)
-            {
-                bytes[i] = Convert.ToByte(message.Substring(8 * i, 8), 2);
-            }
-
-            return bytes;
-        }
-
         //Display values in binary or hexadecimal
         private void grpValueDisplayMode_CheckedChanged(object sender, EventArgs e)
         {
@@ -154,7 +135,7 @@ namespace Cryptographer
                     //Convert key
                     string keyText = txtKey.Text;
                     txtKey.Text = "";
-                    foreach (byte keyByte in parseHexadecimalStringToBytes(keyText))
+                    foreach (byte keyByte in textParser.parseHexadecimalStringToBytes(keyText))
                     {
                         txtKey.Text = txtKey.Text + Convert.ToString(keyByte, 2).PadLeft(8, '0');
                     }
@@ -162,7 +143,7 @@ namespace Cryptographer
                     //Convert IV
                     string IVText = txtIV.Text;
                     txtIV.Text = "";
-                    foreach (byte IVByte in parseHexadecimalStringToBytes(IVText))
+                    foreach (byte IVByte in textParser.parseHexadecimalStringToBytes(IVText))
                     {
                         txtIV.Text = txtIV.Text + Convert.ToString(IVByte, 2).PadLeft(8, '0');
                     }
@@ -170,9 +151,9 @@ namespace Cryptographer
                 else if (rdoHexadecimal.Checked)
                 {
                     //Convert Key
-                    txtKey.Text = BitConverter.ToString(parseBinaryStringToBytes(txtKey.Text)).Replace("-", "");
+                    txtKey.Text = BitConverter.ToString(textParser.parseBinaryStringToBytes(txtKey.Text)).Replace("-", "");
                     //Convert IV
-                    txtIV.Text = BitConverter.ToString(parseBinaryStringToBytes(txtIV.Text)).Replace("-", "");
+                    txtIV.Text = BitConverter.ToString(textParser.parseBinaryStringToBytes(txtIV.Text)).Replace("-", "");
                 }
             }
             catch (System.ArgumentException)
@@ -207,14 +188,6 @@ namespace Cryptographer
             rdoCBC.Checked = true;
 
             return System.Security.Cryptography.CipherMode.CBC;
-        }
-
-        protected byte[] parseHexadecimalStringToBytes(string message)
-        {
-            int messageLength = message.Length;
-            byte[] bytes = new byte[messageLength / 2];
-            for (int i = 0; i < messageLength; i += 2) bytes[i / 2] = Convert.ToByte(message.Substring(i, 2), 16);
-            return bytes;
         }
     }
 }

@@ -76,7 +76,7 @@
             this.Controls.Add(this.btnSaveToClipboard);
             this.Controls.Add(this.btnCaesarInfo);
             this.Name = "frmDES";
-            this.Text = "Cryptographer- DES cipher ";
+            this.Text = "DES cipher ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDES_FormClosing);
             this.Load += new System.EventHandler(this.frmDES_Load);
             this.Controls.SetChildIndex(this.txtIV, 0);

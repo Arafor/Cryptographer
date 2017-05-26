@@ -117,4 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblDescription2.Text" xml:space="preserve">
+    <value>Since AES works with blocks containg bits we need to choose how we want our values represented. One option is in binary (the raw values that the algorithm uses). The other option being to represent them in hexadecimal which is a more compact way of representing the values).</value>
+  </data>
+  <data name="lblDescription5.Text" xml:space="preserve">
+    <value>Lucky for us, if we leave the key field empty we will get a randomly generated key. Ofcourse if we receive a message from someone else we will need the right key to decrypt that message. Thus we can also enter a specific key be it in binary or hexadecimal.</value>
+  </data>
+  <data name="lblDescription8.Text" xml:space="preserve">
+    <value>The Initialization Vector- IV for short. Is usualy a randomly generated input to protect our message from attacks on seperate segments. In our case it is used to protect our message by doing another layer of encryption in a sense. The IV for AES is the same size as the plaintext block which is a 128-bit long input. It is needed to decrypt our message.</value>
+  </data>
+  <data name="lblDescription7.Text" xml:space="preserve">
+    <value>Before we start to encrypt or decrypt or message we should also choose a block cipher mode. AES is a bit block cipher algorithm, but it's main concern is encrypting or decypting individual blocks that it is given. The block cipher modes determine how we are going to manage all of the blocks from our message.</value>
+  </data>
 </root>

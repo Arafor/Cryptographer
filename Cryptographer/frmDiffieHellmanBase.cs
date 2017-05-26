@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Numerics;
 
@@ -89,7 +84,7 @@ namespace Cryptographer
                         {
                             txtPrimitiveRoot.Text = primitiveRootsOfPrimeNumbers[parsedNumber].ToString();
                         }
-                        catch (KeyNotFoundException exc)
+                        catch (KeyNotFoundException)
                         {
                             txtPrimeNumber.ForeColor = Color.Red;
                             errorProvider1.SetError(txtPrimeNumber, "This prime number does not have a primitive root; Please choose a different number");

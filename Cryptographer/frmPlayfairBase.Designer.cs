@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPlayfairBase));
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.txtTable41 = new System.Windows.Forms.TextBox();
             this.txtTable40 = new System.Windows.Forms.TextBox();
@@ -442,10 +443,11 @@
             this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.tblTable);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmPlayfairBase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "frmPlayfairBase";
+            this.Text = "Playfair cipher base";
             this.tblTable.ResumeLayout(false);
             this.tblTable.PerformLayout();
             this.ResumeLayout(false);

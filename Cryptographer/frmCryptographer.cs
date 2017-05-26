@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Cryptographer
@@ -18,6 +11,8 @@ namespace Cryptographer
         frmPlayfair playfairCipher;
         frmDES DESCipher;
         frmAES AESCipher;
+        frmRSA RSACipher;
+        frmRSASignature RSASigature;
         frmDiffieHellman diffieHellman;
 
         public frmCryptographer()
@@ -35,6 +30,8 @@ namespace Cryptographer
             playfairCipher = new frmPlayfair();
             DESCipher = new frmDES();
             AESCipher = new frmAES();
+            RSACipher = new frmRSA();
+            RSASigature = new frmRSASignature();
             diffieHellman = new frmDiffieHellman();
         }
 
@@ -46,6 +43,9 @@ namespace Cryptographer
                 //Create new form window in case it is closed
                 ceasarCipher = new frmCaesar();
                 ceasarCipher.Show();
+            } else
+            {
+                ceasarCipher.BringToFront();
             }
         }
 
@@ -56,6 +56,10 @@ namespace Cryptographer
                 vigenereCipher = new frmVigenere();
                 vigenereCipher.Show();
             }
+            else
+            {
+                vigenereCipher.BringToFront();
+            }
         }
 
         private void btnPlayfair_Click(object sender, EventArgs e)
@@ -64,6 +68,10 @@ namespace Cryptographer
             {
                 playfairCipher = new frmPlayfair();
                 playfairCipher.Show();
+            }
+            else
+            {
+                playfairCipher.BringToFront();
             }
         }
 
@@ -74,6 +82,10 @@ namespace Cryptographer
                 DESCipher = new frmDES();
                 DESCipher.Show();
             }
+            else
+            {
+                DESCipher.BringToFront();
+            }
         }
 
         private void btnAES_Click(object sender, EventArgs e)
@@ -83,6 +95,36 @@ namespace Cryptographer
                 AESCipher = new frmAES();
                 AESCipher.Show();
             }
+            else
+            {
+                AESCipher.BringToFront();
+            }
+        }
+
+        private void btnRSA_Click(object sender, EventArgs e)
+        {
+            if (!RSACipher.Visible)
+            {
+                RSACipher = new frmRSA();
+                RSACipher.Show();
+            }
+            else
+            {
+                RSACipher.BringToFront();
+            }
+        }
+
+        private void btnRSASignature_Click(object sender, EventArgs e)
+        {
+            if (!RSASigature.Visible)
+            {
+                RSASigature = new frmRSASignature();
+                RSASigature.Show();
+            }
+            else
+            {
+                RSASigature.BringToFront();
+            }
         }
 
         private void btnDiffieHellman_Click(object sender, EventArgs e)
@@ -91,6 +133,10 @@ namespace Cryptographer
             {
                 diffieHellman = new frmDiffieHellman();
                 diffieHellman.Show();
+            }
+            else
+            {
+                diffieHellman.BringToFront();
             }
         }
     }

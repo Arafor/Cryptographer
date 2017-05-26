@@ -1,6 +1,6 @@
 ﻿namespace Cryptographer
 {
-    partial class frmCaesar
+    partial class frmRSASignature
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.btnSaveToClipboard = new System.Windows.Forms.Button();
-            this.btnCaesarInfo = new System.Windows.Forms.Button();
+            this.btnRSASignatureInfo = new System.Windows.Forms.Button();
+            this.grpDisplayVlaueMode.SuspendLayout();
             this.grpCipher.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,52 +46,58 @@
             // 
             this.rdoBtnDecrypt.CheckedChanged += new System.EventHandler(this.cipherRadioButtonChanged);
             // 
-            // txtMessage
+            // btnImport
             // 
-            this.txtMessage.TabIndex = 0;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // btnSaveToClipboard
             // 
             this.btnSaveToClipboard.Image = global::Cryptographer.Properties.Resources.Editing_Clipboard_icon30;
-            this.btnSaveToClipboard.Location = new System.Drawing.Point(427, 266);
+            this.btnSaveToClipboard.Location = new System.Drawing.Point(432, 512);
             this.btnSaveToClipboard.Name = "btnSaveToClipboard";
             this.btnSaveToClipboard.Size = new System.Drawing.Size(40, 40);
-            this.btnSaveToClipboard.TabIndex = 5;
+            this.btnSaveToClipboard.TabIndex = 72;
             this.btnSaveToClipboard.UseVisualStyleBackColor = true;
             this.btnSaveToClipboard.Click += new System.EventHandler(this.btnSaveToClipboard_Click);
             // 
-            // btnCaesarInfo
+            // btnRSASignatureInfo
             // 
-            this.btnCaesarInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCaesarInfo.Location = new System.Drawing.Point(445, 5);
-            this.btnCaesarInfo.Name = "btnCaesarInfo";
-            this.btnCaesarInfo.Size = new System.Drawing.Size(22, 23);
-            this.btnCaesarInfo.TabIndex = 7;
-            this.btnCaesarInfo.Text = "?";
-            this.btnCaesarInfo.UseVisualStyleBackColor = true;
-            this.btnCaesarInfo.Click += new System.EventHandler(this.btnCaesarInfo_Click);
+            this.btnRSASignatureInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRSASignatureInfo.Location = new System.Drawing.Point(450, 12);
+            this.btnRSASignatureInfo.Name = "btnRSASignatureInfo";
+            this.btnRSASignatureInfo.Size = new System.Drawing.Size(22, 23);
+            this.btnRSASignatureInfo.TabIndex = 73;
+            this.btnRSASignatureInfo.Text = "?";
+            this.btnRSASignatureInfo.UseVisualStyleBackColor = true;
+            this.btnRSASignatureInfo.Click += new System.EventHandler(this.btnRSASignatureInfo_Click);
             // 
-            // frmCaesar
+            // frmRSASignature
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 451);
-            this.Controls.Add(this.btnCaesarInfo);
+            this.ClientSize = new System.Drawing.Size(484, 561);
             this.Controls.Add(this.btnSaveToClipboard);
-            this.Name = "frmCaesar";
-            this.Text = "Caesar cipher";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCaesar_FormClosing);
-            this.Load += new System.EventHandler(this.frmCaesar_Load);
-            this.Controls.SetChildIndex(this.btnSaveToClipboard, 0);
-            this.Controls.SetChildIndex(this.btnCaesarInfo, 0);
-            this.Controls.SetChildIndex(this.txtMessage, 0);
+            this.Controls.Add(this.btnRSASignatureInfo);
+            this.Name = "frmRSASignature";
+            this.Text = "RSA signature";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmRSASignature_FormClosing);
+            this.Load += new System.EventHandler(this.frmRSASignature_Load);
+            this.Controls.SetChildIndex(this.txtSignature, 0);
+            this.Controls.SetChildIndex(this.lblSignature, 0);
+            this.Controls.SetChildIndex(this.lblValidSignature, 0);
+            this.Controls.SetChildIndex(this.btnImport, 0);
+            this.Controls.SetChildIndex(this.txtSignedData, 0);
             this.Controls.SetChildIndex(this.txtKey, 0);
-            this.Controls.SetChildIndex(this.txtResult, 0);
-            this.Controls.SetChildIndex(this.lblMessage, 0);
+            this.Controls.SetChildIndex(this.grpCipher, 0);
+            this.Controls.SetChildIndex(this.lblSignedData, 0);
             this.Controls.SetChildIndex(this.lblKey, 0);
             this.Controls.SetChildIndex(this.lblResult, 0);
-            this.Controls.SetChildIndex(this.grpCipher, 0);
             this.Controls.SetChildIndex(this.btnCipher, 0);
+            this.Controls.SetChildIndex(this.grpDisplayVlaueMode, 0);
+            this.Controls.SetChildIndex(this.btnRSASignatureInfo, 0);
+            this.Controls.SetChildIndex(this.btnSaveToClipboard, 0);
+            this.grpDisplayVlaueMode.ResumeLayout(false);
+            this.grpDisplayVlaueMode.PerformLayout();
             this.grpCipher.ResumeLayout(false);
             this.grpCipher.PerformLayout();
             this.ResumeLayout(false);
@@ -99,7 +106,8 @@
         }
 
         #endregion
+
         private System.Windows.Forms.Button btnSaveToClipboard;
-        private System.Windows.Forms.Button btnCaesarInfo;
+        private System.Windows.Forms.Button btnRSASignatureInfo;
     }
 }
