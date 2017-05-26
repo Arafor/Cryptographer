@@ -75,7 +75,7 @@
             this.Controls.Add(this.btnSaveToClipboard);
             this.Controls.Add(this.btnRSAInfo);
             this.Name = "frmRSA";
-            this.Text = "Cryptographer- RSA cipher form";
+            this.Text = "RSA cipher";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmRSA_FormClosing);
             this.Load += new System.EventHandler(this.frmRSA_Load);
             this.Controls.SetChildIndex(this.txtMessage, 0);

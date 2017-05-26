@@ -48,22 +48,18 @@
             // btnCipher
             // 
             this.btnCipher.Location = new System.Drawing.Point(437, 605);
-            this.btnCipher.TabIndex = 4;
             this.btnCipher.Click += new System.EventHandler(this.btnCipher_Click);
             // 
             // grpCipher
             // 
             this.grpCipher.Location = new System.Drawing.Point(412, 528);
-            this.grpCipher.TabIndex = 2;
             // 
             // rdoBtnEncrypt
             // 
-            this.rdoBtnEncrypt.TabIndex = 2;
             this.rdoBtnEncrypt.CheckedChanged += new System.EventHandler(this.cipherRadioButtonChanged);
             // 
             // rdoBtnDecrypt
             // 
-            this.rdoBtnDecrypt.TabIndex = 3;
             this.rdoBtnDecrypt.CheckedChanged += new System.EventHandler(this.cipherRadioButtonChanged);
             // 
             // lblResult
@@ -82,13 +78,11 @@
             // 
             this.txtResult.Location = new System.Drawing.Point(15, 649);
             this.txtResult.Size = new System.Drawing.Size(497, 77);
-            this.txtResult.TabIndex = 6;
             // 
             // txtKey
             // 
             this.txtKey.Location = new System.Drawing.Point(371, 91);
             this.txtKey.Size = new System.Drawing.Size(150, 67);
-            this.txtKey.TabIndex = 1;
             // 
             // txtMessage
             // 
@@ -125,10 +119,10 @@
             this.lblDescription2.Location = new System.Drawing.Point(12, 171);
             this.lblDescription2.MaximumSize = new System.Drawing.Size(500, 0);
             this.lblDescription2.Name = "lblDescription2";
-            this.lblDescription2.Size = new System.Drawing.Size(477, 30);
+            this.lblDescription2.Size = new System.Drawing.Size(487, 30);
             this.lblDescription2.TabIndex = 56;
-            this.lblDescription2.Text = "After that we need to parse the message to make sure the text contains letters fr" +
-    "om the english alphabet.";
+            this.lblDescription2.Text = "After that we need to parse the message to make sure the text contains allowed sy" +
+    "mbols (symbols from the latin alphabet).";
             // 
             // lblDescription0
             // 
@@ -137,10 +131,10 @@
             this.lblDescription0.Location = new System.Drawing.Point(12, 9);
             this.lblDescription0.MaximumSize = new System.Drawing.Size(460, 0);
             this.lblDescription0.Name = "lblDescription0";
-            this.lblDescription0.Size = new System.Drawing.Size(424, 30);
+            this.lblDescription0.Size = new System.Drawing.Size(458, 30);
             this.lblDescription0.TabIndex = 55;
-            this.lblDescription0.Text = "The Caesar cipher is a quite simplistic cipher that uses text values both for its" +
-    " message and its key.";
+            this.lblDescription0.Text = "The Caesar cipher is a simple cipher that uses symbols both for its message and i" +
+    "ts key.";
             // 
             // lstFormula
             // 
@@ -166,9 +160,9 @@
             this.label1.Location = new System.Drawing.Point(12, 302);
             this.label1.MaximumSize = new System.Drawing.Size(500, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(497, 30);
+            this.label1.Size = new System.Drawing.Size(499, 30);
             this.label1.TabIndex = 58;
-            this.label1.Text = "You then translate each letter to its numerical number value based on the order o" +
+            this.label1.Text = "Then each symbol is translated to its numerical number value based on the order o" +
     "f where it is located within the alphabet e.g. A => 0, C => 2.";
             // 
             // lblAlphabet
@@ -245,7 +239,7 @@
             this.Controls.Add(this.txtMessageParsed);
             this.Controls.Add(this.lblDescription);
             this.Name = "frmCaesarInfo";
-            this.Text = "Cryptographer - Caezar cipher info";
+            this.Text = "Caesar cipher info";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCaesarInfo_FormClosing);
             this.Load += new System.EventHandler(this.frmCaesarInfo_Load);
             this.Controls.SetChildIndex(this.lblDescription, 0);

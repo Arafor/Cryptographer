@@ -124,6 +124,6 @@
     <value>157, 17</value>
   </metadata>
   <data name="lblDescription3.Text" xml:space="preserve">
-    <value>After that we need to parse our message. We replace all of the letters "J" with the letter "I". Then we check if there are words in our message that are the same and placed next to each other. If there are we insert the letter "Q" between the repeating words. Then we check if there are letters that repeat one another. If there are we replace the second of the same letters with the letter "X". Lastly we check if the message contains an even number of letters. If the message countains an odd number of letters we add the letter "Q" at the end of the message.</value>
+    <value>After that we need to parse our message. We replace all of the letters "J" with the letter "I". Then we check if there are words in our message that are the same and placed next to each other. If there are we insert the symbol "Q" between the repeating words. Then we check if there are symbols that repeat one after the other. If there are we replace the second of the same letters with the symbol "X". Lastly we check if the message contains an even number of symbols. If the message countains an odd number of symbols we add the symbol "Q" at the end of the message.</value>
   </data>
 </root>

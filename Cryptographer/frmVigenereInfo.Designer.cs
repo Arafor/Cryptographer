@@ -50,22 +50,18 @@
             // btnCipher
             // 
             this.btnCipher.Location = new System.Drawing.Point(434, 624);
-            this.btnCipher.TabIndex = 4;
             this.btnCipher.Click += new System.EventHandler(this.btnCipher_Click);
             // 
             // grpCipher
             // 
             this.grpCipher.Location = new System.Drawing.Point(409, 547);
-            this.grpCipher.TabIndex = 2;
             // 
             // rdoBtnEncrypt
             // 
-            this.rdoBtnEncrypt.TabIndex = 2;
             this.rdoBtnEncrypt.CheckedChanged += new System.EventHandler(this.cipherRadioButtonChanged);
             // 
             // rdoBtnDecrypt
             // 
-            this.rdoBtnDecrypt.TabIndex = 3;
             this.rdoBtnDecrypt.CheckedChanged += new System.EventHandler(this.cipherRadioButtonChanged);
             // 
             // lblResult
@@ -84,19 +80,16 @@
             // 
             this.txtResult.Location = new System.Drawing.Point(12, 674);
             this.txtResult.Size = new System.Drawing.Size(497, 77);
-            this.txtResult.TabIndex = 6;
             // 
             // txtKey
             // 
             this.txtKey.Location = new System.Drawing.Point(368, 91);
             this.txtKey.Size = new System.Drawing.Size(150, 67);
-            this.txtKey.TabIndex = 1;
             // 
             // txtMessage
             // 
             this.txtMessage.Location = new System.Drawing.Point(12, 91);
             this.txtMessage.Size = new System.Drawing.Size(350, 67);
-            this.txtMessage.TabIndex = 0;
             // 
             // lblDescription
             // 
@@ -185,10 +178,10 @@
             this.lblDescription0.Location = new System.Drawing.Point(9, 9);
             this.lblDescription0.MaximumSize = new System.Drawing.Size(460, 0);
             this.lblDescription0.Name = "lblDescription0";
-            this.lblDescription0.Size = new System.Drawing.Size(436, 30);
+            this.lblDescription0.Size = new System.Drawing.Size(458, 30);
             this.lblDescription0.TabIndex = 33;
-            this.lblDescription0.Text = "The Vigenere cipher is an old simplistic cipher that uses text values both for th" +
-    "e message and key.";
+            this.lblDescription0.Text = "The Vigenere cipher is a simple cipher that uses symbols both for the message and" +
+    " the key.";
             // 
             // lblDescription2
             // 
@@ -197,7 +190,7 @@
             this.lblDescription2.Location = new System.Drawing.Point(9, 171);
             this.lblDescription2.MaximumSize = new System.Drawing.Size(500, 0);
             this.lblDescription2.Name = "lblDescription2";
-            this.lblDescription2.Size = new System.Drawing.Size(477, 60);
+            this.lblDescription2.Size = new System.Drawing.Size(498, 60);
             this.lblDescription2.TabIndex = 34;
             this.lblDescription2.Text = resources.GetString("lblDescription2.Text");
             // 
@@ -219,9 +212,9 @@
             this.label1.Location = new System.Drawing.Point(9, 334);
             this.label1.MaximumSize = new System.Drawing.Size(500, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(497, 30);
+            this.label1.Size = new System.Drawing.Size(500, 30);
             this.label1.TabIndex = 36;
-            this.label1.Text = "You then translate each letter to its numerical number value based on the order o" +
+            this.label1.Text = "You then translate each symbol to its numerical number value based on the order o" +
     "f where it is located within the alphabet e.g. A => 0, C => 2.";
             // 
             // label2
@@ -251,7 +244,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 761);
+            this.ClientSize = new System.Drawing.Size(534, 741);
             this.Controls.Add(this.btnVigenere);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -268,7 +261,7 @@
             this.Controls.Add(this.txtMessageParsed);
             this.Controls.Add(this.lblDescription);
             this.Name = "frmVigenereInfo";
-            this.Text = "Cryptographer - Vigenere cipher info";
+            this.Text = "Vigenere cipher info";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmVigenereInfo_FormClosing);
             this.Load += new System.EventHandler(this.frmVigenereInfo_Load);
             this.Controls.SetChildIndex(this.lblDescription, 0);

@@ -310,7 +310,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(518, 733);
+            this.ClientSize = new System.Drawing.Size(535, 733);
             this.Controls.Add(this.lblDescription7);
             this.Controls.Add(this.lblDescription6);
             this.Controls.Add(this.lblD);
@@ -332,7 +332,7 @@
             this.Controls.Add(this.btnSaveToClipboard);
             this.Controls.Add(this.btnRSA);
             this.Name = "frmRSASignatureInfo";
-            this.Text = "Cryptographer- RSA signature info form";
+            this.Text = "RSA signature info";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmRSASignatureInfo_FormClosing);
             this.Load += new System.EventHandler(this.frmRSASignatureInfo_Load);
             this.Controls.SetChildIndex(this.txtSignature, 0);

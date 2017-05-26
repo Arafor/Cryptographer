@@ -50,6 +50,7 @@
             this.ClientSize = new System.Drawing.Size(314, 221);
             this.Controls.Add(this.btnDiffieHellmanInfo);
             this.Name = "frmDiffieHellman";
+            this.Text = "Diffie-Hellman cipher";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDiffieHellman_FormClosing);
             this.Load += new System.EventHandler(this.frmDiffieHellman_Load);
             this.Controls.SetChildIndex(this.txtPrimeNumber, 0);

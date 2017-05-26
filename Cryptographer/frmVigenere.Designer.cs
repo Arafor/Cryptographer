@@ -34,34 +34,15 @@
             // 
             // btnCipher
             // 
-            this.btnCipher.TabIndex = 4;
             this.btnCipher.Click += new System.EventHandler(this.btnCipher_Click);
-            // 
-            // grpCipher
-            // 
-            this.grpCipher.TabIndex = 2;
             // 
             // rdoBtnEncrypt
             // 
-            this.rdoBtnEncrypt.TabIndex = 2;
             this.rdoBtnEncrypt.CheckedChanged += new System.EventHandler(this.cipherRadioButtonChanged);
             // 
             // rdoBtnDecrypt
             // 
-            this.rdoBtnDecrypt.TabIndex = 3;
             this.rdoBtnDecrypt.CheckedChanged += new System.EventHandler(this.cipherRadioButtonChanged);
-            // 
-            // txtResult
-            // 
-            this.txtResult.TabIndex = 6;
-            // 
-            // txtKey
-            // 
-            this.txtKey.TabIndex = 1;
-            // 
-            // txtMessage
-            // 
-            this.txtMessage.TabIndex = 0;
             // 
             // btnSaveToClipboard
             // 
@@ -92,7 +73,7 @@
             this.Controls.Add(this.btnVigenereInfo);
             this.Controls.Add(this.btnSaveToClipboard);
             this.Name = "frmVigenere";
-            this.Text = "Cryptographer - Vigenere cipher";
+            this.Text = "Vigenere cipher";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmVigenere_FormClosing);
             this.Load += new System.EventHandler(this.frmVigenere_Load);
             this.Controls.SetChildIndex(this.btnSaveToClipboard, 0);

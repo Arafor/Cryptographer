@@ -118,6 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="lblDescription2.Text" xml:space="preserve">
-    <value>After that we need to parse the message to make sure the text contains letters from the english alphabet. If everything is ok within the message we pad the key to be the same length as our message. This is done by repeating the keys text until it has the same character length as the message.</value>
+    <value>After that we need to parse the message to make sure the symbols contained in the message are from the latin alphabet. If everything is ok within the message we pad the key to be the same length as our message. This is done by repeating the keys symbols until it has the same length of symbols as the message.</value>
   </data>
 </root>

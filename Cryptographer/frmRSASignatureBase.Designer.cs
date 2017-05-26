@@ -227,7 +227,7 @@
             this.MaximizeBox = false;
             this.Name = "frmRSASignatureBase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Cryptographer- RSA signature base form";
+            this.Text = "RSA signature base";
             this.grpDisplayVlaueMode.ResumeLayout(false);
             this.grpDisplayVlaueMode.PerformLayout();
             this.grpCipher.ResumeLayout(false);

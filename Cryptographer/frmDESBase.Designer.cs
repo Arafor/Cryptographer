@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDESBase));
             this.btnCipher = new System.Windows.Forms.Button();
             this.grpCipher = new System.Windows.Forms.GroupBox();
             this.rdoBtnEncrypt = new System.Windows.Forms.RadioButton();
@@ -262,10 +263,11 @@
             this.Controls.Add(this.txtKey);
             this.Controls.Add(this.txtMessage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmDESBase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Cryptographer- DES cipher base form";
+            this.Text = "DES cipher base form";
             this.grpCipher.ResumeLayout(false);
             this.grpCipher.PerformLayout();
             this.grpMode.ResumeLayout(false);

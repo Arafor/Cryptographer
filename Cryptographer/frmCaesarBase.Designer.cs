@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCaesarBase));
             this.btnCipher = new System.Windows.Forms.Button();
             this.grpCipher = new System.Windows.Forms.GroupBox();
             this.rdoBtnEncrypt = new System.Windows.Forms.RadioButton();
@@ -153,10 +154,11 @@
             this.Controls.Add(this.txtKey);
             this.Controls.Add(this.txtMessage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmCaesarBase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Cryptographer- Caesar cipher base form";
+            this.Text = "Caesar cipher base form";
             this.grpCipher.ResumeLayout(false);
             this.grpCipher.PerformLayout();
             this.ResumeLayout(false);

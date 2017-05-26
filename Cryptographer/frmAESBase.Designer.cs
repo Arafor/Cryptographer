@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAESBase));
             this.lblIV = new System.Windows.Forms.Label();
             this.rdoBinary = new System.Windows.Forms.RadioButton();
             this.rdoHexadecimal = new System.Windows.Forms.RadioButton();
@@ -262,10 +263,11 @@
             this.Controls.Add(this.txtKey);
             this.Controls.Add(this.txtMessage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmAESBase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Cryptographer- AES cipher base form";
+            this.Text = "AES cipher base form";
             this.grpDisplayVlaueMode.ResumeLayout(false);
             this.grpDisplayVlaueMode.PerformLayout();
             this.grpMode.ResumeLayout(false);

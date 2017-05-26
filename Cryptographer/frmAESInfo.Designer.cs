@@ -247,7 +247,7 @@
             this.Controls.Add(this.btnAES);
             this.Controls.Add(this.btnSaveToClipboard);
             this.Name = "frmAESInfo";
-            this.Text = "Cryptographer- AES info cipher ";
+            this.Text = "AES cipher info ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmAESInfo_FormClosing);
             this.Load += new System.EventHandler(this.frmAESInfo_Load);
             this.Controls.SetChildIndex(this.txtMessage, 0);

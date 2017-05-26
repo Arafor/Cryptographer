@@ -79,7 +79,7 @@
             this.Controls.Add(this.btnSaveToClipboard);
             this.Controls.Add(this.btnRSASignatureInfo);
             this.Name = "frmRSASignature";
-            this.Text = "Cryptographer- RSA signature form";
+            this.Text = "RSA signature";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmRSASignature_FormClosing);
             this.Load += new System.EventHandler(this.frmRSASignature_Load);
             this.Controls.SetChildIndex(this.txtSignature, 0);

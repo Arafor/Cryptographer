@@ -130,10 +130,10 @@
             this.lblDescription0.Location = new System.Drawing.Point(6, 9);
             this.lblDescription0.MaximumSize = new System.Drawing.Size(390, 0);
             this.lblDescription0.Name = "lblDescription0";
-            this.lblDescription0.Size = new System.Drawing.Size(389, 26);
+            this.lblDescription0.Size = new System.Drawing.Size(366, 26);
             this.lblDescription0.TabIndex = 53;
-            this.lblDescription0.Text = "DES is a block cipher. Meaning that the message is devided into multiple blocks. " +
-    "In DES each block of our message is 64 bits in length.\r\n";
+            this.lblDescription0.Text = "DES is a bit block cipher. Meaning that the message is devided into multiple bloc" +
+    "ks. In DES each block of our message is 64 bits in length.\r\n";
             // 
             // lblDescription1
             // 
@@ -246,7 +246,7 @@
             this.Controls.Add(this.btnSaveToClipboard);
             this.Controls.Add(this.btnDES);
             this.Name = "frmDESInfo";
-            this.Text = "Cryptographer- DES info cipher ";
+            this.Text = "DES cipher info  ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDESInfo_FormClosing);
             this.Load += new System.EventHandler(this.frmDESInfo_Load);
             this.Controls.SetChildIndex(this.btnDES, 0);

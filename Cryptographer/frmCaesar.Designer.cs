@@ -35,30 +35,15 @@
             // 
             // btnCipher
             // 
-            this.btnCipher.TabIndex = 4;
             this.btnCipher.Click += new System.EventHandler(this.btnCipher_Click);
-            // 
-            // grpCipher
-            // 
-            this.grpCipher.TabIndex = 2;
             // 
             // rdoBtnEncrypt
             // 
-            this.rdoBtnEncrypt.TabIndex = 2;
             this.rdoBtnEncrypt.CheckedChanged += new System.EventHandler(this.cipherRadioButtonChanged);
             // 
             // rdoBtnDecrypt
             // 
-            this.rdoBtnDecrypt.TabIndex = 3;
             this.rdoBtnDecrypt.CheckedChanged += new System.EventHandler(this.cipherRadioButtonChanged);
-            // 
-            // txtResult
-            // 
-            this.txtResult.TabIndex = 6;
-            // 
-            // txtKey
-            // 
-            this.txtKey.TabIndex = 1;
             // 
             // txtMessage
             // 
@@ -93,7 +78,7 @@
             this.Controls.Add(this.btnCaesarInfo);
             this.Controls.Add(this.btnSaveToClipboard);
             this.Name = "frmCaesar";
-            this.Text = "Cryptographer- Caesar cipher";
+            this.Text = "Caesar cipher";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCaesar_FormClosing);
             this.Load += new System.EventHandler(this.frmCaesar_Load);
             this.Controls.SetChildIndex(this.btnSaveToClipboard, 0);

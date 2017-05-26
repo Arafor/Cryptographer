@@ -43,6 +43,9 @@ namespace Cryptographer
                 //Create new form window in case it is closed
                 ceasarCipher = new frmCaesar();
                 ceasarCipher.Show();
+            } else
+            {
+                ceasarCipher.BringToFront();
             }
         }
 
@@ -53,6 +56,10 @@ namespace Cryptographer
                 vigenereCipher = new frmVigenere();
                 vigenereCipher.Show();
             }
+            else
+            {
+                vigenereCipher.BringToFront();
+            }
         }
 
         private void btnPlayfair_Click(object sender, EventArgs e)
@@ -61,6 +68,10 @@ namespace Cryptographer
             {
                 playfairCipher = new frmPlayfair();
                 playfairCipher.Show();
+            }
+            else
+            {
+                playfairCipher.BringToFront();
             }
         }
 
@@ -71,6 +82,10 @@ namespace Cryptographer
                 DESCipher = new frmDES();
                 DESCipher.Show();
             }
+            else
+            {
+                DESCipher.BringToFront();
+            }
         }
 
         private void btnAES_Click(object sender, EventArgs e)
@@ -79,6 +94,10 @@ namespace Cryptographer
             {
                 AESCipher = new frmAES();
                 AESCipher.Show();
+            }
+            else
+            {
+                AESCipher.BringToFront();
             }
         }
 
@@ -89,6 +108,10 @@ namespace Cryptographer
                 RSACipher = new frmRSA();
                 RSACipher.Show();
             }
+            else
+            {
+                RSACipher.BringToFront();
+            }
         }
 
         private void btnRSASignature_Click(object sender, EventArgs e)
@@ -98,6 +121,10 @@ namespace Cryptographer
                 RSASigature = new frmRSASignature();
                 RSASigature.Show();
             }
+            else
+            {
+                RSASigature.BringToFront();
+            }
         }
 
         private void btnDiffieHellman_Click(object sender, EventArgs e)
@@ -106,6 +133,10 @@ namespace Cryptographer
             {
                 diffieHellman = new frmDiffieHellman();
                 diffieHellman.Show();
+            }
+            else
+            {
+                diffieHellman.BringToFront();
             }
         }
     }

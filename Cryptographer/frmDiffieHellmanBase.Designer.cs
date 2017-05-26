@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDiffieHellmanBase));
             this.lblWarning = new System.Windows.Forms.Label();
             this.lblSharedSecret = new System.Windows.Forms.Label();
             this.txtSharedSecret = new System.Windows.Forms.TextBox();
@@ -186,10 +187,11 @@
             this.Controls.Add(this.lblPrimeNumber);
             this.Controls.Add(this.txtPrimeNumber);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmDiffieHellmanBase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Cryptographer- Diffie-Hellman cipher";
+            this.Text = "Diffie-Hellman cipher base";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

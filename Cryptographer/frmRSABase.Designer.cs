@@ -195,7 +195,7 @@
             this.MaximizeBox = false;
             this.Name = "frmRSABase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Cryptographer- RSA cipher base form";
+            this.Text = "RSA cipher base";
             this.grpDisplayVlaueMode.ResumeLayout(false);
             this.grpDisplayVlaueMode.PerformLayout();
             this.grpCipher.ResumeLayout(false);
