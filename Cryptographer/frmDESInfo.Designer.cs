@@ -162,10 +162,10 @@
             this.lblDescription3.Location = new System.Drawing.Point(6, 218);
             this.lblDescription3.MaximumSize = new System.Drawing.Size(390, 0);
             this.lblDescription3.Name = "lblDescription3";
-            this.lblDescription3.Size = new System.Drawing.Size(371, 26);
+            this.lblDescription3.Size = new System.Drawing.Size(370, 26);
             this.lblDescription3.TabIndex = 56;
-            this.lblDescription3.Text = "Next we should choose a message. This would be our Plaintext if we want to encryp" +
-    "t or our Ciphertext if we wish to decrypt.\r\n";
+            this.lblDescription3.Text = "Next we should choose a message. This would be our plaintext if we want to encryp" +
+    "t or our ciphertext if we wish to decrypt.\r\n";
             // 
             // lblDescription4
             // 
