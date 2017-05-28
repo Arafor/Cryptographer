@@ -365,35 +365,33 @@ namespace Cryptographer
             }
         }
 
-        protected void btnClearAll_Click(object sender, EventArgs e)
+        protected void btnManualFill_Click(object sender, EventArgs e)
         {
             foreach (TextBox txtBox in getTableTextBoxes())
             {
+                txtBox.ReadOnly = false;
                 txtBox.Text = "";
             }
         }
 
         protected void btnAutoFill_Click(object sender, EventArgs e)
         {
+            foreach (TextBox txtBox in getTableTextBoxes()) {
+                txtBox.ReadOnly = true;
+            }
             // Index of letter to add
-            int resultLetter = -1;
-            char[] alphabetLetters = numAlphabet.getAlphabet();
+            List<char> alphabetLetters = numAlphabet.getAlphabet().ToList();
+            alphabetLetters.Remove('J');
+            Random rnd = new Random();
             char[,] tableArray = new char[5, 5];
             for (int i = 0; i < 5; i++)
             {
                 for (int j = 0; j < 5; j++)
                 {
-                    // J is not contained in the table and must be avoided
-                    if (resultLetter == 8)
-                    {
-                        resultLetter = resultLetter + 2;
-                    }
-                    else
-                    {
-                        resultLetter++;
-                    }
+                    int randomLetter = rnd.Next(0, alphabetLetters.Count);
                     // Auto fill the table with latters from A to Z (without J)
-                    tableArray[i, j] = alphabetLetters[resultLetter];
+                    tableArray[i, j] = alphabetLetters[randomLetter];
+                    alphabetLetters.RemoveAt(randomLetter);
                 }
             }
             fillUITable(getTableTextBoxes(), tableArray);

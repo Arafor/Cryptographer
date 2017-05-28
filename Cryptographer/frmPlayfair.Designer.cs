@@ -433,7 +433,7 @@
             this.Load += new System.EventHandler(this.frmPlayfair_Load);
             this.Controls.SetChildIndex(this.txtMessage, 0);
             this.Controls.SetChildIndex(this.txtResult, 0);
-            this.Controls.SetChildIndex(this.btnClearAll, 0);
+            this.Controls.SetChildIndex(this.btnManualFill, 0);
             this.Controls.SetChildIndex(this.btnAutoFill, 0);
             this.Controls.SetChildIndex(this.lblTable, 0);
             this.Controls.SetChildIndex(this.lblMessage, 0);

@@ -39,7 +39,7 @@
             this.txtTable03 = new System.Windows.Forms.TextBox();
             this.txtTable02 = new System.Windows.Forms.TextBox();
             this.btnAutoFill = new System.Windows.Forms.Button();
-            this.btnClearAll = new System.Windows.Forms.Button();
+            this.btnManualFill = new System.Windows.Forms.Button();
             this.txtTable01 = new System.Windows.Forms.TextBox();
             this.txtTable00 = new System.Windows.Forms.TextBox();
             this.txtTable10 = new System.Windows.Forms.TextBox();
@@ -166,15 +166,15 @@
             this.btnAutoFill.UseVisualStyleBackColor = true;
             this.btnAutoFill.Click += new System.EventHandler(this.btnAutoFill_Click);
             // 
-            // btnClearAll
+            // btnManualFill
             // 
-            this.btnClearAll.Location = new System.Drawing.Point(37, 324);
-            this.btnClearAll.Name = "btnClearAll";
-            this.btnClearAll.Size = new System.Drawing.Size(75, 23);
-            this.btnClearAll.TabIndex = 30;
-            this.btnClearAll.Text = "Clear all";
-            this.btnClearAll.UseVisualStyleBackColor = true;
-            this.btnClearAll.Click += new System.EventHandler(this.btnClearAll_Click);
+            this.btnManualFill.Location = new System.Drawing.Point(37, 324);
+            this.btnManualFill.Name = "btnManualFill";
+            this.btnManualFill.Size = new System.Drawing.Size(75, 23);
+            this.btnManualFill.TabIndex = 30;
+            this.btnManualFill.Text = "Manual Fill";
+            this.btnManualFill.UseVisualStyleBackColor = true;
+            this.btnManualFill.Click += new System.EventHandler(this.btnManualFill_Click);
             // 
             // txtTable01
             // 
@@ -438,7 +438,7 @@
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.btnAutoFill);
-            this.Controls.Add(this.btnClearAll);
+            this.Controls.Add(this.btnManualFill);
             this.Controls.Add(this.txtResult);
             this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.tblTable);
@@ -467,7 +467,7 @@
         protected System.Windows.Forms.TextBox txtTable03;
         protected System.Windows.Forms.TextBox txtTable02;
         protected System.Windows.Forms.Button btnAutoFill;
-        protected System.Windows.Forms.Button btnClearAll;
+        protected System.Windows.Forms.Button btnManualFill;
         protected System.Windows.Forms.TextBox txtTable01;
         protected System.Windows.Forms.TextBox txtTable00;
         protected System.Windows.Forms.TextBox txtTable10;
