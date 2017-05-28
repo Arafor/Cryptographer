@@ -75,11 +75,11 @@
             // 
             // rdoBtnEncrypt
             // 
-            this.rdoBtnEncrypt.Click += new System.EventHandler(this.cipherRadioButtonChanged);
+            this.rdoBtnSign.Click += new System.EventHandler(this.cipherRadioButtonChanged);
             // 
             // rdoBtnDecrypt
             // 
-            this.rdoBtnDecrypt.Click += new System.EventHandler(this.cipherRadioButtonChanged);
+            this.rdoBtnVerify.Click += new System.EventHandler(this.cipherRadioButtonChanged);
             // 
             // grpCipher
             // 

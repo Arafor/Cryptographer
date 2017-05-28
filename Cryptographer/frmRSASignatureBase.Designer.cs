@@ -36,8 +36,8 @@
             this.lblResult = new System.Windows.Forms.Label();
             this.lblKey = new System.Windows.Forms.Label();
             this.lblSignedData = new System.Windows.Forms.Label();
-            this.rdoBtnEncrypt = new System.Windows.Forms.RadioButton();
-            this.rdoBtnDecrypt = new System.Windows.Forms.RadioButton();
+            this.rdoBtnSign = new System.Windows.Forms.RadioButton();
+            this.rdoBtnVerify = new System.Windows.Forms.RadioButton();
             this.grpCipher = new System.Windows.Forms.GroupBox();
             this.txtKey = new System.Windows.Forms.TextBox();
             this.txtSignedData = new System.Windows.Forms.TextBox();
@@ -119,30 +119,30 @@
             this.lblSignedData.TabIndex = 69;
             this.lblSignedData.Text = "Signed Data";
             // 
-            // rdoBtnEncrypt
+            // rdoBtnSign
             // 
-            this.rdoBtnEncrypt.AutoSize = true;
-            this.rdoBtnEncrypt.Location = new System.Drawing.Point(6, 19);
-            this.rdoBtnEncrypt.Name = "rdoBtnEncrypt";
-            this.rdoBtnEncrypt.Size = new System.Drawing.Size(61, 17);
-            this.rdoBtnEncrypt.TabIndex = 8;
-            this.rdoBtnEncrypt.Text = "Encrypt";
-            this.rdoBtnEncrypt.UseVisualStyleBackColor = true;
+            this.rdoBtnSign.AutoSize = true;
+            this.rdoBtnSign.Location = new System.Drawing.Point(6, 19);
+            this.rdoBtnSign.Name = "rdoBtnSign";
+            this.rdoBtnSign.Size = new System.Drawing.Size(46, 17);
+            this.rdoBtnSign.TabIndex = 8;
+            this.rdoBtnSign.Text = "Sign";
+            this.rdoBtnSign.UseVisualStyleBackColor = true;
             // 
-            // rdoBtnDecrypt
+            // rdoBtnVerify
             // 
-            this.rdoBtnDecrypt.AutoSize = true;
-            this.rdoBtnDecrypt.Location = new System.Drawing.Point(6, 42);
-            this.rdoBtnDecrypt.Name = "rdoBtnDecrypt";
-            this.rdoBtnDecrypt.Size = new System.Drawing.Size(62, 17);
-            this.rdoBtnDecrypt.TabIndex = 9;
-            this.rdoBtnDecrypt.Text = "Decrypt";
-            this.rdoBtnDecrypt.UseVisualStyleBackColor = true;
+            this.rdoBtnVerify.AutoSize = true;
+            this.rdoBtnVerify.Location = new System.Drawing.Point(6, 42);
+            this.rdoBtnVerify.Name = "rdoBtnVerify";
+            this.rdoBtnVerify.Size = new System.Drawing.Size(51, 17);
+            this.rdoBtnVerify.TabIndex = 9;
+            this.rdoBtnVerify.Text = "Verify";
+            this.rdoBtnVerify.UseVisualStyleBackColor = true;
             // 
             // grpCipher
             // 
-            this.grpCipher.Controls.Add(this.rdoBtnEncrypt);
-            this.grpCipher.Controls.Add(this.rdoBtnDecrypt);
+            this.grpCipher.Controls.Add(this.rdoBtnSign);
+            this.grpCipher.Controls.Add(this.rdoBtnVerify);
             this.grpCipher.Location = new System.Drawing.Point(373, 256);
             this.grpCipher.Name = "grpCipher";
             this.grpCipher.Size = new System.Drawing.Size(97, 71);
@@ -246,8 +246,8 @@
         protected System.Windows.Forms.Label lblResult;
         protected System.Windows.Forms.Label lblKey;
         protected System.Windows.Forms.Label lblSignedData;
-        protected System.Windows.Forms.RadioButton rdoBtnEncrypt;
-        protected System.Windows.Forms.RadioButton rdoBtnDecrypt;
+        protected System.Windows.Forms.RadioButton rdoBtnSign;
+        protected System.Windows.Forms.RadioButton rdoBtnVerify;
         protected System.Windows.Forms.GroupBox grpCipher;
         protected System.Windows.Forms.TextBox txtKey;
         protected System.Windows.Forms.TextBox txtSignedData;
