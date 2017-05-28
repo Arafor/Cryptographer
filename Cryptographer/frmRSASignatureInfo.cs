@@ -52,7 +52,7 @@ namespace Cryptographer
         private void frmRSASignatureInfo_Load(object sender, EventArgs e)
         {
             RSASignature = new frmRSASignature();
-            rdoBtnEncrypt.Checked = true;
+            rdoBtnSign.Checked = true;
         }
 
         private void btnCipher_Click(object sender, EventArgs e)
@@ -61,7 +61,7 @@ namespace Cryptographer
             {
                 byte[] message = ByteConverter.GetBytes(txtSignedData.Text);
                 // Prepare for cipher text display
-                if (rdoBtnEncrypt.Checked)
+                if (rdoBtnSign.Checked)
                 {
                     txtSignature.Text = "";
                 }
@@ -78,7 +78,7 @@ namespace Cryptographer
                         return;
                     }
                 }
-                if (rdoBtnEncrypt.Checked)
+                if (rdoBtnSign.Checked)
                 {
 
                     //Plaintext to Ciphertext
@@ -115,7 +115,7 @@ namespace Cryptographer
                     }
                     printKeyParam();
                 }
-                else if (rdoBtnDecrypt.Checked)
+                else if (rdoBtnVerify.Checked)
                 {
                     try
                     {
@@ -181,18 +181,18 @@ namespace Cryptographer
                     "Then we choose our private key e where e is a coprime to the number ((p-1)*(q-1)).",
                     "Then we create our public key d=e^-1 mod((p-1)*(q-1)).",
                 };
-            if (rdoBtnEncrypt.Checked)
+            if (rdoBtnSign.Checked)
             {
-                lblSignedData.Text = "Signable data";
+                lblSignedData.Text = "Document/text to be signed";
                 lblDescription5.Text = "To sign our document we use the following formula:";
 
                 //Set encryption formula description
                 formula.Add("After that we can begin to sign our document m.");
                 formula.Add("c=m^d mod(n).");
             }
-            else if (rdoBtnDecrypt.Checked)
+            else if (rdoBtnVerify.Checked)
             {
-                lblSignedData.Text = "Signed data";
+                lblSignedData.Text = "Signed document/data to verify";
                 lblDescription5.Text = "To validate our data we use the following formula:";
 
                 //Set encryption formula description

@@ -40,11 +40,11 @@
             // 
             // rdoBtnEncrypt
             // 
-            this.rdoBtnEncrypt.CheckedChanged += new System.EventHandler(this.cipherRadioButtonChanged);
+            this.rdoBtnSign.CheckedChanged += new System.EventHandler(this.cipherRadioButtonChanged);
             // 
             // rdoBtnDecrypt
             // 
-            this.rdoBtnDecrypt.CheckedChanged += new System.EventHandler(this.cipherRadioButtonChanged);
+            this.rdoBtnVerify.CheckedChanged += new System.EventHandler(this.cipherRadioButtonChanged);
             // 
             // btnImport
             // 

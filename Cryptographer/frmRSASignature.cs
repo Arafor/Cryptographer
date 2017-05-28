@@ -50,7 +50,7 @@ namespace Cryptographer
 
         private void frmRSASignature_Load(object sender, EventArgs e)
         {
-            rdoBtnEncrypt.Checked = true;
+            rdoBtnSign.Checked = true;
             RSASignatureInfo = new frmRSASignatureInfo();
         }
 
@@ -60,7 +60,7 @@ namespace Cryptographer
             {
                 byte[] message = ByteConverter.GetBytes(txtSignedData.Text);
                 // Prepare for cipher text display
-                if (rdoBtnEncrypt.Checked)
+                if (rdoBtnSign.Checked)
                 {
                     txtSignature.Text = "";
                 }
@@ -77,7 +77,7 @@ namespace Cryptographer
                         return;
                     }
                 }
-                if (rdoBtnEncrypt.Checked)
+                if (rdoBtnSign.Checked)
                 {
 
                     //Plaintext to Ciphertext
@@ -113,7 +113,7 @@ namespace Cryptographer
                         return;
                     }
                 }
-                else if (rdoBtnDecrypt.Checked)
+                else if (rdoBtnVerify.Checked)
                 {
                     try
                     {
@@ -168,13 +168,13 @@ namespace Cryptographer
 
         private void cipherRadioButtonChanged(object sender, EventArgs e)
         {
-            if (rdoBtnEncrypt.Checked)
+            if (rdoBtnSign.Checked)
             {
-                lblSignedData.Text = "Signable data";
+                lblSignedData.Text = "Document/text to be signed";
             }
-            else if (rdoBtnDecrypt.Checked)
+            else if (rdoBtnVerify.Checked)
             {
-                lblSignedData.Text = "Signed data";
+                lblSignedData.Text = "Signed document/data to verify";
             }
             else
             {
