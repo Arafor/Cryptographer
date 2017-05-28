@@ -35,6 +35,7 @@ namespace Cryptographer
         private void frmDiffieHellmanInfo_Load(object sender, EventArgs e)
         {
             DFCipher = new frmDiffieHellman();
+            updatePrimeNumberList();
         }
     }
 }

@@ -53,7 +53,7 @@
             this.Text = "Diffie-Hellman cipher";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDiffieHellman_FormClosing);
             this.Load += new System.EventHandler(this.frmDiffieHellman_Load);
-            this.Controls.SetChildIndex(this.txtPrimeNumber, 0);
+            this.Controls.SetChildIndex(this.cmbPrimeNumber, 0);
             this.Controls.SetChildIndex(this.lblPrimeNumber, 0);
             this.Controls.SetChildIndex(this.txtPrimitiveRoot, 0);
             this.Controls.SetChildIndex(this.lblPrimitiveRoot, 0);
