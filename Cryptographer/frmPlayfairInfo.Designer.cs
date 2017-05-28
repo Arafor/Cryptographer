@@ -59,7 +59,7 @@
             // 
             // btnClearAll
             // 
-            this.btnClearAll.Location = new System.Drawing.Point(325, 312);
+            this.btnManualFill.Location = new System.Drawing.Point(325, 312);
             // 
             // txtResult
             // 
@@ -329,7 +329,7 @@
             this.Controls.SetChildIndex(this.lblDescription1, 0);
             this.Controls.SetChildIndex(this.txtMessage, 0);
             this.Controls.SetChildIndex(this.txtResult, 0);
-            this.Controls.SetChildIndex(this.btnClearAll, 0);
+            this.Controls.SetChildIndex(this.btnManualFill, 0);
             this.Controls.SetChildIndex(this.btnAutoFill, 0);
             this.Controls.SetChildIndex(this.btnPlayfair, 0);
             this.Controls.SetChildIndex(this.label3, 0);
