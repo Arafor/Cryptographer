@@ -42,8 +42,8 @@
             this.lblPrimitiveRoot = new System.Windows.Forms.Label();
             this.txtPrimitiveRoot = new System.Windows.Forms.TextBox();
             this.lblPrimeNumber = new System.Windows.Forms.Label();
-            this.txtPrimeNumber = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cmbPrimeNumber = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -155,17 +155,19 @@
             this.lblPrimeNumber.TabIndex = 19;
             this.lblPrimeNumber.Text = "Choose a mutual prime number";
             // 
-            // txtPrimeNumber
-            // 
-            this.txtPrimeNumber.Location = new System.Drawing.Point(12, 76);
-            this.txtPrimeNumber.Name = "txtPrimeNumber";
-            this.txtPrimeNumber.Size = new System.Drawing.Size(100, 20);
-            this.txtPrimeNumber.TabIndex = 0;
-            this.txtPrimeNumber.TextChanged += new System.EventHandler(this.txtPrimeNumber_TextChanged);
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // cmbPrimeNumber
+            // 
+            this.cmbPrimeNumber.FormattingEnabled = true;
+            this.cmbPrimeNumber.Location = new System.Drawing.Point(12, 76);
+            this.cmbPrimeNumber.Name = "cmbPrimeNumber";
+            this.cmbPrimeNumber.Size = new System.Drawing.Size(100, 21);
+            this.cmbPrimeNumber.TabIndex = 26;
+            this.cmbPrimeNumber.SelectedValueChanged += new System.EventHandler(this.cmbPrimeNumber_ValueChanged);
+            this.cmbPrimeNumber.TextChanged += new System.EventHandler(this.cmbPrimeNumber_ValueChanged);
             // 
             // frmDiffieHellmanBase
             // 
@@ -173,6 +175,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(344, 221);
+            this.Controls.Add(this.cmbPrimeNumber);
             this.Controls.Add(this.lblWarning);
             this.Controls.Add(this.lblSharedSecret);
             this.Controls.Add(this.txtSharedSecret);
@@ -185,7 +188,6 @@
             this.Controls.Add(this.lblPrimitiveRoot);
             this.Controls.Add(this.txtPrimitiveRoot);
             this.Controls.Add(this.lblPrimeNumber);
-            this.Controls.Add(this.txtPrimeNumber);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -212,7 +214,7 @@
         protected System.Windows.Forms.Label lblPrimitiveRoot;
         protected System.Windows.Forms.TextBox txtPrimitiveRoot;
         protected System.Windows.Forms.Label lblPrimeNumber;
-        protected System.Windows.Forms.TextBox txtPrimeNumber;
         protected System.Windows.Forms.ErrorProvider errorProvider1;
+        protected System.Windows.Forms.ComboBox cmbPrimeNumber;
     }
 }

@@ -82,7 +82,7 @@
             // 
             // txtPrimeNumber
             // 
-            this.txtPrimeNumber.Location = new System.Drawing.Point(12, 146);
+            this.cmbPrimeNumber.Location = new System.Drawing.Point(12, 146);
             // 
             // btnDiffieHellman
             // 
@@ -153,7 +153,7 @@
             this.Text = "Diffie-Hellman cipher info";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDiffieHellmanInfo_FormClosing);
             this.Load += new System.EventHandler(this.frmDiffieHellmanInfo_Load);
-            this.Controls.SetChildIndex(this.txtPrimeNumber, 0);
+            this.Controls.SetChildIndex(this.cmbPrimeNumber, 0);
             this.Controls.SetChildIndex(this.lblPrimeNumber, 0);
             this.Controls.SetChildIndex(this.txtPrimitiveRoot, 0);
             this.Controls.SetChildIndex(this.lblPrimitiveRoot, 0);

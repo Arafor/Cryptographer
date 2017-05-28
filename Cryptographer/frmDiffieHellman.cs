@@ -27,6 +27,7 @@
         private void frmDiffieHellman_Load(object sender, System.EventArgs e)
         {
             DFInfo = new frmDiffieHellmanInfo();
+            updatePrimeNumberList();
         }
 
         private void frmDiffieHellman_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)

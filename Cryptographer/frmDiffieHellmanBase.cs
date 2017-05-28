@@ -13,7 +13,7 @@ namespace Cryptographer
         public frmDiffieHellmanBase()
         {
             InitializeComponent();
-            this.ActiveControl = txtPrimeNumber;
+            this.ActiveControl = cmbPrimeNumber;
             generatePrimitiveRootNumbersOfPrimeNumbers();
         }
 
@@ -60,7 +60,7 @@ namespace Cryptographer
             return true;
         }
 
-        private void txtPrimeNumber_TextChanged(object sender, EventArgs e)
+        private void cmbPrimeNumber_ValueChanged(object sender, EventArgs e)
         {
             updatePrimitiveRootTextBox();
         }
@@ -69,10 +69,10 @@ namespace Cryptographer
         {
             txtPrimitiveRoot.Text = "";
             //Check if the entered value is a natural number
-            if (assertNaturalNumber(txtPrimeNumber))
+            if (assertNaturalNumber(cmbPrimeNumber))
             {
                 int parsedNumber;
-                if (!int.TryParse(txtPrimeNumber.Text, out parsedNumber)) parsedNumber = 0;
+                if (!int.TryParse(cmbPrimeNumber.Text, out parsedNumber)) parsedNumber = 0;
                 //Check if the number isnt higher than what we have primitive roots for
                 if (parsedNumber <= 97)
                 {
@@ -86,20 +86,20 @@ namespace Cryptographer
                         }
                         catch (KeyNotFoundException)
                         {
-                            txtPrimeNumber.ForeColor = Color.Red;
-                            errorProvider1.SetError(txtPrimeNumber, "This prime number does not have a primitive root; Please choose a different number");
+                            cmbPrimeNumber.ForeColor = Color.Red;
+                            errorProvider1.SetError(cmbPrimeNumber, "This prime number does not have a primitive root; Please choose a different number");
                         }
                     }
                     else
                     {
-                        txtPrimeNumber.ForeColor = Color.Red;
-                        errorProvider1.SetError(txtPrimeNumber, "The entered value is not a prime number");
+                        cmbPrimeNumber.ForeColor = Color.Red;
+                        errorProvider1.SetError(cmbPrimeNumber, "The entered value is not a prime number");
                     }
                 }
                 else
                 {
-                    txtPrimeNumber.ForeColor = Color.Red;
-                    errorProvider1.SetError(txtPrimeNumber, "The highest allowed prime number is 97; Please choose a different number");
+                    cmbPrimeNumber.ForeColor = Color.Red;
+                    errorProvider1.SetError(cmbPrimeNumber, "The highest allowed prime number is 97; Please choose a different number");
                 }
             }
         }
@@ -125,17 +125,23 @@ namespace Cryptographer
                 //Check if primitive root is not empty
                 if (txtPrimitiveRoot.Text != "")
                 {
-                    txtSecret.Text = BigInteger.ModPow(int.Parse(txtPrimitiveRoot.Text), parsedNumber, int.Parse(txtPrimeNumber.Text)).ToString();
+                    txtSecret.Text = BigInteger.ModPow(int.Parse(txtPrimitiveRoot.Text), parsedNumber, int.Parse(cmbPrimeNumber.Text)).ToString();
                 }
                 else
                 {
-                    txtPrimeNumber.ForeColor = Color.Red;
-                    errorProvider1.SetError(txtPrimeNumber, "You need a prime number and a primitive root to create your secret");
+                    cmbPrimeNumber.ForeColor = Color.Red;
+                    errorProvider1.SetError(cmbPrimeNumber, "You need a prime number and a primitive root to create your secret");
                 }
             }
         }
 
         protected void setErrorMessage(TextBox target, string message)
+        {
+            target.ForeColor = Color.Red;
+            errorProvider1.SetError(target, message);
+        }
+
+        protected void setErrorMessage(ComboBox target, string message)
         {
             target.ForeColor = Color.Red;
             errorProvider1.SetError(target, message);
@@ -184,6 +190,49 @@ namespace Cryptographer
             return false;
         }
 
+        protected bool assertNaturalNumber(ComboBox target)
+        {
+            int enteredValue = 0;
+            //Clear previous errors
+            target.ForeColor = Color.Black;
+            errorProvider1.Clear();
+            //Check if the field is not empty
+            if (target.Text != "")
+            {
+                //Check if the entered value is an integer
+                try
+                {
+                    enteredValue = int.Parse(target.Text);
+                }
+                catch (OverflowException)
+                {
+                    setErrorMessage(target, "The chosen value is too large");
+
+                    return false;
+                }
+                catch (Exception)
+                {
+                    setErrorMessage(target, "The value must be a natural number");
+
+                    return false;
+                }
+
+                //Check if the entered value is a natural number
+                if (enteredValue > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    setErrorMessage(target, "A prime number can only be a natural number (0 <)");
+
+                    return false;
+                }
+            }
+
+            return false;
+        }
+
         private void txtOtherSecret_TextChanged(object sender, EventArgs e)
         {
             updateSharedSecretTextBox();
@@ -200,7 +249,7 @@ namespace Cryptographer
                 //Check if we have a secret to work with
                 if (txtSecret.Text != "")
                 {
-                    txtSharedSecret.Text = BigInteger.ModPow(parsedNumber, int.Parse(txtSecretNumber.Text), int.Parse(txtPrimeNumber.Text)).ToString();
+                    txtSharedSecret.Text = BigInteger.ModPow(parsedNumber, int.Parse(txtSecretNumber.Text), int.Parse(cmbPrimeNumber.Text)).ToString();
                 }
                 else
                 {
@@ -213,6 +262,14 @@ namespace Cryptographer
         private void txtSecret_TextChanged(object sender, EventArgs e)
         {
             updateSharedSecretTextBox();
+        }
+
+        protected void updatePrimeNumberList()
+        {
+            foreach(int prime in primitiveRootsOfPrimeNumbers.Keys)
+            {
+                cmbPrimeNumber.Items.Add(prime);
+            }
         }
     }
 }
